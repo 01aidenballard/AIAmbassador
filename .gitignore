@@ -1,2 +1,5 @@
 # DS store
 **/.DS_Store
+
+# python venv
+**/venv
