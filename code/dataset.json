@@ -1,0 +1,1835 @@
+{
+    "data": [
+        {
+            "title": "Degree Programs",
+            "paragraphs": [
+                {
+                    "context": "Describe the degree programs offered by the department",
+                    "qas": [
+                        {
+                            "question": "What undergraduate degrees are available in the department?",
+                            "answer": [
+                                "The department offers undergraduate degrees in Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "Which undergraduate programs can students enroll in within the department?",
+                            "answer": [
+                                "Students can enroll in undergraduate programs such as Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "Can you list the undergraduate degrees provided by the department?",
+                            "answer": [
+                                "Undergraduate degrees available include Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "What bachelor's degree programs are offered by this department?",
+                            "answer": [
+                                "This department offers bachelor's degree programs in Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "Which undergraduate majors are available through the department?",
+                            "answer": [
+                                "The department offers majors in Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "What are the available undergraduate study options in the department?",
+                            "answer": [
+                                "Undergraduate study options in the department include degrees in Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "Does the department provide undergraduate degrees? If so, which ones?",
+                            "answer": [
+                                "Yes, the department provides undergraduate degrees in Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "What undergraduate programs does the department have in engineering and technology fields?",
+                            "answer": [
+                                "The department offers undergraduate programs in Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "Could you outline the undergraduate degree options available in this department?",
+                            "answer": [
+                                "The undergraduate degree options available are Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "What degrees can undergraduate students pursue within the department?",
+                            "answer": [
+                                "Undergraduate students can pursue degrees in Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "What fields of study are covered by the undergraduate degrees offered by the department?",
+                            "answer": [
+                                "The undergraduate degrees cover fields such as Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        
+
+
+                        {
+                            "question": "Are there any dual degree options for undergraduate students?",
+                            "answer": [
+                                "Yes, students can pursue a dual degree in Computer Science (CS) and Computer Engineering (CPE) or in Electrical Engineering (EE) and Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "Can undergraduate students pursue dual degrees in this department?",
+                            "answer": [
+                                "Yes, undergraduate students can pursue dual degrees in Computer Science (CS) and Computer Engineering (CPE) or in Electrical Engineering (EE) and Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "What dual degree options are available for undergraduates in the department?",
+                            "answer": [
+                                "The department offers dual degree options in Computer Science (CS) and Computer Engineering (CPE) or in Electrical Engineering (EE) and Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "Does the department offer any dual-degree programs for undergraduate students?",
+                            "answer": [
+                                "Yes, the department provides dual-degree programs such as Computer Science (CS) with Computer Engineering (CPE) or Electrical Engineering (EE) with Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "Are there dual degree opportunities combining Computer Science and other fields for undergraduates?",
+                            "answer": [
+                                "Undergraduates can pursue dual degrees combining Computer Science (CS) with Computer Engineering (CPE) or Electrical Engineering (EE)."
+                            ]
+                        },
+                        {
+                            "question": "Can a student earn a dual degree in Computer Engineering and Computer Science?",
+                            "answer": [
+                                "Yes, students can earn a dual degree in Computer Engineering (CPE) and Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "What combinations of dual degrees are possible for undergraduates in the department?",
+                            "answer": [
+                                "Undergraduates can pursue dual degrees in combinations such as Computer Science (CS) and Computer Engineering (CPE) or Electrical Engineering (EE) and Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "Does this department support dual-degree paths for its undergraduate students?",
+                            "answer": [
+                                "Yes, the department supports dual-degree paths like Computer Science (CS) and Computer Engineering (CPE) or Electrical Engineering (EE) and Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "Are there options for undergraduates to combine two fields of study into a dual degree?",
+                            "answer": [
+                                "Yes, undergraduates can combine fields like Computer Science (CS) with Computer Engineering (CPE) or Electrical Engineering (EE) into dual degrees."
+                            ]
+                        },
+                        {
+                            "question": "Which dual degree programs are specifically available for undergraduate students?",
+                            "answer": [
+                                "The dual degree programs available are Computer Science (CS) with Computer Engineering (CPE) and Electrical Engineering (EE) with Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "What are the dual degree possibilities for students in this department?",
+                            "answer": [
+                                "Students can pursue dual degrees in fields such as Computer Science (CS) and Computer Engineering (CPE) or Electrical Engineering (EE) and Computer Science (CS)."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "Can students minor in Computer Science?",
+                            "answer": [
+                                "Yes, students have the option to minor in Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "Is it possible for students to take a minor in Computer Science?",
+                            "answer": [
+                                "Yes, students can choose to minor in Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "Does the department offer a Computer Science minor for students?",
+                            "answer": [
+                                "Yes, the department offers a minor in Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "Can students add a Computer Science minor to their studies?",
+                            "answer": [
+                                "Yes, students have the option to add a Computer Science (CS) minor to their academic program."
+                            ]
+                        },
+                        {
+                            "question": "Are students allowed to minor in the field of Computer Science?",
+                            "answer": [
+                                "Yes, students are allowed to minor in Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "What are the minor options for students interested in Computer Science?",
+                            "answer": [
+                                "Students interested in Computer Science can opt for a minor in the subject."
+                            ]
+                        },
+                        {
+                            "question": "Does the department provide a program for minoring in Computer Science?",
+                            "answer": [
+                                "Yes, the department provides a program for students to minor in Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "Can a student pursue a minor in Computer Science at this department?",
+                            "answer": [
+                                "Yes, students can pursue a minor in Computer Science (CS) through this department."
+                            ]
+                        },
+                        {
+                            "question": "Is the option to minor in Computer Science available for students?",
+                            "answer": [
+                                "Yes, the option to minor in Computer Science (CS) is available for students."
+                            ]
+                        },
+                        {
+                            "question": "Are there opportunities to minor in Computer Science for students in this program?",
+                            "answer": [
+                                "Yes, students in this program can minor in Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "Can students complement their major with a minor in Computer Science?",
+                            "answer": [
+                                "Yes, students can complement their major by pursuing a minor in Computer Science (CS)."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What graduate degrees are offered by the department?",
+                            "answer": [
+                                "Graduate degrees include an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Which graduate programs are available in this department?",
+                            "answer": [
+                                "The department offers graduate programs including an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "What graduate-level degrees can students pursue in this department?",
+                            "answer": [
+                                "Students can pursue graduate-level degrees such as an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Does the department provide any graduate degree programs?",
+                            "answer": [
+                                "Yes, the department provides graduate degree programs, including an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Can you list the master's programs offered by the department?",
+                            "answer": [
+                                "The master's programs offered include an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "What are the available graduate study options in this department?",
+                            "answer": [
+                                "Available graduate study options include an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Are there any graduate degree options in engineering or computer science?",
+                            "answer": [
+                                "Yes, graduate degree options include an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "What advanced degrees does the department offer for graduate students?",
+                            "answer": [
+                                "The department offers advanced degrees such as an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Which graduate degrees in science and engineering can be earned here?",
+                            "answer": [
+                                "Graduate degrees that can be earned include an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Does the department offer graduate degrees in software and electrical engineering?",
+                            "answer": [
+                                "Yes, the department offers an MS in Software Engineering, Electrical Engineering (EE), and Computer Science (CS)."
+                            ]
+                        },
+                        {
+                            "question": "What master's degree programs are available to graduate students?",
+                            "answer": [
+                                "Graduate students can enroll in master's degree programs such as an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What PhD programs are available in the department?",
+                            "answer": [
+                                "PhD programs are offered in Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                            ]
+                        },
+                        {
+                            "question": "Which PhD programs does the department offer?",
+                            "answer": [
+                                "The department offers PhD programs in Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                            ]
+                        },
+                        {
+                            "question": "Are there any doctoral programs available in the department?",
+                            "answer": [
+                                "Yes, the department provides doctoral programs in Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                            ]
+                        },
+                        {
+                            "question": "Can students pursue a PhD in this department? If so, in what fields?",
+                            "answer": [
+                                "Yes, students can pursue a PhD in fields like Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                            ]
+                        },
+                        {
+                            "question": "What are the available doctoral study options in this department?",
+                            "answer": [
+                                "Available doctoral study options include PhD programs in Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                            ]
+                        },
+                        {
+                            "question": "Does the department offer PhD programs in engineering or science disciplines?",
+                            "answer": [
+                                "Yes, PhD programs are offered in Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                            ]
+                        },
+                        {
+                            "question": "Which disciplines are covered by the department's PhD programs?",
+                            "answer": [
+                                "The department's PhD programs cover disciplines like Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                            ]
+                        },
+                        {
+                            "question": "Are there PhD programs in Computer Engineering and Computer Science?",
+                            "answer": [
+                                "Yes, the department offers PhD programs in both Computer Engineering (CPE) and Computer Science (CS), as well as Information Science and Electrical Engineering (EE)."
+                            ]
+                        },
+                        {
+                            "question": "What doctoral programs can graduate students enroll in within this department?",
+                            "answer": [
+                                "Graduate students can enroll in doctoral programs such as PhDs in Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                            ]
+                        },
+                        {
+                            "question": "Does the department provide PhD opportunities in Electrical Engineering or Information Science?",
+                            "answer": [
+                                "Yes, the department provides PhD opportunities in Electrical Engineering (EE), Information Science, Computer Science (CS), and Computer Engineering (CPE)."
+                            ]
+                        },
+                        {
+                            "question": "What are the research areas for the PhD programs in this department?",
+                            "answer": [
+                                "The PhD programs focus on areas like Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Research Opportunities",
+            "paragraphs": [
+                {
+                    "context": "Provide an overview of research areas and opportunities.",
+                    "qas": [
+                        {
+                            "question": "What are the primary research areas in the Lane Department of Computer Science and Electrical Engineering?",
+                            "answer": [
+                                "The primary research areas include biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                            ]
+                        },
+                        {
+                            "question": "What research fields does the Lane Department focus on?",
+                            "answer": [
+                                "The department focuses on research areas such as biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                            ]
+                        },
+                        {
+                            "question": "Can you list the main research areas in the Lane Department of Computer Science and Electrical Engineering?",
+                            "answer": [
+                                "The main research areas include biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                            ]
+                        },
+                        {
+                            "question": "What are the key research topics covered by the Lane Department?",
+                            "answer": [
+                                "Key research topics include biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                            ]
+                        },
+                        {
+                            "question": "Which areas of research are emphasized in the Lane Department?",
+                            "answer": [
+                                "The Lane Department emphasizes research in biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                            ]
+                        },
+                        {
+                            "question": "What are the primary fields of study within the Lane Department's research initiatives?",
+                            "answer": [
+                                "Primary fields of study include biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                            ]
+                        },
+                        {
+                            "question": "Does the Lane Department have specific research focus areas?",
+                            "answer": [
+                                "Yes, the department focuses on biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                            ]
+                        },
+                        {
+                            "question": "What are the focus areas for research at the Lane Department of Computer Science and Electrical Engineering?",
+                            "answer": [
+                                "Research focus areas include biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                            ]
+                        },
+                        {
+                            "question": "Which disciplines does the Lane Department prioritize in its research efforts?",
+                            "answer": [
+                                "The department prioritizes research in biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                            ]
+                        },
+                        {
+                            "question": "What are the Lane Department’s main areas of research activity?",
+                            "answer": [
+                                "The main areas of research activity are biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                            ]
+                        },
+                        {
+                            "question": "In which research domains is the Lane Department actively involved?",
+                            "answer": [
+                                "The department is actively involved in research domains like biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                            ]
+                        },
+
+                        
+
+                        {
+                            "question": "What is the focus of research in the field of biometrics?",
+                            "answer": [
+                                "Research in biometrics focuses on using biological signatures like fingerprints, voice, face, and DNA for identification or authentication in applications such as criminal justice, e-commerce, and medical fields. It is led by the Biometrics and Identification Innovation Center at WVU, which partners with the FBI as a lead academic partner in biometrics."
+                            ]
+                        },
+                        {
+                            "question": "What does biometrics research focus on in this department?",
+                            "answer": [
+                                "Biometrics research focuses on using biological signatures, such as fingerprints, voice, face, and DNA, for identification or authentication in areas like criminal justice, e-commerce, and medical applications. The Biometrics and Identification Innovation Center at WVU leads this research, partnering with the FBI as a lead academic partner."
+                            ]
+                        },
+                        {
+                            "question": "What are the key applications of biometrics research at WVU?",
+                            "answer": [
+                                "Key applications of biometrics research include using biological signatures for identification and authentication in criminal justice, e-commerce, and healthcare. The Biometrics and Identification Innovation Center collaborates with the FBI in this field."
+                            ]
+                        },
+                        {
+                            "question": "Which biological signatures are studied in biometrics research at WVU?",
+                            "answer": [
+                                "WVU's biometrics research studies biological signatures such as fingerprints, voice, face, and DNA for purposes like identification and authentication in various fields, including criminal justice and healthcare."
+                            ]
+                        },
+                        {
+                            "question": "What is the role of the Biometrics and Identification Innovation Center in biometrics research?",
+                            "answer": [
+                                "The Biometrics and Identification Innovation Center leads biometrics research at WVU, focusing on biological signatures for identification and authentication, with applications in areas like criminal justice and e-commerce. It collaborates with the FBI as a lead academic partner."
+                            ]
+                        },
+                        {
+                            "question": "What areas benefit from biometrics research conducted at WVU?",
+                            "answer": [
+                                "Biometrics research at WVU benefits areas such as criminal justice, e-commerce, and medical fields by leveraging biological signatures like fingerprints and DNA for identification and authentication."
+                            ]
+                        },
+                        {
+                            "question": "How does WVU contribute to advancements in biometrics research?",
+                            "answer": [
+                                "WVU contributes to biometrics research through the Biometrics and Identification Innovation Center, focusing on biological signatures for applications in criminal justice, e-commerce, and medical fields. It also partners with the FBI in advancing this field."
+                            ]
+                        },
+                        {
+                            "question": "What are the research priorities in the biometrics field at WVU?",
+                            "answer": [
+                                "The research priorities in biometrics at WVU include the study of fingerprints, voice, face, and DNA for authentication and identification in fields such as criminal justice and healthcare. This is spearheaded by the Biometrics and Identification Innovation Center."
+                            ]
+                        },
+                        {
+                            "question": "What partnerships support biometrics research at WVU?",
+                            "answer": [
+                                "Biometrics research at WVU is supported by partnerships with the FBI through the Biometrics and Identification Innovation Center, focusing on biological signatures for diverse applications."
+                            ]
+                        },
+                        {
+                            "question": "What is the academic role of WVU in the field of biometrics?",
+                            "answer": [
+                                "WVU plays a leading academic role in biometrics through its Biometrics and Identification Innovation Center, focusing on applications like criminal justice, e-commerce, and healthcare, in collaboration with the FBI."
+                            ]
+                        },
+                        {
+                            "question": "What makes biometrics research at WVU unique?",
+                            "answer": [
+                                "Biometrics research at WVU is unique due to its focus on biological signatures for real-world applications, led by the Biometrics and Identification Innovation Center, which collaborates closely with the FBI."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What research is conducted in AI and robotics at WVU?",
+                            "answer": [
+                                "Research in AI and robotics at WVU integrates AI with robotics to enable object recognition and process understanding. WVU Robotics supports projects like satellite refueling and repair through the West Virginia Robotic Technology Center, which collaborates with NASA."
+                            ]
+                        },
+                        {
+                            "question": "What is the focus of AI and robotics research at WVU?",
+                            "answer": [
+                                "AI and robotics research at WVU focuses on integrating artificial intelligence with robotics to enable object recognition and process understanding. Projects include satellite refueling and repair through the West Virginia Robotic Technology Center in collaboration with NASA."
+                            ]
+                        },
+                        {
+                            "question": "How does WVU contribute to AI and robotics research?",
+                            "answer": [
+                                "WVU contributes to AI and robotics research by integrating AI with robotics for tasks such as object recognition and process understanding. It supports projects like satellite repair via the West Virginia Robotic Technology Center in partnership with NASA."
+                            ]
+                        },
+                        {
+                            "question": "What kind of projects are supported by WVU Robotics in AI and robotics research?",
+                            "answer": [
+                                "WVU Robotics supports projects such as satellite refueling and repair, leveraging AI and robotics integration for advanced object recognition and process understanding. These efforts are conducted in collaboration with NASA."
+                            ]
+                        },
+                        {
+                            "question": "What role does the West Virginia Robotic Technology Center play in AI and robotics research?",
+                            "answer": [
+                                "The West Virginia Robotic Technology Center plays a key role in AI and robotics research at WVU by facilitating projects like satellite repair and refueling, in partnership with NASA."
+                            ]
+                        },
+                        {
+                            "question": "What advancements in AI and robotics are being pursued at WVU?",
+                            "answer": [
+                                "Advancements include integrating AI with robotics to enhance object recognition and process understanding. WVU is involved in projects like satellite refueling through its collaboration with NASA at the West Virginia Robotic Technology Center."
+                            ]
+                        },
+                        {
+                            "question": "Does WVU collaborate with NASA on AI and robotics research?",
+                            "answer": [
+                                "Yes, WVU collaborates with NASA on AI and robotics research, particularly through projects like satellite refueling and repair conducted at the West Virginia Robotic Technology Center."
+                            ]
+                        },
+                        {
+                            "question": "What is the significance of NASA's partnership with WVU in robotics research?",
+                            "answer": [
+                                "The NASA partnership allows WVU to engage in cutting-edge robotics research, including projects like satellite refueling and repair at the West Virginia Robotic Technology Center, with a focus on AI integration."
+                            ]
+                        },
+                        {
+                            "question": "What technologies are being developed in AI and robotics at WVU?",
+                            "answer": [
+                                "Technologies include AI-enabled object recognition and robotics for process understanding. Notable projects include satellite maintenance, supported by the West Virginia Robotic Technology Center in partnership with NASA."
+                            ]
+                        },
+                        {
+                            "question": "What are the key research areas in AI and robotics at WVU?",
+                            "answer": [
+                                "Key research areas include integrating AI with robotics to achieve advanced object recognition and process automation. WVU also focuses on satellite repair and refueling projects with NASA's collaboration."
+                            ]
+                        },
+                        {
+                            "question": "How does WVU use AI in its robotics research projects?",
+                            "answer": [
+                                "WVU uses AI in robotics to enhance object recognition and improve process understanding. Projects like satellite refueling and repair are conducted with NASA at the West Virginia Robotic Technology Center."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "How does WVU contribute to big data research?",
+                            "answer": [
+                                "WVU conducts big data research that involves data visualization and analysis of large datasets. Students can learn these techniques in courses like Big Data Engineering, which explores algorithms and methods for organizing and analyzing massive datasets."
+                            ]
+                        },
+                        {
+                            "question": "What is WVU's role in advancing big data research?",
+                            "answer": [
+                                "WVU advances big data research through data visualization and large-scale dataset analysis. Techniques are taught in courses like Big Data Engineering, which covers algorithms and methods for managing massive datasets."
+                            ]
+                        },
+                        {
+                            "question": "How does WVU approach research in big data?",
+                            "answer": [
+                                "WVU approaches big data research by focusing on data visualization and large dataset analysis. The Big Data Engineering course introduces students to relevant algorithms and methods for this field."
+                            ]
+                        },
+                        {
+                            "question": "What kind of big data research is conducted at WVU?",
+                            "answer": [
+                                "Big data research at WVU involves visualizing and analyzing large datasets. Students gain expertise in this area through courses like Big Data Engineering, which explores essential algorithms and techniques."
+                            ]
+                        },
+                        {
+                            "question": "Does WVU provide any academic support for big data research?",
+                            "answer": [
+                                "Yes, WVU supports big data research through academic programs like the Big Data Engineering course, where students learn to organize and analyze large datasets using advanced algorithms."
+                            ]
+                        },
+                        {
+                            "question": "What courses at WVU help students engage in big data research?",
+                            "answer": [
+                                "Courses like Big Data Engineering at WVU help students engage in big data research by teaching algorithms and methods for the analysis and visualization of massive datasets."
+                            ]
+                        },
+                        {
+                            "question": "How does WVU integrate education into its big data research initiatives?",
+                            "answer": [
+                                "WVU integrates education into its big data research by offering courses such as Big Data Engineering, which trains students in visualization techniques and large dataset analysis."
+                            ]
+                        },
+                        {
+                            "question": "What educational opportunities does WVU provide for big data analysis?",
+                            "answer": [
+                                "WVU provides educational opportunities in big data analysis through courses like Big Data Engineering, focusing on organizing and analyzing large datasets using cutting-edge methods."
+                            ]
+                        },
+                        {
+                            "question": "How does WVU involve students in big data research projects?",
+                            "answer": [
+                                "WVU involves students in big data research through courses such as Big Data Engineering, where they learn visualization and analytical methods for massive datasets."
+                            ]
+                        },
+                        {
+                            "question": "What contributions does WVU make to the field of big data visualization and analysis?",
+                            "answer": [
+                                "WVU contributes to big data visualization and analysis by conducting research in these areas and offering courses like Big Data Engineering to train students in relevant algorithms and techniques."
+                            ]
+                        },
+                        {
+                            "question": "What role do WVU’s academic programs play in big data research?",
+                            "answer": [
+                                "WVU’s academic programs, including courses like Big Data Engineering, play a key role in advancing big data research by teaching methods for visualizing and analyzing large datasets."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What is the significance of the WVU Center for Gravitational Waves and Cosmology in radio astronomy research?",
+                            "answer": [
+                                "The WVU Center for Gravitational Waves and Cosmology collaborates with the National Radio Astronomy Observatory and the Lane Department to advance digital signal processing techniques for radio astronomy, including cosmology and transient detection."
+                            ]
+                        },
+                        {
+                            "question": "How does the WVU Center for Gravitational Waves and Cosmology contribute to radio astronomy?",
+                            "answer": [
+                                "The WVU Center for Gravitational Waves and Cosmology contributes by collaborating with the National Radio Astronomy Observatory and the Lane Department to improve digital signal processing techniques for applications like cosmology and transient detection."
+                            ]
+                        },
+                        {
+                            "question": "What role does the WVU Center for Gravitational Waves and Cosmology play in advancing radio astronomy research?",
+                            "answer": [
+                                "The center plays a critical role by working with the National Radio Astronomy Observatory and the Lane Department to enhance digital signal processing methods used in radio astronomy."
+                            ]
+                        },
+                        {
+                            "question": "How is the WVU Center for Gravitational Waves and Cosmology involved in cosmology and transient detection research?",
+                            "answer": [
+                                "The center collaborates with the National Radio Astronomy Observatory and the Lane Department to advance digital signal processing techniques that support research in cosmology and transient detection."
+                            ]
+                        },
+                        {
+                            "question": "What collaborations support the work of the WVU Center for Gravitational Waves and Cosmology in radio astronomy?",
+                            "answer": [
+                                "The center collaborates with the National Radio Astronomy Observatory and the Lane Department, focusing on innovations in digital signal processing for radio astronomy and related fields."
+                            ]
+                        },
+                        {
+                            "question": "How does the WVU Center for Gravitational Waves and Cosmology impact digital signal processing in astronomy?",
+                            "answer": [
+                                "The center advances digital signal processing for astronomy by partnering with the National Radio Astronomy Observatory and the Lane Department to support research in cosmology and transient detection."
+                            ]
+                        },
+                        {
+                            "question": "What advancements in radio astronomy are driven by the WVU Center for Gravitational Waves and Cosmology?",
+                            "answer": [
+                                "Advancements include improved digital signal processing techniques for radio astronomy, achieved through collaboration with the National Radio Astronomy Observatory and the Lane Department."
+                            ]
+                        },
+                        {
+                            "question": "What is the focus of the WVU Center for Gravitational Waves and Cosmology in astronomy research?",
+                            "answer": [
+                                "The center focuses on digital signal processing for radio astronomy, cosmology, and transient detection, collaborating with the National Radio Astronomy Observatory and the Lane Department."
+                            ]
+                        },
+                        {
+                            "question": "How does the partnership between the WVU Center for Gravitational Waves and Cosmology and the National Radio Astronomy Observatory benefit astronomy research?",
+                            "answer": [
+                                "This partnership benefits astronomy research by enhancing digital signal processing capabilities, with applications in cosmology and transient detection."
+                            ]
+                        },
+                        {
+                            "question": "What research areas does the WVU Center for Gravitational Waves and Cosmology address in collaboration with the Lane Department?",
+                            "answer": [
+                                "The center addresses digital signal processing for radio astronomy, focusing on cosmology and transient detection, in partnership with the Lane Department and the National Radio Astronomy Observatory."
+                            ]
+                        },
+                        {
+                            "question": "What techniques are advanced by the WVU Center for Gravitational Waves and Cosmology in radio astronomy?",
+                            "answer": [
+                                "The center advances digital signal processing techniques for radio astronomy, collaborating with the Lane Department and the National Radio Astronomy Observatory to further research in cosmology and transient detection."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What are the research efforts in cybersecurity and computer forensics?",
+                            "answer": [
+                                "WVU is designated as a Center for Excellence in Information Assurance Education by the NSA and DHS. Research includes tackling cybersecurity threats, preventing computer crimes, and training law enforcement and academia to stay ahead of cybercriminals."
+                            ]
+                        },
+                        {
+                            "question": "What does WVU focus on in cybersecurity and computer forensics research?",
+                            "answer": [
+                                "WVU focuses on addressing cybersecurity threats, preventing computer crimes, and providing training for law enforcement and academic institutions to counter cybercriminal activities. It is designated as a Center for Excellence in Information Assurance Education by the NSA and DHS."
+                            ]
+                        },
+                        {
+                            "question": "How does WVU contribute to cybersecurity and computer forensics?",
+                            "answer": [
+                                "WVU contributes by researching methods to combat cybersecurity threats, prevent cybercrime, and train professionals to stay ahead of cybercriminals. The university is recognized as a Center for Excellence in Information Assurance Education by the NSA and DHS."
+                            ]
+                        },
+                        {
+                            "question": "What are WVU’s key initiatives in the field of cybersecurity and computer forensics?",
+                            "answer": [
+                                "Key initiatives include researching cybersecurity threats, developing methods to prevent computer crimes, and training law enforcement and academics to tackle cybercriminals effectively. WVU is a designated Center for Excellence in this field."
+                            ]
+                        },
+                        {
+                            "question": "How is WVU recognized for its efforts in cybersecurity research?",
+                            "answer": [
+                                "WVU is recognized as a Center for Excellence in Information Assurance Education by the NSA and DHS for its research in cybersecurity threats, computer crime prevention, and professional training."
+                            ]
+                        },
+                        {
+                            "question": "What training does WVU provide in cybersecurity and computer forensics?",
+                            "answer": [
+                                "WVU provides training to law enforcement and academia to counter cybercriminal activities. This effort is part of its designation as a Center for Excellence in Information Assurance Education by the NSA and DHS."
+                            ]
+                        },
+                        {
+                            "question": "What is the focus of WVU's cybersecurity and computer forensics research?",
+                            "answer": [
+                                "The focus is on tackling cybersecurity threats, preventing cybercrimes, and educating professionals to counteract cybercriminals. WVU's designation as a Center for Excellence underscores these efforts."
+                            ]
+                        },
+                        {
+                            "question": "How does WVU support the fight against cybercrime?",
+                            "answer": [
+                                "WVU supports the fight against cybercrime through research on cybersecurity threats, crime prevention strategies, and specialized training for law enforcement and academic professionals."
+                            ]
+                        },
+                        {
+                            "question": "What recognition has WVU received for its work in cybersecurity?",
+                            "answer": [
+                                "WVU has been recognized as a Center for Excellence in Information Assurance Education by the NSA and DHS, highlighting its research and training efforts in cybersecurity and computer forensics."
+                            ]
+                        },
+                        {
+                            "question": "What role does WVU play in advancing cybersecurity and forensics education?",
+                            "answer": [
+                                "WVU advances education by training law enforcement and academia to counter cybercrime while conducting cutting-edge research in cybersecurity threats and crime prevention."
+                            ]
+                        },
+                        {
+                            "question": "How does WVU’s cybersecurity research impact law enforcement training?",
+                            "answer": [
+                                "WVU's research in cybersecurity and crime prevention directly supports training programs for law enforcement, helping them to effectively combat cybercriminal activities."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What facilities support research in nanotechnology and electronics at WVU?",
+                            "answer": [
+                                "WVU hosts a 4,000-square-foot cleanroom facility that supports research in nanotechnology and electronics, focusing on areas like semiconductor fabrication, photonics integration, and nanoelectronics."
+                            ]
+                        },
+                        {
+                            "question": "What resources does WVU provide for nanotechnology and electronics research?",
+                            "answer": [
+                                "WVU provides a 4,000-square-foot cleanroom facility for research in nanotechnology and electronics, focusing on semiconductor fabrication, photonics integration, and nanoelectronics."
+                            ]
+                        },
+                        {
+                            "question": "How does WVU support research in electronics and nanotechnology?",
+                            "answer": [
+                                "WVU supports research in electronics and nanotechnology through a 4,000-square-foot cleanroom facility designed for semiconductor fabrication, photonics integration, and nanoelectronics."
+                            ]
+                        },
+                        {
+                            "question": "What infrastructure does WVU offer for advanced research in nanotechnology?",
+                            "answer": [
+                                "WVU offers a state-of-the-art 4,000-square-foot cleanroom facility to facilitate advanced research in nanotechnology and electronics, with a focus on semiconductor and photonics technologies."
+                            ]
+                        },
+                        {
+                            "question": "What facilities at WVU are dedicated to nanotechnology research?",
+                            "answer": [
+                                "WVU’s nanotechnology research is supported by a 4,000-square-foot cleanroom, which is equipped for semiconductor fabrication, photonics integration, and nanoelectronics development."
+                            ]
+                        },
+                        {
+                            "question": "What areas of research are supported by WVU’s cleanroom facility?",
+                            "answer": [
+                                "WVU’s cleanroom facility supports research in semiconductor fabrication, photonics integration, and nanoelectronics, crucial for advancements in nanotechnology and electronics."
+                            ]
+                        },
+                        {
+                            "question": "How does WVU facilitate semiconductor and nanoelectronics research?",
+                            "answer": [
+                                "WVU facilitates semiconductor and nanoelectronics research through its 4,000-square-foot cleanroom, which is equipped for cutting-edge work in nanotechnology and electronics."
+                            ]
+                        },
+                        {
+                            "question": "What role does WVU's cleanroom play in electronics research?",
+                            "answer": [
+                                "The cleanroom at WVU plays a critical role in electronics research, enabling semiconductor fabrication, photonics integration, and the development of nanoelectronics."
+                            ]
+                        },
+                        {
+                            "question": "What facilities are available at WVU for photonics research?",
+                            "answer": [
+                                "WVU offers a 4,000-square-foot cleanroom facility for photonics research, along with related work in semiconductor fabrication and nanoelectronics."
+                            ]
+                        },
+                        {
+                            "question": "What is the significance of WVU's cleanroom facility in nanotechnology?",
+                            "answer": [
+                                "The cleanroom facility is vital for nanotechnology at WVU, supporting research areas such as semiconductor fabrication, photonics integration, and nanoelectronics."
+                            ]
+                        },
+                        {
+                            "question": "What cutting-edge research is supported by WVU’s cleanroom in nanotechnology?",
+                            "answer": [
+                                "WVU’s cleanroom supports cutting-edge nanotechnology research in areas like semiconductor fabrication, photonics integration, and the advancement of nanoelectronics."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Facilities and Resources",
+            "paragraphs": [
+                {
+                    "context": "Highlight department facilities.",
+                    "qas": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Clubs and Organizations",
+            "paragraphs": [
+                {
+                    "context": "Mention student organizations and extracurricular activities.",
+                    "qas": [
+                        {
+                            "question": "What student organizations can I join in the Lane Department of Computer Science and Electrical Engineering?",
+                            "answer" : [
+                                "The Lane Department of Computer Science and Electrical Engineering offers Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, WVU Amateur Radio Club, and more!"
+                            ]
+                        },
+                        {
+                            "question": "What clubs and organizations are available in the Lane Department of Computer Science and Electrical Engineering?",
+                            "answer": [
+                                "Students in the Lane Department can join organizations like the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, WVU Amateur Radio Club, and others."
+                            ]
+                        },
+                        {
+                            "question": "Are there any student organizations for CSEE students at WVU?",
+                            "answer": [
+                                "Yes, CSEE students at WVU can participate in groups like the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
+                            ]
+                        },
+                        {
+                            "question": "Which student groups can I get involved with in the Lane Department?",
+                            "answer": [
+                                "You can get involved in groups such as the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
+                            ]
+                        },
+                        {
+                            "question": "What opportunities are there for joining student organizations in the Lane Department?",
+                            "answer": [
+                                "Opportunities include joining the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, WVU Amateur Radio Club, and other groups."
+                            ]
+                        },
+                        {
+                            "question": "What are some extracurricular groups for students in the Lane Department?",
+                            "answer": [
+                                "Extracurricular groups include the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
+                            ]
+                        },
+                        {
+                            "question": "Can you list the student organizations specific to the Lane Department of CSEE?",
+                            "answer": [
+                                "The student organizations include the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
+                            ]
+                        },
+                        {
+                            "question": "What are the main student organizations for Lane Department students?",
+                            "answer": [
+                                "Main organizations include the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
+                            ]
+                        },
+                        {
+                            "question": "Are there any clubs for computer science and electrical engineering students at WVU?",
+                            "answer": [
+                                "Yes, clubs for these students include the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
+                            ]
+                        },
+                        {
+                            "question": "What student societies are available for Lane Department students?",
+                            "answer": [
+                                "Student societies include the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
+                            ]
+                        },
+                        {
+                            "question": "What groups can Lane Department students join to enhance their university experience?",
+                            "answer": [
+                                "Lane Department students can enhance their experience by joining groups like the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What is the purpose of the WVU student chapter of the Association for Computing Machinery (ACM)?",
+                            "answer": [
+                                "The WVU student chapter of ACM serves computer science students by hosting expert speakers from industry and academia, and providing opportunities for students to meet and socialize."
+                            ]
+                        },
+                        {
+                            "question": "What does the WVU student chapter of ACM offer to computer science students?",
+                            "answer": [
+                                "The WVU student chapter of ACM offers opportunities for computer science students to attend talks by expert speakers from industry and academia and to socialize with peers."
+                            ]
+                        },
+                        {
+                            "question": "How does the WVU student chapter of ACM support computer science students?",
+                            "answer": [
+                                "The ACM student chapter at WVU supports computer science students by organizing events with industry and academic speakers and fostering social connections among students."
+                            ]
+                        },
+                        {
+                            "question": "What activities are organized by the WVU student ACM chapter?",
+                            "answer": [
+                                "The WVU ACM chapter organizes events such as expert speaker sessions and social gatherings for computer science students."
+                            ]
+                        },
+                        {
+                            "question": "What is the mission of the WVU student chapter of the Association for Computing Machinery?",
+                            "answer": [
+                                "The mission of the WVU student chapter of ACM is to enhance the experience of computer science students through industry and academic talks and networking opportunities."
+                            ]
+                        },
+                        {
+                            "question": "Why should computer science students join the WVU ACM student chapter?",
+                            "answer": [
+                                "Joining the WVU ACM student chapter allows computer science students to connect with industry and academic professionals and engage in social activities with their peers."
+                            ]
+                        },
+                        {
+                            "question": "What benefits does the WVU ACM student chapter provide for its members?",
+                            "answer": [
+                                "Members of the WVU ACM student chapter benefit from access to industry and academic speakers, as well as opportunities to network and socialize with fellow computer science students."
+                            ]
+                        },
+                        {
+                            "question": "How does the WVU student ACM chapter contribute to the professional growth of computer science students?",
+                            "answer": [
+                                "The WVU student ACM chapter contributes to professional growth by hosting expert talks from industry and academia and creating a space for students to build connections."
+                            ]
+                        },
+                        {
+                            "question": "What opportunities does the WVU ACM student chapter create for computer science students?",
+                            "answer": [
+                                "The WVU ACM student chapter creates opportunities for students to learn from industry and academic experts and to interact socially with other computer science students."
+                            ]
+                        },
+                        {
+                            "question": "What role does the WVU ACM chapter play for computer science students?",
+                            "answer": [
+                                "The WVU ACM chapter plays a key role in enriching the educational experience of computer science students by providing access to expert speakers and social opportunities."
+                            ]
+                        },
+                        {
+                            "question": "What is the primary focus of the WVU ACM student chapter?",
+                            "answer": [
+                                "The primary focus of the WVU ACM student chapter is to enhance the learning and social experience of computer science students through expert talks and networking events."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What activities does CyberWVU organize for its members?",
+                            "answer": [
+                                "CyberWVU organizes competitions, speaker events, competition simulations, volunteer tutoring hours, open-source volunteer events, and security training sessions."
+                            ]
+                        },
+                        {
+                            "question": "What events and activities are hosted by CyberWVU for its members?",
+                            "answer": [
+                                "CyberWVU hosts competitions, speaker events, competition simulations, volunteer tutoring hours, open-source volunteer events, and security training sessions."
+                            ]
+                        },
+                        {
+                            "question": "What opportunities does CyberWVU provide for its members?",
+                            "answer": [
+                                "CyberWVU provides opportunities such as participating in competitions, attending speaker events, engaging in competition simulations, and joining volunteer activities like tutoring and open-source events."
+                            ]
+                        },
+                        {
+                            "question": "What kinds of activities does CyberWVU offer to its members?",
+                            "answer": [
+                                "CyberWVU offers activities like competitions, security training sessions, speaker events, open-source volunteer projects, and tutoring hours."
+                            ]
+                        },
+                        {
+                            "question": "What can members of CyberWVU expect to participate in?",
+                            "answer": [
+                                "Members of CyberWVU can participate in competitions, simulations, volunteer tutoring, open-source projects, security training, and speaker events."
+                            ]
+                        },
+                        {
+                            "question": "What events are available through CyberWVU for cybersecurity enthusiasts?",
+                            "answer": [
+                                "Events available through CyberWVU include competitions, speaker events, security training sessions, and volunteer projects like tutoring and open-source events."
+                            ]
+                        },
+                        {
+                            "question": "What does CyberWVU offer to students interested in cybersecurity and open-source software?",
+                            "answer": [
+                                "CyberWVU offers cybersecurity and open-source enthusiasts activities such as competitions, training sessions, speaker events, and volunteering opportunities like tutoring and open-source projects."
+                            ]
+                        },
+                        {
+                            "question": "How does CyberWVU engage its members in cybersecurity activities?",
+                            "answer": [
+                                "CyberWVU engages members by organizing competitions, security training, speaker events, and volunteering opportunities such as tutoring and open-source events."
+                            ]
+                        },
+                        {
+                            "question": "What are the main events and programs organized by CyberWVU?",
+                            "answer": [
+                                "The main events and programs organized by CyberWVU include competitions, speaker sessions, security training, competition simulations, and volunteer activities like tutoring and open-source projects."
+                            ]
+                        },
+                        {
+                            "question": "What activities does CyberWVU organize to support its members' learning and development?",
+                            "answer": [
+                                "CyberWVU supports members' learning through activities like competitions, security training, speaker events, and volunteer opportunities such as tutoring and open-source projects."
+                            ]
+                        },
+                        {
+                            "question": "What types of events does CyberWVU conduct throughout the year?",
+                            "answer": [
+                                "Throughout the year, CyberWVU conducts competitions, speaker events, security training sessions, competition simulations, and volunteer programs such as tutoring and open-source events."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "Who can join CyberWVU, and is prior experience required?",
+                            "answer": [
+                                "Anyone can join CyberWVU, and no prior experience is required. The club provides resources to help members learn and develop their skills."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What is Eta Kappa Nu (HKN), and who can become a member?",
+                            "answer": [
+                                "Eta Kappa Nu is a national honorary society for electrical and computer engineers. Membership is offered to students with outstanding academic achievement and character, typically in their junior or senior years."
+                            ]
+                        },
+                        {
+                            "question": "What is Eta Kappa Nu, and what are the membership criteria?",
+                            "answer": [
+                                "Eta Kappa Nu is a national honorary society for electrical and computer engineers. Students with outstanding academic performance and character, usually in their junior or senior years, are eligible for membership."
+                            ]
+                        },
+                        {
+                            "question": "Who can join Eta Kappa Nu (HKN), and what does it represent?",
+                            "answer": [
+                                "Eta Kappa Nu represents a national honorary society for electrical and computer engineers. Membership is open to junior or senior students with excellent academic achievement and character."
+                            ]
+                        },
+                        {
+                            "question": "What does Eta Kappa Nu stand for, and who qualifies for membership?",
+                            "answer": [
+                                "Eta Kappa Nu is an honorary society for electrical and computer engineers. Students with exceptional academic records and strong character, typically in their junior or senior years, qualify for membership."
+                            ]
+                        },
+                        {
+                            "question": "What is the purpose of Eta Kappa Nu, and who can become a part of it?",
+                            "answer": [
+                                "The purpose of Eta Kappa Nu is to honor outstanding electrical and computer engineering students. Membership is extended to juniors and seniors with high academic achievement and exemplary character."
+                            ]
+                        },
+                        {
+                            "question": "What are the eligibility requirements for Eta Kappa Nu (HKN)?",
+                            "answer": [
+                                "Eligibility for Eta Kappa Nu requires outstanding academic performance and character, and is typically offered to electrical and computer engineering students in their junior or senior years."
+                            ]
+                        },
+                        {
+                            "question": "What is the mission of Eta Kappa Nu, and who are its members?",
+                            "answer": [
+                                "The mission of Eta Kappa Nu is to recognize and honor excellence in electrical and computer engineering. Members are students with strong academic performance and character, usually in their junior or senior years."
+                            ]
+                        },
+                        {
+                            "question": "Who is eligible to join Eta Kappa Nu at WVU?",
+                            "answer": [
+                                "Students in electrical and computer engineering who demonstrate exceptional academic achievement and character, typically in their junior or senior years, are eligible to join Eta Kappa Nu."
+                            ]
+                        },
+                        {
+                            "question": "What is the significance of Eta Kappa Nu, and how does one become a member?",
+                            "answer": [
+                                "Eta Kappa Nu is a prestigious honorary society for electrical and computer engineers. Membership is awarded to students with excellent academic and personal achievements, usually in their junior or senior years."
+                            ]
+                        },
+                        {
+                            "question": "What makes a student eligible for membership in Eta Kappa Nu?",
+                            "answer": [
+                                "Students are eligible for Eta Kappa Nu membership if they have outstanding academic records and character, with membership typically offered in the junior or senior years."
+                            ]
+                        },
+                        {
+                            "question": "What is the role of Eta Kappa Nu in recognizing academic excellence?",
+                            "answer": [
+                                "Eta Kappa Nu recognizes academic excellence by honoring electrical and computer engineering students with exceptional performance and character, typically in their junior or senior years."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What are the benefits of joining IEEE as a CSEE student?",
+                            "answer": [
+                                "Benefits of joining IEEE include access to technical journals, conferences, and networking opportunities, as well as participation in fun social events like picnics and flag football."
+                            ]
+                        },
+                        {
+                            "question": "Why should CSEE students consider joining IEEE?",
+                            "answer": [
+                                "CSEE students should consider joining IEEE for benefits like access to technical journals, professional conferences, networking opportunities, and fun social events such as picnics and flag football."
+                            ]
+                        },
+                        {
+                            "question": "What does IEEE membership offer to CSEE students?",
+                            "answer": [
+                                "IEEE membership offers CSEE students access to technical publications, opportunities to attend conferences, networking with professionals, and participation in social activities like picnics and sports events."
+                            ]
+                        },
+                        {
+                            "question": "How does IEEE benefit students in the Lane Department?",
+                            "answer": [
+                                "IEEE benefits Lane Department students by providing access to cutting-edge technical resources, professional networking opportunities, and engaging social events like picnics and flag football games."
+                            ]
+                        },
+                        {
+                            "question": "What are the advantages of being an IEEE member for CSEE students?",
+                            "answer": [
+                                "Advantages of being an IEEE member include access to technical journals and conferences, professional networking, and participation in enjoyable social activities such as picnics and sports."
+                            ]
+                        },
+                        {
+                            "question": "How does joining IEEE enhance the experience of CSEE students?",
+                            "answer": [
+                                "Joining IEEE enhances the student experience by providing access to journals, conferences, and networking events, as well as opportunities to enjoy social activities like picnics and flag football."
+                            ]
+                        },
+                        {
+                            "question": "What professional and social benefits does IEEE offer CSEE students?",
+                            "answer": [
+                                "IEEE offers professional benefits like access to journals and conferences, along with social benefits including picnics, flag football, and other networking opportunities."
+                            ]
+                        },
+                        {
+                            "question": "Why is IEEE membership valuable for CSEE students?",
+                            "answer": [
+                                "IEEE membership is valuable for CSEE students as it provides access to professional resources, networking opportunities, and social events like picnics and sports activities."
+                            ]
+                        },
+                        {
+                            "question": "What can CSEE students gain from joining IEEE?",
+                            "answer": [
+                                "CSEE students can gain access to technical resources, professional networking, conference participation, and social events like picnics and flag football by joining IEEE."
+                            ]
+                        },
+                        {
+                            "question": "What makes IEEE membership appealing to CSEE students?",
+                            "answer": [
+                                "IEEE membership appeals to CSEE students due to benefits like access to technical journals and conferences, professional connections, and enjoyable social gatherings such as picnics."
+                            ]
+                        },
+                        {
+                            "question": "What opportunities are available to CSEE students through IEEE membership?",
+                            "answer": [
+                                "IEEE membership offers opportunities such as access to journals and conferences, networking with professionals, and participation in social events like picnics and flag football."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What is the role of the Student Advisory Council (SAC) in the Lane Department?",
+                            "answer": [
+                                "The SAC provides input on department policies and operations, coordinates student activities, and organizes department-wide social events like picnics."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What is the mission of the Student Society for the Advancement of Biometrics (SSAB)?",
+                            "answer": [
+                                "SSAB promotes student research in biometrics, facilitates networking opportunities, and assists students in transitioning from academia to the professional world."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What is Upsilon Pi Epsilon (UPE), and what is its mission?",
+                            "answer": [
+                                "Upsilon Pi Epsilon is an international honor society for the computing sciences. Its mission is to recognize academic excellence and support the professional growth of its members."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "How does the Women in Computer Science and Electrical Engineering (WCSEE) group support its members?",
+                            "answer": [
+                                "WCSEE serves as a support group for women students and faculty, providing a space to share challenges, successes, and concerns through monthly lunch meetings and other programs."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What does the WVU Amateur Radio Club offer to its members?",
+                            "answer": [
+                                "The WVU Amateur Radio Club offers training for obtaining an amateur radio license, operates a transmitter on campus, and provides opportunities to practice amateur radio as a hobby and public service."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What opportunities does Statler College Student Services provide to students?",
+                            "answer": [
+                                "Statler College Student Services helps students achieve their academic and personal goals by providing support and resources for student success."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "How does WVU Career Services assist students in their career development?",
+                            "answer": [
+                                "WVU Career Services assists students with resume reviews, practice interviews, job search coaching, and other career development resources."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What is the focus of the IEEE Student Branch at WVU?",
+                            "answer": [
+                                "The IEEE Student Branch focuses on hosting speakers, sponsoring social events, and providing access to professional resources for electrical and computer engineering students."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What activities does the SAC coordinate for Lane Department students?",
+                            "answer": [
+                                "The SAC coordinates activities like picnics, provides feedback on courses and labs, and organizes student services and social events."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What is the significance of SSAB in the field of biometrics?",
+                            "answer": [
+                                "SSAB is the first student organization dedicated to biometrics at WVU, promoting research, networking, and professional involvement in the field."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What type of students is the IEEE organization geared toward?",
+                            "answer": [
+                                "The IEEE organization is geared toward students majoring in electrical engineering or computer engineering, offering professional development and networking opportunities."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What is the primary goal of Upsilon Pi Epsilon at WVU?",
+                            "answer": [
+                                "The primary goal of Upsilon Pi Epsilon is to support Computer Science students in excelling academically and preparing for their careers."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What does CyberWVU offer to members interested in open-source projects?",
+                            "answer": [
+                                "CyberWVU provides opportunities for members to participate in open-source volunteer events, fostering skill development and collaboration."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What role do the Women in Computer Science and Electrical Engineering group’s lunch meetings serve?",
+                            "answer": [
+                                "The lunch meetings provide a space for fellowship, conversation, and informal networking among women students and faculty."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "How does the WVU Amateur Radio Club contribute to public service?",
+                            "answer": [
+                                "The WVU Amateur Radio Club contributes to public service by providing emergency communications support during natural disasters and training students in amateur radio operations."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Career Opportunities",
+            "paragraphs": [
+                {
+                    "context": "Discuss career paths for graduates",
+                    "qas": [
+                        {
+                            "question": "What career fields can computer science (CS) graduates pursue?",
+                            "answer": [
+                                "CS graduates can pursue careers in software development, data science, artificial intelligence, cybersecurity, database management, game development, and IT consulting."
+                            ]
+                        },
+                        {
+                            "question": "What career options are available to graduates with a degree in computer science?",
+                            "answer": [
+                                "Graduates with a degree in computer science can work in fields such as software development, data science, artificial intelligence, cybersecurity, database management, game development, and IT consulting."
+                            ]
+                        },
+                        {
+                            "question": "What job opportunities are open to computer science graduates?",
+                            "answer": [
+                                "Computer science graduates can find opportunities in software engineering, data analysis, AI development, cybersecurity, database administration, game programming, and IT consulting."
+                            ]
+                        },
+                        {
+                            "question": "What professions can computer science graduates enter after completing their degree?",
+                            "answer": [
+                                "After completing their degree, computer science graduates can enter professions like software development, data science, artificial intelligence, cybersecurity, game design, database management, and IT consulting."
+                            ]
+                        },
+                        {
+                            "question": "What industries hire computer science graduates?",
+                            "answer": [
+                                "Industries that hire computer science graduates include technology, finance, healthcare, gaming, and cybersecurity, with roles in software development, data science, and IT consulting."
+                            ]
+                        },
+                        {
+                            "question": "What are some popular career paths for CS graduates?",
+                            "answer": [
+                                "Popular career paths for CS graduates include working in software engineering, data science, artificial intelligence, cybersecurity, database management, and game development."
+                            ]
+                        },
+                        {
+                            "question": "Which fields can a computer science graduate specialize in?",
+                            "answer": [
+                                "A computer science graduate can specialize in fields such as software engineering, machine learning, cybersecurity, game programming, and database systems."
+                            ]
+                        },
+                        {
+                            "question": "What technical roles are suitable for computer science graduates?",
+                            "answer": [
+                                "Technical roles for computer science graduates include software developer, data scientist, AI engineer, cybersecurity analyst, and database administrator."
+                            ]
+                        },
+                        {
+                            "question": "What career paths are commonly pursued by computer science graduates?",
+                            "answer": [
+                                "Common career paths for computer science graduates include software engineering, data analysis, cybersecurity, AI research, database management, and game development."
+                            ]
+                        },
+                        {
+                            "question": "What opportunities exist for computer science graduates in IT consulting?",
+                            "answer": [
+                                "Computer science graduates in IT consulting can help organizations with system integration, software solutions, and optimizing their IT operations."
+                            ]
+                        },
+                        {
+                            "question": "What are the main fields of work for a computer science graduate?",
+                            "answer": [
+                                "The main fields of work for a computer science graduate include software development, data science, cybersecurity, artificial intelligence, game design, and database management."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What job opportunities are available for computer engineering (CPE) graduates?",
+                            "answer": [
+                                "CPE graduates can work in embedded systems, robotics, hardware design, software-hardware integration, telecommunications, and Internet of Things (IoT) development."
+                            ]
+                        },
+                        {
+                            "question": "What career options are available for computer engineering graduates?",
+                            "answer": [
+                                "Computer engineering graduates can pursue careers in embedded systems, robotics, hardware design, software-hardware integration, telecommunications, and IoT development."
+                            ]
+                        },
+                        {
+                            "question": "What fields can CPE graduates enter after completing their degree?",
+                            "answer": [
+                                "CPE graduates can enter fields such as embedded systems, robotics, hardware engineering, telecommunications, software-hardware integration, and IoT solutions."
+                            ]
+                        },
+                        {
+                            "question": "What industries hire graduates with a degree in computer engineering?",
+                            "answer": [
+                                "Industries hiring CPE graduates include robotics, telecommunications, hardware manufacturing, embedded systems, and IoT development."
+                            ]
+                        },
+                        {
+                            "question": "What are some common career paths for computer engineering graduates?",
+                            "answer": [
+                                "Common career paths include working in embedded system design, hardware engineering, robotics development, telecommunications, and IoT architecture."
+                            ]
+                        },
+                        {
+                            "question": "What job roles are suitable for computer engineering graduates?",
+                            "answer": [
+                                "Suitable job roles include embedded systems engineer, robotics engineer, hardware designer, IoT developer, and telecommunications specialist."
+                            ]
+                        },
+                        {
+                            "question": "What technical fields can CPE graduates specialize in?",
+                            "answer": [
+                                "CPE graduates can specialize in fields such as hardware design, embedded systems, robotics, software-hardware integration, telecommunications, and IoT technology."
+                            ]
+                        },
+                        {
+                            "question": "What opportunities exist for computer engineering graduates in IoT development?",
+                            "answer": [
+                                "Opportunities in IoT development include roles like IoT system architect, embedded systems engineer, and IoT hardware designer."
+                            ]
+                        },
+                        {
+                            "question": "Which industries commonly employ computer engineering graduates?",
+                            "answer": [
+                                "Industries such as robotics, embedded systems, telecommunications, hardware manufacturing, and IoT technology commonly employ computer engineering graduates."
+                            ]
+                        },
+                        {
+                            "question": "What types of jobs are available to CPE graduates in robotics?",
+                            "answer": [
+                                "CPE graduates can work as robotics engineers, automation specialists, or machine vision developers in the robotics field."
+                            ]
+                        },
+                        {
+                            "question": "What roles can CPE graduates pursue in embedded systems?",
+                            "answer": [
+                                "CPE graduates can pursue roles such as embedded systems engineer, firmware developer, or system-on-chip designer."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What are the common career paths for electrical engineering (EE) graduates?",
+                            "answer": [
+                                "EE graduates often find opportunities in power systems, renewable energy, electronics design, signal processing, automation, and aerospace engineering."
+                            ]
+                        },
+                        {
+                            "question": "What career opportunities are available for electrical engineering graduates?",
+                            "answer": [
+                                "Electrical engineering graduates can work in fields such as power systems, renewable energy, electronics design, signal processing, automation, and aerospace engineering."
+                            ]
+                        },
+                        {
+                            "question": "What industries commonly hire electrical engineering graduates?",
+                            "answer": [
+                                "Industries like power generation, renewable energy, electronics manufacturing, automation, aerospace, and telecommunications commonly hire electrical engineering graduates."
+                            ]
+                        },
+                        {
+                            "question": "What are some typical career paths for EE graduates?",
+                            "answer": [
+                                "Typical career paths include roles in power systems engineering, renewable energy technology, electronic circuit design, signal processing, and aerospace engineering."
+                            ]
+                        },
+                        {
+                            "question": "What fields can electrical engineering graduates specialize in?",
+                            "answer": [
+                                "Electrical engineering graduates can specialize in power systems, renewable energy, automation, electronics design, signal processing, and aerospace technologies."
+                            ]
+                        },
+                        {
+                            "question": "What job roles are suitable for electrical engineering graduates?",
+                            "answer": [
+                                "Suitable roles for electrical engineering graduates include power systems engineer, renewable energy specialist, electronics designer, signal processing analyst, and aerospace engineer."
+                            ]
+                        },
+                        {
+                            "question": "What career paths exist in the renewable energy sector for EE graduates?",
+                            "answer": [
+                                "EE graduates in the renewable energy sector can work as solar energy engineers, wind power specialists, or grid integration analysts."
+                            ]
+                        },
+                        {
+                            "question": "What opportunities are available to electrical engineering graduates in aerospace engineering?",
+                            "answer": [
+                                "Opportunities in aerospace engineering include roles as avionics engineers, control systems designers, and satellite system developers."
+                            ]
+                        },
+                        {
+                            "question": "Which technical fields do electrical engineering graduates typically enter?",
+                            "answer": [
+                                "Electrical engineering graduates typically enter fields like power generation, renewable energy systems, electronics, signal processing, and automation."
+                            ]
+                        },
+                        {
+                            "question": "What kinds of jobs can EE graduates pursue in automation?",
+                            "answer": [
+                                "EE graduates can pursue jobs in automation as control systems engineers, industrial automation specialists, or robotics integration developers."
+                            ]
+                        },
+                        {
+                            "question": "What career options do electrical engineering graduates have in signal processing?",
+                            "answer": [
+                                "Electrical engineering graduates can work in signal processing as digital signal processing engineers, communication system analysts, or multimedia signal specialists."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What industries hire graduates with a degree in cybersecurity (CYBE)?",
+                            "answer": [
+                                "CYBE graduates are in demand in industries such as financial services, healthcare, government agencies, technology firms, and consulting for roles in penetration testing, risk management, and network security."
+                            ]
+                        },
+                        {
+                            "question": "What industries employ graduates with a degree in cybersecurity?",
+                            "answer": [
+                                "Graduates with a degree in cybersecurity are employed in industries such as financial services, healthcare, government, technology, and consulting for roles like penetration testing, risk management, and network security."
+                            ]
+                        },
+                        {
+                            "question": "Which sectors hire cybersecurity graduates?",
+                            "answer": [
+                                "Sectors that hire cybersecurity graduates include finance, healthcare, government agencies, tech companies, and consulting firms for roles in network security and risk analysis."
+                            ]
+                        },
+                        {
+                            "question": "What are the key industries for cybersecurity graduates?",
+                            "answer": [
+                                "Key industries for cybersecurity graduates include financial services, healthcare, government, technology, and consulting, offering roles like penetration tester and security analyst."
+                            ]
+                        },
+                        {
+                            "question": "Where can cybersecurity graduates find employment opportunities?",
+                            "answer": [
+                                "Cybersecurity graduates can find employment in industries like finance, healthcare, government, technology, and consulting, focusing on areas like risk management and network protection."
+                            ]
+                        },
+                        {
+                            "question": "What industries offer roles in cybersecurity for recent graduates?",
+                            "answer": [
+                                "Industries offering roles in cybersecurity for recent graduates include financial services, healthcare, government agencies, consulting firms, and technology companies."
+                            ]
+                        },
+                        {
+                            "question": "What kinds of jobs do cybersecurity graduates take in government agencies?",
+                            "answer": [
+                                "In government agencies, cybersecurity graduates work in roles such as cyber defense specialists, network security analysts, and risk managers."
+                            ]
+                        },
+                        {
+                            "question": "What industries need cybersecurity professionals with a CYBE degree?",
+                            "answer": [
+                                "Industries needing cybersecurity professionals include finance, healthcare, technology, government, and consulting for roles in security analysis and penetration testing."
+                            ]
+                        },
+                        {
+                            "question": "Which sectors actively recruit cybersecurity graduates for risk management roles?",
+                            "answer": [
+                                "Sectors such as financial services, government agencies, and healthcare actively recruit cybersecurity graduates for risk management positions."
+                            ]
+                        },
+                        {
+                            "question": "What job opportunities are available in the technology industry for cybersecurity graduates?",
+                            "answer": [
+                                "In the technology industry, cybersecurity graduates can work as network security specialists, penetration testers, and system risk managers."
+                            ]
+                        },
+                        {
+                            "question": "What roles can CYBE graduates pursue in the consulting industry?",
+                            "answer": [
+                                "In consulting, CYBE graduates can work as cybersecurity consultants, penetration testing experts, and compliance advisors."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What roles can CS graduates take in the field of artificial intelligence?",
+                            "answer": [
+                                "CS graduates can work as machine learning engineers, AI researchers, data scientists, or natural language processing (NLP) specialists."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What are the career opportunities for CPE graduates in robotics?",
+                            "answer": [
+                                "CPE graduates can work as robotics engineers, automation specialists, or machine vision experts, contributing to the design and programming of intelligent machines."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "Which roles are suitable for EE graduates in the renewable energy sector?",
+                            "answer": [
+                                "EE graduates can pursue roles such as renewable energy engineers, power grid analysts, and solar/wind energy system designers."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What cybersecurity roles are available for graduates specializing in CYBE?",
+                            "answer": [
+                                "Graduates can work as ethical hackers, security analysts, incident response specialists, or compliance officers."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "How can CS graduates contribute to game development?",
+                            "answer": [
+                                "CS graduates can become game developers, game engine programmers, or software engineers specializing in graphics and physics simulation."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What roles are open to CPE graduates in the Internet of Things (IoT) industry?",
+                            "answer": [
+                                "CPE graduates can work as IoT developers, system architects, or embedded system engineers."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What types of jobs do EE graduates take in aerospace engineering?",
+                            "answer": [
+                                "EE graduates can work as avionics engineers, control systems specialists, or satellite system designers."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What consulting opportunities are there for cybersecurity graduates?",
+                            "answer": [
+                                "CYBE graduates can work as cybersecurity consultants, advising companies on securing their networks, systems, and data."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What positions can CS graduates hold in IT consulting?",
+                            "answer": [
+                                "CS graduates can work as IT consultants, helping organizations with system integration, software solutions, and optimizing technology operations."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What are the potential roles for CPE graduates in hardware design?",
+                            "answer": [
+                                "CPE graduates can work as hardware engineers, chip designers, or FPGA developers, creating and testing new electronic components."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What career paths exist for EE graduates in automation?",
+                            "answer": [
+                                "EE graduates can become automation engineers, control system designers, or industrial automation specialists."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What positions are available for CYBE graduates in risk management?",
+                            "answer": [
+                                "CYBE graduates can work as risk analysts, compliance managers, or cybersecurity auditors, identifying and mitigating risks in IT systems."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What opportunities exist for CS graduates in database management?",
+                            "answer": [
+                                "CS graduates can become database administrators, data engineers, or cloud database specialists."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What are the career options for CPE graduates in telecommunications?",
+                            "answer": [
+                                "CPE graduates can pursue careers as network engineers, telecommunication specialists, or signal processing experts."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "What jobs can EE graduates get in electronics design?",
+                            "answer": [
+                                "EE graduates can work as circuit designers, electronic device engineers, or PCB design specialists."
+                            ]
+                        },
+
+
+
+                        {
+                            "question": "How can CYBE graduates work in government agencies?",
+                            "answer": [
+                                "CYBE graduates can work in roles such as cyber defense specialists, IT security officers, or digital forensics analysts in government agencies."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Internships",
+            "paragraphs": [
+                {
+                    "context": "Explain internship programs and support.",
+                    "qas": [
+
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Financial Aid and Scholarships",
+            "paragraphs": [
+                {
+                    "context": "Detail funding opportunities.",
+                    "qas": [
+
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Faculty Information",
+            "paragraphs": [
+                {
+                    "context": "Provide an overview of faculty expertise.",
+                    "qas": [
+
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Admissions Process",
+            "paragraphs": [
+                {
+                    "context": "Describe the application and admissions process.",
+                    "qas": [
+
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Location and Contact",
+            "paragraphs": [
+                {
+                    "context": "Describe the department's location and how to get in touch.",
+                    "qas": [
+
+                    ]
+                }
+            ]
+        }
+    ]
+}
