@@ -6,13 +6,15 @@ Author: Ian Jackson
 Date: 03-02-2025
 
 '''
+# TODO: implement SVM model 
 
 #== Imports ==#
 import os
 import json
-import torch
-import argparse
 import time
+import argparse
+import torch
+import spacy
 
 import torch.nn as nn
 import torch.optim as optim
@@ -22,9 +24,19 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, f1_score
+from sentence_transformers import SentenceTransformer
 
 #== Global Variables ==#
-
+test_dataset = {'data': [
+    {'question': 'What degree programs does the department offer?', 'label': 'Degree Programs'},
+    {'question': 'What dual degrees can I pursue?', 'label': 'Degree Programs'},
+    {'question': 'What are the various research areas in the Lane Department?', 'label': 'Research Opportunities'},
+    {'question': 'What research is done in the biometrics field?', 'label': 'Research Opportunities'},
+    {'question': 'What are the student orgs I can join as a LCSEE student?', 'label': 'Clubs and Organizations'},
+    {'question': 'What kind of activities do CyberWVU students do?', 'label': 'Clubs and Organizations'},
+    {'question': 'What can I do with a computer engineering degree?', 'label': 'Career Opportunities'},
+    {'question': 'What can I do with a computer science degree?', 'label': 'Career Opportunities'},
+]}
 
 #== Classes ==#
 class LogisticRegression(nn.Module):
@@ -110,6 +122,39 @@ def classify_question_LR(question: str, vectorizer: TfidfVectorizer, model: Logi
     
     return category
 
+def extract_keywords_NER(question: str, nlp) -> list:
+    '''
+    extract named entities and keywords from question
+
+    Args:
+        question (str): question of interest
+        nlp (_type_): spacy model
+
+    Returns:
+        list: extracted entities and keywords
+    '''
+    doc = nlp(question)
+    entities = [(ent.text, ent.label_) for ent in doc.ents]
+    keywords = [token.text for token in doc if token.pos_ in ["NOUN", "PROPN"]]
+    
+    return keywords + entities
+
+def extract_keywords_TFIDF(question: str, vectorizer: TfidfVectorizer) -> list:
+    '''
+    extract keywords from question using TF-IDF vectorization
+
+    Args:
+        question (str): question of interest
+        vectorizer (TfidfVectorizer): tf-idf vectorizer
+
+    Returns:
+        list: extracted keywords
+    '''
+    response = vectorizer.transform([question])
+    feature_names = vectorizer.get_feature_names_out()
+    keywords = [feature_names[i] for i in response.indices]
+    return keywords
+
 #== Main Execution ==#
 def main(args):
     # extract force arg
@@ -176,16 +221,6 @@ def main(args):
 
         #- Run the model -#
         print("Evaluating model")
-        test_dataset = {'data': [
-            {'question': 'What degree programs does the department offer?', 'label': 'Degree Programs'},
-            {'question': 'What dual degrees can I pursue?', 'label': 'Degree Programs'},
-            {'question': 'What are the various research areas in the Lane Department?', 'label': 'Research Opportunities'},
-            {'question': 'What research is done in the biometrics field?', 'label': 'Research Opportunities'},
-            {'question': 'What are the student orgs I can join as a LCSEE student?', 'label': 'Clubs and Organizations'},
-            {'question': 'What kind of activities do CyberWVU students do?', 'label': 'Clubs and Organizations'},
-            {'question': 'What can I do with a computer engineering degree?', 'label': 'Career Opportunities'},
-            {'question': 'What can I do with a computer science degree?', 'label': 'Career Opportunities'},
-        ]}
         
         response_times = []
         true_labels = []
@@ -212,11 +247,51 @@ def main(args):
         print(f"Test F1 Score: {f1:.4f}")
         print(f"Average Response Time: {avg_response_time:.2f} ms")
 
+    #-- Extract Information --#
+    elif args.extract:
+        #- NER -#
+        if args.extract == 'NER':
+            # load pre-trained NER model
+            nlp = spacy.load("en_core_web_sm")
+
+            # extract keywords for each test question 
+            for question in test_dataset['data']:
+                kw = extract_keywords_NER(question['question'], nlp)
+                print(f"Question: {question['question']}")
+                print(f"\tKeywords: {kw}")
+                print()
+
+        #- TF-IDF -#
+        elif args.extract == 'TFIDF':
+            # convert questions to TF-IDF features
+            vectorizer = TfidfVectorizer(stop_words='english')
+            X_tfidf = vectorizer.fit_transform([item['question'] for item in test_dataset['data']])
+
+            # extract keywords for each test question 
+            for question in test_dataset['data']:
+                kw = extract_keywords_TFIDF(question['question'], vectorizer)
+                print(f"Question: {question['question']}")
+                print(f"\tKeywords: {kw}")
+                print()
+
+        #- Word2Vec -#
+        elif args.extract == 'vec':
+            # load a pretrained model
+            model = SentenceTransformer('all-MiniLM-L6-v2')
+
+            # extract keywords for each test question 
+            for question in test_dataset['data']:
+                kw_vec = model.encode(question['question'])
+                print(f"Question: {question['question']}")
+                print(f"\tVector length: {len(kw_vec)}\tFirst 3 elements: {kw_vec[:3]}")
+                print()
+
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser(description='Traditional ML Classifier')
 
     argparser.add_argument('--LR', action='store_true', help='Use Logistic Regression')
     argparser.add_argument('--force', action='store_true', help='Force training')
+    argparser.add_argument('--extract', type=str, choices=['NER', 'TFIDF', 'DP', 'vec'], help='Run extraction of question information. Value passed determines method used:\nNER - Named Entity Recognition\nTFIDF - TF-IDF vectorization\n\vec - Word2Vec')
 
     args = argparser.parse_args()
 
