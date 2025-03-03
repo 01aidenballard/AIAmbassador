@@ -3,3 +3,6 @@
 
 # python venv
 **/venv
+
+# models
+**/*.pth
