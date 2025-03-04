@@ -6,7 +6,6 @@ Author: Ian Jackson
 Date: 03-02-2025
 
 '''
-# TODO: implement SVM model 
 
 #== Imports ==#
 import os
@@ -40,13 +39,59 @@ test_dataset = {'data': [
 
 #== Classes ==#
 class LogisticRegression(nn.Module):
+    '''
+    Logistic regression model for question classification
+    '''
     def __init__(self, input_dim: int, num_classes: int):
+        '''
+        initialize the LR model
+
+        Args:
+            input_dim (int): dimension of the input
+            num_classes (int): number of classes
+        '''
         super(LogisticRegression, self).__init__()
         self.linear = nn.Linear(input_dim, num_classes)
         self.softmax = nn.Softmax(dim=1)
 
-    def forward(self, x):
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        '''
+        feed forward pass of the model
+
+        Args:
+            x (torch.Tensor): input tensor
+
+        Returns:
+            torch.Tensor: output tensor
+        '''
         return self.softmax(self.linear(x))
+
+class SVM(nn.Module):
+    '''
+    SVM model for question classification
+    '''
+    def __init__(self, input_dim: int, num_classes: int):
+        '''
+        initialize the SVM model
+
+        Args:
+            input_dim (int): dimension of input
+            num_classes (int): number of classes
+        '''
+        super(SVM, self).__init__()
+        self.fc = nn.Linear(input_dim, num_classes)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        '''
+        feed forward pass of the model
+
+        Args:
+            x (torch.Tensor): input tensor
+
+        Returns:
+            torch.Tensor: output tensor
+        '''
+        return self.fc(x)
 
 #== Methods ==#
 def load_dataset(path: str) -> dict:
@@ -90,16 +135,39 @@ def load_dataset(path: str) -> dict:
 
     return labeled_data
 
-def classify_question_LR(question: str, vectorizer: TfidfVectorizer, model: LogisticRegression, label_encoder) -> str:
+def hinge_loss(output: torch.Tensor, target: torch.Tensor, num_classes: int) -> float:
     '''
-    classify question using LR model
+    hinge loss for SVM
 
     Args:
-        question (str): question to classify
-        vectorizer (TfidfVectorizer): TF-IDF vectorizer
-        model (LogisticRegression): trained model
+        output (torch.Tensor): output from model
+        target (torch.Tensor): actual labels to compare against
+        num_classes (int): number of classes
+
     Returns:
-        str: class
+        float: hinge loss
+    '''
+    # convert labels to one-hot encoding
+    target_one_hot = torch.eye(num_classes)[target] 
+
+    # calculate the hinge loss
+    margin = 1 - output * target_one_hot
+    loss = torch.mean(torch.clamp(margin, min=0))  # max(0, 1 - y*f(x))
+    return loss
+
+def classify_question(question: str, vectorizer: TfidfVectorizer, model: LogisticRegression | SVM, label_encoder: LabelEncoder) -> str:
+    '''
+    classify a question into category using trained model
+    can use either LR or SVM since the both use TF-IDF features
+
+    Args:
+        question (str): question to be classified
+        vectorizer (TfidfVectorizer): TD-IDF vectorizer
+        model (LogisticRegression | SVM): model to use for classification
+        label_encoder (LabelEncoder): label encoder to decode predicted label
+
+    Returns:
+        str: predicted class
     '''
     # measure response time
     start_time = time.time()
@@ -166,11 +234,13 @@ def main(args):
 
     #-- Logistic Regression --#
     if args.LR:
+        print("Running Logistic Regression")
+
         # extract the questions and labels
         questions = [item['question'] for item in dataset['data']]
         labels = [item['label'] for item in dataset['data']]
 
-        # convert test into TF-IDF features
+        # convert text into TF-IDF features
         vectorizer = TfidfVectorizer(max_features=1000)
         X_tfidf = vectorizer.fit_transform(questions).toarray()
 
@@ -231,7 +301,98 @@ def main(args):
             true_label = item['label']
             
             start_time = time.time()
-            predicted_category = classify_question_LR(question, vectorizer, model, label_encoder)
+            predicted_category = classify_question(question, vectorizer, model, label_encoder)
+            response_time = (time.time() - start_time) * 1000  # Convert to milliseconds
+            
+            response_times.append(response_time)
+            true_labels.append(true_label)
+            predicted_labels.append(predicted_category)
+
+        # Compute Evaluation Metrics
+        accuracy = accuracy_score(true_labels, predicted_labels)
+        f1 = f1_score(true_labels, predicted_labels, average="weighted")
+        avg_response_time = sum(response_times) / len(response_times)
+
+        print(f"Test Accuracy: {accuracy * 100:.2f}%")
+        print(f"Test F1 Score: {f1:.4f}")
+        print(f"Average Response Time: {avg_response_time:.2f} ms")
+
+    #-- Support Vector Machine --#
+    elif args.SVM:
+        print("Running Support Vector Machine")
+
+        # extract the questions and labels
+        questions = [item['question'] for item in dataset['data']]
+        labels = [item['label'] for item in dataset['data']]
+
+        # convert text into TF-IDF features
+        vectorizer = TfidfVectorizer(max_features=1000)
+        X_tfidf = vectorizer.fit_transform(questions).toarray()
+
+        # encode labels to numerical values
+        label_encoder = LabelEncoder()
+        y_encoded = label_encoder.fit_transform(labels)
+
+        # convert data into PyTorch Tensors
+        X_tensor = torch.tensor(X_tfidf, dtype=torch.float32)
+        Y_tensor = torch.tensor(y_encoded, dtype=torch.long)
+
+        # initialize the model
+        input_dim = X_tensor.shape[1]
+        num_classes = len(set(labels))
+        model = SVM(input_dim, num_classes)
+
+        # loss is hinge loss, use Adam optimizer
+        optimizer = optim.Adam(model.parameters(), lr=0.01)
+
+        #- Train the Model -#
+        if not os.path.exists("classify/svm_c_model.pth") or force:
+            num_epochs = 100
+            batch_size = 8
+
+            for epoch in range(num_epochs):
+                model.train()
+                total_loss = 0
+
+                for i in range(0, len(X_tensor), batch_size):
+                    # get batch
+                    X_batch = X_tensor[i:i+batch_size]
+                    y_batch = Y_tensor[i:i+batch_size]
+
+                    # forward Pass
+                    optimizer.zero_grad() 
+                    outputs = model(X_batch)
+                    loss = hinge_loss(outputs, y_batch, num_classes)
+
+                    # backward Pass
+                    loss.backward()
+                    optimizer.step()
+                    total_loss += loss.item()
+
+                if (epoch + 1) % 10 == 0:
+                    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
+
+            torch.save(model.state_dict(), "classify/svm_c_model.pth")
+            print("Model saved successfully")
+            model.eval()
+        else:
+            print("Loading trained model")
+            model.load_state_dict(torch.load("classify/svm_c_model.pth"))
+            model.eval()
+
+        #- Run the model -#
+        print("Evaluating model")
+
+        response_times = []
+        true_labels = []
+        predicted_labels = []
+
+        for item in test_dataset['data']:
+            question = item['question']
+            true_label = item['label']
+            
+            start_time = time.time()
+            predicted_category = classify_question(question, vectorizer, model, label_encoder)
             response_time = (time.time() - start_time) * 1000  # Convert to milliseconds
             
             response_times.append(response_time)
@@ -290,6 +451,7 @@ if __name__ == "__main__":
     argparser = argparse.ArgumentParser(description='Traditional ML Classifier')
 
     argparser.add_argument('--LR', action='store_true', help='Use Logistic Regression')
+    argparser.add_argument('--SVM', action='store_true', help='Use Support Vector Machine')
     argparser.add_argument('--force', action='store_true', help='Force training')
     argparser.add_argument('--extract', type=str, choices=['NER', 'TFIDF', 'DP', 'vec'], help='Run extraction of question information. Value passed determines method used:\nNER - Named Entity Recognition\nTFIDF - TF-IDF vectorization\n\vec - Word2Vec')
 

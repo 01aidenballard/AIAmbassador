@@ -5,6 +5,7 @@ Training:
 - Train dataset = 263
 - Test dataset = 8
 - Classes = 4
+- Epoch = 100
 
 | Epoch |  Loss  |
 |-------|--------|
@@ -23,3 +24,30 @@ Results:
 - Accuracy: 100.00%
 - F1 = 1.0000
 - Avg Resp Time = 1.44 ms
+
+## SVM + TD-IDF
+### Model Train 03/04/2025
+Training:
+- Train dataset = 263
+- Test dataset = 8
+- Classes = 4
+- Epoch = 100
+- Batch size = 8
+
+| Epoch |  Loss  |
+|-------|--------|
+| 10    | 0.7500 |
+| 20    | 0.7500 |
+| 30    | 0.7500 |
+| 40    | 0.7500 |
+| 50    | 0.7500 |
+| 60    | 0.7500 |
+| 70    | 0.7500 |
+| 80    | 0.7500 |
+| 90    | 0.7500 |
+| 100   | 0.7500 |
+
+Results:
+- Accuracy: 100.00%
+- F1 = 1.0000
+- Avg Resp Time = 1.28 ms
