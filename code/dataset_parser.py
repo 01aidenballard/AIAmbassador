@@ -10,7 +10,8 @@ total_qas = 0
 # print statements
 print("QA pairs: ")
 for x in range(0,len(ds["data"])):
-    print(f"    {ds["data"][x]["title"]}: {len(ds["data"][x]["paragraphs"][0]["qas"])}")
+    # {title} {qas count}
+    print(f"    {ds['data'][x]['title']}: {len(ds['data'][x]['paragraphs'][0]['qas'])}")
     total_qas += len(ds["data"][x]["paragraphs"][0]["qas"])
 
 
