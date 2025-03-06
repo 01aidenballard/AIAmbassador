@@ -6,3 +6,8 @@
 
 # models
 **/*.pth
+**/bert-question-classifier
+**/BERT*
+
+# model log files
+code/CRG/classify/logs/*
