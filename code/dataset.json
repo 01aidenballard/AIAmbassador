@@ -845,12 +845,536 @@
         {
             "title": "Facilities and Resources",
             "paragraphs": [
-                {
-                    "context": "Highlight department facilities.",
-                    "qas": [
-                        
+              {
+                "context": "Highlight department facilities.",
+                "qas": [
+                  {
+                    "question": "What types of facilities does the Lane Department provide?",
+                    "answer": [
+                        "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
                     ]
-                }
+                  },
+                  {
+                    "question": "What types of resources are available in the Lane Department?",
+                    "answer": [
+                        "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
+                    ]
+                  },
+                  {
+                    "question": "What kinds of resources and spaces are available to students in the Lane Department?",
+                    "answer": [
+                        "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
+                    ]
+                  },
+                  {
+                    "question": "What types of facilities and spaces are available in the Lane Department?",
+                    "answer": [
+                        "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
+                    ]
+                  },
+
+                  {
+                    "question": "How do the Lane Department’s facilities compare to other universities?",
+                    "answer": [
+                        "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
+                    ]
+                  },
+                  {
+                    "question": "How do the facilities in the Lane Department compare to those at other institutions?",
+                    "answer": [
+                        "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
+                    ]
+                  },
+                  {
+                    "question": "How does the quality of the Lane Department’s infrastructure stack up against similar programs?",
+                    "answer": [
+                        "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
+                    ]
+                  },
+                  {
+                    "question": "How do the Lane Department’s facilities measure up against those of other schools?",
+                    "answer": [
+                        "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
+                    ]
+                  },
+
+                  {
+                    "question": "What are some key features of the Lane Department’s laboratories?",
+                    "answer": [
+                        "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
+                    ]
+                  },
+                  {
+                    "question": "What are the important characteristics of the Lane Department’s labs?",
+                    "answer": [
+                        "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
+                    ]
+                  },
+                  {
+                    "question": "What important aspects make the Lane Department’s labs stand out?",
+                    "answer": [
+                        "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
+                    ]
+                  },
+                  {
+                    "question": "What makes the Lane Department’s laboratories unique?",
+                    "answer": [
+                        "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
+                    ]
+                  },
+
+                  {
+                    "question": "What types of labs are available for electrical engineering students at WVU?",
+                    "answer": [
+                        "Labs for circuit design, energy systems, electronics, and embedded systems."
+                    ]
+                  },
+                  {
+                    "question": "What labs are used by electrical engineering students to design and test circuits?",
+                    "answer": [
+                        "Labs for digital and analog circuit design, electronics, energy systems, and embedded systems."
+                    ]
+                  },
+                  {
+                    "question": "What types of labs are available for computer engineering students at WVU?",
+                    "answer": [
+                        "Labs for digital systems, embedded systems, robotics, and hardware/software integration."
+                    ]
+                  },
+                  {
+                    "question": "Which labs are available for computer engineering students to apply hardware and software integration?",
+                    "answer": [
+                        "Labs for hardware design, embedded systems, robotics, and computational systems."
+                    ]
+                  },
+                  {
+                    "question": "Are there labs where electrical engineering students can learn about power systems?",
+                    "answer": [
+                        "Labs for power systems, energy conversion, and smart grids."
+                    ]
+                  },
+                  {
+                    "question": "Which labs allow electrical engineering students to focus on energy systems and power generation?",
+                    "answer": [
+                        "Labs for energy systems, power generation, energy conversion, and smart grids."
+                    ]
+                  },
+                  {
+                    "question": "What labs are available for computer engineering students to study hardware design?",
+                    "answer": [
+                        "Labs for digital design, microcontroller programming, and circuit testing."
+                    ]
+                  },
+                  {
+                    "question": "Which labs provide computer engineering students hands-on experience with hardware and circuits?",
+                    "answer": [
+                        "Labs for digital circuit design, embedded systems, microcontroller programming, and hardware/software integration."
+                    ]
+                  },
+                  {
+                    "question": "What labs do electrical engineering students use for circuit design?",
+                    "answer": [
+                        "Labs for analog and digital circuit design, testing, and fabrication."
+                    ]
+                  },
+                  {
+                    "question": "How do electrical engineering students gain practical experience in circuit design?",
+                    "answer": [
+                        "Labs for circuit design, testing, and fabrication."
+                    ]
+                  },
+
+                  {
+                    "question": "Which specific industry-grade software packages are available to students and faculty in the Lane Department?",
+                    "answer": [
+                        "The Lane Department provides access to various licensed industry-grade software packages, including MATLAB, Simulink, Cadence, and LabVIEW, for simulations and development."
+                    ]
+                  },
+                  {
+                    "question": "What professional software tools can students and faculty use in the Lane Department?",
+                    "answer": [
+                        "Students and faculty in the Lane Department have access to licensed industry-grade software such as MATLAB, Simulink, Cadence, and LabVIEW for simulations, modeling, and development."
+                    ]
+                  },
+                  {
+                    "question": "What industry-standard software do students in the Lane Department have access to?",
+                    "answer": [
+                        "Students in the Lane Department can utilize industry-standard software, including MATLAB, Simulink, Cadence, and LabVIEW, to support coursework and research in engineering disciplines."
+                    ]
+                  },
+                  {
+                    "question": "What specialized software programs are available for students in the Lane Department?",
+                    "answer": [
+                        "Students in the Lane Department have access to specialized software programs such as MATLAB, Simulink, Cadence, and LabVIEW, which are commonly used for engineering simulations and system modeling."
+                    ]
+                  },
+                  {
+                    "question": "Which licensed software applications are provided to Lane Department students for academic use?",
+                    "answer": [
+                        "The Lane Department offers students access to licensed software applications, including MATLAB, Simulink, Cadence, and LabVIEW, to aid in engineering design, analysis, and testing."
+                    ]
+                  },
+
+                  {
+                    "question": "Does the Lane Department provide access to industry-grade software?",
+                    "answer": [
+                        "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                    ]
+                  },
+                  {
+                    "question": "Can students and faculty use professional-level software in the Lane Department?",
+                    "answer": [
+                        "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                    ]
+                  },
+                  {
+                    "question": "Does the Lane Department provide software used in the industry?",
+                    "answer": [
+                        "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                    ]
+                  },
+                  {
+                    "question": "Are students in the Lane Department given access to industry-standard software?",
+                    "answer": [
+                        "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                    ]
+                  },
+
+                  {
+                    "question": "How do the Lane Department’s facilities support student learning?",
+                    "answer": [
+                        "They offer hands-on experience with advanced technology and project-based learning opportunities."
+                    ]
+                  },
+                  {
+                    "question": "In what ways do the Lane Department’s resources enhance student education?",
+                    "answer": [
+                        "They offer hands-on experience with advanced technology and project-based learning opportunities."
+                    ]
+                  },
+                  {
+                    "question": "How do the facilities in the Lane Department facilitate student learning?",
+                    "answer": [
+                        "They offer hands-on experience with advanced technology and project-based learning opportunities."
+                    ]
+                  },
+                  {
+                    "question": "How does the Lane Department’s infrastructure support student development?",
+                    "answer": [
+                        "They offer hands-on experience with advanced technology and project-based learning opportunities."
+                    ]
+                  },
+
+                  {
+                    "question": "Do students have access to labs outside of class hours in the Lane Department?",
+                    "answer": [
+                        "Yes, many labs have extended or 24/7 access for students working on projects."
+                    ]
+                  },
+                  {
+                    "question": "Are the Lane Department’s labs available for student use beyond scheduled class times?",
+                    "answer": [
+                        "Yes, many labs have extended or 24/7 access for students working on projects."
+                    ]
+                  },
+                  {
+                    "question": "Can students use the Lane Department’s labs outside of their class hours?",
+                    "answer": [
+                        "Yes, many labs have extended or 24/7 access for students working on projects."
+                    ]
+                  },
+                  {
+                    "question": "Are the Lane Department’s laboratories accessible to students beyond normal hours?",
+                    "answer": [
+                        "Yes, many labs have extended or 24/7 access for students working on projects."
+                    ]
+                  },
+
+                  {
+                    "question": "Are undergraduate students allowed to use specialized facilities in the Lane Department?",
+                    "answer": [
+                        "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                    ]
+                  },
+                  {
+                    "question": "Can undergraduate students use advanced facilities in the Lane Department?",
+                    "answer": [
+                        "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                    ]
+                  },
+                  {
+                    "question": "Are undergraduate students permitted to use specialized research spaces in the Lane Department?",
+                    "answer": [
+                        "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                    ]
+                  },
+                  {
+                    "question": "Can undergraduate students work in the Lane Department’s specialized labs?",
+                    "answer": [
+                        "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                    ]
+                  },
+
+                  {
+                    "question": "What kind of equipment is available for student projects in the Lane Department?",
+                    "answer": [
+                        "Students have access to high-performance computers, testing equipment, and prototyping tools."
+                    ]
+                  },
+                  {
+                    "question": "What equipment and tools can students use for their academic projects in the Lane Department?",
+                    "answer": [
+                        "Students have access to high-performance computers, testing equipment, and prototyping tools."
+                    ]
+                  },
+                  {
+                    "question": "What tools are available for students to use in the Lane Department?",
+                    "answer": [
+                        "Students have access to high-performance computers, testing equipment, and prototyping tools."
+                    ]
+                  },
+                  {
+                    "question": "What equipment can students utilize for their projects in the Lane Department?",
+                    "answer": [
+                        "Students have access to high-performance computers, testing equipment, and prototyping tools."
+                    ]
+                  },
+
+                  {
+                    "question": "Do students receive training on how to use the Lane Department’s facilities?",
+                    "answer": [
+                        "Yes, students receive training through coursework, workshops, and faculty guidance."
+                    ]
+                  },
+                  {
+                    "question": "Are students trained on how to operate the Lane Department’s facilities?",
+                    "answer": [
+                        "Yes, students receive training through coursework, workshops, and faculty guidance."
+                    ]
+                  },
+                  {
+                    "question": "Are there any instructional sessions available for students to learn about the Lane Department’s resources?",
+                    "answer": [
+                        "Yes, students receive training through coursework, workshops, and faculty guidance."
+                    ]
+                  },
+                  {
+                    "question": "Does the Lane Department offer training to students for using department resources?",
+                    "answer": [
+                        "Yes, students receive training through coursework, workshops, and faculty guidance."
+                    ]
+                  },
+
+                  {
+                    "question": "Are there dedicated labs for specific areas of study in the Lane Department?",
+                    "answer": [
+                        "Yes, the Lane Department has specialized labs for cybersecurity, robotics, and artificial intelligence."
+                    ]
+                  },
+                  {
+                    "question": "Does the Lane Department offer specialized labs for different fields of study?",
+                    "answer": [
+                        "Yes, the Lane Department has specialized labs for cybersecurity, robotics, and artificial intelligence."
+                    ]
+                  },
+                  {
+                    "question": "Does the Lane Department maintain a robotics lab?",
+                    "answer": [
+                        "Yes, the robotics lab provides resources for autonomous systems, machine learning, and hardware prototyping."
+                    ]
+                  },
+                  {
+                    "question": "Is there a dedicated robotics lab in the Lane Department?",
+                    "answer": [
+                        "Yes, the robotics lab provides resources for autonomous systems, machine learning, and hardware prototyping."
+                    ]
+                  },
+
+                  {
+                    "question": "Does the Lane Department have an AI-focused lab?",
+                    "answer": [
+                        "Yes, the Lane Department maintains an AI lab dedicated to machine learning and data science."
+                    ]
+                  },
+                  {
+                    "question": "Is there an artificial intelligence lab in the Lane Department?",
+                    "answer": [
+                        "Yes, the Lane Department maintains an AI lab dedicated to machine learning and data science."
+                    ]
+                  },
+
+                  {
+                    "question": "Does the Lane Department have a cybersecurity lab?",
+                    "answer": [
+                        "Yes, the Lane Department provides a lab dedicated to network security, cryptography, and ethical hacking."
+                    ]
+                  },
+                  {
+                    "question": "Does the Lane Department offer resources for cybersecurity education?",
+                    "answer": [
+                        "Yes, the Lane Department provides a lab dedicated to network security, cryptography, and ethical hacking."
+                    ]
+                  },
+
+                  {
+                    "question": "What does the Lane Department’s cybersecurity lab focus on?",
+                    "answer": [
+                        "The Lane Department’s cybersecurity lab focuses on network security, cryptography, and ethical hacking."
+                    ]
+                  },
+                  {
+                    "question": "What are the main areas covered by the Lane Department’s cybersecurity lab?",
+                    "answer": [
+                        "The Lane Department’s cybersecurity lab focuses on network security, cryptography, and ethical hacking."
+                    ]
+                  },
+
+                  {
+                    "question": "Does the Lane Department offer tutoring services for students?",
+                    "answer": [
+                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                    ]
+                  },
+                  {
+                    "question": "Are tutoring services available in the Lane Department to help students with their studies?",
+                    "answer": [
+                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                    ]
+                  },
+                  {
+                    "question": "Does the Lane Department provide any academic assistance to students in the form of tutoring?",
+                    "answer": [
+                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                    ]
+                  },
+                  {
+                    "question": "Are there tutoring options available in the Lane Department for students?",
+                    "answer": [
+                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                    ]
+                  },
+                  {
+                    "question": "Can students receive tutoring support through the Lane Department?",
+                    "answer": [
+                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                    ]
+                  },
+                  {
+                    "question": "Does the Lane Department have tutoring programs for students?",
+                    "answer": [
+                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                    ]
+                  },
+                  {
+                    "question": "Are there tutoring resources available in the Lane Department?",
+                    "answer": [
+                        "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                    ]
+                  },
+                  {
+                    "question": "Does the Lane Department provide academic support through tutoring?",
+                    "answer": [
+                        "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                    ]
+                  },
+                  {
+                    "question": "Can students receive tutoring help for coursework in the Lane Department?",
+                    "answer": [
+                        "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                    ]
+                  },
+                  {
+                    "question": "Does the Lane Department provide free tutoring services?",
+                    "answer": [
+                        "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                    ]
+                  },
+                  {
+                    "question": "How can students get tutoring help in the Lane Department?",
+                    "answer": [
+                        "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
+                    ]
+                  },
+                  {
+                    "question": "What steps should students take to receive tutoring assistance in the Lane Department?",
+                    "answer": [
+                        "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
+                    ]
+                  },
+                  {
+                    "question": "How can students sign up for tutoring in the Lane Department?",
+                    "answer": [
+                        "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
+                    ]
+                  },
+                  {
+                    "question": "What are the ways students can access tutoring in the Lane Department?",
+                    "answer": [
+                        "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
+                    ]
+                  },
+                  {
+                    "question": "Where can students go for tutoring assistance in the Lane Department?",
+                    "answer": [
+                        "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
+                    ]
+                  },
+                  {
+                    "question": "What subjects are covered by tutoring services in the Lane Department?",
+                    "answer": [
+                        "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
+                    ]
+                  },
+                  {
+                    "question": "Which topics do the tutoring services in the Lane Department focus on?",
+                    "answer": [
+                        "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
+                    ]
+                  },
+                  {
+                    "question": "What areas of study are included in the Lane Department's tutoring services?",
+                    "answer": [
+                        "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
+                    ]
+                  },
+                  {
+                    "question": "Does tutoring in the Lane Department cover software engineering topics?",
+                    "answer": [
+                        "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
+                    ]
+                  },
+                  {
+                    "question": "Where can students find tutoring support in the Lane Department?",
+                    "answer": [
+                        "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
+                    ]
+                  },
+                  {
+                    "question": "Which rooms in the Lane Department offer tutoring services for students?",
+                    "answer": [
+                        "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
+                    ]
+                  },
+                  {
+                    "question": "What locations offer tutoring services in the Lane Department?",
+                    "answer": [
+                        "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
+                    ]
+                  },
+                  {
+                    "question": "Where should students go if they need tutoring help in the Lane Department?",
+                    "answer": [
+                        "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
+                    ]
+                  },
+                  {
+                    "question": "Are there specific rooms where tutoring is provided in the Lane Department?",
+                    "answer": [
+                        "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
+                    ]
+                  }
+                ]
+              }
             ]
         },
         {
@@ -1782,7 +2306,161 @@
                 {
                     "context": "Explain internship programs and support.",
                     "qas": [
+                        {
+                            "question": "How does Statler College support students in securing internships?",
+                            "answer": [
+                                "Statler College offers dedicated career services, such as industry-specific career fairs, personalized advising, and an extensive network of employer connections that assist students in securing internships and future job placements across fields like CPE, EE, CS, and CYBE."
+                            ]                    
+                        },
+                        {
+                            "question": "How does Statler College assist students in finding internships?",
+                            "answer": [
+                                "Through personalized advising, career fairs focused on specific industries, and connections with employers in fields like CPE, EE, CS, and CYBE, Statler College ensures students have access to internship opportunities."
+                            ]    
+                        },
+                        {
+                            "question": "What resources does Statler College offer to help students land internships?",
+                            "answer": [
+                                "Statler College provides resources such as job boards, networking events, and access to a strong network of employers in engineering, computer science, and cybersecurity, all designed to help students secure internships."
+                            ]    
+                        },
+                        {
+                            "question": "What types of support does Statler College offer to help students land internships?",
+                            "answer": [
+                                "The college offers job boards, networking events, and industry connections to help students in sectors like computer science, cybersecurity, and engineering secure internship opportunities."
+                            ]
+                        },
+                        {
+                            "question": "How do faculty assist students in finding internships in the Lane Department?",
+                            "answer": [
+                                "Faculty members in the Lane Department provide mentorship, recommendations, and industry connections to students in CPE, EE, CS, and CYBE to help them identify internship opportunities."
+                            ]    
+                        },
+                        {
+                            "question": "How do professors in the Lane Department support students with internships?",
+                            "answer": [
+                                "Professors in the Lane Department offer guidance, provide recommendations to potential employers, and help students build industry connections to secure internships."
+                            ]
+                        },
 
+                        {
+                            "question": "What types of companies do Statler College students intern with?",
+                            "answer": [
+                                "Statler College students have the chance to intern with a wide range of companies, from large tech corporations to government agencies, focusing on fields like cybersecurity, computer engineering, electrical engineering, and computer science."
+                            ]
+                        },
+                        {
+                            "question": "What kinds of companies do students from Statler College intern with?",
+                            "answer": [
+                                "Statler College students intern with companies across diverse sectors, including tech firms, government organizations, and industries specializing in cybersecurity, computer engineering, and computer science."
+                            ]
+                        },
+                        {
+                            "question": "What industries do Statler College students typically intern with?",
+                            "answer": [
+                                "Statler College students typically intern with industries in software development, cybersecurity, computer engineering, and electrical systems, including government and private sector companies."
+                            ]    
+                        },
+                        {
+                            "question": "What industries do students from Statler College commonly intern with?",
+                            "answer": [
+                                "Students from Statler College often intern in industries such as cybersecurity, software development, and computer engineering, working with both private companies and government organizations."
+                            ]    
+                        },
+
+                        {
+                            "question": "How does Statler College assist with international internship placements?",
+                            "answer": [
+                                "Statler College facilitates global internship opportunities through partnerships with international companies, enabling students in fields like CPE, EE, CS, and CYBE to gain international career experience."
+                            ]
+                        },
+                        {
+                            "question": "Does Statler College offer assistance for securing internships abroad?",
+                            "answer": [
+                                "Yes, Statler College supports students by connecting them with international internship opportunities, helping with visa processes, and offering guidance on cultural adaptation for students in engineering and technology fields."
+                            ]
+                        },
+                        {
+                            "question": "How does the Lane Department prepare students for internships in engineering and computer science?",
+                            "answer": [
+                                "The Lane Department prepares students by offering tailored career fairs, networking events, and collaborations with industry leaders to ensure that CPE, EE, CS, and CYBE students are ready for real-world internship opportunities."
+                            ]    
+                        },
+                        {
+                            "question": "What preparation does the Lane Department provide to students for internships?",
+                            "answer": [
+                                "The Lane Department helps students prepare for internships by hosting career fairs, networking events, and connecting them with industry leaders, ensuring they are well-prepared for internships in fields like CPE, EE, CS, and CYBE."
+                            ]    
+                        },
+
+                        {
+                            "question": "Do Lane Department students have opportunities for research internships?",
+                            "answer": [
+                                "Yes, Lane Department students, especially in CS, CYBE, and EE, can participate in research internships through faculty-led labs, working on cutting-edge topics like artificial intelligence and cybersecurity."
+                            ]
+                        },
+                        {
+                            "question": "Can students in the Lane Department take part in research internships?",
+                            "answer": [
+                                "Students in the Lane Department, particularly those studying CS, CYBE, and EE, have the opportunity to engage in research internships through faculty-led labs focusing on innovative technologies like AI and cybersecurity."
+                            ]
+                        },
+
+                        {
+                            "question": "Can Lane Department students earn academic credit for internships?",
+                            "answer": [
+                                "Yes, Lane Department students can earn academic credit for internships, with these internships counting toward their degree requirements, especially for students in CPE, EE, CS, and CYBE programs."
+                            ]    
+                        },
+                        {
+                            "question": "Is it possible for Lane Department students to earn credit for internships?",
+                            "answer": [
+                                "Yes, students in the Lane Department, particularly those pursuing CPE, EE, CS, and CYBE degrees, can earn academic credit for internships, integrating both professional experience and academic progress."
+                            ]    
+                        },
+
+                        {
+                            "question": "What is the Lane Department's co-op program?",
+                            "answer": [
+                                "The co-op program in the Lane Department allows CPE, EE, CS, and CYBE students to alternate between academic studies and full-time industry work, gaining valuable experience while continuing their education."
+                            ]    
+                        },
+                        {
+                            "question": "How does the co-op program work in the Lane Department?",
+                            "answer": [
+                                "In the Lane Department's co-op program, students in CPE, EE, CS, and CYBE switch between full-time coursework and industry placements, gaining real-world experience while advancing their academic careers."
+                            ]    
+                        },
+                        {
+                            "question": "What opportunities does the Lane Department’s co-op program offer to students?",
+                            "answer": [
+                                "The Lane Department’s co-op program provides CPE, EE, CS, and CYBE students the chance to alternate between full-time industry work and academic coursework, offering them professional experience while pursuing their degrees."
+                            ]    
+                        },
+                        {
+                            "question": "How do students in the Lane Department participate in the co-op program?",
+                            "answer": [
+                                "Lane Department students, especially those in CPE, EE, CS, and CYBE, can join the co-op program, where they alternate between academic study and hands-on industry work, gaining valuable skills for their careers."
+                            ]    
+                        },
+                        {
+                            "question": "How is the co-op program structured for Lane Department students?",
+                            "answer": [
+                                "The co-op program in the Lane Department is structured to allow students to alternate between full-time work in industry and academic study, ensuring they gain work experience while completing their degree."
+                            ]
+                        },
+                        {
+                            "question": "What is the benefit of the co-op program in the Lane Department?",
+                            "answer": [
+                                "The co-op program in the Lane Department benefits students by providing them with industry experience and academic credit, which enhances their employability after graduation."
+                            ]
+                        },
+                        {
+                            "question": "Can students in the Lane Department apply for co-op positions while studying?",
+                            "answer": [
+                                "Yes, students in the Lane Department, particularly those studying CPE, EE, CS, and CYBE, can apply for co-op positions that allow them to alternate between academic studies and industry roles."
+                            ]
+                        }
                     ]
                 }
             ]
@@ -1793,6 +2471,246 @@
                 {
                     "context": "Detail funding opportunities.",
                     "qas": [
+                        {
+                            "question": "What types of scholarships are available for undergraduate students in the LCSEE at WVU?",
+                            "answer": [
+                                "Undergraduate students in the LCSEE at WVU have access to various scholarships, including those offered by the Statler College for incoming first-time freshmen and current students. Additionally, external scholarships are available through organizations such as the Renewable Energy Scholarship Foundation, Mickey Leland Energy Fellowship Program, IEEE Power and Energy Plus Scholarship, and the ARRL Foundation."
+                            ]  
+                          },
+                          {
+                            "question": "What types of scholarships does LCSEE offer for undergraduate students?",
+                            "answer": [
+                                "LCSEE offers multiple scholarships for undergraduate students, including merit-based, need-based, and external scholarships such as those from IEEE and the Renewable Energy Scholarship Foundation."
+                            ]  
+                          },
+                          {
+                            "question": "Are there specific scholarships for undergraduates in the LCSEE department?",
+                            "answer": [
+                                "Yes, undergraduates in LCSEE can apply for scholarships offered by the Statler College and external organizations such as IEEE and the Mickey Leland Energy Fellowship Program."
+                            ]  
+                          },
+                          {
+                            "question": "What scholarships are available for incoming freshmen in the LCSEE department at WVU?",
+                            "answer": [
+                                "Incoming freshmen in the LCSEE department at WVU can apply for undergraduate scholarships offered by the Statler College. A single application allows consideration for all general scholarships for first-time freshmen or transfer students for fall 2025.  "
+                            ]  
+                          },
+                          {
+                            "question": "Are there scholarship opportunities for first-year LCSEE students at WVU?",
+                            "answer": [
+                                "Yes, first-year LCSEE students can apply for scholarships through the Statler College, which offers financial aid based on merit and need. The application process for incoming students is streamlined, allowing for multiple scholarship considerations.  "
+                            ]  
+                          },
+                          {
+                            "question": "Does LCSEE offer scholarships for freshmen entering the program?",
+                            "answer": [
+                                "Yes, freshmen entering LCSEE are eligible for scholarships through the Statler College, which automatically considers students who submit a general application. These scholarships are awarded based on academic achievement, financial need, and other criteria.  "
+                            ]  
+                          },
+                          {
+                            "question": "Are there scholarships specifically for West Virginia residents in the LCSEE department?",
+                            "answer": [
+                                "Yes, there are scholarships specifically for West Virginia residents in the LCSEE department. For example, the Statler College offers endowed scholarships for West Virginia residents majoring in engineering disciplines, including electrical engineering and computer science.  "
+                            ]  
+                          },
+                          {
+                            "question": "Do West Virginia residents have priority for LCSEE scholarships?",
+                            "answer": [
+                                "Some LCSEE scholarships prioritize West Virginia residents, particularly those funded by the Statler College. These scholarships often focus on academic merit, financial need, and residency status.  "
+                            ]
+                          },
+                          {
+                            "question": "What financial aid options are available for West Virginia students in LCSEE?",
+                            "answer": [
+                                "West Virginia students in LCSEE can apply for need-based and merit-based scholarships through the Statler College. Additionally, state-funded programs may provide financial assistance to in-state students pursuing engineering degrees.  "
+                            ]  
+                          },
+                          {
+                            "question": "How can current LCSEE undergraduates find scholarship opportunities?",
+                            "answer": [
+                                "Current LCSEE undergraduates can explore scholarship opportunities by visiting the Statler College's scholarship funds page, which provides a comprehensive list of available scholarships for engineering students.  "
+                            ]  
+                          },
+                          {
+                            "question": "Where can LCSEE students find information on available scholarships?",
+                            "answer": [
+                                "LCSEE students can check the Statler College’s scholarship webpage for details on available funding. Regularly checking departmental emails and contacting academic advisors can also help identify new scholarship opportunities.  "
+                            ]  
+                          },
+                          {
+                            "question": "Are there dedicated resources for LCSEE students seeking scholarships?",
+                            "answer": [
+                                "Yes, LCSEE students can access scholarship listings through the Statler College website and consult faculty or advisors for guidance. Many scholarships are awarded annually, and applications should be submitted before the specified deadlines.  "
+                            ]  
+                          },
+                          {
+                            "question": "Does WVU offer scholarships based on financial need for LCSEE students?",
+                            "answer": [
+                                "Yes, WVU offers scholarships based on financial need for LCSEE students. Many endowed scholarships within the Statler College consider financial need as a criterion for eligibility.  "
+                            ]  
+                          },
+                          {
+                            "question": "Can LCSEE students apply for need-based financial aid?",
+                            "answer": [
+                                "Yes, LCSEE students can apply for need-based scholarships through the Statler College. FAFSA submission is required for consideration, and awards are granted based on demonstrated financial need.  "
+                            ]  
+                          },
+                          {
+                            "question": "Are there any scholarships specifically for financially disadvantaged LCSEE students?",
+                            "answer": [
+                                "Yes, some scholarships within the Statler College are designated for students with financial need. These scholarships may also consider academic performance and extracurricular involvement.  "
+                            ]  
+                          },
+                          {
+                            "question": "Are there external scholarships available for LCSEE undergraduates?",
+                            "answer": [
+                                "Yes, LCSEE undergraduates can apply for external scholarships offered by various organizations. While specific external scholarships are not listed on the LCSEE website, students are encouraged to explore opportunities through professional organizations related to computer science and electrical engineering."
+                            ]  
+                          },
+                          {
+                            "question": "What external funding options exist for LCSEE students?",
+                            "answer": [
+                                "LCSEE students can seek external scholarships from industry groups such as IEEE, the National Science Foundation, and private foundations that support STEM education. Researching and applying to these scholarships can provide additional financial aid beyond university funding."
+                            ]  
+                          },
+                          {
+                            "question": "Can LCSEE students receive financial support from industry-related organizations?",
+                            "answer": [
+                                "Yes, students in LCSEE may qualify for scholarships provided by professional engineering and technology organizations. These scholarships often require a strong academic record and may include internship opportunities as part of the award."
+                            ]  
+                          },
+                            
+                          {
+                            "question": "How can current undergraduate students apply for Statler College scholarships?",
+                            "answer": [
+                                "Current undergraduate students should complete a new scholarship application annually by December 31. To be eligible, students must be enrolled full-time (minimum of 12 hours) and have a current FAFSA on file with WVU Financial Aid by January 1st of each year."
+                            ]  
+                          },
+                          {
+                            "question": "How do current undergraduate students apply for scholarships at Statler College?",
+                            "answer": [
+                                "Undergraduate students must complete a new scholarship application each year before December 31 and ensure their FAFSA is submitted to WVU Financial Aid by January 1st."
+                            ]  
+                          },
+                          {
+                            "question": "What is the deadline for current students to apply for Statler College scholarships?",
+                            "answer": [
+                                "Current students must submit their scholarship applications by December 31 and have an up-to-date FAFSA filed by January 1st."
+                            ]  
+                          },
+
+                          {
+                            "question": "Are international students eligible to apply for Statler College scholarships?",
+                            "answer": [
+                                "Yes, international students can apply for Statler College scholarships. While they cannot complete the FAFSA, there are merit-based awards that do not require a financial need component."
+                            ]  
+                          },
+                          {
+                            "question": "Are international students eligible for LCSEE scholarships?",
+                            "answer": [
+                                "Yes, international students can apply for merit-based scholarships, even though they do not qualify for FAFSA-based need-based aid."
+                            ]  
+                          },
+                          {
+                            "question": "Can non-U.S. students apply for Statler College scholarships?",
+                            "answer": [
+                                "International students can apply for scholarships that do not require financial need criteria, as FAFSA is not applicable to them."
+                            ]
+                          },
+                          {
+                            "question": "Do international students qualify for the same scholarships as domestic students?",
+                            "answer": [
+                                "While international students are not eligible for FAFSA-dependent scholarships, they can apply for merit-based and external funding opportunities."
+                            ]  
+                          },
+
+                          {
+                            "question": "What financial support options are available for graduate students in the LCSEE?",
+                            "answer": [
+                                "Graduate students in the LCSEE may receive financial support through Graduate Teaching Assistantships, Graduate Research Assistantships, and Graduate Service Assistantships. These positions often include a waiver of university tuition and a stipend for living expenses. Additionally, external funding opportunities such as scholarships and fellowships are available."
+                            ]  
+                          },
+                          {
+                            "question": "What types of assistantships are available for graduate students in LCSEE?",
+                            "answer": [
+                                "Graduate students can apply for teaching assistantships (TAs), research assistantships (RAs), and service assistantships (SAs), which often provide tuition waivers and stipends."
+                            ]  
+                          },
+                          {
+                            "question": "What assistantship opportunities are available for graduate students in LCSEE?",
+                            "answer": [
+                                "Graduate students in LCSEE can apply for teaching assistantships (TAs), research assistantships (RAs), and service assistantships (SAs), which provide tuition waivers and stipends."
+                            ]  
+                          },
+                          {
+                            "question": "How can graduate students receive financial support at LCSEE?",
+                            "answer": [
+                                "Graduate students can apply for assistantships, fellowships, and external grants that provide financial assistance and research opportunities."
+                            ]  
+                          },
+                          {
+                            "question": "Are there teaching assistant (TA) positions available for graduate students?",
+                            "answer": [
+                                "Yes, LCSEE offers TA positions where graduate students assist in teaching courses and receive stipends along with tuition waivers."
+                            ]
+                          },
+
+                          {
+                            "question": "Does the LCSEE department offer research funding for undergraduate students?",
+                            "answer": [
+                                "Yes, the LCSEE department provides research funding opportunities for undergraduate students through programs such as the WVU Research Apprenticeship Program (RAP) and faculty-led research grants."
+                            ]
+                          },
+
+                          {
+                            "question": "What is the application period for incoming student scholarships at the Statler College for the 2025-2026 academic year?",
+                            "answer": [
+                                "The application period for incoming student scholarships at the Statler College for the 2025-2026 academic year starts on October 1, 2024, and ends on Sunday, February 2, 2025. Students must be admitted to the Statler College to be considered for these scholarships."
+                            ]  
+                          },
+                          {
+                            "question": "What is the application period for incoming Statler College scholarships?",
+                            "answer": [
+                                "For the 2025-2026 academic year, the application period starts on October 1, 2024, and closes on February 2, 2025."
+                            ]
+                          },
+                          {
+                            "question": "When should incoming students apply for Statler College scholarships?",
+                            "answer": [
+                                "The scholarship application period for incoming students begins in October and runs until early February."
+                            ]  
+                          },
+                          {
+                            "question": "What is the deadline for new students to apply for financial aid at Statler College?",
+                            "answer": [
+                                "New students must submit their scholarship applications by February 2, 2025, to be considered for financial aid."
+                            ]  
+                          },
+
+                          {
+                            "question": "Are transfer students eligible for scholarships at the Statler College?",
+                            "answer": [
+                                "Yes, transfer students are eligible for scholarships at the Statler College. They must apply within the designated application period and meet the eligibility criteria, including GPA and enrollment requirements."
+                            ]  
+                          },
+                          {
+                            "question": "Are transfer students eligible for LCSEE scholarships?",
+                            "answer": [
+                                "Yes, transfer students can apply for scholarships if they meet eligibility criteria such as GPA and enrollment requirements."
+                            ]  
+                          },
+                          {
+                            "question": "Can students transferring from other institutions receive scholarships?",
+                            "answer": [
+                                "Transfer students are eligible for certain scholarships, provided they apply within the deadline and meet academic requirements."
+                            ]  
+                          },
+                          {
+                            "question": "Does LCSEE offer scholarships specifically for transfer students?",
+                            "answer": [
+                                "Yes, some scholarships are designated for transfer students who meet eligibility requirements."
+                            ]  
+                          }
 
                     ]
                 }
@@ -1826,6 +2744,63 @@
                 {
                     "context": "Describe the department's location and how to get in touch.",
                     "qas": [
+                        {
+                            "question": "Where is the Lane Department of Computer Science and Electrical Engineering located?",
+                            "answer": [
+                                "The department is located at 1220 Evansdale Drive, Morgantown, West Virginia, in the Advanced Engineering Research (AER) building."
+                            ]  
+                          },
+                          {
+                            "question": "What is the physical address of the Lane Department?",
+                            "answer": [
+                                "You can find the Lane Department at 1220 Evansdale Drive, Morgantown, West Virginia, in the AER building."
+                            ]
+                          },
+                          {
+                            "question": "What building houses the Lane Department of Computer Science and Electrical Engineering?",
+                            "answer": [
+                                "The Lane Department is located in the Advanced Engineering Research (AER) building at 1220 Evansdale Drive, Morgantown, West Virginia."
+                            ]
+                          },
+                          {
+                            "question": "What is the phone number to contact the Lane Department?",
+                            "answer": [
+                                "The department's contact number is 304-293-5263."
+                            ]
+                          },
+                          {
+                            "question": "How can you reach the Lane Department by phone?",
+                            "answer": [
+                                "You can contact the Lane Department by calling 304-293-5263."
+                            ]
+                          },
+                          {
+                            "question": "What is the contact number for the Lane Department of Computer Science and Electrical Engineering?",
+                            "answer": [
+                                "To contact the department, dial 304-293-5263."
+                            ]
+                          },
+                          {
+                            "question": "What is the mailing address for the Lane Department?",
+                            "answer": [
+                                "The department's mailing address is P.O. Box 6109, Morgantown, West Virginia, 26506-6109."
+                            ]
+                          },
+                          {
+                            "question": "Where should mail for the Lane Department be sent?",
+                            "answer": [
+                                "Please send mail to P.O. Box 6109, Morgantown, West Virginia, 26506-6109."
+                            ]
+                          },
+                          {
+                            "question": "What is the mailing address for the department?",
+                            "answer": [
+                                "Send mail to P.O. Box 6109, Morgantown, West Virginia, 26506-6109."
+                            ]
+                          }
+                          
+                          
+                          
 
                     ]
                 }
