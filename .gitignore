@@ -8,6 +8,7 @@
 **/*.pth
 **/bert-question-classifier
 **/BERT*
+**/DistilBERT*
 
 # model log files
 code/CRG/classify/logs/*

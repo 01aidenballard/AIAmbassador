@@ -24,7 +24,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, f1_score
 from sentence_transformers import SentenceTransformer
-from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments
+from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments, DistilBertTokenizer, DistilBertForSequenceClassification
 from datasets import Dataset
 from torch.utils.data import DataLoader
 
@@ -206,6 +206,103 @@ def main(args):
     #-- DistilBERT --#
     if args.DistilBERT:
         print('Using DistilBERT for classification')
+
+        # check if model exist
+        if not os.path.exists(f"./classify/distilbert-question-classifier") or train:
+            print('Training DistilBERT')
+
+            # load the tokenizer
+            tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased")
+
+            # tokenize the training & test data
+            train_encodings = tokenizer(train_questions, truncation=True, padding=True, max_length=512)
+
+            # convert to HuggingFace dataset format
+            train_dataset = Dataset.from_dict({
+                'input_ids': train_encodings['input_ids'],
+                'attention_mask': train_encodings['attention_mask'],
+                'labels': label_map
+            })
+
+            # 80/20 test eval split
+            train_data = train_dataset.train_test_split(test_size=0.8, seed=42)['train']
+            eval_data = train_dataset.train_test_split(test_size=0.2, seed=42)['test']
+
+            # load pretrained BERT model
+            model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=len(label_encoder.classes_))
+
+            # define training args
+            training_args = TrainingArguments(
+                output_dir=f"./classify/DistilBERT_results",
+                evaluation_strategy="epoch",
+                save_strategy="epoch",
+                learning_rate=2e-5,
+                per_device_train_batch_size=8,
+                per_device_eval_batch_size=8,
+                num_train_epochs=5,
+                weight_decay=0.01,
+                logging_dir=f"./classify/logs/DistilBERT",
+                logging_steps=10,
+            )
+
+            # use HF trainer API
+            trainer = Trainer(
+                model=model,
+                args=training_args,
+                train_dataset=train_data,
+                eval_dataset=eval_data,
+            )
+
+            # Train the model
+            trainer.train()
+
+            # save the model
+            model.save_pretrained(f"./classify/distilbert-question-classifier")
+            tokenizer.save_pretrained(f"./classify/distilbert-question-classifier")
+        else:
+            print('Loading BERT model')
+            model = BertForSequenceClassification.from_pretrained(f"./classify/distilbert-question-classifier")
+            tokenizer = BertTokenizer.from_pretrained(f"./classify/distilbert-question-classifier")
+
+        # evaluate BERT on test dataset
+        model.eval()
+
+        true_labels = []
+        predicted_labels = []
+        response_times = []
+
+        for item in GB_test_dataset['data']:
+            question = item['question']
+            true_label = item['label']
+
+            # tokenize question
+            inputs = tokenizer(question, return_tensors="pt")
+
+            start_time = time.time()
+
+            with torch.no_grad():
+                outputs = model(**inputs)
+                prediction = torch.argmax(outputs.logits, dim=-1).item()
+
+            end_time = time.time() 
+            response_time = end_time - start_time
+            response_times.append(response_time)
+
+            # map to label
+            category = label_encoder.inverse_transform([prediction])[0]
+            print(f"Question: {question}\n\tPredicted Category: {category}")
+
+            true_labels.append(true_label)
+            predicted_labels.append(category)
+
+        # Compute Evaluation Metrics
+        accuracy = accuracy_score(true_labels, predicted_labels)
+        f1 = f1_score(true_labels, predicted_labels, average="weighted")
+        avg_response_time = sum(response_times) / len(response_times)
+
+        print(f"Test Accuracy: {accuracy * 100:.2f}%")
+        print(f"Test F1 Score: {f1:.4f}")
+        print(f"Average Response Time: {avg_response_time:.2f} ms")
 
     #-- T5 --#
     if args.T5:
