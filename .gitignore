@@ -1,8 +1,9 @@
 # DS store
 **/.DS_Store
 
-# python venv
+# python venv & pycahce
 **/venv
+**/__pycache__
 
 # models
 **/*.pth
