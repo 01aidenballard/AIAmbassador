@@ -24,6 +24,7 @@ import numpy as np
 import traditional_ML as trad           #type: ignore
 import finetune_transformer as trans    #type: ignore
 
+from itertools import chain
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
@@ -44,6 +45,9 @@ test_dataset = {'data': [
     {'question': 'What can I do with a computer engineering degree?', 'label': 'Career Opportunities'},
     {'question': 'What can I do with a computer science degree?', 'label': 'Career Opportunities'},
 ]}
+
+spacy_model = None
+tfidf_vectorizer = None
 
 #== Classes ==#
 
@@ -174,10 +178,12 @@ def classify_and_extract(args: dict) -> None:
         #- BERT -#
         elif args.classify_method == 'BERT':
             print('Using BERT')
+            # TODO: retrain and implement BERT 
 
         #- DistilBERT -#
         elif args.classify_method == 'DistilBERT':
             print('Using DistilBERT')
+            # TODO: retrain and implement DistilBERT 
 
         else:
             print('Error: Classification method not defined')
@@ -195,6 +201,8 @@ def classify_and_extract(args: dict) -> None:
 
             # load pre-trained NER model
             nlp = spacy.load("en_core_web_sm")
+            global spacy_model
+            spacy_model = nlp
 
             # extract keywords for each test question 
             for i,question in enumerate(test_dataset['data']):
@@ -208,6 +216,9 @@ def classify_and_extract(args: dict) -> None:
             # convert questions to TF-IDF features
             vectorizer = TfidfVectorizer(stop_words='english')
             X_tfidf = vectorizer.fit_transform([item['question'] for item in test_dataset['data']])
+
+            global tfidf_vectorizer
+            tfidf_vectorizer = vectorizer
 
             # extract keywords for each test question 
             for i,question in enumerate(test_dataset['data']):
@@ -297,6 +308,121 @@ def retrieve_EKI(filtered_data: dict, keywords: list) -> str:
     else:
         return best_ans[random.randint(0, len(best_ans) - 1)]
 
+def retrieve_Jaccard(filtered_data: dict, keywords: list, kw_method: str = 'NER') -> str:
+    '''
+    retrieve answer using Jaccard similarity (IoU) 
+
+    Args:
+        filtered_data (dict): filtered QA pairs based on class
+        keywords (list): keywords extracted from question
+        kw_method (str): keyword extraction method (default NER)
+
+    Returns:
+        str: predicted answer
+    '''
+    for i,qa in enumerate(filtered_data):
+        question = qa['question']
+        question_kw = None
+
+        # get keywords based on extraction method
+        if kw_method == 'NER':
+            question_kw = trad.extract_keywords_NER(question, spacy_model)
+        elif kw_method == 'TFIDF':
+            question_kw = trad.extract_keywords_TFIDF(question, tfidf_vectorizer)
+        else:
+            print('Error: invalid extraction method in Jaccard similarity')
+            quit()
+
+        # flatten with possibility of tuples
+        keywords = list(chain.from_iterable(item if isinstance(item, tuple) else (item,) for item in keywords))
+        question_kw = list(chain.from_iterable(item if isinstance(item, tuple) else (item,) for item in question_kw))
+
+        # compute Jaccard similarity score
+        intersection = set(keywords) & set(question_kw)
+        union = set(keywords) | set(question_kw)
+        score = len(intersection) / len(union) if union else 0
+
+        # store score in dataset
+        filtered_data[i]['score'] = score
+
+    # get the highest scoring answers
+    max_score = max(item['score'] for item in filtered_data)
+    best_ans = [item['answer'] for item in filtered_data if item['score'] == max_score]
+    
+    # flatten 
+    best_ans = [item[0] for item in best_ans]
+
+    # if one answer, use that; otherwise choose randomly
+    if len(best_ans) == 1:
+        return best_ans[0]
+    else:
+        return best_ans[random.randint(0, len(best_ans) - 1)]
+
+def retrieve_JEKI(filtered_data: dict, keywords: list, kw_method: str = 'NER', lamb_1: float = 0.5, lambd_2: float = 0.5) -> str:
+    '''
+    retrieve answer using JEKI (weighted sum of EKI and Jaccard)
+
+    Args:
+        filtered_data (dict): filtered QA pairs based on class
+        keywords (list): keywords extracted from question
+        kw_method (str): keyword extraction method (default NER)
+        lambd_1 (float): weight for EKI score (default 0.5)
+        lambd_2 (float): weight for Jaccard score (default 0.5)
+
+    Returns:
+        str: predicted answer
+    '''
+    for i,qa in enumerate(filtered_data):
+        question = qa['question']
+        question_kw = None
+
+        # get keywords based on extraction method
+        if kw_method == 'NER':
+            question_kw = trad.extract_keywords_NER(question, spacy_model)
+        elif kw_method == 'TFIDF':
+            question_kw = trad.extract_keywords_TFIDF(question, tfidf_vectorizer)
+        else:
+            print('Error: invalid extraction method in Jaccard similarity')
+            quit()
+
+        # flatten with possibility of tuples
+        keywords = list(chain.from_iterable(item if isinstance(item, tuple) else (item,) for item in keywords))
+        question_kw = list(chain.from_iterable(item if isinstance(item, tuple) else (item,) for item in question_kw))
+
+        # compute Jaccard similarity score
+        intersection = set(keywords) & set(question_kw)
+        union = set(keywords) | set(question_kw)
+        jaccard_score = len(intersection) / len(union) if union else 0
+
+        # compute EKI score
+        EKI_score = 0
+
+        # for each keyword, see if its in the question
+        for kw in keywords:
+            # keywords can be either strings or tuples
+            if type(kw) is str:
+                if kw in question: EKI_score += 1
+            elif type(kw) is tuple:
+                x,y = kw
+                if x in question: EKI_score += 1
+                if y in question: EKI_score += 1
+
+        # store score in dataset
+        filtered_data[i]['score'] = lamb_1 * EKI_score + lambd_2 * jaccard_score
+
+    # get the highest scoring answers
+    max_score = max(item['score'] for item in filtered_data)
+    best_ans = [item['answer'] for item in filtered_data if item['score'] == max_score]
+    
+    # flatten 
+    best_ans = [item[0] for item in best_ans]
+
+    # if one answer, use that; otherwise choose randomly
+    if len(best_ans) == 1:
+        return best_ans[0]
+    else:
+        return best_ans[random.randint(0, len(best_ans) - 1)]
+    
 #== Main Execution ==#
 def main(args):
     # fill test dataset with predictions using provided classification method and extraction method
@@ -312,9 +438,21 @@ def main(args):
         filtered_data = filter_dataset(pred_class)
         
         # get best answer (based on method)
+        #- EKI -#
         if args.retrieve_method == 'EKI':
             answer = retrieve_EKI(filtered_data, kw)
+            print(f'Question: {question}\n\tAnswer: {answer}\n')
 
+        #- Jaccard -#
+        elif args.retrieve_method == 'Jaccard':
+            extract_method = 'TFIDF' if args.extract_method == 'TFIDF' else 'NER'
+            answer = retrieve_Jaccard(filtered_data, kw, extract_method)
+            print(f'Question: {question}\n\tAnswer: {answer}\n')
+
+        #- JEKI -#
+        elif args.retrieve_method == 'JEKI':
+            extract_method = 'TFIDF' if args.extract_method == 'TFIDF' else 'NER'
+            answer = retrieve_JEKI(filtered_data, kw, extract_method)
             print(f'Question: {question}\n\tAnswer: {answer}\n')
 
 if __name__ == "__main__":
@@ -323,7 +461,7 @@ if __name__ == "__main__":
     # arguments
     argparser.add_argument('--classify_method', type=str, choices=['LR', 'SVM', 'BERT', 'DistilBERT'], help='Classification method to use')
     argparser.add_argument('--extract_method', type=str, choices=['NER', 'TFIDF', 'vec'], help='Extraction of question information. Value passed determines method used:\nNER - Named Entity Recognition\nTFIDF - TF-IDF vectorization\n\vec - Word2Vec')
-    argparser.add_argument('--retrieve_method', type=str, choices=['EKI'], help='Retrieval method to use')
+    argparser.add_argument('--retrieve_method', type=str, choices=['EKI', 'Jaccard', 'JEKI'], help='Retrieval method to use')
 
     args = argparser.parse_args()
 

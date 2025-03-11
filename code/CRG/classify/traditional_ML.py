@@ -186,7 +186,7 @@ def classify_question(question: str, vectorizer: TfidfVectorizer, model: Logisti
     category = label_encoder.inverse_transform([predicted_label])[0]
 
     response_time = (time.time() - start_time) * 1000  # Convert to milliseconds
-    if show_output: print(f"Predicted Category: {category} | Response Time: {response_time:.2f} ms")
+    if show_output: print(f"Question: {question}\n\tPredicted Category: {category} | Response Time: {response_time:.2f} ms\n")
     
     return category
 
