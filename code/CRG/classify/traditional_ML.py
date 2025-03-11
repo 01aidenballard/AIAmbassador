@@ -155,7 +155,7 @@ def hinge_loss(output: torch.Tensor, target: torch.Tensor, num_classes: int) -> 
     loss = torch.mean(torch.clamp(margin, min=0))  # max(0, 1 - y*f(x))
     return loss
 
-def classify_question(question: str, vectorizer: TfidfVectorizer, model: LogisticRegression | SVM, label_encoder: LabelEncoder) -> str:
+def classify_question(question: str, vectorizer: TfidfVectorizer, model: LogisticRegression | SVM, label_encoder: LabelEncoder, show_output: bool = True) -> str:
     '''
     classify a question into category using trained model
     can use either LR or SVM since the both use TF-IDF features
@@ -186,7 +186,7 @@ def classify_question(question: str, vectorizer: TfidfVectorizer, model: Logisti
     category = label_encoder.inverse_transform([predicted_label])[0]
 
     response_time = (time.time() - start_time) * 1000  # Convert to milliseconds
-    print(f"Predicted Category: {category} | Response Time: {response_time:.2f} ms")
+    if show_output: print(f"Question: {question}\n\tPredicted Category: {category} | Response Time: {response_time:.2f} ms\n")
     
     return category
 
