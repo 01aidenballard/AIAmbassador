@@ -29,6 +29,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments, DistilBertTokenizer, DistilBertForSequenceClassification
 from datasets import Dataset
@@ -36,18 +37,19 @@ from torch.utils.data import DataLoader
 
 #== Global Variables ==#
 test_dataset = {'data': [
-    {'question': 'What degree programs does the department offer?', 'label': 'Degree Programs'},
-    {'question': 'What dual degrees can I pursue?', 'label': 'Degree Programs'},
-    {'question': 'What are the various research areas in the Lane Department?', 'label': 'Research Opportunities'},
-    {'question': 'What research is done in the biometrics field?', 'label': 'Research Opportunities'},
-    {'question': 'What are the student orgs I can join as a LCSEE student?', 'label': 'Clubs and Organizations'},
-    {'question': 'What kind of activities do CyberWVU students do?', 'label': 'Clubs and Organizations'},
-    {'question': 'What can I do with a computer engineering degree?', 'label': 'Career Opportunities'},
-    {'question': 'What can I do with a computer science degree?', 'label': 'Career Opportunities'},
+    {'question': 'What degree programs does the department offer?', 'label': 'Degree Programs', 'correct_ans_idx': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
+    {'question': 'What dual degrees can I pursue?', 'label': 'Degree Programs', 'correct_ans_idx': [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]},
+    {'question': 'What are the various research areas in the Lane Department?', 'label': 'Research Opportunities', 'correct_ans_idx': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
+    {'question': 'What research is done in the biometrics field?', 'label': 'Research Opportunities', 'correct_ans_idx': [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]},
+    {'question': 'What are the student orgs I can join as a LCSEE student?', 'label': 'Clubs and Organizations', 'correct_ans_idx': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
+    {'question': 'What kind of activities do CyberWVU students do?', 'label': 'Clubs and Organizations', 'correct_ans_idx': [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]},
+    {'question': 'What can I do with a computer engineering degree?', 'label': 'Career Opportunities', 'correct_ans_idx': [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]},
+    {'question': 'What can I do with a computer science degree?', 'label': 'Career Opportunities', 'correct_ans_idx': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
 ]}
 
 spacy_model = None
 tfidf_vectorizer = None
+w2v_model = None
 
 #== Classes ==#
 
@@ -178,12 +180,64 @@ def classify_and_extract(args: dict) -> None:
         #- BERT -#
         elif args.classify_method == 'BERT':
             print('Using BERT')
-            # TODO: retrain and implement BERT 
+
+            # preprocess the dataset
+            train_labels = [item['label'] for item in dataset['data']]
+
+            # encode labels to numerical values
+            label_encoder = LabelEncoder()
+            label_encoder.fit_transform(train_labels)
+            
+            model = BertForSequenceClassification.from_pretrained(f"./classify/bert-question-classifier")
+            tokenizer = BertTokenizer.from_pretrained(f"./classify/bert-question-classifier")
+
+            # evaluate BERT on test dataset
+            model.eval()
+
+            for i,item in enumerate(test_dataset['data']):
+                question = item['question']
+
+                # tokenize question
+                inputs = tokenizer(question, return_tensors="pt")
+
+                with torch.no_grad():
+                    outputs = model(**inputs)
+                    prediction = torch.argmax(outputs.logits, dim=-1).item()
+
+                # map to label
+                category = label_encoder.inverse_transform([prediction])[0]
+                test_dataset['data'][i]['pred_class'] = category
 
         #- DistilBERT -#
         elif args.classify_method == 'DistilBERT':
             print('Using DistilBERT')
-            # TODO: retrain and implement DistilBERT 
+
+            # preprocess the dataset
+            train_labels = [item['label'] for item in dataset['data']]
+
+            # encode labels to numerical values
+            label_encoder = LabelEncoder()
+            label_encoder.fit_transform(train_labels)
+
+            model = DistilBertForSequenceClassification.from_pretrained(f"./classify/distilbert-question-classifier")
+            tokenizer = DistilBertTokenizer.from_pretrained(f"./classify/distilbert-question-classifier")
+
+            # evaluate DistilBERT on test dataset
+            model.eval()
+
+            for i,item in enumerate(test_dataset['data']):
+                question = item['question']
+
+                # tokenize question
+                inputs = tokenizer(question, return_tensors="pt")
+
+                with torch.no_grad():
+                    outputs = model(**inputs)
+                    prediction = torch.argmax(outputs.logits, dim=-1).item()
+
+                # map to label
+                category = label_encoder.inverse_transform([prediction])[0]
+                test_dataset['data'][i]['pred_class'] = category
 
         else:
             print('Error: Classification method not defined')
@@ -231,6 +285,9 @@ def classify_and_extract(args: dict) -> None:
 
             # load a pretrained model
             model = SentenceTransformer('all-MiniLM-L6-v2')
+
+            global w2v_model
+            w2v_model = model
 
             # extract keywords for each test question 
             for i,question in enumerate(test_dataset['data']):
@@ -423,37 +480,208 @@ def retrieve_JEKI(filtered_data: dict, keywords: list, kw_method: str = 'NER', l
     else:
         return best_ans[random.randint(0, len(best_ans) - 1)]
     
+def retrieve_CSC_TFIDF(filtered_data: dict, ask_question: str) -> str:
+    '''
+    retrieve answer using cosine similarity with TD-IDF embeddings 
+
+    Args:
+        filtered_data (dict): filtered QA pairs based on class
+        ask_question (str): test question/sample question
+
+    Returns:
+        str: predicted answer
+    '''
+    # for each question in filtered data, get their vector embedding
+    for i,qa in enumerate(filtered_data):
+        db_question = qa['question']
+        tdidf_matrix = tfidf_vectorizer.transform([ask_question, db_question])
+        cosine_sim_matrix = cosine_similarity(tdidf_matrix, tdidf_matrix)
+
+        # extract score
+        css = cosine_sim_matrix[0,1]
+
+        # store score in dataset
+        filtered_data[i]['score'] = css
+
+    # get the best scoring answer
+    # get the highest scoring answers
+    max_score = max(item['score'] for item in filtered_data)
+    best_ans = [item['answer'] for item in filtered_data if item['score'] == max_score]
+    
+    # flatten 
+    best_ans = [item[0] for item in best_ans]
+
+    # if one answer, use that; otherwise choose randomly
+    if len(best_ans) == 1:
+        return best_ans[0]
+    else:
+        return best_ans[random.randint(0, len(best_ans) - 1)]
+
+def retrieve_CSC_vec(filtered_data: dict, ask_question: str) -> str:
+    '''
+    retrieve answer using cosine similarity with TD-IDF embeddings 
+
+    Args:
+        filtered_data (dict): filtered QA pairs based on class
+        ask_question (str): test question/sample question
+
+    Returns:
+        str: predicted answer
+    '''
+    # get vec embedding of asked question
+    ask_question_vec = w2v_model.encode(ask_question)
+    ask_question_vec = np.array(ask_question_vec).reshape(1, -1)
+
+    # for each question in filtered data, get their vector embedding
+    for i,qa in enumerate(filtered_data):
+        db_question = qa['question']
+        db_question_vec = w2v_model.encode(db_question)
+        db_question_vec = np.array(db_question_vec).reshape(1, -1)
+
+        # compute similarity
+        css = cosine_similarity(ask_question_vec, db_question_vec)[0, 0]
+
+        # store score in dataset
+        filtered_data[i]['score'] = css
+
+    # get the best scoring answer
+    # get the highest scoring answers
+    max_score = max(item['score'] for item in filtered_data)
+    best_ans = [item['answer'] for item in filtered_data if item['score'] == max_score]
+    
+    # flatten 
+    best_ans = [item[0] for item in best_ans]
+
+    # if one answer, use that; otherwise choose randomly
+    if len(best_ans) == 1:
+        return best_ans[0]
+    else:
+        return best_ans[random.randint(0, len(best_ans) - 1)]
+
+def correct_ans_score(pred_ans: str, filtered_data: dict, correct_ans_idx: list) -> float:
+    '''
+    determine retrieval score for predicted answer
+    1 if correct, 0 if incorrect
+
+    Args:
+        pred_ans (str): predicted answer
+        filtered_data (dict): filtered dataset based on ground truth class
+        correct_ans_idx (list): indices of correct answers
+
+    Returns:
+        float: binary retrieval score
+    '''
+    # go through the correct answers provided
+    for i,qa in enumerate(filtered_data):
+        # only look at answers with the correct index
+        if i in correct_ans_idx and qa['answer'][0] == pred_ans:
+            # if answer in index, score of 1
+            return 1.0
+    
+    # nothing found, score of 0
+    return 0.0
+
 #== Main Execution ==#
 def main(args):
     # fill test dataset with predictions using provided classification method and extraction method
     classify_and_extract(args)
 
+    # store retrieve times
+    retrieve_times = []
+    retrieval_scores = []
+
     #-- extract the answer from the database --#
     for i,item in enumerate(test_dataset['data']):
         question = item['question']
         pred_class = item['pred_class']
+        gnd_class = item['label']
         kw = item['keywords']
+        correct_ans_idx = item['correct_ans_idx']
 
         # get filtered data from class
         filtered_data = filter_dataset(pred_class)
+        filtered_data_gnd = filter_dataset(gnd_class)
         
         # get best answer (based on method)
         #- EKI -#
         if args.retrieve_method == 'EKI':
+            # retrieve answer
+            st = time.time()
             answer = retrieve_EKI(filtered_data, kw)
-            print(f'Question: {question}\n\tAnswer: {answer}\n')
+            retrieve_times.append(time.time() - st)
+
+            # get retrieval score
+            rs = correct_ans_score(answer, filtered_data_gnd, correct_ans_idx)
+            retrieval_scores.append(rs)
+
+            print(f'Question: {question}\n\tPredicted Class: {pred_class}\n\tAnswer: {answer}\n\tScore: {rs}\n')
 
         #- Jaccard -#
         elif args.retrieve_method == 'Jaccard':
+            # retrieve answer
             extract_method = 'TFIDF' if args.extract_method == 'TFIDF' else 'NER'
+
+            st = time.time()
             answer = retrieve_Jaccard(filtered_data, kw, extract_method)
-            print(f'Question: {question}\n\tAnswer: {answer}\n')
+            retrieve_times.append(time.time() - st)
+
+            # get retrieval score
+            rs = correct_ans_score(answer, filtered_data_gnd, correct_ans_idx)
+            retrieval_scores.append(rs)
+
+            print(f'Question: {question}\n\tPredicted Class: {pred_class}\n\tAnswer: {answer}\n\tScore: {rs}\n')
 
         #- JEKI -#
         elif args.retrieve_method == 'JEKI':
+            # retrieve answer
             extract_method = 'TFIDF' if args.extract_method == 'TFIDF' else 'NER'
+
+            st = time.time()
             answer = retrieve_JEKI(filtered_data, kw, extract_method)
-            print(f'Question: {question}\n\tAnswer: {answer}\n')
+            retrieve_times.append(time.time() - st)
+
+            # get retrieval score
+            rs = correct_ans_score(answer, filtered_data_gnd, correct_ans_idx)
+            retrieval_scores.append(rs)
+
+            print(f'Question: {question}\n\tPredicted Class: {pred_class}\n\tAnswer: {answer}\n\tScore: {rs}\n')
+
+        #- Cosine Similarity using TFIDF -#
+        elif args.retrieve_method == 'CSS-TFIDF':
+            # retrieve answer
+            st = time.time()
+            answer = retrieve_CSC_TFIDF(filtered_data, question)
+            retrieve_times.append(time.time() - st)
+
+            # get retrieval score
+            rs = correct_ans_score(answer, filtered_data_gnd, correct_ans_idx)
+            retrieval_scores.append(rs)
+
+            print(f'Question: {question}\n\tPredicted Class: {pred_class}\n\tAnswer: {answer}\n\tScore: {rs}\n')
+
+        #- Cosine Similarity using WOrd2Vec -#
+        elif args.retrieve_method == 'CSS-vec':
+            # retrieve answer
+            st = time.time()
+            answer = retrieve_CSC_vec(filtered_data, question)
+            retrieve_times.append(time.time() - st)
+
+            # get retrieval score
+            rs = correct_ans_score(answer, filtered_data_gnd, correct_ans_idx)
+            retrieval_scores.append(rs)
+
+            print(f'Question: {question}\n\tPredicted Class: {pred_class}\n\tAnswer: {answer}\n\tScore: {rs}\n')
+
+    # compute metrics
+    avg_time = sum(retrieve_times) / len(retrieve_times)
+    avg_rs = sum(retrieval_scores) / len(retrieval_scores)
+
+    print("=== SUMMARY ===")
+    print(f"Classification = {args.classify_method} | Extraction = {args.extract_method} | Retrieve = {args.retrieve_method}")
+    print(f"Average Retrieval Score: {avg_rs:.3f}")
+    print(f"Average Response Time: {avg_time:.5f} ms")
+
+    return avg_time, avg_rs
 
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser(description='Retrieve Step')
@@ -461,8 +689,23 @@ if __name__ == "__main__":
     # arguments
     argparser.add_argument('--classify_method', type=str, choices=['LR', 'SVM', 'BERT', 'DistilBERT'], help='Classification method to use')
     argparser.add_argument('--extract_method', type=str, choices=['NER', 'TFIDF', 'vec'], help='Extraction of question information. Value passed determines method used:\nNER - Named Entity Recognition\nTFIDF - TF-IDF vectorization\n\vec - Word2Vec')
-    argparser.add_argument('--retrieve_method', type=str, choices=['EKI', 'Jaccard', 'JEKI'], help='Retrieval method to use')
+    argparser.add_argument('--retrieve_method', type=str, choices=['EKI', 'Jaccard', 'JEKI', 'CSS-TFIDF', 'CSS-vec'], help='Retrieval method to use')
+    argparser.add_argument('--run_study', action='store_true')
 
     args = argparser.parse_args()
+
+    if args.run_study and args.retrieve_method in ['EKI', 'Jaccard']:
+        rt = []
+        rs = []
+        for i in range(5):
+            rt_i, rs_i = main(args)
+            rt.append(rt_i)
+            rs.append(rs_i)
+
+        art = sum(rt)/len(rt)
+        ars = sum(rs)/len(rs)
+
+        print(ars, art)
+        quit()
 
     main(args)

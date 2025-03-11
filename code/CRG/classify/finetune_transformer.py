@@ -261,8 +261,8 @@ def main(args):
             tokenizer.save_pretrained(f"./classify/distilbert-question-classifier")
         else:
             print('Loading BERT model')
-            model = BertForSequenceClassification.from_pretrained(f"./classify/distilbert-question-classifier")
-            tokenizer = BertTokenizer.from_pretrained(f"./classify/distilbert-question-classifier")
+            model = DistilBertForSequenceClassification.from_pretrained(f"./classify/distilbert-question-classifier")
+            tokenizer = DistilBertTokenizer.from_pretrained(f"./classify/distilbert-question-classifier")
 
         # evaluate BERT on test dataset
         model.eval()
