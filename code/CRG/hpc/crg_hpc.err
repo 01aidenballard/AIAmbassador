@@ -1,31 +1,7 @@
-Removing gcc version 12.2.0 : lang/gcc/12.2.0
-Removing python version cpython_3.10.11_gcc122 : lang/python/cpython_3.10.11_gcc122
 Loading gcc version 12.2.0 : lang/gcc/12.2.0
 Loading gcc version 12.2.0 : lang/gcc/12.2.0
 Loading python version cpython_3.10.11_gcc122 : lang/python/cpython_3.10.11_gcc122
 Loading cuda version 11.8 : parallel/cuda/11.8
-2025-03-11 23:17:16.944186: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-03-11 23:17:22.776557: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2025-03-11 23:17:32.697262: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
-Traceback (most recent call last):
-  File "/users/isj0001/.local/lib/python3.10/site-packages/transformers/utils/hub.py", line 342, in cached_file
-    resolved_file = hf_hub_download(
-  File "/users/isj0001/.local/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
-    validate_repo_id(arg_value)
-  File "/users/isj0001/.local/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
-    raise HFValidationError(
-huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '/scratch/isj0001/huggingface_models/bert-base-uncased'. Use `repo_type` argument if needed.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/scratch/isj0001/AIAmbassador/code/CRG/classify/finetune_transformer.py", line 332, in <module>
-    main(args)
-  File "/scratch/isj0001/AIAmbassador/code/CRG/classify/finetune_transformer.py", line 118, in main
-    tokenizer = BertTokenizer.from_pretrained("/scratch/isj0001/huggingface_models/bert-base-uncased") # HPC
-  File "/users/isj0001/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1971, in from_pretrained
-    resolved_config_file = cached_file(
-  File "/users/isj0001/.local/lib/python3.10/site-packages/transformers/utils/hub.py", line 408, in cached_file
-    raise EnvironmentError(
-OSError: Incorrect path_or_model_id: '/scratch/isj0001/huggingface_models/bert-base-uncased'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+2025-03-17 15:28:27.886631: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-03-17 15:28:39.280584: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT

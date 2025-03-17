@@ -1,3 +1,98 @@
-Using device: cuda
-Using BERT for classification
-Training BERT
+Running Support Vector Machine
+Epoch [100/5000], Loss: 24.5375
+Epoch [200/5000], Loss: 24.5953
+Epoch [300/5000], Loss: 24.5344
+Epoch [400/5000], Loss: 24.5656
+Epoch [500/5000], Loss: 24.6375
+Epoch [600/5000], Loss: 24.7125
+Epoch [700/5000], Loss: 24.7172
+Epoch [800/5000], Loss: 24.5656
+Epoch [900/5000], Loss: 24.7063
+Epoch [1000/5000], Loss: 24.6359
+Epoch [1100/5000], Loss: 24.6203
+Epoch [1200/5000], Loss: 24.5078
+Epoch [1300/5000], Loss: 24.7078
+Epoch [1400/5000], Loss: 24.8297
+Epoch [1500/5000], Loss: 24.5813
+Epoch [1600/5000], Loss: 24.7297
+Epoch [1700/5000], Loss: 24.5016
+Epoch [1800/5000], Loss: 24.7219
+Epoch [1900/5000], Loss: 24.5016
+Epoch [2000/5000], Loss: 24.6281
+Epoch [2100/5000], Loss: 24.7156
+Epoch [2200/5000], Loss: 24.8094
+Epoch [2300/5000], Loss: 24.6328
+Epoch [2400/5000], Loss: 24.7047
+Epoch [2500/5000], Loss: 24.6359
+Epoch [2600/5000], Loss: 24.6828
+Epoch [2700/5000], Loss: 24.5406
+Epoch [2800/5000], Loss: 24.6969
+Epoch [2900/5000], Loss: 24.5562
+Epoch [3000/5000], Loss: 24.5656
+Epoch [3100/5000], Loss: 24.5266
+Epoch [3200/5000], Loss: 24.6906
+Epoch [3300/5000], Loss: 24.7047
+Epoch [3400/5000], Loss: 24.6734
+Epoch [3500/5000], Loss: 24.5969
+Epoch [3600/5000], Loss: 24.7969
+Epoch [3700/5000], Loss: 24.6047
+Epoch [3800/5000], Loss: 24.5500
+Epoch [3900/5000], Loss: 24.6516
+Epoch [4000/5000], Loss: 24.6984
+Epoch [4100/5000], Loss: 24.7453
+Epoch [4200/5000], Loss: 24.7031
+Epoch [4300/5000], Loss: 24.7141
+Epoch [4400/5000], Loss: 24.6016
+Epoch [4500/5000], Loss: 24.6766
+Epoch [4600/5000], Loss: 24.6187
+Epoch [4700/5000], Loss: 24.4953
+Epoch [4800/5000], Loss: 24.8078
+Epoch [4900/5000], Loss: 24.5484
+Epoch [5000/5000], Loss: 24.6641
+Model saved successfully
+Evaluating model
+Question: What degree programs does the department offer?
+	Predicted Category: Degree Programs | Response Time: 2.00 ms
+
+Question: What dual degrees can I pursue?
+	Predicted Category: Degree Programs | Response Time: 0.82 ms
+
+Question: What are the various research areas in the Lane Department?
+	Predicted Category: Research Opportunities | Response Time: 0.73 ms
+
+Question: What research is done in the biometrics field?
+	Predicted Category: Research Opportunities | Response Time: 0.69 ms
+
+Question: What are the student orgs I can join as a LCSEE student?
+	Predicted Category: Clubs and Organizations | Response Time: 0.72 ms
+
+Question: What kind of activities do CyberWVU students do?
+	Predicted Category: Clubs and Organizations | Response Time: 0.73 ms
+
+Question: What can I do with a computer engineering degree?
+	Predicted Category: Career Opportunities | Response Time: 0.72 ms
+
+Question: What can I do with a computer science degree?
+	Predicted Category: Degree Programs | Response Time: 0.71 ms
+
+Question: What type of internships do students get?
+	Predicted Category: Clubs and Organizations | Response Time: 0.72 ms
+
+Question: How can students get internships?
+	Predicted Category: Facilities and Resources | Response Time: 0.72 ms
+
+Question: What type of scholarships are available for incoming students?
+	Predicted Category: Financial Aid and Scholarships | Response Time: 0.71 ms
+
+Question: How can freshmen get scholarships?
+	Predicted Category: Financial Aid and Scholarships | Response Time: 0.71 ms
+
+Question: How can I get into contact with the Lane Department?
+	Predicted Category: Facilities and Resources | Response Time: 0.84 ms
+
+Question: Where is the Lane Department Located?
+	Predicted Category: Location and Contact | Response Time: 0.74 ms
+
+Test Accuracy: 71.43%
+Test F1 Score: 0.7048
+Average Response Time: 0.84 ms
