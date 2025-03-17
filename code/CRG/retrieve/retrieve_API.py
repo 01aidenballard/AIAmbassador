@@ -24,6 +24,7 @@ import numpy as np
 import traditional_ML as trad           #type: ignore
 import finetune_transformer as trans    #type: ignore
 
+from typing import Union
 from itertools import chain
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
@@ -102,7 +103,7 @@ def load_dataset(path: str) -> dict:
 
     return labeled_data
 
-def classify_and_extract(args: dict) -> None:
+def classify_and_extract(args: dict, question: str) -> Union[str, list]:
     '''
     use classification method and extraction method to fill the test dataset with
     their predicted class and keywords
@@ -113,10 +114,14 @@ def classify_and_extract(args: dict) -> None:
     # load the dataset
     dataset = load_dataset('../dataset.json')
 
+    # output
+    predicted_category = None
+    kw = None
+
     #-- determine the classification used --#
-    if args.classify_method:
+    if args['classify_method']:
         #- Linear Regression -#
-        if args.classify_method == 'LR':
+        if args['classify_method'] == 'LR':
             print('Using Linear Regression')
 
             # extract the questions and labels
@@ -143,14 +148,11 @@ def classify_and_extract(args: dict) -> None:
             model.load_state_dict(torch.load("classify/lr_c_model.pth"))
             model.eval()
 
-            # store predicted class in test dataset 
-            for i,item in enumerate(test_dataset['data']):
-                question = item['question']
-                predicted_category = trad.classify_question(question, vectorizer, model, label_encoder, False)
-                test_dataset['data'][i]['pred_class'] = predicted_category
+            # get predicted class 
+            predicted_category = trad.classify_question(question, vectorizer, model, label_encoder, False)
 
         #- Support Vector Machine -#
-        elif args.classify_method == 'SVM':
+        elif args['classify_method'] == 'SVM':
             print('Using Support Vector Machine')
 
             # extract the questions and labels
@@ -177,14 +179,11 @@ def classify_and_extract(args: dict) -> None:
             model.load_state_dict(torch.load("classify/svm_c_model.pth"))
             model.eval()
 
-            # store predicted class in test dataset 
-            for i,item in enumerate(test_dataset['data']):
-                question = item['question']
-                predicted_category = trad.classify_question(question, vectorizer, model, label_encoder, False)
-                test_dataset['data'][i]['pred_class'] = predicted_category
+            # get prediction
+            predicted_category = trad.classify_question(question, vectorizer, model, label_encoder, False)
 
         #- BERT -#
-        elif args.classify_method == 'BERT':
+        elif args['classify_method'] == 'BERT':
             print('Using BERT')
 
             # preprocess the dataset
@@ -200,22 +199,18 @@ def classify_and_extract(args: dict) -> None:
             # evaluate BERT on test dataset
             model.eval()
 
-            for i,item in enumerate(test_dataset['data']):
-                question = item['question']
+            # tokenize question
+            inputs = tokenizer(question, return_tensors="pt")
 
-                # tokenize question
-                inputs = tokenizer(question, return_tensors="pt")
+            with torch.no_grad():
+                outputs = model(**inputs)
+                prediction = torch.argmax(outputs.logits, dim=-1).item()
 
-                with torch.no_grad():
-                    outputs = model(**inputs)
-                    prediction = torch.argmax(outputs.logits, dim=-1).item()
-
-                # map to label
-                category = label_encoder.inverse_transform([prediction])[0]
-                test_dataset['data'][i]['pred_class'] = category
+            # map to label
+            predicted_category = label_encoder.inverse_transform([prediction])[0]
 
         #- DistilBERT -#
-        elif args.classify_method == 'DistilBERT':
+        elif args['classify_method'] == 'DistilBERT':
             print('Using DistilBERT')
 
             # preprocess the dataset
@@ -231,19 +226,16 @@ def classify_and_extract(args: dict) -> None:
             # evaluate DistilBERT on test dataset
             model.eval()
 
-            for i,item in enumerate(test_dataset['data']):
-                question = item['question']
 
-                # tokenize question
-                inputs = tokenizer(question, return_tensors="pt")
+            # tokenize question
+            inputs = tokenizer(question, return_tensors="pt")
 
-                with torch.no_grad():
-                    outputs = model(**inputs)
-                    prediction = torch.argmax(outputs.logits, dim=-1).item()
+            with torch.no_grad():
+                outputs = model(**inputs)
+                prediction = torch.argmax(outputs.logits, dim=-1).item()
 
-                # map to label
-                category = label_encoder.inverse_transform([prediction])[0]
-                test_dataset['data'][i]['pred_class'] = category
+            # map to label
+            predicted_category = label_encoder.inverse_transform([prediction])[0]
 
         else:
             print('Error: Classification method not defined')
@@ -254,9 +246,9 @@ def classify_and_extract(args: dict) -> None:
 
     #-- determine extraction method --#
     # put keywords associated with question into test dataset 
-    if args.extract_method:
+    if args['extract_method']:
         #- NER -#
-        if args.extract_method == 'NER':
+        if args['extract_method'] == 'NER':
             print('Using NER')
 
             # load pre-trained NER model
@@ -265,12 +257,10 @@ def classify_and_extract(args: dict) -> None:
             spacy_model = nlp
 
             # extract keywords for each test question 
-            for i,question in enumerate(test_dataset['data']):
-                kw = trad.extract_keywords_NER(question['question'], nlp)
-                test_dataset['data'][i]['keywords'] = kw
+            kw = trad.extract_keywords_NER(question, nlp)
 
         #- TF-IDF -#
-        elif args.extract_method == 'TFIDF':
+        elif args['extract_method'] == 'TFIDF':
             print('Using TF-IDF')
 
             # convert questions to TF-IDF features
@@ -281,12 +271,10 @@ def classify_and_extract(args: dict) -> None:
             tfidf_vectorizer = vectorizer
 
             # extract keywords for each test question 
-            for i,question in enumerate(test_dataset['data']):
-                kw = trad.extract_keywords_TFIDF(question['question'], vectorizer)
-                test_dataset['data'][i]['keywords'] = kw
+            kw = trad.extract_keywords_TFIDF(question, vectorizer)
 
         #- Word2Vec -#
-        elif args.extract_method == 'vec':
+        elif args['extract_method'] == 'vec':
             print('Using Word2Vec')
 
             # load a pretrained model
@@ -296,12 +284,12 @@ def classify_and_extract(args: dict) -> None:
             w2v_model = model
 
             # extract keywords for each test question 
-            for i,question in enumerate(test_dataset['data']):
-                kw_vec = model.encode(question['question'])
-                test_dataset['data'][i]['keywords'] = kw_vec
+            kw = model.encode(question)
     else: 
         print('Error: Provide extraction method')
         quit()
+
+    return predicted_category, kw
 
 def filter_dataset(classification: str) -> dict:
     '''
@@ -564,154 +552,52 @@ def retrieve_CSC_vec(filtered_data: dict, ask_question: str) -> str:
     else:
         return best_ans[random.randint(0, len(best_ans) - 1)]
 
-def correct_ans_score(pred_ans: str, filtered_data: dict, correct_ans_idx: list) -> float:
-    '''
-    determine retrieval score for predicted answer
-    1 if correct, 0 if incorrect
-
-    Args:
-        pred_ans (str): predicted answer
-        filtered_data (dict): filtered dataset based on ground truth class
-        correct_ans_idx (list): indices of correct answers
-
-    Returns:
-        float: binary retrieval score
-    '''
-    # go through the correct answers provided
-    for i,qa in enumerate(filtered_data):
-        # only look at answers with the correct index
-        if i in correct_ans_idx and qa['answer'][0] == pred_ans:
-            # if answer in index, score of 1
-            return 1.0
-    
-    # nothing found, score of 0
-    return 0.0
-
 #== Main Execution ==#
-def main(args):
+def main(args: dict, question: str):
     # fill test dataset with predictions using provided classification method and extraction method
-    classify_and_extract(args)
-
-    # store retrieve times
-    retrieve_times = []
-    retrieval_scores = []
+    pred_class, kw = classify_and_extract(args, question)
 
     #-- extract the answer from the database --#
-    for i,item in enumerate(test_dataset['data']):
-        question = item['question']
-        pred_class = item['pred_class']
-        gnd_class = item['label']
-        kw = item['keywords']
-        correct_ans_idx = item['correct_ans_idx']
 
-        # get filtered data from class
-        filtered_data = filter_dataset(pred_class)
-        filtered_data_gnd = filter_dataset(gnd_class)
-        
-        # get best answer (based on method)
-        #- EKI -#
-        if args.retrieve_method == 'EKI':
-            # retrieve answer
-            st = time.time()
-            answer = retrieve_EKI(filtered_data, kw)
-            retrieve_times.append(time.time() - st)
+    # get filtered data from class
+    filtered_data = filter_dataset(pred_class)
+    
+    # get best answer (based on method)
+    #- EKI -#
+    if args['retrieve_method'] == 'EKI':
+        # retrieve answer
+        answer = retrieve_EKI(filtered_data, kw)
 
-            # get retrieval score
-            rs = correct_ans_score(answer, filtered_data_gnd, correct_ans_idx)
-            retrieval_scores.append(rs)
+    #- Jaccard -#
+    elif args['retrieve_method'] == 'Jaccard':
+        # retrieve answer
+        extract_method = 'TFIDF' if args['extract_method'] == 'TFIDF' else 'NER'
 
-            print(f'Question: {question}\n\tPredicted Class: {pred_class}\n\tAnswer: {answer}\n\tScore: {rs}\n')
+        answer = retrieve_Jaccard(filtered_data, kw, extract_method)
 
-        #- Jaccard -#
-        elif args.retrieve_method == 'Jaccard':
-            # retrieve answer
-            extract_method = 'TFIDF' if args.extract_method == 'TFIDF' else 'NER'
+    #- JEKI -#
+    elif args['retrieve_method'] == 'JEKI':
+        # retrieve answer
+        extract_method = 'TFIDF' if args['extract_method'] == 'TFIDF' else 'NER'
 
-            st = time.time()
-            answer = retrieve_Jaccard(filtered_data, kw, extract_method)
-            retrieve_times.append(time.time() - st)
+        answer = retrieve_JEKI(filtered_data, kw, extract_method)
 
-            # get retrieval score
-            rs = correct_ans_score(answer, filtered_data_gnd, correct_ans_idx)
-            retrieval_scores.append(rs)
+    #- Cosine Similarity using TFIDF -#
+    elif args['retrieve_method'] == 'CSS-TFIDF':
+        # retrieve answer
+        answer = retrieve_CSC_TFIDF(filtered_data, question)
 
-            print(f'Question: {question}\n\tPredicted Class: {pred_class}\n\tAnswer: {answer}\n\tScore: {rs}\n')
-
-        #- JEKI -#
-        elif args.retrieve_method == 'JEKI':
-            # retrieve answer
-            extract_method = 'TFIDF' if args.extract_method == 'TFIDF' else 'NER'
-
-            st = time.time()
-            answer = retrieve_JEKI(filtered_data, kw, extract_method)
-            retrieve_times.append(time.time() - st)
-
-            # get retrieval score
-            rs = correct_ans_score(answer, filtered_data_gnd, correct_ans_idx)
-            retrieval_scores.append(rs)
-
-            print(f'Question: {question}\n\tPredicted Class: {pred_class}\n\tAnswer: {answer}\n\tScore: {rs}\n')
-
-        #- Cosine Similarity using TFIDF -#
-        elif args.retrieve_method == 'CSS-TFIDF':
-            # retrieve answer
-            st = time.time()
-            answer = retrieve_CSC_TFIDF(filtered_data, question)
-            retrieve_times.append(time.time() - st)
-
-            # get retrieval score
-            rs = correct_ans_score(answer, filtered_data_gnd, correct_ans_idx)
-            retrieval_scores.append(rs)
-
-            print(f'Question: {question}\n\tPredicted Class: {pred_class}\n\tAnswer: {answer}\n\tScore: {rs}\n')
-
-        #- Cosine Similarity using WOrd2Vec -#
-        elif args.retrieve_method == 'CSS-vec':
-            # retrieve answer
-            st = time.time()
-            answer = retrieve_CSC_vec(filtered_data, question)
-            retrieve_times.append(time.time() - st)
-
-            # get retrieval score
-            rs = correct_ans_score(answer, filtered_data_gnd, correct_ans_idx)
-            retrieval_scores.append(rs)
-
-            print(f'Question: {question}\n\tPredicted Class: {pred_class}\n\tAnswer: {answer}\n\tScore: {rs}\n')
-
-    # compute metrics
-    avg_time = sum(retrieve_times) / len(retrieve_times)
-    avg_rs = sum(retrieval_scores) / len(retrieval_scores)
+    #- Cosine Similarity using WOrd2Vec -#
+    elif args['retrieve_method'] == 'CSS-vec':
+        # retrieve answer
+        answer = retrieve_CSC_vec(filtered_data, question)
 
     print("=== SUMMARY ===")
-    print(f"Classification = {args.classify_method} | Extraction = {args.extract_method} | Retrieve = {args.retrieve_method}")
-    print(f"Average Retrieval Score: {avg_rs:.3f}")
-    print(f"Average Response Time: {avg_time:.5f} ms")
+    print(f"Classification = {args['classify_method']} | Extraction = {args['extract_method']} | Retrieve = {args['retrieve_method']}")
 
-    return avg_time, avg_rs
+    return answer
 
 if __name__ == "__main__":
-    argparser = argparse.ArgumentParser(description='Retrieve Step')
-
-    # arguments
-    argparser.add_argument('--classify_method', type=str, choices=['LR', 'SVM', 'BERT', 'DistilBERT'], help='Classification method to use')
-    argparser.add_argument('--extract_method', type=str, choices=['NER', 'TFIDF', 'vec'], help='Extraction of question information. Value passed determines method used:\nNER - Named Entity Recognition\nTFIDF - TF-IDF vectorization\n\vec - Word2Vec')
-    argparser.add_argument('--retrieve_method', type=str, choices=['EKI', 'Jaccard', 'JEKI', 'CSS-TFIDF', 'CSS-vec'], help='Retrieval method to use')
-    argparser.add_argument('--run_study', action='store_true')
-
-    args = argparser.parse_args()
-
-    if args.run_study and args.retrieve_method in ['EKI', 'Jaccard']:
-        rt = []
-        rs = []
-        for i in range(5):
-            rt_i, rs_i = main(args)
-            rt.append(rt_i)
-            rs.append(rs_i)
-
-        art = sum(rt)/len(rt)
-        ars = sum(rs)/len(rs)
-
-        print(ars, art)
-        quit()
+    args = {}
 
     main(args)
