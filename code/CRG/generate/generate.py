@@ -24,12 +24,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import retrieve_API as r # type: ignore
 
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers import T5Tokenizer, T5ForConditionalGeneration
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import accuracy_score, f1_score
-from sentence_transformers import SentenceTransformer
 
 #== Global Variables ==#
 test_dataset = {'data': [
@@ -64,22 +60,30 @@ def main(cr_args, args):
     answer = r.main(cr_args, question)
 
     # system prompt
-    system_prompt = 'You are an AI assistant for a university tour guide. Take the retrieved answer and make an engaging response out of it. Be enthusiastic.'
+    system_prompt = """
+        You are a friendly and engaging university tour guide.
+        Your role is to provide clear, conversational, and helpful responses based on the given information.
+
+        - Rephrase the provided information in a natural, engaging way.
+        - Do NOT mention that the information was 'given' or 'provided'—just answer conversationally.
+        - Keep responses concise but informative.
+        - After answering, ask a relevant follow-up question to continue the conversation.
+        """
+
+
+    # put together input text
+    input_text = (
+        f"User Question: {question}\n"
+        f"Retrieved Answer: {answer}\n"
+        f"Generated Response:"
+    )
 
     # determine the generation method to use
     if args.gen_method == 'Flan-T5':
         # load model
-        name = 'google/flan-t5-base'
+        name = 'google/flan-t5-small'
         tokenizer = T5Tokenizer.from_pretrained(name, legacy=False)
         model = T5ForConditionalGeneration.from_pretrained(name)
-
-        # put together input text
-        input_text = (
-            f"{system_prompt}\n\n"
-            f"User Question: {question}\n"
-            f"Retrieved Answer: {answer}\n"
-            f"Rephrase and make it engaging:"
-        )
 
         # tokenize input
         inputs = tokenizer(input_text, return_tensors='pt', max_length=512, truncation=True)
@@ -88,7 +92,7 @@ def main(cr_args, args):
         st = time.time()
         output_tokens = model.generate(
             **inputs,
-            max_length=150,
+            max_length=256,
             do_sample=True,  # Enables creative responses
             temperature=0.7,  # Introduces variety
             top_p=0.9,  # Ensures diverse and high-quality generation
@@ -102,6 +106,43 @@ def main(cr_args, args):
         resp_time = time.time() - st
     
         # print response
+        print(f'Question: {question}')
+        print(f'\nRetrieved response: {answer}\n\nGenerated Response: {response}\n\nResponse Time: {resp_time:.4f} ms')
+
+    elif args.gen_method == 'TinyLlama':
+        # load model
+        model = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+        tokenizer = AutoTokenizer.from_pretrained(model)
+        model = AutoModelForCausalLM.from_pretrained(model)
+
+        messages = [
+            {"role": "system", "content": system_prompt},  
+            {"role": "user", "content": question},  
+            {"role": "assistant", "content": answer}  # Assistant uses this as background info
+        ]
+
+        # tokenize input
+        inputs = tokenizer.apply_chat_template(messages, return_tensors="pt")
+        input_ids = inputs.unsqueeze(0) if inputs.dim() == 1 else inputs
+        # inputs = tokenizer(input_text, return_tensors="pt", max_length=512, truncation=True)
+
+        # Generate response
+        st = time.time()
+        with torch.no_grad():
+            output_tokens = model.generate(
+                input_ids=input_ids,
+                max_length=256,
+                repetition_penalty=1.2,  
+                num_return_sequences=1,  
+                eos_token_id=tokenizer.eos_token_id 
+            )
+
+        # Decode the generated response
+        response = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+        resp_time = time.time() - st
+
+        # print response
+        print(f'Question: {question}')
         print(f'\nRetrieved response: {answer}\n\nGenerated Response: {response}\n\nResponse Time: {resp_time:.4f} ms')
 
 if __name__ == "__main__":
@@ -114,7 +155,7 @@ if __name__ == "__main__":
     argparser = argparse.ArgumentParser(description='Generate Step')
 
     # arguments
-    argparser.add_argument('--gen_method', type=str, choices=['Flan-T5'], help='Generate method to use')
+    argparser.add_argument('--gen_method', type=str, choices=['Flan-T5', 'TinyLlama'], help='Generate method to use')
 
     args = argparser.parse_args()
 
