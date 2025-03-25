@@ -24,11 +24,14 @@ def main():
         dataset_pth, 
         classify_method=classify_method, 
         extract_method=extract_method,
-        print_info=True)
+        retrieve_method=retrieve_method,
+        print_info=False)
 
     # answer a sample question
-    question = 'What degrees are offered for undergraduates?'
-    crg.answer_question(question)
+    question = 'What degrees are offered for undergraduate?'
+    answer = crg.answer_question(question)
+
+    print(f'Question: {question}\nAnswer: {answer}')
 
 if __name__ == '__main__':
     main()

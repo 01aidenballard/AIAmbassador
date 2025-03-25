@@ -12,14 +12,17 @@ import sys
 import json
 import torch
 import spacy
+import random
 
 import numpy as np
 import torch.nn as nn
 
 from enum import Enum
 from typing import Union
+from itertools import chain
 from sklearn.preprocessing import LabelEncoder
 from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from classify.traditional_ML import LogisticRegression, SVM
 from transformers import BertTokenizer, BertForSequenceClassification 
@@ -49,6 +52,10 @@ MODEL_LR_PTH = 'classify/lr_c_model.pth'
 MODEL_SVM_PTH = 'classify/svm_c_model.pth'
 MODEL_BERT_PTH = 'classify/bert-question-classifier'
 MODEL_DISTILBERT_PTH = 'classify/distilbert-question-classifier'
+
+MODEL_SPACY = None
+MODEL_TFIDF_VEC = None
+MODEL_W2V = None
 
 #== Model Classes ==#
 class LogisticRegression(nn.Module):
@@ -196,18 +203,21 @@ class Classify():
         self.classify_method = classify_method
         self.extract_method = extract_method
 
-        # init model and vectorizer/tokenizer
-        if self.classify_method in [ClassifyMethod.LR, ClassifyMethod.SVM]:
-            self.model, self.vectorizer, self.label_encoder = self._init_trad_model_vectorizer(self.classify_method)
-            self.tokenizer = None
+        # if classify model is None, instance is used just for extraction
+        if self.classify_method != None:
 
-        elif self.classify_method in [ClassifyMethod.BERT, ClassifyMethod.DISTILBERT]:
-            self.model, self.tokenizer, self.label_encoder = self._init_trad_model_tokenizer(self.classify_method)
-            self.vectorizer = None
+            # init model and vectorizer/tokenizer
+            if self.classify_method in [ClassifyMethod.LR, ClassifyMethod.SVM]:
+                self.model, self.vectorizer, self.label_encoder = self._init_trad_model_vectorizer(self.classify_method)
+                self.tokenizer = None
 
-        else:
-            print(f'[E] Invalid classification method {classify_method}')
-            quit()
+            elif self.classify_method in [ClassifyMethod.BERT, ClassifyMethod.DISTILBERT]:
+                self.model, self.tokenizer, self.label_encoder = self._init_trad_model_tokenizer(self.classify_method)
+                self.vectorizer = None
+
+            else:
+                print(f'[E] Invalid classification method {classify_method}')
+                quit()
 
     def _init_trad_model_vectorizer(self, classify_method: ClassifyMethod) -> Union[LogisticRegression | SVM, TfidfVectorizer, LabelEncoder]:
         '''
@@ -358,6 +368,8 @@ class Classify():
         if self.extract_method == ExtractMethod.NER:
             # load spacy model
             nlp = spacy.load("en_core_web_sm")
+            global MODEL_SPACY
+            MODEL_SPACY = nlp
 
             # extract keywords
             doc = nlp(question)
@@ -372,6 +384,9 @@ class Classify():
             vectorizer = TfidfVectorizer(stop_words='english')
             vectorizer.fit_transform(self.dataset.questions)
 
+            global MODEL_TFIDF_VEC
+            MODEL_TFIDF_VEC = vectorizer
+
             # extract keywords
             response = vectorizer.transform([question])
             feature_names = vectorizer.get_feature_names_out()
@@ -381,6 +396,10 @@ class Classify():
         elif self.extract_method == ExtractMethod.VEC:
             # load a pretrained model
             model = SentenceTransformer('all-MiniLM-L6-v2')
+            
+            global MODEL_W2V
+            MODEL_W2V = model
+
             info = model.encode(question)
 
         else:
@@ -393,18 +412,28 @@ class Retrieve():
     '''
     class to represent retrieval step
     '''
-    def __init__(self, dataset: Dataset, retrieve_method: RetrieveMethod = RetrieveMethod.CSS_VEC):
+    def __init__(self, 
+                 dataset: Dataset, 
+                 retrieve_method: RetrieveMethod = RetrieveMethod.CSS_VEC, 
+                 extract_method: ExtractMethod = None,
+                 lambd_1: float = 0.5, lambd_2: float = 0.5):
         '''
         init instance of retrieval step
 
         Args:
             dataset (Dataset): dataset instance
             retrieve_method (RetrieveMethod, optional): method of retrieval. Defaults to RetrieveMethod.CSS_VEC.
+            extract_method (ExtractMethod): method of extraction from classification step (needed in Jaccard)
+            lambd_1 (float): weight for EKI score (default 0.5)
+            lambd_2 (float): weight for Jaccard score (default 0.5)
         '''
         self.dataset = dataset
         self.retrieve_method = retrieve_method
+        self.extract_method = extract_method
+        self.lmbda_1 = lambd_1
+        self.lmbda_2 = lambd_2
 
-    def retrieve_answer(self) -> str:
+    def retrieve_answer(self, question: str, question_info: list | torch.Tensor) -> str:
         '''
         retrieve answer from database using specified method
         IMPORTANT: for efficient use, set dataset.filtered_dataset BEFORE retrieving
@@ -413,7 +442,181 @@ class Retrieve():
             str: best answer
         '''
         # determine retrieval method
-        # PICK UP FROM HERE
+        # EKI
+        if self.retrieve_method == RetrieveMethod.EKI:
+            # tag each question in filtered dataset with score
+            for i,qa in enumerate(self.dataset.filtered_dataset['data']):
+                question = qa['question']
+                
+                score = 0
+
+                # for each keyword, see if its in the question
+                for kw in question_info:
+                    # keywords can be either strings or tuples
+                    if type(kw) is str:
+                        if kw in question: score += 1
+                    elif type(kw) is tuple:
+                        x,y = kw
+                        if x in question: score += 1
+                        if y in question: score += 1
+
+                self.dataset.filtered_dataset['data'][i]['score'] = score
+
+            # get the highest scoring answers
+            max_score = max(item['score'] for item in self.dataset.filtered_dataset['data'])
+            best_ans = [item['answer'] for item in self.dataset.filtered_dataset['data'] if item['score'] == max_score]
+            
+            # flatten 
+            # best_ans = [item[0] for item in best_ans]
+
+            # if one answer, use that; otherwise choose randomly
+            if len(best_ans) == 1:
+                best_ans = best_ans[0]
+            else:
+                best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
+
+        # Jaccard
+        elif self.retrieve_method == RetrieveMethod.Jaccard:
+            classification = Classify(self.dataset, None, self.extract_method)
+
+            for i,qa in enumerate(self.dataset.filtered_dataset['data']):
+                question = qa['question']
+                question_kw = None
+
+                # to use extraction code, init classification instance
+                question_kw = classification.extract_info(question)
+
+                # flatten with possibility of tuples
+                question_info = list(chain.from_iterable(item if isinstance(item, tuple) else (item,) for item in question_info))
+                question_kw = list(chain.from_iterable(item if isinstance(item, tuple) else (item,) for item in question_kw))
+
+                # compute Jaccard similarity score
+                intersection = set(question_info) & set(question_kw)
+                union = set(question_info) | set(question_kw)
+                score = len(intersection) / len(union) if union else 0
+
+                # store score in dataset
+                self.dataset.filtered_dataset['data'][i]['score'] = score
+
+            # get the highest scoring answers
+            max_score = max(item['score'] for item in self.dataset.filtered_dataset['data'])
+            best_ans = [item['answer'] for item in self.dataset.filtered_dataset['data'] if item['score'] == max_score]
+            
+            # flatten 
+            # best_ans = [item[0] for item in best_ans]
+
+            # if one answer, use that; otherwise choose randomly
+            if len(best_ans) == 1:
+                best_ans = best_ans[0]
+            else:
+                best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
+
+        # JEKI
+        elif self.retrieve_method == RetrieveMethod.JEKI:
+            classification = Classify(self.dataset, None, self.extract_method)
+
+            for i,qa in enumerate(self.dataset.filtered_dataset['data']):
+                question = qa['question']
+                question_kw = None
+
+                # to use extraction code, init classification instance
+                question_kw = classification.extract_info(question)
+
+                # flatten with possibility of tuples
+                question_info = list(chain.from_iterable(item if isinstance(item, tuple) else (item,) for item in question_info))
+                question_kw = list(chain.from_iterable(item if isinstance(item, tuple) else (item,) for item in question_kw))
+
+                # compute Jaccard similarity score
+                intersection = set(question_info) & set(question_kw)
+                union = set(question_info) | set(question_kw)
+                jaccard_score = len(intersection) / len(union) if union else 0
+
+                # get EKI score
+                EKI_score = 0
+
+                # for each keyword, see if its in the question
+                for kw in question_info:
+                    # keywords can be either strings or tuples
+                    if type(kw) is str:
+                        if kw in question: EKI_score += 1
+                    elif type(kw) is tuple:
+                        x,y = kw
+                        if x in question: EKI_score += 1
+                        if y in question: EKI_score += 1
+
+                # store score in dataset
+                self.dataset.filtered_dataset['data'][i]['score'] = self.lmbda_1 * EKI_score + self.lmbda_2 * jaccard_score
+
+            # get the highest scoring answers
+            max_score = max(item['score'] for item in self.dataset.filtered_dataset['data'])
+            best_ans = [item['answer'] for item in self.dataset.filtered_dataset['data'] if item['score'] == max_score]
+            
+            # flatten 
+            # best_ans = [item[0] for item in best_ans]
+
+            # if one answer, use that; otherwise choose randomly
+            if len(best_ans) == 1:
+                best_ans = best_ans[0]
+            else:
+                best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
+
+        # CSS-TDIDF
+        elif self.retrieve_method == RetrieveMethod.CSS_TFIDF:
+            for i,qa in enumerate(self.dataset.filtered_dataset['data']):
+                db_question = qa['question']
+
+                tdidf_matrix = MODEL_TFIDF_VEC.transform([question, db_question])
+                cosine_sim_matrix = cosine_similarity(tdidf_matrix, tdidf_matrix)
+
+                # extract score
+                css = cosine_sim_matrix[0,1]
+
+                # store score in dataset
+                self.dataset.filtered_dataset['data'][i]['score'] = css
+
+            # get the highest scoring answers
+            max_score = max(item['score'] for item in self.dataset.filtered_dataset['data'])
+            best_ans = [item['answer'] for item in self.dataset.filtered_dataset['data'] if item['score'] == max_score]
+
+            # if one answer, use that; otherwise choose randomly
+            if len(best_ans) == 1:
+                best_ans = best_ans[0]
+            else:
+                best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
+
+        # CSS-vec
+        elif self.retrieve_method == RetrieveMethod.CSS_VEC:
+            # get vector embedding of asked question
+            ask_question_vec = MODEL_W2V.encode(question)
+            ask_question_vec = np.array(ask_question_vec).reshape(1, -1)
+            
+            for i,qa in enumerate(self.dataset.filtered_dataset['data']):
+                # get vector embedding of database question
+                db_question = qa['question']
+                db_question_vec = MODEL_W2V.encode(db_question)
+                db_question_vec = np.array(db_question_vec).reshape(1, -1)
+
+                # compute similarity
+                css = cosine_similarity(ask_question_vec, db_question_vec)[0, 0]
+
+                # store score in dataset
+                self.dataset.filtered_dataset['data'][i]['score'] = css
+
+            # get the highest scoring answers
+            max_score = max(item['score'] for item in self.dataset.filtered_dataset['data'])
+            best_ans = [item['answer'] for item in self.dataset.filtered_dataset['data'] if item['score'] == max_score]
+
+            # if one answer, use that; otherwise choose randomly
+            if len(best_ans) == 1:
+                best_ans = best_ans[0]
+            else:
+                best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
+
+        else:
+            print(f'[E] Invalid retrieval method {self.retrieve_method}')
+            quit()
+
+        return best_ans
 
 class Generate():
     pass
@@ -440,7 +643,7 @@ class CRG():
         self.classify = Classify(self.dataset, classify_method, extract_method)
         if self.print_info: print('✓ Classification model initialized')
 
-        self.retrieve = Retrieve(self.dataset, retrieve_method)
+        self.retrieve = Retrieve(self.dataset, retrieve_method, extract_method)
         if self.print_info: print('✓ Retrieval model initialized')
 
         self.generate = Generate()
@@ -463,6 +666,13 @@ class CRG():
         # filter dataset and store in dataset instance
         self.dataset.filtered_dataset = filter_dataset(self.dataset.dataset, question_class)
 
+        # retrieve best answer
+        pred_answer = self.retrieve.retrieve_answer(question, question_info)
+        
+        # generation step
+
+        return pred_answer
+
 #== Methods ==#
 def filter_dataset(dataset: dict, label: str) -> dict:
     '''
@@ -479,6 +689,6 @@ def filter_dataset(dataset: dict, label: str) -> dict:
 
     for data in dataset['data']:
         if data['label'] == label:
-            filter_dataset.append(data)
+            filtered_data['data'].append(data)
 
     return filtered_data
