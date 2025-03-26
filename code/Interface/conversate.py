@@ -1,30 +1,39 @@
+'''
+Conversate
+The User Interface between our user and the CRG API
+
+Author: Aiden Ballard
+Date: 03/26/2025
+'''
+
 import re
 import pyttsx3 as tts
+from ..CRG.crg_api import CRG, ClassifyMethod, RetrieveMethod, ExtractMethod
 
 
-voice = tts.init()
-user_input = input("What would you like to say?\n")
 
-def does_text_contain(regex, text, flags=0):
-    """
-    Checks if a regex pattern is present in a text string.
+def main():
+    # set dataset path
+    dataset_pth = '../dataset.json'
 
-    Args:
-        regex: The regular expression pattern to search for.
-        text: The text string to search within.
-        flags: Optional flags like re.IGNORECASE for case-insensitive matching.
+    # change the model parameters
+    classify_method = ClassifyMethod.LR
+    extract_method = ExtractMethod.VEC
+    retrieve_method = RetrieveMethod.CSS_VEC
 
-    Returns:
-        True if the regex pattern is found in the text, False otherwise.
-    """
-    match = re.search(regex, text, flags)
-    return bool(match)
+    # init CRG
+    crg = CRG(
+        dataset_pth, 
+        classify_method=classify_method, 
+        extract_method=extract_method,
+        retrieve_method=retrieve_method,
+        print_info=False)
 
-if does_text_contain(r"hi|hey|hello", user_input, re.IGNORECASE):
-    # L.A.I.N = Lane Artifical Intelligence Navigator:
-    voice.say("Hello! My name is LAIN, nice to meet you!")
-    voice.runAndWait()
-elif does_text_contain(r"name|call you", user_input, re.IGNORECASE):
-    voice.say("My name is LAIN.")
-    voice.runAndWait()
+    # answer a sample question
+    question = 'What degrees are offered for undergraduate?'
+    answer = crg.answer_question(question)
 
+    print(f'Question: {question}\nAnswer: {answer}')
+
+if __name__ == '__main__':
+    main()
