@@ -7,12 +7,16 @@ Date: 03/18/2025
 
 #== Imports ==#
 import time
+import pyttsx3
 
 from crg_api import CRG
 from crg_api import ClassifyMethod, RetrieveMethod, ExtractMethod
 
 #== Main Execution ==#
 def main():
+    engine = pyttsx3.init()
+    engine.setProperty('rate', 150)
+
     # set dataset path
     dataset_pth = '../dataset.json'
 
@@ -40,6 +44,9 @@ def main():
         et = time.time()
         print(f'Answer: {answer}')
         print(f'Time taken: {et - st:.2f} seconds\n')
+
+        engine.say(answer)
+        engine.runAndWait()
 
     
     # question = 'What degrees are offered for undergraduate?'
