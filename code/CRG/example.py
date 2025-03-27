@@ -29,15 +29,27 @@ def main():
         retrieve_method=retrieve_method,
         print_info=False)
 
-    # answer a sample question
-    question = 'What degrees are offered for undergraduate?'
+    # while loop to ask questions
+    user_ans = ''
+    while user_ans != 'exit':
+        user_ans = input('Type your question (or type "exit" to quit): ')
+        if user_ans.lower() == 'exit':
+            break
+        st = time.time()
+        answer = crg.answer_question(user_ans)
+        et = time.time()
+        print(f'Answer: {answer}')
+        print(f'Time taken: {et - st:.2f} seconds\n')
 
-    st = time.time()
-    answer = crg.answer_question(question)
-    et = time.time()
+    
+    # question = 'What degrees are offered for undergraduate?'
 
-    print(f'Question: {question}\nAnswer: {answer}')
-    print(f'Time taken: {et - st:.2f} seconds')
+    # st = time.time()
+    # answer = crg.answer_question(question)
+    # et = time.time()
+
+    # print(f'Question: {question}\nAnswer: {answer}')
+    # print(f'Time taken: {et - st:.2f} seconds')
 
 if __name__ == '__main__':
     main()
