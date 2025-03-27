@@ -8,8 +8,14 @@ Date: 03/26/2025
 
 import re
 import pyttsx3 as tts
-from ..CRG.crg_api import CRG, ClassifyMethod, RetrieveMethod, ExtractMethod
+import sys
+import os
 
+# Add the CRG directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'CRG')))
+
+# Now you can import the modules
+from crg_api import CRG, ClassifyMethod, RetrieveMethod, ExtractMethod
 
 
 def main():
