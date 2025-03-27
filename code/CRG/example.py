@@ -6,6 +6,8 @@ Date: 03/18/2025
 '''
 
 #== Imports ==#
+import time
+
 from crg_api import CRG
 from crg_api import ClassifyMethod, RetrieveMethod, ExtractMethod
 
@@ -29,9 +31,13 @@ def main():
 
     # answer a sample question
     question = 'What degrees are offered for undergraduate?'
+
+    st = time.time()
     answer = crg.answer_question(question)
+    et = time.time()
 
     print(f'Question: {question}\nAnswer: {answer}')
+    print(f'Time taken: {et - st:.2f} seconds')
 
 if __name__ == '__main__':
     main()
