@@ -18,6 +18,7 @@ import spacy
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
+import matplotlib.pyplot as plt
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
@@ -35,6 +36,12 @@ test_dataset = {'data': [
     {'question': 'What kind of activities do CyberWVU students do?', 'label': 'Clubs and Organizations'},
     {'question': 'What can I do with a computer engineering degree?', 'label': 'Career Opportunities'},
     {'question': 'What can I do with a computer science degree?', 'label': 'Career Opportunities'},
+    {'question': 'What type of internships do students get?', 'label': 'Internships'},
+    {'question': 'How can students get internships?', 'label': 'Internships'},
+    {'question': 'What type of scholarships are available for incoming students?', 'label': 'Financial Aid and Scholarships'},
+    {'question': 'How can freshmen get scholarships?', 'label': 'Financial Aid and Scholarships'},
+    {'question': 'How can I get into contact with the Lane Department?', 'label': 'Location and Contact'},
+    {'question': 'Where is the Lane Department Located?', 'label': 'Location and Contact'},
 ]}
 
 #== Classes ==#
@@ -51,7 +58,9 @@ class LogisticRegression(nn.Module):
             num_classes (int): number of classes
         '''
         super(LogisticRegression, self).__init__()
+        self.bn = nn.BatchNorm1d(input_dim)
         self.linear = nn.Linear(input_dim, num_classes)
+        self.dropout = nn.Dropout(0.3)
         self.softmax = nn.Softmax(dim=1)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
@@ -64,7 +73,9 @@ class LogisticRegression(nn.Module):
         Returns:
             torch.Tensor: output tensor
         '''
-        return self.softmax(self.linear(x))
+        x = self.bn(x)
+        x = self.dropout(self.linear(x))
+        return x
 
 class SVM(nn.Module):
     '''
@@ -79,7 +90,9 @@ class SVM(nn.Module):
             num_classes (int): number of classes
         '''
         super(SVM, self).__init__()
+        # self.bn = nn.BatchNorm1d(input_dim)
         self.fc = nn.Linear(input_dim, num_classes)
+        self.dropout = nn.Dropout(0.3)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         '''
@@ -91,7 +104,8 @@ class SVM(nn.Module):
         Returns:
             torch.Tensor: output tensor
         '''
-        return self.fc(x)
+        # x = self.bn(x)
+        return self.dropout(self.fc(x))
 
 #== Methods ==#
 def load_dataset(path: str) -> dict:
@@ -260,11 +274,14 @@ def main(args):
 
         # define loss function and optimizer
         criterion = nn.CrossEntropyLoss()
-        optimizer = optim.Adam(model.parameters(), lr=0.01)
+        # optimizer = optim.Adam(model.parameters(), lr=0.001)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=1e-4)
+        scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=1000, gamma=0.5)
 
         #- Train the Model -#
         if not os.path.exists("classify/lr_c_model.pth") or force:
-            num_epochs = 100
+            num_epochs = 5000
+            loss_val = []
 
             for epoch in range(num_epochs):
                 model.train()
@@ -278,12 +295,25 @@ def main(args):
                 loss.backward()
                 optimizer.step()
 
-                if (epoch + 1) % 10 == 0:
+                # store loss
+                loss_val.append(loss.item())
+                scheduler.step()
+
+                if (epoch + 1) % 100 == 0:
                     print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 
             torch.save(model.state_dict(), "classify/lr_c_model.pth")
             print("Model saved successfully")
             model.eval()
+
+            # plot training loss curve
+            plt.figure(figsize=(8,6))
+            plt.plot(range(1, num_epochs+1), loss_val)
+            plt.xlabel('Epoch')
+            plt.ylabel('Loss')
+            plt.title('Training Loss Curve')
+            plt.grid()
+            plt.savefig('classify/LR_train_curve.png')
         else:
             print("Loading trained model")
             model.load_state_dict(torch.load("classify/lr_c_model.pth"))
@@ -343,12 +373,15 @@ def main(args):
         model = SVM(input_dim, num_classes)
 
         # loss is hinge loss, use Adam optimizer
-        optimizer = optim.Adam(model.parameters(), lr=0.01)
+        # optimizer = optim.Adam(model.parameters(), lr=0.01)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=1e-4)
+        scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=100, gamma=0.5)
 
         #- Train the Model -#
         if not os.path.exists("classify/svm_c_model.pth") or force:
-            num_epochs = 100
-            batch_size = 8
+            num_epochs = 5000
+            batch_size = 16
+            loss_val = []
 
             for epoch in range(num_epochs):
                 model.train()
@@ -369,12 +402,24 @@ def main(args):
                     optimizer.step()
                     total_loss += loss.item()
 
-                if (epoch + 1) % 10 == 0:
-                    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
+                # store loss
+                loss_val.append(total_loss)
+
+                if (epoch + 1) % 100 == 0:
+                    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {total_loss:.4f}')
 
             torch.save(model.state_dict(), "classify/svm_c_model.pth")
             print("Model saved successfully")
             model.eval()
+
+            # plot training loss curve
+            plt.figure(figsize=(8,6))
+            plt.plot(range(1, num_epochs+1), loss_val)
+            plt.xlabel('Epoch')
+            plt.ylabel('Loss')
+            plt.title('Training Loss Curve')
+            plt.grid()
+            plt.savefig('classify/SVM_train_curve.png')
         else:
             print("Loading trained model")
             model.load_state_dict(torch.load("classify/svm_c_model.pth"))
