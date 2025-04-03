@@ -13,3 +13,10 @@
 
 # model log files
 code/CRG/classify/logs/*
+
+# latex
+**/*.aux
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.synctex.gz

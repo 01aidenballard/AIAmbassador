@@ -1,0 +1,7 @@
+Loading gcc version 12.2.0 : lang/gcc/12.2.0
+Loading gcc version 12.2.0 : lang/gcc/12.2.0
+Loading python version cpython_3.10.11_gcc122 : lang/python/cpython_3.10.11_gcc122
+Loading cuda version 11.8 : parallel/cuda/11.8
+2025-03-17 15:28:27.886631: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-03-17 15:28:39.280584: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT

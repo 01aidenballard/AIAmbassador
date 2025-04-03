@@ -38,6 +38,12 @@ GB_test_dataset = {'data': [
     {'question': 'What kind of activities do CyberWVU students do?', 'label': 'Clubs and Organizations'},
     {'question': 'What can I do with a computer engineering degree?', 'label': 'Career Opportunities'},
     {'question': 'What can I do with a computer science degree?', 'label': 'Career Opportunities'},
+    {'question': 'What type of internships do students get?', 'label': 'Internships'},
+    {'question': 'How can students get internships?', 'label': 'Internships'},
+    {'question': 'What type of scholarships are available for incoming students?', 'label': 'Financial Aid and Scholarships'},
+    {'question': 'How can freshmen get scholarships?', 'label': 'Financial Aid and Scholarships'},
+    {'question': 'How can I get into contact with the Lane Department?', 'label': 'Location and Contact'},
+    {'question': 'Where is the Lane Department Located?', 'label': 'Location and Contact'},
 ]}
 
 #== Classes ==#
@@ -102,6 +108,9 @@ def main(args):
     label_encoder = LabelEncoder()
     label_map = label_encoder.fit_transform(train_labels)
 
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Using device: {device}")
+
     #-- BERT --#
     if args.BERT:
         print('Using BERT for classification')
@@ -111,7 +120,8 @@ def main(args):
             print('Training BERT')
 
             # load the tokenizer
-            tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+            # tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+            tokenizer = BertTokenizer.from_pretrained("/scratch/isj0001/huggingface_models/bert-base-uncased") # HPC
 
             # tokenize the training & test data
             train_encodings = tokenizer(train_questions, truncation=True, padding=True, max_length=512)
@@ -128,7 +138,9 @@ def main(args):
             eval_data = train_dataset.train_test_split(test_size=0.2, seed=42)['test']
 
             # load pretrained BERT model
-            model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=len(label_encoder.classes_))
+            # model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=len(label_encoder.classes_))
+            model = BertForSequenceClassification.from_pretrained("/scratch/isj0001/huggingface_models/bert-base-uncased", num_labels=len(label_encoder.classes_)) # HPC
+            model.to(device)
 
             # define training args
             training_args = TrainingArguments(
@@ -142,6 +154,8 @@ def main(args):
                 weight_decay=0.01,
                 logging_dir=f"./classify/logs/BERT",
                 logging_steps=10,
+                report_to="none",
+                fp16=True if torch.cuda.is_available() else False
             )
 
             # use HF trainer API
@@ -165,6 +179,7 @@ def main(args):
 
         # evaluate BERT on test dataset
         model.eval()
+        model.to(device)
 
         true_labels = []
         predicted_labels = []
@@ -176,6 +191,7 @@ def main(args):
 
             # tokenize question
             inputs = tokenizer(question, return_tensors="pt")
+            inputs = {key: val.to(device) for key, val in inputs.items()}
 
             start_time = time.time()
 
