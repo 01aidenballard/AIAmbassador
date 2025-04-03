@@ -848,531 +848,657 @@
               {
                 "context": "Highlight department facilities.",
                 "qas": [
-                  {
-                    "question": "What types of facilities does the Lane Department provide?",
-                    "answer": [
-                        "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
-                    ]
-                  },
-                  {
-                    "question": "What types of resources are available in the Lane Department?",
-                    "answer": [
-                        "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
-                    ]
-                  },
-                  {
-                    "question": "What kinds of resources and spaces are available to students in the Lane Department?",
-                    "answer": [
-                        "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
-                    ]
-                  },
-                  {
-                    "question": "What types of facilities and spaces are available in the Lane Department?",
-                    "answer": [
-                        "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
-                    ]
-                  },
+                    {
+                        "question": "What types of facilities does the Lane Department provide?",
+                        "answer": [
+                            "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
+                        ]
+                    },
+                    {
+                        "question": "What types of resources are available in the Lane Department?",
+                        "answer": [
+                            "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
+                        ]
+                    },
+                    {
+                        "question": "What kinds of resources and spaces are available to students in the Lane Department?",
+                        "answer": [
+                            "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
+                        ]
+                    },
+                    {
+                        "question": "What types of facilities and spaces are available in the Lane Department?",
+                        "answer": [
+                            "The Lane Department provides laboratories, research centers, and collaborative spaces for students and faculty."
+                        ]
+                    },
 
-                  {
-                    "question": "How do the Lane Department’s facilities compare to other universities?",
-                    "answer": [
-                        "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
-                    ]
-                  },
-                  {
-                    "question": "How do the facilities in the Lane Department compare to those at other institutions?",
-                    "answer": [
-                        "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
-                    ]
-                  },
-                  {
-                    "question": "How does the quality of the Lane Department’s infrastructure stack up against similar programs?",
-                    "answer": [
-                        "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
-                    ]
-                  },
-                  {
-                    "question": "How do the Lane Department’s facilities measure up against those of other schools?",
-                    "answer": [
-                        "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
-                    ]
-                  },
+                    {
+                        "question": "How do the Lane Department’s facilities compare to other universities?",
+                        "answer": [
+                            "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
+                        ]
+                    },
+                    {
+                        "question": "How do the facilities in the Lane Department compare to those at other institutions?",
+                        "answer": [
+                            "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
+                        ]
+                    },
+                    {
+                        "question": "How does the quality of the Lane Department’s infrastructure stack up against similar programs?",
+                        "answer": [
+                            "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
+                        ]
+                    },
+                    {
+                        "question": "How do the Lane Department’s facilities measure up against those of other schools?",
+                        "answer": [
+                            "The Lane Department offers state-of-the-art facilities comparable to leading engineering and technology institutions."
+                        ]
+                    },
 
-                  {
-                    "question": "What are some key features of the Lane Department’s laboratories?",
-                    "answer": [
-                        "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
-                    ]
-                  },
-                  {
-                    "question": "What are the important characteristics of the Lane Department’s labs?",
-                    "answer": [
-                        "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
-                    ]
-                  },
-                  {
-                    "question": "What important aspects make the Lane Department’s labs stand out?",
-                    "answer": [
-                        "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
-                    ]
-                  },
-                  {
-                    "question": "What makes the Lane Department’s laboratories unique?",
-                    "answer": [
-                        "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
-                    ]
-                  },
+                    {
+                        "question": "What are some key features of the Lane Department’s laboratories?",
+                        "answer": [
+                            "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
+                        ]
+                    },
+                    {
+                        "question": "What are the important characteristics of the Lane Department’s labs?",
+                        "answer": [
+                            "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
+                        ]
+                    },
+                    {
+                        "question": "What important aspects make the Lane Department’s labs stand out?",
+                        "answer": [
+                            "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
+                        ]
+                    },
+                    {
+                        "question": "What makes the Lane Department’s laboratories unique?",
+                        "answer": [
+                            "The labs include advanced computing systems, testing equipment, and secure environments for student projects."
+                        ]
+                    },
 
-                  {
-                    "question": "What types of labs are available for electrical engineering students at WVU?",
-                    "answer": [
-                        "Labs for circuit design, energy systems, electronics, and embedded systems."
-                    ]
-                  },
-                  {
-                    "question": "What labs are used by electrical engineering students to design and test circuits?",
-                    "answer": [
-                        "Labs for digital and analog circuit design, electronics, energy systems, and embedded systems."
-                    ]
-                  },
-                  {
-                    "question": "What types of labs are available for computer engineering students at WVU?",
-                    "answer": [
-                        "Labs for digital systems, embedded systems, robotics, and hardware/software integration."
-                    ]
-                  },
-                  {
-                    "question": "Which labs are available for computer engineering students to apply hardware and software integration?",
-                    "answer": [
-                        "Labs for hardware design, embedded systems, robotics, and computational systems."
-                    ]
-                  },
-                  {
-                    "question": "Are there labs where electrical engineering students can learn about power systems?",
-                    "answer": [
-                        "Labs for power systems, energy conversion, and smart grids."
-                    ]
-                  },
-                  {
-                    "question": "Which labs allow electrical engineering students to focus on energy systems and power generation?",
-                    "answer": [
-                        "Labs for energy systems, power generation, energy conversion, and smart grids."
-                    ]
-                  },
-                  {
-                    "question": "What labs are available for computer engineering students to study hardware design?",
-                    "answer": [
-                        "Labs for digital design, microcontroller programming, and circuit testing."
-                    ]
-                  },
-                  {
-                    "question": "Which labs provide computer engineering students hands-on experience with hardware and circuits?",
-                    "answer": [
-                        "Labs for digital circuit design, embedded systems, microcontroller programming, and hardware/software integration."
-                    ]
-                  },
-                  {
-                    "question": "What labs do electrical engineering students use for circuit design?",
-                    "answer": [
-                        "Labs for analog and digital circuit design, testing, and fabrication."
-                    ]
-                  },
-                  {
-                    "question": "How do electrical engineering students gain practical experience in circuit design?",
-                    "answer": [
-                        "Labs for circuit design, testing, and fabrication."
-                    ]
-                  },
+                    {
+                        "question": "What types of labs are available for electrical engineering students at WVU?",
+                        "answer": [
+                            "Labs for circuit design, energy systems, electronics, and embedded systems."
+                        ]
+                    },
+                    {
+                        "question": "What labs are used by electrical engineering students to design and test circuits?",
+                        "answer": [
+                            "Labs for digital and analog circuit design, electronics, energy systems, and embedded systems."
+                        ]
+                    },
+                    {
+                        "question": "What types of labs are available for computer engineering students at WVU?",
+                        "answer": [
+                            "Labs for digital systems, embedded systems, robotics, and hardware/software integration."
+                        ]
+                    },
+                    {
+                        "question": "Which labs are available for computer engineering students to apply hardware and software integration?",
+                        "answer": [
+                            "Labs for hardware design, embedded systems, robotics, and computational systems."
+                        ]
+                    },
+                    {
+                        "question": "Are there labs where electrical engineering students can learn about power systems?",
+                        "answer": [
+                            "Labs for power systems, energy conversion, and smart grids."
+                        ]
+                    },
+                    {
+                        "question": "Which labs allow electrical engineering students to focus on energy systems and power generation?",
+                        "answer": [
+                            "Labs for energy systems, power generation, energy conversion, and smart grids."
+                        ]
+                    },
+                    {
+                        "question": "What labs are available for computer engineering students to study hardware design?",
+                        "answer": [
+                            "Labs for digital design, microcontroller programming, and circuit testing."
+                        ]
+                    },
+                    {
+                        "question": "Which labs provide computer engineering students hands-on experience with hardware and circuits?",
+                        "answer": [
+                            "Labs for digital circuit design, embedded systems, microcontroller programming, and hardware/software integration."
+                        ]
+                    },
+                    {
+                        "question": "What labs do electrical engineering students use for circuit design?",
+                        "answer": [
+                            "Labs for analog and digital circuit design, testing, and fabrication."
+                        ]
+                    },
+                    {
+                        "question": "How do electrical engineering students gain practical experience in circuit design?",
+                        "answer": [
+                            "Labs for circuit design, testing, and fabrication."
+                        ]
+                    },
 
-                  {
-                    "question": "Which specific industry-grade software packages are available to students and faculty in the Lane Department?",
-                    "answer": [
-                        "The Lane Department provides access to various licensed industry-grade software packages, including MATLAB, Simulink, Cadence, and LabVIEW, for simulations and development."
-                    ]
-                  },
-                  {
-                    "question": "What professional software tools can students and faculty use in the Lane Department?",
-                    "answer": [
-                        "Students and faculty in the Lane Department have access to licensed industry-grade software such as MATLAB, Simulink, Cadence, and LabVIEW for simulations, modeling, and development."
-                    ]
-                  },
-                  {
-                    "question": "What industry-standard software do students in the Lane Department have access to?",
-                    "answer": [
-                        "Students in the Lane Department can utilize industry-standard software, including MATLAB, Simulink, Cadence, and LabVIEW, to support coursework and research in engineering disciplines."
-                    ]
-                  },
-                  {
-                    "question": "What specialized software programs are available for students in the Lane Department?",
-                    "answer": [
-                        "Students in the Lane Department have access to specialized software programs such as MATLAB, Simulink, Cadence, and LabVIEW, which are commonly used for engineering simulations and system modeling."
-                    ]
-                  },
-                  {
-                    "question": "Which licensed software applications are provided to Lane Department students for academic use?",
-                    "answer": [
-                        "The Lane Department offers students access to licensed software applications, including MATLAB, Simulink, Cadence, and LabVIEW, to aid in engineering design, analysis, and testing."
-                    ]
-                  },
+                    {
+                        "question": "Which specific industry-grade software packages are available to students and faculty in the Lane Department?",
+                        "answer": [
+                            "The Lane Department provides access to various licensed industry-grade software packages, including MATLAB, Simulink, Cadence, and LabVIEW, for simulations and development."
+                        ]
+                    },
+                    {
+                        "question": "What professional software tools can students and faculty use in the Lane Department?",
+                        "answer": [
+                            "Students and faculty in the Lane Department have access to licensed industry-grade software such as MATLAB, Simulink, Cadence, and LabVIEW for simulations, modeling, and development."
+                        ]
+                    },
+                    {
+                        "question": "What industry-standard software do students in the Lane Department have access to?",
+                        "answer": [
+                            "Students in the Lane Department can utilize industry-standard software, including MATLAB, Simulink, Cadence, and LabVIEW, to support coursework and research in engineering disciplines."
+                        ]
+                    },
+                    {
+                        "question": "What specialized software programs are available for students in the Lane Department?",
+                        "answer": [
+                            "Students in the Lane Department have access to specialized software programs such as MATLAB, Simulink, Cadence, and LabVIEW, which are commonly used for engineering simulations and system modeling."
+                        ]
+                    },
+                    {
+                        "question": "Which licensed software applications are provided to Lane Department students for academic use?",
+                        "answer": [
+                            "The Lane Department offers students access to licensed software applications, including MATLAB, Simulink, Cadence, and LabVIEW, to aid in engineering design, analysis, and testing."
+                        ]
+                    },
 
-                  {
-                    "question": "Does the Lane Department provide access to industry-grade software?",
-                    "answer": [
-                        "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
-                    ]
-                  },
-                  {
-                    "question": "Can students and faculty use professional-level software in the Lane Department?",
-                    "answer": [
-                        "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
-                    ]
-                  },
-                  {
-                    "question": "Does the Lane Department provide software used in the industry?",
-                    "answer": [
-                        "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
-                    ]
-                  },
-                  {
-                    "question": "Are students in the Lane Department given access to industry-standard software?",
-                    "answer": [
-                        "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
-                    ]
-                  },
+                    {
+                        "question": "Does the Lane Department provide access to industry-grade software?",
+                        "answer": [
+                            "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                        ]
+                    },
+                    {
+                        "question": "Can students and faculty use professional-level software in the Lane Department?",
+                        "answer": [
+                            "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                        ]
+                    },
+                    {
+                        "question": "Does the Lane Department provide software used in the industry?",
+                        "answer": [
+                            "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                        ]
+                    },
+                    {
+                        "question": "Are students in the Lane Department given access to industry-standard software?",
+                        "answer": [
+                            "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                        ]
+                    },
 
-                  {
-                    "question": "How do the Lane Department’s facilities support student learning?",
-                    "answer": [
-                        "They offer hands-on experience with advanced technology and project-based learning opportunities."
-                    ]
-                  },
-                  {
-                    "question": "In what ways do the Lane Department’s resources enhance student education?",
-                    "answer": [
-                        "They offer hands-on experience with advanced technology and project-based learning opportunities."
-                    ]
-                  },
-                  {
-                    "question": "How do the facilities in the Lane Department facilitate student learning?",
-                    "answer": [
-                        "They offer hands-on experience with advanced technology and project-based learning opportunities."
-                    ]
-                  },
-                  {
-                    "question": "How does the Lane Department’s infrastructure support student development?",
-                    "answer": [
-                        "They offer hands-on experience with advanced technology and project-based learning opportunities."
-                    ]
-                  },
+                    {
+                        "question": "How do the Lane Department’s facilities support student learning?",
+                        "answer": [
+                            "They offer hands-on experience with advanced technology and project-based learning opportunities."
+                        ]
+                    },
+                    {
+                        "question": "In what ways do the Lane Department’s resources enhance student education?",
+                        "answer": [
+                            "They offer hands-on experience with advanced technology and project-based learning opportunities."
+                        ]
+                    },
+                    {
+                        "question": "How do the facilities in the Lane Department facilitate student learning?",
+                        "answer": [
+                            "They offer hands-on experience with advanced technology and project-based learning opportunities."
+                        ]
+                    },
+                    {
+                        "question": "How does the Lane Department’s infrastructure support student development?",
+                        "answer": [
+                            "They offer hands-on experience with advanced technology and project-based learning opportunities."
+                        ]
+                    },
 
-                  {
-                    "question": "Do students have access to labs outside of class hours in the Lane Department?",
-                    "answer": [
-                        "Yes, many labs have extended or 24/7 access for students working on projects."
-                    ]
-                  },
-                  {
-                    "question": "Are the Lane Department’s labs available for student use beyond scheduled class times?",
-                    "answer": [
-                        "Yes, many labs have extended or 24/7 access for students working on projects."
-                    ]
-                  },
-                  {
-                    "question": "Can students use the Lane Department’s labs outside of their class hours?",
-                    "answer": [
-                        "Yes, many labs have extended or 24/7 access for students working on projects."
-                    ]
-                  },
-                  {
-                    "question": "Are the Lane Department’s laboratories accessible to students beyond normal hours?",
-                    "answer": [
-                        "Yes, many labs have extended or 24/7 access for students working on projects."
-                    ]
-                  },
+                    {
+                        "question": "Do students have access to labs outside of class hours in the Lane Department?",
+                        "answer": [
+                            "Yes, many labs have extended or 24/7 access for students working on projects."
+                        ]
+                    },
+                    {
+                        "question": "Are the Lane Department’s labs available for student use beyond scheduled class times?",
+                        "answer": [
+                            "Yes, many labs have extended or 24/7 access for students working on projects."
+                        ]
+                    },
+                    {
+                        "question": "Can students use the Lane Department’s labs outside of their class hours?",
+                        "answer": [
+                            "Yes, many labs have extended or 24/7 access for students working on projects."
+                        ]
+                    },
+                    {
+                        "question": "Are the Lane Department’s laboratories accessible to students beyond normal hours?",
+                        "answer": [
+                            "Yes, many labs have extended or 24/7 access for students working on projects."
+                        ]
+                    },
 
-                  {
-                    "question": "Are undergraduate students allowed to use specialized facilities in the Lane Department?",
-                    "answer": [
-                        "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
-                    ]
-                  },
-                  {
-                    "question": "Can undergraduate students use advanced facilities in the Lane Department?",
-                    "answer": [
-                        "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
-                    ]
-                  },
-                  {
-                    "question": "Are undergraduate students permitted to use specialized research spaces in the Lane Department?",
-                    "answer": [
-                        "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
-                    ]
-                  },
-                  {
-                    "question": "Can undergraduate students work in the Lane Department’s specialized labs?",
-                    "answer": [
-                        "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
-                    ]
-                  },
+                    {
+                        "question": "Are undergraduate students allowed to use specialized facilities in the Lane Department?",
+                        "answer": [
+                            "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                        ]
+                    },
+                    {
+                        "question": "Can undergraduate students use advanced facilities in the Lane Department?",
+                        "answer": [
+                            "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                        ]
+                    },
+                    {
+                        "question": "Are undergraduate students permitted to use specialized research spaces in the Lane Department?",
+                        "answer": [
+                            "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                        ]
+                    },
+                    {
+                        "question": "Can undergraduate students work in the Lane Department’s specialized labs?",
+                        "answer": [
+                            "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                        ]
+                    },
 
-                  {
-                    "question": "What kind of equipment is available for student projects in the Lane Department?",
-                    "answer": [
-                        "Students have access to high-performance computers, testing equipment, and prototyping tools."
-                    ]
-                  },
-                  {
-                    "question": "What equipment and tools can students use for their academic projects in the Lane Department?",
-                    "answer": [
-                        "Students have access to high-performance computers, testing equipment, and prototyping tools."
-                    ]
-                  },
-                  {
-                    "question": "What tools are available for students to use in the Lane Department?",
-                    "answer": [
-                        "Students have access to high-performance computers, testing equipment, and prototyping tools."
-                    ]
-                  },
-                  {
-                    "question": "What equipment can students utilize for their projects in the Lane Department?",
-                    "answer": [
-                        "Students have access to high-performance computers, testing equipment, and prototyping tools."
-                    ]
-                  },
+                    {
+                        "question": "What kind of equipment is available for student projects in the Lane Department?",
+                        "answer": [
+                            "Students have access to high-performance computers, testing equipment, and prototyping tools."
+                        ]
+                    },
+                    {
+                        "question": "What equipment and tools can students use for their academic projects in the Lane Department?",
+                        "answer": [
+                            "Students have access to high-performance computers, testing equipment, and prototyping tools."
+                        ]
+                    },
+                    {
+                        "question": "What tools are available for students to use in the Lane Department?",
+                        "answer": [
+                            "Students have access to high-performance computers, testing equipment, and prototyping tools."
+                        ]
+                    },
+                    {
+                        "question": "What equipment can students utilize for their projects in the Lane Department?",
+                        "answer": [
+                            "Students have access to high-performance computers, testing equipment, and prototyping tools."
+                        ]
+                    },
 
-                  {
-                    "question": "Do students receive training on how to use the Lane Department’s facilities?",
-                    "answer": [
-                        "Yes, students receive training through coursework, workshops, and faculty guidance."
-                    ]
-                  },
-                  {
-                    "question": "Are students trained on how to operate the Lane Department’s facilities?",
-                    "answer": [
-                        "Yes, students receive training through coursework, workshops, and faculty guidance."
-                    ]
-                  },
-                  {
-                    "question": "Are there any instructional sessions available for students to learn about the Lane Department’s resources?",
-                    "answer": [
-                        "Yes, students receive training through coursework, workshops, and faculty guidance."
-                    ]
-                  },
-                  {
-                    "question": "Does the Lane Department offer training to students for using department resources?",
-                    "answer": [
-                        "Yes, students receive training through coursework, workshops, and faculty guidance."
-                    ]
-                  },
+                    {
+                        "question": "Do students receive training on how to use the Lane Department’s facilities?",
+                        "answer": [
+                            "Yes, students receive training through coursework, workshops, and faculty guidance."
+                        ]
+                    },
+                    {
+                        "question": "Are students trained on how to operate the Lane Department’s facilities?",
+                        "answer": [
+                            "Yes, students receive training through coursework, workshops, and faculty guidance."
+                        ]
+                    },
+                    {
+                        "question": "Are there any instructional sessions available for students to learn about the Lane Department’s resources?",
+                        "answer": [
+                            "Yes, students receive training through coursework, workshops, and faculty guidance."
+                        ]
+                    },
+                    {
+                        "question": "Does the Lane Department offer training to students for using department resources?",
+                        "answer": [
+                            "Yes, students receive training through coursework, workshops, and faculty guidance."
+                        ]
+                    },
 
-                  {
-                    "question": "Are there dedicated labs for specific areas of study in the Lane Department?",
-                    "answer": [
-                        "Yes, the Lane Department has specialized labs for cybersecurity, robotics, and artificial intelligence."
-                    ]
-                  },
-                  {
-                    "question": "Does the Lane Department offer specialized labs for different fields of study?",
-                    "answer": [
-                        "Yes, the Lane Department has specialized labs for cybersecurity, robotics, and artificial intelligence."
-                    ]
-                  },
-                  {
-                    "question": "Does the Lane Department maintain a robotics lab?",
-                    "answer": [
-                        "Yes, the robotics lab provides resources for autonomous systems, machine learning, and hardware prototyping."
-                    ]
-                  },
-                  {
-                    "question": "Is there a dedicated robotics lab in the Lane Department?",
-                    "answer": [
-                        "Yes, the robotics lab provides resources for autonomous systems, machine learning, and hardware prototyping."
-                    ]
-                  },
+                    {
+                        "question": "Are there dedicated labs for specific areas of study in the Lane Department?",
+                        "answer": [
+                            "Yes, the Lane Department has specialized labs for cybersecurity, robotics, and artificial intelligence."
+                        ]
+                    },
+                    {
+                        "question": "Does the Lane Department offer specialized labs for different fields of study?",
+                        "answer": [
+                            "Yes, the Lane Department has specialized labs for cybersecurity, robotics, and artificial intelligence."
+                        ]
+                    },
+                    {
+                        "question": "Does the Lane Department maintain a robotics lab?",
+                        "answer": [
+                            "Yes, the robotics lab provides resources for autonomous systems, machine learning, and hardware prototyping."
+                        ]
+                    },
+                    {
+                        "question": "Is there a dedicated robotics lab in the Lane Department?",
+                        "answer": [
+                            "Yes, the robotics lab provides resources for autonomous systems, machine learning, and hardware prototyping."
+                        ]
+                    },
 
-                  {
-                    "question": "Does the Lane Department have an AI-focused lab?",
-                    "answer": [
-                        "Yes, the Lane Department maintains an AI lab dedicated to machine learning and data science."
-                    ]
-                  },
-                  {
-                    "question": "Is there an artificial intelligence lab in the Lane Department?",
-                    "answer": [
-                        "Yes, the Lane Department maintains an AI lab dedicated to machine learning and data science."
-                    ]
-                  },
+                    {
+                        "question": "Does the Lane Department have an AI-focused lab?",
+                        "answer": [
+                            "Yes, the Lane Department maintains an AI lab dedicated to machine learning and data science."
+                        ]
+                    },
+                    {
+                        "question": "Is there an artificial intelligence lab in the Lane Department?",
+                        "answer": [
+                            "Yes, the Lane Department maintains an AI lab dedicated to machine learning and data science."
+                        ]
+                    },
 
-                  {
-                    "question": "Does the Lane Department have a cybersecurity lab?",
-                    "answer": [
-                        "Yes, the Lane Department provides a lab dedicated to network security, cryptography, and ethical hacking."
-                    ]
-                  },
-                  {
-                    "question": "Does the Lane Department offer resources for cybersecurity education?",
-                    "answer": [
-                        "Yes, the Lane Department provides a lab dedicated to network security, cryptography, and ethical hacking."
-                    ]
-                  },
+                    {
+                        "question": "Does the Lane Department have a cybersecurity lab?",
+                        "answer": [
+                            "Yes, the Lane Department provides a lab dedicated to network security, cryptography, and ethical hacking."
+                        ]
+                    },
+                    {
+                        "question": "Does the Lane Department offer resources for cybersecurity education?",
+                        "answer": [
+                            "Yes, the Lane Department provides a lab dedicated to network security, cryptography, and ethical hacking."
+                        ]
+                    },
 
-                  {
-                    "question": "What does the Lane Department’s cybersecurity lab focus on?",
-                    "answer": [
-                        "The Lane Department’s cybersecurity lab focuses on network security, cryptography, and ethical hacking."
-                    ]
-                  },
-                  {
-                    "question": "What are the main areas covered by the Lane Department’s cybersecurity lab?",
-                    "answer": [
-                        "The Lane Department’s cybersecurity lab focuses on network security, cryptography, and ethical hacking."
-                    ]
-                  },
+                    {
+                        "question": "What does the Lane Department’s cybersecurity lab focus on?",
+                        "answer": [
+                            "The Lane Department’s cybersecurity lab focuses on network security, cryptography, and ethical hacking."
+                        ]
+                    },
+                    {
+                        "question": "What are the main areas covered by the Lane Department’s cybersecurity lab?",
+                        "answer": [
+                            "The Lane Department’s cybersecurity lab focuses on network security, cryptography, and ethical hacking."
+                        ]
+                    },
 
-                  {
-                    "question": "Does the Lane Department offer tutoring services for students?",
-                    "answer": [
-                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
-                    ]
-                  },
-                  {
-                    "question": "Are tutoring services available in the Lane Department to help students with their studies?",
-                    "answer": [
-                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
-                    ]
-                  },
-                  {
-                    "question": "Does the Lane Department provide any academic assistance to students in the form of tutoring?",
-                    "answer": [
-                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
-                    ]
-                  },
-                  {
-                    "question": "Are there tutoring options available in the Lane Department for students?",
-                    "answer": [
-                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
-                    ]
-                  },
-                  {
-                    "question": "Can students receive tutoring support through the Lane Department?",
-                    "answer": [
-                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
-                    ]
-                  },
-                  {
-                    "question": "Does the Lane Department have tutoring programs for students?",
-                    "answer": [
-                        "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
-                    ]
-                  },
-                  {
-                    "question": "Are there tutoring resources available in the Lane Department?",
-                    "answer": [
-                        "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
-                    ]
-                  },
-                  {
-                    "question": "Does the Lane Department provide academic support through tutoring?",
-                    "answer": [
-                        "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
-                    ]
-                  },
-                  {
-                    "question": "Can students receive tutoring help for coursework in the Lane Department?",
-                    "answer": [
-                        "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
-                    ]
-                  },
-                  {
-                    "question": "Does the Lane Department provide free tutoring services?",
-                    "answer": [
-                        "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
-                    ]
-                  },
-                  {
-                    "question": "How can students get tutoring help in the Lane Department?",
-                    "answer": [
-                        "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
-                    ]
-                  },
-                  {
-                    "question": "What steps should students take to receive tutoring assistance in the Lane Department?",
-                    "answer": [
-                        "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
-                    ]
-                  },
-                  {
-                    "question": "How can students sign up for tutoring in the Lane Department?",
-                    "answer": [
-                        "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
-                    ]
-                  },
-                  {
-                    "question": "What are the ways students can access tutoring in the Lane Department?",
-                    "answer": [
-                        "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
-                    ]
-                  },
-                  {
-                    "question": "Where can students go for tutoring assistance in the Lane Department?",
-                    "answer": [
-                        "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
-                    ]
-                  },
-                  {
-                    "question": "What subjects are covered by tutoring services in the Lane Department?",
-                    "answer": [
-                        "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
-                    ]
-                  },
-                  {
-                    "question": "Which topics do the tutoring services in the Lane Department focus on?",
-                    "answer": [
-                        "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
-                    ]
-                  },
-                  {
-                    "question": "What areas of study are included in the Lane Department's tutoring services?",
-                    "answer": [
-                        "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
-                    ]
-                  },
-                  {
-                    "question": "Does tutoring in the Lane Department cover software engineering topics?",
-                    "answer": [
-                        "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
-                    ]
-                  },
-                  {
-                    "question": "Where can students find tutoring support in the Lane Department?",
-                    "answer": [
-                        "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
-                    ]
-                  },
-                  {
-                    "question": "Which rooms in the Lane Department offer tutoring services for students?",
-                    "answer": [
-                        "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
-                    ]
-                  },
-                  {
-                    "question": "What locations offer tutoring services in the Lane Department?",
-                    "answer": [
-                        "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
-                    ]
-                  },
-                  {
-                    "question": "Where should students go if they need tutoring help in the Lane Department?",
-                    "answer": [
-                        "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
-                    ]
-                  },
-                  {
-                    "question": "Are there specific rooms where tutoring is provided in the Lane Department?",
-                    "answer": [
-                        "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
-                    ]
-                  }
+                    {
+                        "question": "Does the Lane Department offer tutoring services for students?",
+                        "answer": [
+                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                        ]
+                    },
+                    {
+                        "question": "Are tutoring services available in the Lane Department to help students with their studies?",
+                        "answer": [
+                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                        ]
+                    },
+                    {
+                        "question": "Does the Lane Department provide any academic assistance to students in the form of tutoring?",
+                        "answer": [
+                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                        ]
+                    },
+                    {
+                        "question": "Are there tutoring options available in the Lane Department for students?",
+                        "answer": [
+                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                        ]
+                    },
+                    {
+                        "question": "Can students receive tutoring support through the Lane Department?",
+                        "answer": [
+                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                        ]
+                    },
+                    {
+                        "question": "Does the Lane Department have tutoring programs for students?",
+                        "answer": [
+                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                        ]
+                    },
+                    {
+                        "question": "Are there tutoring resources available in the Lane Department?",
+                        "answer": [
+                            "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                        ]
+                    },
+                    {
+                        "question": "Does the Lane Department provide academic support through tutoring?",
+                        "answer": [
+                            "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                        ]
+                    },
+                    {
+                        "question": "Can students receive tutoring help for coursework in the Lane Department?",
+                        "answer": [
+                            "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                        ]
+                    },
+                    {
+                        "question": "Does the Lane Department provide free tutoring services?",
+                        "answer": [
+                            "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                        ]
+                    },
+                    {
+                        "question": "How can students get tutoring help in the Lane Department?",
+                        "answer": [
+                            "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
+                        ]
+                    },
+                    {
+                        "question": "What steps should students take to receive tutoring assistance in the Lane Department?",
+                        "answer": [
+                            "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
+                        ]
+                    },
+                    {
+                        "question": "How can students sign up for tutoring in the Lane Department?",
+                        "answer": [
+                            "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
+                        ]
+                    },
+                    {
+                        "question": "What are the ways students can access tutoring in the Lane Department?",
+                        "answer": [
+                            "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
+                        ]
+                    },
+                    {
+                        "question": "Where can students go for tutoring assistance in the Lane Department?",
+                        "answer": [
+                            "Students can access tutoring services through scheduled sessions, drop-in hours, or by appointment with tutors."
+                        ]
+                    },
+                    {
+                        "question": "What subjects are covered by tutoring services in the Lane Department?",
+                        "answer": [
+                            "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
+                        ]
+                    },
+                    {
+                        "question": "Which topics do the tutoring services in the Lane Department focus on?",
+                        "answer": [
+                            "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
+                        ]
+                    },
+                    {
+                        "question": "What areas of study are included in the Lane Department's tutoring services?",
+                        "answer": [
+                            "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
+                        ]
+                    },
+                    {
+                        "question": "Does tutoring in the Lane Department cover software engineering topics?",
+                        "answer": [
+                            "Tutoring services in the Lane Department cover core subjects such as programming, circuits, cybersecurity, and mathematics."
+                        ]
+                    },
+                    {
+                        "question": "Where can students find tutoring support in the Lane Department?",
+                        "answer": [
+                            "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
+                        ]
+                    },
+                    {
+                        "question": "Which rooms in the Lane Department offer tutoring services for students?",
+                        "answer": [
+                            "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
+                        ]
+                    },
+                    {
+                        "question": "What locations offer tutoring services in the Lane Department?",
+                        "answer": [
+                            "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
+                        ]
+                    },
+                    {
+                        "question": "Where should students go if they need tutoring help in the Lane Department?",
+                        "answer": [
+                            "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
+                        ]
+                    },
+                    {
+                        "question": "Are there specific rooms where tutoring is provided in the Lane Department?",
+                        "answer": [
+                            "Students can find tutoring support in designated tutoring centers such as Room 138 of the AER building, faculty offices, or online resources provided by the department."
+                        ]
+                    },
+
+
+                    {
+                        "question": "What is WVU Lane's Innovation Hub, and what is its purpose?",
+                        "answer": ["It is a makerspace that provides tools and resources for innovation and entrepreneurship."]
+                    },
+                    {
+                        "question": "What kind of equipment and resources are available for students to use?",
+                        "answer": ["It offers 3D printers, laser cutters, CNC machines, woodworking tools, and electronics workstations."]
+                    },
+                    {
+                        "question": "Who can use Lane's Innovation Hub, and is there a cost to access it?",
+                        "answer": ["WVU students, faculty, and approved community members can use it, with some material fees applying."]
+                    },
+                    {
+                        "question": "How can students get involved with projects or workshops at the Innovation Hub?",
+                        "answer": ["Students can join workshops, training sessions, and innovation challenges hosted at the hub."]
+                    },
+                    {
+                        "question": "Does the Innovation Hub support startups and entrepreneurship?",
+                        "answer": ["Yes, it provides prototyping resources, business development support, and networking opportunities."]
+                    },
+                    {
+                        "question": "What is WVU Lane's Innovation Hub, and what is its purpose?",
+                        "answer": ["It is a collaborative space where students can create, prototype, and develop new ideas."]
+                    },
+                    {
+                        "question": "What is WVU Lane's Innovation Hub, and what does it offer?",
+                        "answer": ["It is a hands-on innovation center providing advanced tools and workspace for students."]
+                    },
+                    {
+                        "question": "What kind of equipment and resources are available for students to use?",
+                        "answer": ["Students have access to high-tech fabrication tools, including 3D printers and CNC machines."]
+                    },
+                    {
+                        "question": "What equipment does the Innovation Hub provide for student projects?",
+                        "answer": ["It includes woodworking, metalworking, and digital fabrication tools for hands-on learning."]
+                    },
+                    {
+                        "question": "Who can use Lane's Innovation Hub, and is there a cost to access it?",
+                        "answer": ["It is open to WVU students, faculty, and staff, with some fees for material usage."]
+                    },
+                    {
+                        "question": "Who has access to Lane's Innovation Hub, and do they need to pay?",
+                        "answer": ["WVU affiliates can use it, and while access is free, some machines require a small fee."]
+                    },
+                    {
+                        "question": "How can students get involved with projects or workshops at the Innovation Hub?",
+                        "answer": ["They can attend scheduled workshops, join group projects, or start their own creative work."]
+                    },
+                    {
+                        "question": "What opportunities are there for students to engage with the Innovation Hub?",
+                        "answer": ["Students can participate in design challenges, training sessions, and collaborative projects."]
+                    },
+                    {
+                        "question": "Does the Innovation Hub support startups and entrepreneurship?",
+                        "answer": ["Yes, it helps students turn ideas into businesses by providing resources and mentorship."]
+                    },
+                    {
+                        "question": "How does the Innovation Hub assist students in launching startups?",
+                        "answer": ["It offers prototyping tools, startup guidance, and access to entrepreneurial networks."]
+                    },
+                    {
+                        "question": "What types of tools are available for students to use at the Innovation Hub?",
+                        "answer": ["The hub provides 3D printers, laser cutters, CNC machines, and electronics workstations."]
+                    },
+                    {
+                        "question": "What tools does the Innovation Hub offer for hands-on student projects?",
+                        "answer": ["It includes woodworking tools, metalworking stations, and digital fabrication equipment."]
+                    },
+                    {
+                        "question": "Does the Innovation Hub offer training on how to use the equipment?",
+                        "answer": ["Yes, students can attend safety and skills training to use tools like 3D printers and CNC machines."]
+                    },
+                    {
+                        "question": "How can students learn to use the tools at the Innovation Hub?",
+                        "answer": ["The hub offers workshops and certification programs to train students on various machines."]
+                    },
+                    {
+                        "question": "Are there safety guidelines for using the equipment at the Innovation Hub?",
+                        "answer": ["Yes, students must complete safety training before using certain machines and tools."]
+                    },
+                    {
+                        "question": "What safety measures are in place for students using the Innovation Hub’s equipment?",
+                        "answer": ["Students must follow safety protocols, wear protective gear, and complete training sessions."]
+                    },
+                    {
+                        "question": "Does the Innovation Hub provide software training for design and prototyping?",
+                        "answer": ["Yes, students can learn CAD software, circuit design, and programming for prototyping projects."]
+                    },
+                    {
+                        "question": "What software skills can students learn at the Innovation Hub?",
+                        "answer": ["They can get training on 3D modeling, PCB design, and coding for hardware projects."]
+                    },
+                    {
+                        "question": "What types of tools are available for students to use at the Innovation Hub?",
+                        "answer": ["The hub provides 3D printers, laser cutters, CNC machines, and electronics workstations."]
+                    },
+                    {
+                        "question": "What tools does the Innovation Hub offer for hands-on student projects?",
+                        "answer": ["It includes woodworking tools, metalworking stations, and digital fabrication equipment."]
+                    },
+                    {
+                        "question": "Does the Innovation Hub offer training on how to use the equipment?",
+                        "answer": ["Yes, students can attend safety and skills training to use tools like 3D printers and CNC machines."]
+                    },
+                    {
+                        "question": "How can students learn to use the tools at the Innovation Hub?",
+                        "answer": ["The hub offers workshops and certification programs to train students on various machines."]
+                    },
+                    {
+                        "question": "Are there safety guidelines for using the equipment at the Innovation Hub?",
+                        "answer": ["Yes, students must complete safety training before using certain machines and tools."]
+                    },
+                    {
+                        "question": "What safety measures are in place for students using the Innovation Hub’s equipment?",
+                        "answer": ["Students must follow safety protocols, wear protective gear, and complete training sessions."]
+                    },
+                    {
+                        "question": "Does the Innovation Hub provide software training for design and prototyping?",
+                        "answer": ["Yes, students can learn CAD software, circuit design, and programming for prototyping projects."]
+                    },
+                    {
+                        "question": "What software skills can students learn at the Innovation Hub?",
+                        "answer": ["They can get training on 3D modeling, PCB design, and coding for hardware projects."]
+                    }
                 ]
               }
             ]
@@ -1867,6 +1993,50 @@
                             "question": "How does the WVU Amateur Radio Club contribute to public service?",
                             "answer": [
                                 "The WVU Amateur Radio Club contributes to public service by providing emergency communications support during natural disasters and training students in amateur radio operations."
+                            ]
+                        },
+
+
+                        {
+                            "question": "What is a Capstone?",
+                            "answer": [ 
+                                "The capstone experience is a significant academic project with oral and written components where students independently gather material, critically integrate their knowledge, and reflect on ethical implications."
+                            ]
+                        },
+                        {
+                            "question": "What is a Capstone Project?",
+                            "answer": [
+                                "A capstone project is a culminating academic experience where students apply their knowledge and skills to a comprehensive research or practical project, often including both written and oral presentations."
+                            ]
+                        },
+                        {
+                            "question": "Why is a Capstone important?",
+                            "answer": [
+                                "A capstone is important because it allows students to demonstrate their mastery of a subject, develop problem-solving skills, and integrate knowledge from various courses into a final project."
+                            ]
+                        },
+                        {
+                            "question": "What do students do in a Capstone course?",
+                            "answer": [
+                                "In a capstone course, students engage in independent research, solve real-world problems, present findings, and reflect on the broader impact of their work within their field."
+                            ]
+                        },
+                        {
+                            "question": "What do students do in a Capstone course?",
+                            "answer": [
+                                "In a capstone course, students can join compeitition teams like EcoCar, research under a professor, or design and implement a project of their own."
+                            ]
+                        },
+                        {
+                            "question": "How does a Capstone differ from other coursework?",
+                            "answer": [
+                                "Unlike regular coursework, a capstone requires students to synthesize learning from multiple disciplines, conduct extensive research, and often collaborate on a large-scale project."
+                            ]
+                        },
+                        {
+                            "question": "What are common components of a Capstone project?",
+                            "answer": [
+                                "Common components of a capstone project include a research paper, a presentation, data analysis, problem-solving tasks, and a reflection on the learning process and ethical considerations."
                             ]
                         }
                     ]
@@ -2802,6 +2972,34 @@
                           
                           
 
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Name and Greeting",
+            "paragraphs": [
+                {
+                    "context": "Introduce the robot and greet prospective students.",
+                    "qas": [
+                        {
+                            "question": "What is your name?",
+                            "answer": [
+                                "My name is Lain, nice to meet you."
+                            ]
+                        },
+                        {
+                            "question": "What can I call you?",
+                            "answer": [
+                                "My name is Lain, pleasure to meet you."
+                            ]
+                        }, 
+                        {
+                            "question": "Do you have a name?",
+                            "answer": [
+                                "My name is Lain, glad to make you acquintance."
+                            ]
+                        }
                     ]
                 }
             ]
