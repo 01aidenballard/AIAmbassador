@@ -11,8 +11,17 @@
 \usepackage{subcaption}
 \usepackage{lipsum} 
 \usepackage{dblfloatfix}
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\makeatletter
+\newcommand{\linebreakand}{%
+    \end{@IEEEauthorhalign}
+    \hfill\mbox{}\par
+    \mbox{}\hfill\begin{@IEEEauthorhalign}
+}
+\makeatother
 
 \begin{document}
 
@@ -28,10 +37,32 @@
             Morgantown, United States \\
             isj0001@mix.wvu.edu}
     \and
-    \IEEEauthorblockN{Aiden Ballard}
+
+    \IEEEauthorblockN{Aiden G. Ballard}
     \IEEEauthorblockA{\textit{West Virginia University} \\
             Morgantown, United States \\
             agb00033@mix.wvu.edu}
+
+    \linebreakand
+
+    \IEEEauthorblockN{Dr. Mohamed Hefeida}
+    \IEEEauthorblockA{\textit{West Virginia University} \\
+            Morgantown, United States \\
+            mohamed.hefeida@mail.wvu.edu}
+
+    \and
+
+    \IEEEauthorblockN{Dr. Anurag Srivastava}
+    \IEEEauthorblockA{\textit{West Virginia University} \\
+            Morgantown, United States \\
+            anurag.srivastava@mail.wvu.edu}
+            
+    \and
+
+    \IEEEauthorblockN{Dr. Prashnna Gyawali}
+    \IEEEauthorblockA{\textit{West Virginia University} \\
+            Morgantown, United States \\
+            prashnna.gyawali@mail.wvu.edu}
 }
 
 \maketitle
@@ -107,7 +138,7 @@ software architecture, and end-to-end data flow from voice input to generated re
 
 Various mediums to house the underlying AI-powered tour guide were considered. The mediums can be broken up into two categories: kit based systems and custom systems.
 The first kit-based system is the MangDang Mini Pupper \cite{b1}, an open-source dog-like robot, powered by a Raspberry Pi 4B. It highlights a simple and quick assembly as well as an all-inclusive kit. 
-The second kit-based system is the Poppy Humaniod \cite{b6}, and open-source human-like robot. The Poppy Humaniod is powered by a Raspberry Pi as well, however most of the parts are 3D printed by the customer. The robot utilizes Dynamixel servos to provide stable and accurate movement, the downside being the high cost of the parts.
+The second kit-based system is the Poppy Humaniod \cite{b6}, an open-source human-like robot. The Poppy Humaniod is powered by a Raspberry Pi as well, however most of the parts are 3D printed by the customer. The robot utilizes Dynamixel servos to provide stable and accurate movement, the downside being the high cost of the parts.
 The last medium considered is a custom system, designed from scratch. This opens up the possibility for the robotic medium to be custom to the department and college. 
 
 Regardless of the robotic medium chosen, the robot will feature three main parts to facilitate an interactive experience: a microphone, a computer, and a speaker. 
@@ -123,10 +154,18 @@ Due to the niche nature of the application, a custom dataset of question and ans
 The dataset was created by curating information from various sources, including the LCSEE website, course catalogs, departmental brochures, and talking to tour guides of the department. 
 The goal was to ensure that the dataset covered a wide range of topics relevant to prospective students, including academic programs, faculty research, campus facilities, and student life.
 
+% CRG Flow Figure
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.60\linewidth]{assets/crg_diagram.png}
+    \caption{Classify-Retrieve-Generate (CRG) Pipeline}
+    \label{fig:crg_flow}
+\end{figure*}
+
 Question and answer pairs were human-generated, ensuring accuracy and eliminating the risk of misinformation.
 To expand the dataset and improve generalization, data augmentation techniques were employed.
 This included paraphrasing questions, rephrasing answers, and introducing synonyms to create variations of the original pairs.
-To efficiency augment the dataset, each question answer pair was fed into ChatGPT to generate multiple variations of the same question and answer.
+To efficiently augment the dataset, each question answer pair was fed into ChatGPT to generate multiple variations of the same question and answer.
 
 The dataset is stored in the SQuAD format \cite{b7}. 
 The SQuAD format includes a list of topics as the top level, with each topic having a title. 
@@ -155,14 +194,6 @@ A table summarizing the dataset can be seen in Table \ref{tab:dataset}.
     \end{tabular}
     \label{tab:dataset}
 \end{table}
-
-% CRG Flow Figure
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=0.60\linewidth]{assets/crg_diagram.png}
-    \caption{Classify-Retrieve-Generate (CRG) Pipeline}
-    \label{fig:crg_flow}
-\end{figure*}
 
 %== DirectLLM Model ==%
 \section{DirectLLM Model}
