@@ -172,7 +172,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.train:
-        dataset_path = "./dataset.json"  # Path to your dataset
+        dataset_path = "../dataset.json"  # Path to your dataset
         raw_data = load_dataset(dataset_path)
         records = preprocess_dataset(raw_data)
         hf_dataset = create_hf_dataset(records)
