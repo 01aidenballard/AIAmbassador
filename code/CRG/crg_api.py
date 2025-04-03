@@ -476,6 +476,7 @@ class Retrieve():
                 best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
 
         # Jaccard
+        # TODO: Pre-Score Shtuff
         elif self.retrieve_method == RetrieveMethod.Jaccard:
             classification = Classify(self.dataset, None, self.extract_method)
 
@@ -585,6 +586,7 @@ class Retrieve():
                 best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
 
         # CSS-vec
+        # TODO: Pre-Vectorize
         elif self.retrieve_method == RetrieveMethod.CSS_VEC:
             # get vector embedding of asked question
             ask_question_vec = MODEL_W2V.encode(question)
