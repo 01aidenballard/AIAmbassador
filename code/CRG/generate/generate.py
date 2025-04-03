@@ -107,7 +107,7 @@ def main(cr_args, args):
     
         # print response
         print(f'Question: {question}')
-        print(f'\nRetrieved response: {answer}\n\nGenerated Response: {response}\n\nResponse Time: {resp_time:.4f} ms')
+        print(f'\nRetrieved response: {answer}\n\nGenerated Response: {response}\n\nResponse Time: {resp_time:.4f} s')
 
     elif args.gen_method == 'TinyLlama':
         # load model
