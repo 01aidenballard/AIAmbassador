@@ -52,7 +52,10 @@ def create_hf_dataset(records):
     return DatasetDict({"train": dataset})
 
 # Fine-tune FLAN-T5
-def fine_tune_model(dataset, model_name="google/flan-t5-small"):
+def fine_tune_model(dataset, model_name="google/flan-t5-small", is_hpc=False):
+    if is_hpc:
+        model_name = "/scratch/isj0001/models/flan-t5-small-local/"
+
     tokenizer = T5Tokenizer.from_pretrained(model_name)
     model = T5ForConditionalGeneration.from_pretrained(model_name)
 
@@ -169,6 +172,7 @@ def calculate_bleu(predictions, references):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--train', action='store_true', help="Force retrain the model")
+    parser.add_argument('--hpc', action='store_true', help="Running on HPC (only valid for my env lol)")
     args = parser.parse_args()
 
     if args.train:
