@@ -27,43 +27,45 @@
 
 % Title
 \title{Development of Microcontroller-Based AI Robot Tour Guide Utilizing Custom Language Models
-\thanks{Computational resources were provided by the WVU Research Computing Thorny Flat HPC cluster, partly funded by NSF OAC-1726534.}
+% \thanks{Computational resources were provided by the WVU Research Computing Thorny Flat HPC cluster, partly funded by NSF OAC-1726534.}
 }
 
 % Authors 
-\author{
-    \IEEEauthorblockN{Ian S. Jackson}
-    \IEEEauthorblockA{\textit{West Virginia University} \\
-            Morgantown, United States \\
-            isj0001@mix.wvu.edu}
-    \and
+% \author{
+%     \IEEEauthorblockN{Ian S. Jackson}
+%     \IEEEauthorblockA{\textit{West Virginia University} \\
+%             Morgantown, United States \\
+%             isj0001@mix.wvu.edu}
+%     \and
 
-    \IEEEauthorblockN{Aiden G. Ballard}
-    \IEEEauthorblockA{\textit{West Virginia University} \\
-            Morgantown, United States \\
-            agb00033@mix.wvu.edu}
+%     \IEEEauthorblockN{Aiden G. Ballard}
+%     \IEEEauthorblockA{\textit{West Virginia University} \\
+%             Morgantown, United States \\
+%             agb00033@mix.wvu.edu}
 
-    \linebreakand
+%     \linebreakand
 
-    \IEEEauthorblockN{Dr. Mohamed Hefeida}
-    \IEEEauthorblockA{\textit{West Virginia University} \\
-            Morgantown, United States \\
-            mohamed.hefeida@mail.wvu.edu}
+%     \IEEEauthorblockN{Dr. Mohamed Hefeida}
+%     \IEEEauthorblockA{\textit{West Virginia University} \\
+%             Morgantown, United States \\
+%             mohamed.hefeida@mail.wvu.edu}
 
-    \and
+%     \and
 
-    \IEEEauthorblockN{Dr. Anurag Srivastava}
-    \IEEEauthorblockA{\textit{West Virginia University} \\
-            Morgantown, United States \\
-            anurag.srivastava@mail.wvu.edu}
+%     \IEEEauthorblockN{Dr. Anurag Srivastava}
+%     \IEEEauthorblockA{\textit{West Virginia University} \\
+%             Morgantown, United States \\
+%             anurag.srivastava@mail.wvu.edu}
             
-    \and
+%     \and
 
-    \IEEEauthorblockN{Dr. Prashnna Gyawali}
-    \IEEEauthorblockA{\textit{West Virginia University} \\
-            Morgantown, United States \\
-            prashnna.gyawali@mail.wvu.edu}
-}
+%     \IEEEauthorblockN{Dr. Prashnna Gyawali}
+%     \IEEEauthorblockA{\textit{West Virginia University} \\
+%             Morgantown, United States \\
+%             prashnna.gyawali@mail.wvu.edu}
+% }
+
+\author{\textbf{Anonymous submission}}
 
 \maketitle
 \thispagestyle{plain}
@@ -71,10 +73,10 @@
 
 %== ABSTRACT ==%
 \begin{abstract}
-    This paper presents the design and implementation of an AI-powered robotic tour guide system for the Lane Department of Computer Science and Electrical Engineering (LCSEE). 
+    This paper presents the design and implementation of an AI-powered robotic tour guide system for the X Department of Computer Science and Electrical Engineering. 
     The system enables prospective students to engage in real-time, natural language conversations with a robot equipped with department-specific knowledge. 
     Two methodologies were explored: (1) a DirectLLM approach that fine-tunes a large language model on a custom dataset, and (2) a Classify-Retrieve-Generate (CRG) pipeline that modularizes classification, answer retrieval, and natural response generation. 
-    A custom SQuAD-style dataset was developed using LCSEE data, supporting both pipelines. 
+    A custom SQuAD-style dataset was developed using X data, supporting both pipelines. 
     The system was deployed on a Raspberry Pi 4 integrated with a MangDang Mini Pupper robot. 
     Evaluation results show that while DirectLLM excels in fluency, it suffers from retraining constraints and scalability issues. 
     In contrast, the CRG method provides modularity and easier maintenance, with strong performance on classification and retrieval but pending refinement in response generation. 
@@ -83,9 +85,14 @@
 \end{abstract}
 
 %== KEYWORDS ==%
-% \begin{IEEEkeywords}
-%     TODO: keywords
-% \end{IEEEkeywords}
+\begin{IEEEkeywords}
+    Robotic Tour Guide
+    Custom Language Models
+    DirectLLM
+    Classify-Retrieve-Generate (CRG)
+    Raspberry Pi Deployment
+    Domain-Specific NLP
+\end{IEEEkeywords}
 
 %== Introduction ==%
 \section{Introduction}
@@ -93,14 +100,14 @@ Advancements in artificial intelligence (AI) and natural language processing (NL
 Universities increasingly seek innovative ways to connect with prospective students, providing them with immersive experiences that showcase academic programs, research opportunities, and campus life. 
 One such approach is the integration of AI-powered robotic tour guides that allow visitors to interact dynamically with departmental resources.
 
-This research focuses on the development of an AI-driven robotic tour guide designed to enhance the experience of prospective students visiting the Lane Department of Computer Science and Electrical Engineering (LCSEE). 
+This research focuses on the development of an AI-driven robotic tour guide designed to enhance the experience of prospective students visiting the X Department of Computer Science and Electrical Engineering. 
 The goal is to create an interactive medium where students can ask questions about the department, and the robot, powered by language models, generates informative responses in real-time. 
 Unlike static presentations or pre-scripted responses, this approach enables natural, context-aware interactions, providing a more engaging and personalized tour experience.
 
 To achieve this, two distinct methodologies were explored: 
-(1) DirectLLM, which fine-tunes a large language model (LLM) specifically for LCSEE-related queries, and 
+(1) DirectLLM, which fine-tunes a large language model (LLM) specifically for department-related queries, and 
 (2) a Classify-Retrieve-Generate (CRG) pipeline, which first classifies the user's question, retrieves relevant information, and then generates a response. 
-A custom Q\&A dataset was curated using LCSEE-specific data, ensuring that the AI model delivers accurate and contextually relevant information.
+A custom Q\&A dataset was curated using department-specific data, ensuring that the AI model delivers accurate and contextually relevant information.
 
 The system was deployed on a Raspberry Pi 4, paired with a MangDang Mini Pupper \cite{b1} robot as the physical embodiment of the tour guide. 
 The robot is equipped with a simple microphone and speaker interface, facilitating natural language communication with users. 
@@ -122,7 +129,7 @@ By comparing these methods, we aim to determine the most effective strategy for 
 \subsection{Fine-Tuning Large Language Models for Domain-Specific Tasks}
 Fine-tuning pre-trained LLMs has become a standard approach to adapting general-purpose models for domain-specific applications. 
 Studies show that fine-tuned LLMs outperform generic models in specialized domains, such as healthcare and legal services \cite{b2}, by leveraging tailored datasets. 
-The DirectLLM approach in this work applies the same principle, fine-tuning a model specifically on Lane Department of CSEE (LCSEE) information. 
+The DirectLLM approach in this work applies the same principle, fine-tuning a model specifically on X of CSEE information. 
 However, fine-tuning requires significant computational resources, which poses challenges for deployment on edge devices like microcontrollers and single-board computers \cite{b3}.
 
 \subsection{Deploying AI Models on Resource-Constrained Devices}
@@ -150,8 +157,8 @@ The decision was made based on the cost, ease of assembly, and the all-inclusive
 
 %== Custom Dataset Development ==%
 \section{Custom Dataset Development}
-Due to the niche nature of the application, a custom dataset of question and answer pairs about the LCSEE was developed.
-The dataset was created by curating information from various sources, including the LCSEE website, course catalogs, departmental brochures, and talking to tour guides of the department. 
+Due to the niche nature of the application, a custom dataset of question and answer pairs about the X department was developed.
+The dataset was created by curating information from various sources, including the X department website, course catalogs, departmental brochures, and talking to tour guides of the department. 
 The goal was to ensure that the dataset covered a wide range of topics relevant to prospective students, including academic programs, faculty research, campus facilities, and student life.
 
 % CRG Flow Figure
@@ -178,19 +185,22 @@ A table summarizing the dataset can be seen in Table \ref{tab:dataset}.
 \begin{table}[h]
     \centering
     \caption{Custom Dataset Summary}
-    \begin{tabular}{|c|c|}
-        \hline
-        \textbf{Category} & \textbf{Number of Pairs} \\ \hline
-        Degree Programs & 55 \\ \hline
-        Research Opportunities & 77 \\ \hline
-        Facilities and Resources & 85 \\ \hline
-        Clubs and Organizations & 71 \\ \hline
-        Career Opportunities & 60 \\ \hline
-        Internships & 25 \\ \hline
-        Financial Aid and Scholarships & 39 \\ \hline
-        Faculty Information & 0 \\ \hline
-        Admission Process & 0 \\ \hline
-        Location and Contact & 9 \\ \hline
+    \begin{tabular}{l|c}
+        \toprule
+        \textbf{Category} & \textbf{Number of Pairs} \\
+        \midrule
+        Degree Programs & 55 \\
+        Research Opportunities & 77 \\
+        Facilities and Resources & 85 \\
+        Clubs and Organizations & 71 \\
+        Career Opportunities & 60 \\
+        Internships & 25 \\
+        Financial Aid and Scholarships & 39 \\
+        Faculty Information & 0 \\
+        Admission Process & 0 \\
+        Location and Contact & 9 \\
+        \bottomrule
+        \textbf{Total} & \textbf{421} \\
     \end{tabular}
     \label{tab:dataset}
 \end{table}
@@ -251,7 +261,7 @@ Each model utilized their own transformer: The T5 Tokenizer \cite{b10} for FLAN-
 
 %== Classify-Retrieve-Generate (CRG) Model ==%
 \section{Classify-Retrieve-Generate (CRG) Model}
-To address the issues of how to handle new information in the LCSEE, a new approach is needed. 
+To address the issues of how to handle new information in the X department, a new approach is needed. 
 Instead of a DirectLLM approach, which would need to be retrained with new information, the classify-retrieve-generate (CRG) approach is proposed. 
 The main approach here is to have a neural network classify the question asked into the type of question (i.e. degree programs, research, etc) with some encoded information to look up the answer in a database. 
 Once fetched, the raw data is fed into a basic LLM that will refine the response to a more natural response.
@@ -259,7 +269,7 @@ The CRG pipeline can be seen in Figure \ref{fig:crg_flow}.
 
 \subsection{Classification Step}
 To initiate the CRG pipeline, a classifier is used to determine the category of an incoming question. 
-Each category corresponds to a high-level topic (e.g., degree programs, research opportunities) within the LCSEE department's offerings
+Each category corresponds to a high-level topic (e.g., degree programs, research opportunities) within the X department's offerings
 Several classification approaches were explored, ranging from traditional machine learning to transformer-based fine-tuned models. 
 In each approach, the input question is first transformed into a numerical format using Term Frequency–Inverse Document Frequency (TF-IDF), word embeddings, or contextual token embeddings.
 
@@ -496,7 +506,7 @@ Further fine-tuning and prompt engineering are planned.
 
 %== Evaluation and Comparison ==%
 \section{Evaluation and Comparison} \label{sec:evaluation}
-This section compares the performance of the DirectLLM approaches and the CRG approaches in addressing question about the LCSEE department.
+This section compares the performance of the DirectLLM approaches and the CRG approaches in addressing question about the X department.
 The evaluation framework considers both quantitative metrics (accuracy, F1, BLEU, response time) and qualitative observations (response fluency, robustness, ease of update).
 \subsection{DirectLLM Evaluation}
 To evaluate the performance of FLAN-T5 and BART, two metrics are employed: F1 Score and BLEU score. 
@@ -533,7 +543,7 @@ The BLEU Score formula is seen in Equation \ref{eq:BLEU}.
 where $\text{BP}$ is the Brevity Penalty (seen in Equation \ref{eq:BP}), $p_n$ is the precision of $n$-grams, and $w_n$ is the weight associated to $n$-grams (typically equal $\forall n$).
 
 \subsection{CRG Evaluation}
-The various combinations of implementations for each step in the CRG pipeline were evaluated to determine their effectiveness in answering questions about the LCSEE department.
+The various combinations of implementations for each step in the CRG pipeline were evaluated to determine their effectiveness in answering questions about the X department.
 In total there are 96 combinations of the CRG pipeline, the best three combinations are shown in this section. 
 Table \ref{tab:crg_combinations} summarizes the three best-performing CRG configurations, including the classification model, retrieval method, and generation model used in each case.
 
@@ -590,7 +600,7 @@ The DirectLLM results are seen in Table \ref{tab:directllm_results}, while the C
     \end{tabular}
 \end{table}
 
-Sample outputs from both DirectLLM and CRG models can be found in Appendix \ref{app:directllm_output} and \ref{app:crg_output}, respectively.
+% Sample outputs from both DirectLLM and CRG models can be found in Appendix \ref{app:directllm_output} and \ref{app:crg_output}, respectively.
 
 %== Discussion ==%
 \section{Discussion}
@@ -625,7 +635,7 @@ In contrast, the CRG system, particularly when using lightweight models like Log
 Furthermore, CRG's deterministic logic and rule-based fallback mechanisms enhance its reliability, which is crucial in educational contexts where incorrect or hallucinated responses could erode user trust.
 
 \section{Conclusion}
-This research presented the development of an AI-powered robotic tour guide for the Lane Department of Computer Science and Electrical Engineering (LCSEE), leveraging two natural language processing (NLP) pipelines: DirectLLM and Classify-Retrieve-Generate (CRG). 
+This research presented the development of an AI-powered robotic tour guide for the X Department of Computer Science and Electrical Engineering, leveraging two natural language processing (NLP) pipelines: DirectLLM and Classify-Retrieve-Generate (CRG). 
 Each approach was designed, implemented, and evaluated with the goal of enabling natural, accurate, and efficient interactions between prospective students and the department's offerings.
 
 The DirectLLM approach demonstrated strong performance in generating fluent and context-rich responses, benefiting from end-to-end fine-tuning on a curated dataset. 
@@ -668,48 +678,48 @@ Together, these enhancements aim to advance the system toward a fully autonomous
 \end{thebibliography}
 
 %-- Appendix --%
-\newpage
-\onecolumn
-\appendix
-\section{Appendix}
-\subsection{Sample Output from FLAN-T5 and BART} \label{app:directllm_output}
-\begin{figure*}[!h]
-    \centering
-    \includegraphics[width=\linewidth]{assets/Flan_out.png}
-    \caption{FLAN-T5 Output}
-    \label{fig:FLAN_Out}
-\end{figure*}
+% \newpage
+% \onecolumn
+% \appendix
+% \section{Appendix}
+% \subsection{Sample Output from FLAN-T5 and BART} \label{app:directllm_output}
+% \begin{figure*}[!h]
+%     \centering
+%     \includegraphics[width=\linewidth]{assets/Flan_out.png}
+%     \caption{FLAN-T5 Output}
+%     \label{fig:FLAN_Out}
+% \end{figure*}
 
-\begin{figure*}[!h]
-    \centering
-    \includegraphics[width=\linewidth]{assets/Bart_out.png}
-    \caption{BART Output}
-    \label{fig:BART_Out}
-\end{figure*}
+% \begin{figure*}[!h]
+%     \centering
+%     \includegraphics[width=\linewidth]{assets/Bart_out.png}
+%     \caption{BART Output}
+%     \label{fig:BART_Out}
+% \end{figure*}
 
-\newpage
-\subsection{Sample Output from CRG} \label{app:crg_output}
-\begin{figure*}[!h]
-    \centering
-    \includegraphics[width=\linewidth]{assets/CRG1_out.png}
-    \caption{CRG-1 Output: LR + Vector + Cosine Similarity}
-    \label{fig:CRG_1-Out}
-\end{figure*}
+% \newpage
+% \subsection{Sample Output from CRG} \label{app:crg_output}
+% \begin{figure*}[!h]
+%     \centering
+%     \includegraphics[width=\linewidth]{assets/CRG1_out.png}
+%     \caption{CRG-1 Output: LR + Vector + Cosine Similarity}
+%     \label{fig:CRG_1-Out}
+% \end{figure*}
 
-\begin{figure*}[!h]
-    \centering
-    \includegraphics[width=\linewidth]{assets/CRG2_out.png}
-    \caption{CRG-2 Output: SVM + NER + EKI}
-    \label{fig:CRG_2-Out}
-\end{figure*}
+% \begin{figure*}[!h]
+%     \centering
+%     \includegraphics[width=\linewidth]{assets/CRG2_out.png}
+%     \caption{CRG-2 Output: SVM + NER + EKI}
+%     \label{fig:CRG_2-Out}
+% \end{figure*}
 
-\newpage
-\begin{figure*}[!h]
-    \centering
-    \includegraphics[width=\linewidth]{assets/CRG3_out.png}
-    \caption{CRG-3 Output: DistilBERT + Vector + Cosine Similarity}
-    \label{fig:CRG_3-Out}
-\end{figure*}
+% \newpage
+% \begin{figure*}[!h]
+%     \centering
+%     \includegraphics[width=\linewidth]{assets/CRG3_out.png}
+%     \caption{CRG-3 Output: DistilBERT + Vector + Cosine Similarity}
+%     \label{fig:CRG_3-Out}
+% \end{figure*}
 
 
 \end{document}
