@@ -80,7 +80,7 @@ def load_fine_tuned_model(model_path="./bart_finetuned"):
     return model, tokenizer
 
 def generate_answer(model, tokenizer, question, context):
-    inputs = tokenizer(f"question: {question} context: {context}", return_tensors="pt", max_length=512, truncation=True)
+    inputs = tokenizer(f"question: {question} context: {context}", return_tensors="pt", max_length=512, truncation=True).to(model.device)
     outputs = model.generate(inputs['input_ids'], max_length=128, num_beams=4, early_stopping=True)
     return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
@@ -97,6 +97,7 @@ def main():
     global tokenizer
 
     if args.train:
+        print('Training model')
         raw_data = load_and_process_dataset(dataset_path)
         dataset = Dataset.from_dict({
             "context": [item['context'] for item in raw_data],
@@ -111,6 +112,7 @@ def main():
         
         model, tokenizer = fine_tune_bart(dataset, is_hpc=args.hpc)
     else:
+        print('Loading finetuned model')
         model, tokenizer = load_fine_tuned_model()
 
     test_data = [

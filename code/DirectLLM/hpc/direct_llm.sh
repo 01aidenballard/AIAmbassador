@@ -15,4 +15,4 @@ module purge
 module load lang/gcc/12.2.0 lang/python/cpython_3.10.11_gcc122 parallel/cuda/11.8
 
 source /scratch/isj0001/AIAmbassador/code/DirectLLM/venv/bin/activate
-python3 /scratch/isj0001/AIAmbassador/code/DirectLLM/BART.py --train
+python3 /scratch/isj0001/AIAmbassador/code/DirectLLM/BART.py --hpc
