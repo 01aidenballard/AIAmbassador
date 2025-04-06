@@ -86,7 +86,10 @@ def main():
     parser.add_argument('--train', action='store_true', help="Force retrain the model")
     args = parser.parse_args()
 
-    dataset_path = 'dataset.json'
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Using device: {device}")
+
+    dataset_path = '../dataset.json'
     global tokenizer
 
     if args.train:
