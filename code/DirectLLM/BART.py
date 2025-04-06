@@ -34,7 +34,7 @@ def load_and_process_dataset(file_path):
                 data.append({"context": context, "question": question, "answer": answer})
     return data
 
-def fine_tune_bart(dataset, model_name="facebook/bart-base"):
+def fine_tune_bart(dataset, model_name="facebook/bart-base", is_hpc=False):
     def preprocess_function(examples):
         inputs = [f"question: {q} context: {c}" for q, c in zip(examples['question'], examples['context'])]
         model_inputs = tokenizer(inputs, max_length=512, truncation=True, padding="max_length")
@@ -56,6 +56,9 @@ def fine_tune_bart(dataset, model_name="facebook/bart-base"):
         save_total_limit=2,
     )
 
+    if is_hpc:
+        model_name = "/scratch/isj0001/models/bart-large-local/"
+        
     model = BartForConditionalGeneration.from_pretrained(model_name)
 
     trainer = Trainer(
@@ -84,6 +87,7 @@ def generate_answer(model, tokenizer, question, context):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--train', action='store_true', help="Force retrain the model")
+    parser.add_argument('--hpc', action='store_true', help="Running on HPC (only valid for my env lol)")
     args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -99,8 +103,13 @@ def main():
             "question": [item['question'] for item in raw_data],
             "answer": [item['answer'] for item in raw_data],
         })
-        tokenizer = BartTokenizer.from_pretrained("facebook/bart-large")
-        model, tokenizer = fine_tune_bart(dataset)
+
+        if args.hpc:
+            tokenizer = BartTokenizer.from_pretrained("/scratch/isj0001/models/bart-large-local/")
+        else:
+            tokenizer = BartTokenizer.from_pretrained("facebook/bart-large")
+        
+        model, tokenizer = fine_tune_bart(dataset, is_hpc=args.hpc)
     else:
         model, tokenizer = load_fine_tuned_model()
 
