@@ -46,7 +46,7 @@ def fine_tune_bart(dataset, model_name="facebook/bart-base", is_hpc=False):
 
     training_args = TrainingArguments(
         output_dir="./bart_finetuned",
-        evaluation_strategy="epoch",
+        eval_strategy="epoch",
         weight_decay=0.01,
         learning_rate=3e-5,
         logging_steps=5,
