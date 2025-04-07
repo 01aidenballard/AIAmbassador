@@ -1,3 +1,4 @@
+=== Sun Apr  6 20:47:03 EDT 2025 ===
 [94m[i] Dataset Size: 462[0m
 {'loss': 3.3428, 'grad_norm': 3.6591053009033203, 'learning_rate': 4.931034482758621e-05, 'epoch': 0.17}
 {'loss': 3.2032, 'grad_norm': 2.301792621612549, 'learning_rate': 4.844827586206897e-05, 'epoch': 0.34}
@@ -97,3 +98,4 @@ Answer: A computer science degree can help you develop a career in computer scie
 F1 Score: 35.74777073413033
 BLEU Score: 62.081753227960135
 Avg Resp Time: 0.5469s
+
