@@ -6,8 +6,8 @@ Author: Aiden Ballard
 Date: 03/26/2025
 '''
 
-import re
-import pyttsx3 as tts
+import time
+import pyttsx3
 import sys
 import os
 
@@ -17,8 +17,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'C
 # Now you can import the modules
 from crg_api import CRG, ClassifyMethod, RetrieveMethod, ExtractMethod
 
-
 def main():
+    engine = pyttsx3.init()
+    engine.setProperty('rate', 150)
+
     # set dataset path
     dataset_pth = '../dataset.json'
 
@@ -35,11 +37,30 @@ def main():
         retrieve_method=retrieve_method,
         print_info=False)
 
-    # answer a sample question
-    question = 'What degrees are offered for undergraduate?'
-    answer = crg.answer_question(question)
+    # while loop to ask questions
+    user_ans = ''
+    while user_ans != 'exit':
+        user_ans = input('Type your question (or type "exit" to quit): ')
+        if user_ans.lower() == 'exit':
+            break
+        st = time.time()
+        answer = crg.answer_question(user_ans)
+        et = time.time()
+        print(f'Answer: {answer}')
+        print(f'Time taken: {et - st:.2f} seconds\n')
 
-    print(f'Question: {question}\nAnswer: {answer}')
+        engine.say(answer)
+        engine.runAndWait()
+
+    
+    # question = 'What degrees are offered for undergraduate?'
+
+    # st = time.time()
+    # answer = crg.answer_question(question)
+    # et = time.time()
+
+    # print(f'Question: {question}\nAnswer: {answer}')
+    # print(f'Time taken: {et - st:.2f} seconds')
 
 if __name__ == '__main__':
     main()
