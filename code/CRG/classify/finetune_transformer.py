@@ -121,7 +121,7 @@ def main(args):
 
             # load the tokenizer
             # tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-            tokenizer = BertTokenizer.from_pretrained("/scratch/isj0001/huggingface_models/bert-base-uncased") # HPC
+            tokenizer = BertTokenizer.from_pretrained("/scratch/isj0001/models/bert-base-uncased") # HPC
 
             # tokenize the training & test data
             train_encodings = tokenizer(train_questions, truncation=True, padding=True, max_length=512)
@@ -139,7 +139,7 @@ def main(args):
 
             # load pretrained BERT model
             # model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=len(label_encoder.classes_))
-            model = BertForSequenceClassification.from_pretrained("/scratch/isj0001/huggingface_models/bert-base-uncased", num_labels=len(label_encoder.classes_)) # HPC
+            model = BertForSequenceClassification.from_pretrained("/scratch/isj0001/models/bert-base-uncased", num_labels=len(label_encoder.classes_)) # HPC
             model.to(device)
 
             # define training args
@@ -228,7 +228,8 @@ def main(args):
             print('Training DistilBERT')
 
             # load the tokenizer
-            tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased")
+            # tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased") 
+            tokenizer = DistilBertTokenizer.from_pretrained("/scratch/isj0001/models/distilbert-base-uncased") # HPC
 
             # tokenize the training & test data
             train_encodings = tokenizer(train_questions, truncation=True, padding=True, max_length=512)
@@ -245,7 +246,8 @@ def main(args):
             eval_data = train_dataset.train_test_split(test_size=0.2, seed=42)['test']
 
             # load pretrained BERT model
-            model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=len(label_encoder.classes_))
+            # model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=len(label_encoder.classes_))
+            model = DistilBertForSequenceClassification.from_pretrained("/scratch/isj0001/models/distilbert-base-uncased", num_labels=len(label_encoder.classes_))
 
             # define training args
             training_args = TrainingArguments(
