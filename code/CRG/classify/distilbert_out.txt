@@ -1,0 +1,117 @@
+=== Thu Apr 10 13:39:31 EDT 2025 ===
+Using device: cuda
+Using DistilBERT for classification
+Training DistilBERT
+{'loss': 2.3628, 'grad_norm': 5.096000671386719, 'learning_rate': 1.95e-05, 'epoch': 1.0}
+{'eval_loss': 2.3188982009887695, 'eval_runtime': 0.3118, 'eval_samples_per_second': 481.034, 'eval_steps_per_second': 32.069, 'epoch': 1.0}
+{'loss': 2.2341, 'grad_norm': 6.022822856903076, 'learning_rate': 1.9e-05, 'epoch': 2.0}
+{'eval_loss': 2.242199420928955, 'eval_runtime': 0.3114, 'eval_samples_per_second': 481.667, 'eval_steps_per_second': 32.111, 'epoch': 2.0}
+{'loss': 2.0949, 'grad_norm': 5.684435844421387, 'learning_rate': 1.8500000000000002e-05, 'epoch': 3.0}
+{'eval_loss': 2.1409988403320312, 'eval_runtime': 0.3107, 'eval_samples_per_second': 482.764, 'eval_steps_per_second': 32.184, 'epoch': 3.0}
+{'loss': 1.9153, 'grad_norm': 5.742948532104492, 'learning_rate': 1.8e-05, 'epoch': 4.0}
+{'eval_loss': 1.9943571090698242, 'eval_runtime': 0.3106, 'eval_samples_per_second': 482.932, 'eval_steps_per_second': 32.195, 'epoch': 4.0}
+{'loss': 1.7546, 'grad_norm': 6.4512763023376465, 'learning_rate': 1.7500000000000002e-05, 'epoch': 5.0}
+{'eval_loss': 1.8179632425308228, 'eval_runtime': 0.3109, 'eval_samples_per_second': 482.459, 'eval_steps_per_second': 32.164, 'epoch': 5.0}
+{'loss': 1.5209, 'grad_norm': 6.53371524810791, 'learning_rate': 1.7e-05, 'epoch': 6.0}
+{'eval_loss': 1.6281459331512451, 'eval_runtime': 0.3125, 'eval_samples_per_second': 479.962, 'eval_steps_per_second': 31.997, 'epoch': 6.0}
+{'loss': 1.3003, 'grad_norm': 6.942514419555664, 'learning_rate': 1.65e-05, 'epoch': 7.0}
+{'eval_loss': 1.438148856163025, 'eval_runtime': 0.3126, 'eval_samples_per_second': 479.877, 'eval_steps_per_second': 31.992, 'epoch': 7.0}
+{'loss': 1.0694, 'grad_norm': 7.347894668579102, 'learning_rate': 1.6000000000000003e-05, 'epoch': 8.0}
+{'eval_loss': 1.2582024335861206, 'eval_runtime': 0.3129, 'eval_samples_per_second': 479.331, 'eval_steps_per_second': 31.955, 'epoch': 8.0}
+{'loss': 0.884, 'grad_norm': 4.858494281768799, 'learning_rate': 1.55e-05, 'epoch': 9.0}
+{'eval_loss': 1.1090030670166016, 'eval_runtime': 0.3124, 'eval_samples_per_second': 480.078, 'eval_steps_per_second': 32.005, 'epoch': 9.0}
+{'loss': 0.719, 'grad_norm': 4.736852169036865, 'learning_rate': 1.5000000000000002e-05, 'epoch': 10.0}
+{'eval_loss': 0.9725651144981384, 'eval_runtime': 0.3126, 'eval_samples_per_second': 479.879, 'eval_steps_per_second': 31.992, 'epoch': 10.0}
+{'loss': 0.6007, 'grad_norm': 4.304337024688721, 'learning_rate': 1.45e-05, 'epoch': 11.0}
+{'eval_loss': 0.8487943410873413, 'eval_runtime': 0.314, 'eval_samples_per_second': 477.701, 'eval_steps_per_second': 31.847, 'epoch': 11.0}
+{'loss': 0.4594, 'grad_norm': 3.2571771144866943, 'learning_rate': 1.4e-05, 'epoch': 12.0}
+{'eval_loss': 0.7504754662513733, 'eval_runtime': 0.3111, 'eval_samples_per_second': 482.118, 'eval_steps_per_second': 32.141, 'epoch': 12.0}
+{'loss': 0.3788, 'grad_norm': 2.481740713119507, 'learning_rate': 1.3500000000000001e-05, 'epoch': 13.0}
+{'eval_loss': 0.670988142490387, 'eval_runtime': 0.3132, 'eval_samples_per_second': 479.0, 'eval_steps_per_second': 31.933, 'epoch': 13.0}
+{'loss': 0.3165, 'grad_norm': 2.7461743354797363, 'learning_rate': 1.3000000000000001e-05, 'epoch': 14.0}
+{'eval_loss': 0.6115961670875549, 'eval_runtime': 0.3104, 'eval_samples_per_second': 483.231, 'eval_steps_per_second': 32.215, 'epoch': 14.0}
+{'loss': 0.2604, 'grad_norm': 3.2050461769104004, 'learning_rate': 1.25e-05, 'epoch': 15.0}
+{'eval_loss': 0.5588251352310181, 'eval_runtime': 0.3125, 'eval_samples_per_second': 479.984, 'eval_steps_per_second': 31.999, 'epoch': 15.0}
+{'loss': 0.2249, 'grad_norm': 2.8639981746673584, 'learning_rate': 1.2e-05, 'epoch': 16.0}
+{'eval_loss': 0.5210446119308472, 'eval_runtime': 0.3128, 'eval_samples_per_second': 479.523, 'eval_steps_per_second': 31.968, 'epoch': 16.0}
+{'loss': 0.1893, 'grad_norm': 2.010971784591675, 'learning_rate': 1.15e-05, 'epoch': 17.0}
+{'eval_loss': 0.49668461084365845, 'eval_runtime': 0.3128, 'eval_samples_per_second': 479.615, 'eval_steps_per_second': 31.974, 'epoch': 17.0}
+{'loss': 0.1729, 'grad_norm': 2.048205614089966, 'learning_rate': 1.1000000000000001e-05, 'epoch': 18.0}
+{'eval_loss': 0.46482574939727783, 'eval_runtime': 0.3128, 'eval_samples_per_second': 479.482, 'eval_steps_per_second': 31.965, 'epoch': 18.0}
+{'loss': 0.1431, 'grad_norm': 1.339717984199524, 'learning_rate': 1.0500000000000001e-05, 'epoch': 19.0}
+{'eval_loss': 0.4417353868484497, 'eval_runtime': 0.3125, 'eval_samples_per_second': 480.075, 'eval_steps_per_second': 32.005, 'epoch': 19.0}
+{'loss': 0.1238, 'grad_norm': 0.6907191276550293, 'learning_rate': 1e-05, 'epoch': 20.0}
+{'eval_loss': 0.430839478969574, 'eval_runtime': 0.3126, 'eval_samples_per_second': 479.778, 'eval_steps_per_second': 31.985, 'epoch': 20.0}
+{'loss': 0.1112, 'grad_norm': 0.8926165699958801, 'learning_rate': 9.5e-06, 'epoch': 21.0}
+{'eval_loss': 0.421680748462677, 'eval_runtime': 0.3122, 'eval_samples_per_second': 480.468, 'eval_steps_per_second': 32.031, 'epoch': 21.0}
+{'loss': 0.1025, 'grad_norm': 0.6690660715103149, 'learning_rate': 9e-06, 'epoch': 22.0}
+{'eval_loss': 0.4044760465621948, 'eval_runtime': 0.3124, 'eval_samples_per_second': 480.167, 'eval_steps_per_second': 32.011, 'epoch': 22.0}
+{'loss': 0.0944, 'grad_norm': 0.657095193862915, 'learning_rate': 8.5e-06, 'epoch': 23.0}
+{'eval_loss': 0.3970862627029419, 'eval_runtime': 0.3125, 'eval_samples_per_second': 479.953, 'eval_steps_per_second': 31.997, 'epoch': 23.0}
+{'loss': 0.0869, 'grad_norm': 0.5099431872367859, 'learning_rate': 8.000000000000001e-06, 'epoch': 24.0}
+{'eval_loss': 0.38980376720428467, 'eval_runtime': 0.3128, 'eval_samples_per_second': 479.595, 'eval_steps_per_second': 31.973, 'epoch': 24.0}
+{'loss': 0.1013, 'grad_norm': 4.112852573394775, 'learning_rate': 7.500000000000001e-06, 'epoch': 25.0}
+{'eval_loss': 0.38688668608665466, 'eval_runtime': 0.313, 'eval_samples_per_second': 479.212, 'eval_steps_per_second': 31.947, 'epoch': 25.0}
+{'loss': 0.0764, 'grad_norm': 0.7190119028091431, 'learning_rate': 7e-06, 'epoch': 26.0}
+{'eval_loss': 0.38478320837020874, 'eval_runtime': 0.3121, 'eval_samples_per_second': 480.687, 'eval_steps_per_second': 32.046, 'epoch': 26.0}
+{'loss': 0.0695, 'grad_norm': 0.5839625597000122, 'learning_rate': 6.5000000000000004e-06, 'epoch': 27.0}
+{'eval_loss': 0.37275373935699463, 'eval_runtime': 0.3106, 'eval_samples_per_second': 482.875, 'eval_steps_per_second': 32.192, 'epoch': 27.0}
+{'loss': 0.0681, 'grad_norm': 0.6507740020751953, 'learning_rate': 6e-06, 'epoch': 28.0}
+{'eval_loss': 0.3722671568393707, 'eval_runtime': 0.3109, 'eval_samples_per_second': 482.535, 'eval_steps_per_second': 32.169, 'epoch': 28.0}
+{'loss': 0.081, 'grad_norm': 2.5624091625213623, 'learning_rate': 5.500000000000001e-06, 'epoch': 29.0}
+{'eval_loss': 0.375308096408844, 'eval_runtime': 0.3125, 'eval_samples_per_second': 479.989, 'eval_steps_per_second': 31.999, 'epoch': 29.0}
+{'loss': 0.0688, 'grad_norm': 1.6566500663757324, 'learning_rate': 5e-06, 'epoch': 30.0}
+{'eval_loss': 0.37052300572395325, 'eval_runtime': 0.3128, 'eval_samples_per_second': 479.593, 'eval_steps_per_second': 31.973, 'epoch': 30.0}
+{'loss': 0.0634, 'grad_norm': 0.515824556350708, 'learning_rate': 4.5e-06, 'epoch': 31.0}
+{'eval_loss': 0.3674185276031494, 'eval_runtime': 0.3125, 'eval_samples_per_second': 479.949, 'eval_steps_per_second': 31.997, 'epoch': 31.0}
+{'loss': 0.0583, 'grad_norm': 0.47498229146003723, 'learning_rate': 4.000000000000001e-06, 'epoch': 32.0}
+{'eval_loss': 0.36386433243751526, 'eval_runtime': 0.3133, 'eval_samples_per_second': 478.851, 'eval_steps_per_second': 31.923, 'epoch': 32.0}
+{'loss': 0.0595, 'grad_norm': 0.5132728219032288, 'learning_rate': 3.5e-06, 'epoch': 33.0}
+{'eval_loss': 0.3630824685096741, 'eval_runtime': 0.3132, 'eval_samples_per_second': 478.958, 'eval_steps_per_second': 31.931, 'epoch': 33.0}
+{'loss': 0.0576, 'grad_norm': 0.513195276260376, 'learning_rate': 3e-06, 'epoch': 34.0}
+{'eval_loss': 0.3602856993675232, 'eval_runtime': 0.6301, 'eval_samples_per_second': 238.076, 'eval_steps_per_second': 15.872, 'epoch': 34.0}
+{'loss': 0.0522, 'grad_norm': 0.3237389326095581, 'learning_rate': 2.5e-06, 'epoch': 35.0}
+{'eval_loss': 0.35953810811042786, 'eval_runtime': 0.3108, 'eval_samples_per_second': 482.569, 'eval_steps_per_second': 32.171, 'epoch': 35.0}
+{'loss': 0.056, 'grad_norm': 0.5691611766815186, 'learning_rate': 2.0000000000000003e-06, 'epoch': 36.0}
+{'eval_loss': 0.3607557713985443, 'eval_runtime': 0.3105, 'eval_samples_per_second': 483.014, 'eval_steps_per_second': 32.201, 'epoch': 36.0}
+{'loss': 0.0517, 'grad_norm': 0.460868239402771, 'learning_rate': 1.5e-06, 'epoch': 37.0}
+{'eval_loss': 0.36136582493782043, 'eval_runtime': 0.3109, 'eval_samples_per_second': 482.414, 'eval_steps_per_second': 32.161, 'epoch': 37.0}
+{'loss': 0.0552, 'grad_norm': 0.3853386342525482, 'learning_rate': 1.0000000000000002e-06, 'epoch': 38.0}
+{'eval_loss': 0.36114901304244995, 'eval_runtime': 0.311, 'eval_samples_per_second': 482.35, 'eval_steps_per_second': 32.157, 'epoch': 38.0}
+{'loss': 0.0598, 'grad_norm': 1.534144639968872, 'learning_rate': 5.000000000000001e-07, 'epoch': 39.0}
+{'eval_loss': 0.36087843775749207, 'eval_runtime': 0.3107, 'eval_samples_per_second': 482.786, 'eval_steps_per_second': 32.186, 'epoch': 39.0}
+{'loss': 0.0543, 'grad_norm': 0.4693056643009186, 'learning_rate': 0.0, 'epoch': 40.0}
+{'eval_loss': 0.3606819808483124, 'eval_runtime': 0.3134, 'eval_samples_per_second': 478.573, 'eval_steps_per_second': 31.905, 'epoch': 40.0}
+{'train_runtime': 103.46, 'train_samples_per_second': 57.607, 'train_steps_per_second': 3.866, 'train_loss': 0.5038233092427253, 'epoch': 40.0}
+Question: What degree programs does the department offer?
+	Predicted Category: Degree Programs
+Question: What dual degrees can I pursue?
+	Predicted Category: Degree Programs
+Question: What are the various research areas in the Lane Department?
+	Predicted Category: Research Opportunities
+Question: What research is done in the biometrics field?
+	Predicted Category: Research Opportunities
+Question: What are the student orgs I can join as a LCSEE student?
+	Predicted Category: Clubs and Organizations
+Question: What kind of activities do CyberWVU students do?
+	Predicted Category: Clubs and Organizations
+Question: What can I do with a computer engineering degree?
+	Predicted Category: Degree Programs
+Question: What can I do with a computer science degree?
+	Predicted Category: Degree Programs
+Question: What type of internships do students get?
+	Predicted Category: Internships
+Question: How can students get internships?
+	Predicted Category: Internships
+Question: What type of scholarships are available for incoming students?
+	Predicted Category: Financial Aid and Scholarships
+Question: How can freshmen get scholarships?
+	Predicted Category: Financial Aid and Scholarships
+Question: How can I get into contact with the Lane Department?
+	Predicted Category: Clubs and Organizations
+Question: Where is the Lane Department Located?
+	Predicted Category: Facilities and Resources
+Test Accuracy: 71.43%
+Test F1 Score: 0.6381
+Average Response Time: 0.01 ms
+
