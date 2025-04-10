@@ -347,7 +347,273 @@
                             "answer": [
                                 "The PhD programs focus on areas like Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
                             ]
+                        },
+
+                        {
+                            "question": "Does the Lane Department offer a Robotics Degree?",
+                            "answer": [
+                                "Yes, the Lane Department offers a Robotics Engineering (ROBE) program with the Mechanical, Materials and Aerospace Engineering Department."
+                            ]
+                        },
+                        {
+                            "question": "Is there a robotics program available at WVU through the Lane Department?",
+                            "answer": [
+                                "Yes, WVU offers a Robotics Engineering program through a collaboration between the Lane Department and the Mechanical, Materials and Aerospace Engineering Department."
+                            ]
+                        },
+                        {
+                            "question": "Can I study Robotics Engineering at WVU through the Lane Department?",
+                            "answer": [
+                                "Yes, the Lane Department partners with the Mechanical, Materials and Aerospace Engineering Department to offer a Robotics Engineering program."
+                            ]
+                        },
+                        {
+                            "question": "Does WVU have a Robotics Engineering degree?",
+                            "answer": [
+                                "Yes, WVU provides a Robotics Engineering (ROBE) degree program that is a joint effort between the Lane Department and the Mechanical, Materials and Aerospace Engineering Department."
+                            ]
+                        },
+
+                        {
+                            "question": "What are the durations of the degree programs offered by the Lane Department?",
+                            "answer": [
+                                "The Lane Department offers undergraduate programs that typically span four years, leading to a Bachelor of Science degree. Graduate programs vary: the Master of Science in Software Engineering is designed to be completed in 30 to 33 credit hours, depending on the chosen path. Ph.D. programs have flexible durations, depending on the student's research progress and dissertation completion."
+                            ]
+                        },
+                        {
+                            "question": "How long does it take to complete a degree from the Lane Department?",
+                            "answer": [
+                                "Undergraduate degrees from the Lane Department typically take four years to complete. Graduate programs like the M.S. in Software Engineering usually require 30 to 33 credit hours, while Ph.D. programs have variable timelines based on research and dissertation progress."
+                            ]
+                        },
+                        {
+                            "question": "Are the Lane Department’s degree programs 2-year or 4-year programs?",
+                            "answer": [
+                                "The Lane Department primarily offers 4-year undergraduate programs. Graduate programs, such as master’s degrees, vary in length, and Ph.D. programs depend on research requirements and individual progress."
+                            ]
+                        },
+                        {
+                            "question": "Does the Lane Department offer any shorter or accelerated degree options?",
+                            "answer": [
+                                "Most undergraduate programs at the Lane Department are designed to be completed in four years. Some graduate programs, particularly online master’s degrees, may be completed more quickly depending on course load and scheduling."
+                            ]
+                        },
+                        {
+                            "question": "What is the typical length of study for degrees in the Lane Department?",
+                            "answer": [
+                                "Undergraduate programs in the Lane Department are typically completed in four years. Master’s programs vary but often range from 1.5 to 2 years, depending on the number of credit hours taken per semester. Ph.D. programs usually take several years and depend on research progress."
+                            ]
+                        },
+                        {
+                            "question": "Do Lane Department undergraduate programs take four years to finish?",
+                            "answer": [
+                                "Yes, undergraduate programs offered by the Lane Department are generally structured to be completed in four years of full-time study."
+                            ]
+                        },
+                        {
+                            "question": "How long are bachelor's programs in the Lane Department?",
+                            "answer": [
+                                "Bachelor's degrees typically take 4 years to complete, but are also commonly completed in 3.5 years or 4.5 years."
+                            ]
+                        },
+                        {
+                            "question": "How long are master's programs in the Lane Department?",
+                            "answer": [
+                                "Master's programs can often be completed in 1.5 to 2 years."
+                            ]
+                        },
+                        {
+                            "question": "How long are doctoral programs in the Lane Department?",
+                            "answer": [
+                                "Doctoral programs have flexible durations based on the student's research timeline."
+                            ]
+                        },
+                        
+                        {
+                            "question": "What are some courses that Computer Science students take?",
+                            "answer": [
+                                "Computer Science students at WVU study topics including programming, data structures, computer organization, algorithms, software engineering, artificial intelligence, databases, operating systems, and computer networks."
+                            ]
+                        },
+                        {
+                            "question": "What topics do Computer Science students study at WVU?",
+                            "answer": [
+                                "Computer Science students at WVU study various topics such as algorithms, artificial intelligence, data structures, programming languages, and computer networks."
+                            ]
+                        },
+                        {
+                            "question": "Which areas are covered in the Computer Science curriculum at WVU?",
+                            "answer": [
+                                "The curriculum at WVU includes topics like software engineering, computer organization, databases, operating systems, algorithms, and computer networks."
+                            ]
+                        },
+                        {
+                            "question": "What subjects are part of the Computer Science program at WVU?",
+                            "answer": [
+                                "Students in the Computer Science program at WVU learn about areas like data structures, artificial intelligence, algorithms, software development, and computer security."
+                            ]
+                        },
+                        {
+                            "question": "What fundamental topics are included in WVU's Computer Science courses?",
+                            "answer": [
+                                "Key topics include programming, operating systems, algorithms, software engineering, databases, and network security."
+                            ]
+                        },
+                        {
+                            "question": "What are some key areas of focus for Computer Science students at WVU?",
+                            "answer": [
+                                "Computer Science students at WVU focus on topics such as artificial intelligence, databases, data structures, algorithms, and network security."
+                            ]
+                        },
+                        
+                        {
+                            "question": "What are some courses that Electrical Engineering students take?",
+                            "answer": [
+                                "Electrical Engineering students at WVU study topics such as circuit analysis, electromagnetics, power systems, control systems, digital systems, signal processing, and communications."
+                            ]
+                        },
+                        {
+                            "question": "What subjects are covered in the Electrical Engineering program at WVU?",
+                            "answer": [
+                                "Electrical Engineering students at WVU focus on areas such as circuit analysis, control systems, signal processing, power systems, and electromagnetics."
+                            ]
+                        },
+                        {
+                            "question": "What topics do Electrical Engineering students study at WVU?",
+                            "answer": [
+                                "Students in Electrical Engineering study subjects including power electronics, communication systems, digital logic, and signal processing."
+                            ]
+                        },
+                        {
+                            "question": "What are the main areas of study for Electrical Engineering students at WVU?",
+                            "answer": [
+                                "Key areas of study for Electrical Engineering students at WVU include electrical circuits, electromagnetics, microelectronics, power systems, and control systems."
+                            ]
+                        },
+                        {
+                            "question": "Which courses do Electrical Engineering students typically take at WVU?",
+                            "answer": [
+                                "Electrical Engineering students at WVU typically study courses in digital systems, electromagnetics, power systems, circuits, and control theory."
+                            ]
+                        },
+                        {
+                            "question": "What do Electrical Engineering students learn about at WVU?",
+                            "answer": [
+                                "Students in the Electrical Engineering program at WVU learn about topics such as control systems, communication systems, circuit design, power generation, and signal processing."
+                            ]
+                        },
+
+                        {
+                            "question": "What are some courses that Computer Engineering students take?",
+                            "answer": [
+                                "Computer Engineering students at WVU study topics such as digital systems, microprocessors, circuit design, computer architecture, embedded systems, control systems, and software engineering. These courses blend electrical engineering and computer science principles."
+                            ]
+                        },
+                        {
+                            "question": "What subjects are included in the Computer Engineering program at WVU?",
+                            "answer": [
+                                "Students in Computer Engineering at WVU learn about subjects like digital systems, embedded systems, microprocessors, and computer architecture. These courses blend electrical engineering and computer science principles."
+                            ]
+                        },
+                        {
+                            "question": "What do Computer Engineering students study at WVU?",
+                            "answer": [
+                                "Computer Engineering students at WVU study areas including circuit design, computer architecture, embedded systems, and software development. These courses blend electrical engineering and computer science principles."
+                            ]
+                        },
+                        {
+                            "question": "Which topics are part of the Computer Engineering curriculum at WVU?",
+                            "answer": [
+                                "The curriculum includes topics like microprocessors, digital logic, control systems, embedded systems, and hardware/software integration. These courses blend electrical engineering and computer science principles."
+                            ]
+                        },
+                        {
+                            "question": "What are the main areas of study for Computer Engineering students at WVU?",
+                            "answer": [
+                                "Key areas include digital electronics, microelectronics, computer architecture, embedded systems, and signal processing. These courses blend electrical engineering and computer science principles."
+                            ]
+                        },
+                        {
+                            "question": "Which courses do Computer Engineering students typically take at WVU?",
+                            "answer": [
+                                "Typical courses for Computer Engineering students at WVU include embedded systems, digital circuits, microprocessor design, and software engineering. These courses blend electrical engineering and computer science principles."
+                            ]
+                        },
+
+                        {
+                            "question": "What are some courses that Cybersecurity students take?",
+                            "answer": [
+                                "Cybersecurity students at WVU study topics such as network security, cryptography, ethical hacking, digital forensics, risk management, and secure software development."
+                            ]
+                        },
+                        {
+                            "question": "What subjects do Cybersecurity students focus on at WVU?",
+                            "answer": [
+                                "Cybersecurity students focus on subjects such as cryptography, network defense, ethical hacking, digital forensics, and information security."
+                            ]
+                        },
+                        {
+                            "question": "What topics are included in the Cybersecurity program at WVU?",
+                            "answer": [
+                                "The Cybersecurity program covers topics like ethical hacking, risk management, security policy, cryptography, and secure system design."
+                            ]
+                        },
+                        {
+                            "question": "Which areas do Cybersecurity students study at WVU?",
+                            "answer": [
+                                "Students study areas such as network security, penetration testing, security protocols, cryptography, and digital forensics."
+                            ]
+                        },
+                        {
+                            "question": "What are the main topics covered in the Cybersecurity curriculum at WVU?",
+                            "answer": [
+                                "Main topics include network defense, ethical hacking, malware analysis, digital forensics, and cryptography."
+                            ]
+                        },
+                        {
+                            "question": "What courses are part of the Cybersecurity program at WVU?",
+                            "answer": [
+                                "Courses in the Cybersecurity program cover subjects like secure coding, network security, ethical hacking, digital forensics, and incident response."
+                            ]
+                        },
+
+                        {
+                            "question": "What are some courses that Robotics Engineering students take?",
+                            "answer": [
+                                "Robotics Engineering students at WVU study topics such as robotics systems, control systems, computer vision, artificial intelligence, machine learning, and mechatronics. These courses combine elements of mechanical, electrical, and computer engineering to provide a comprehensive understanding of robotics technology."
+                            ]
+                        },
+                        {
+                            "question": "What subjects are covered in the Robotics Engineering program at WVU?",
+                            "answer": [
+                                "The Robotics Engineering program at WVU includes subjects like computer vision, robotics control systems, machine learning, mechatronics, and artificial intelligence. These courses combine elements of mechanical, electrical, and computer engineering to provide a comprehensive understanding of robotics technology."
+                            ]
+                        },
+                        {
+                            "question": "What do Robotics Engineering students study at WVU?",
+                            "answer": [
+                                "Students in the Robotics Engineering program study robotics systems, control algorithms, artificial intelligence, computer vision, and machine learning. These courses combine elements of mechanical, electrical, and computer engineering to provide a comprehensive understanding of robotics technology."
+                            ]
+                        },
+                        {
+                            "question": "Which topics are part of the Robotics Engineering curriculum at WVU?",
+                            "answer": [
+                                "The curriculum includes topics such as mechatronics, robotics design, artificial intelligence, machine learning, and autonomous systems. These courses combine elements of mechanical, electrical, and computer engineering to provide a comprehensive understanding of robotics technology."
+                            ]
+                        },
+                        {
+                            "question": "What are the main areas of study for Robotics Engineering students at WVU?",
+                            "answer": [
+                                "Main areas of study include robotics systems, control theory, computer vision, mechatronics, and artificial intelligence. These courses combine elements of mechanical, electrical, and computer engineering to provide a comprehensive understanding of robotics technology."
+                            ]
+                        },
+                        {
+                            "question": "What courses do Robotics Engineering students typically take at WVU?",
+                            "answer": [
+                                "Robotics Engineering students typically take courses in robotics systems, artificial intelligence, computer vision, control systems, and machine learning. These courses combine elements of mechanical, electrical, and computer engineering to provide a comprehensive understanding of robotics technology."
+                            ]
                         }
+                          
                     ]
                 }
             ]
@@ -1869,7 +2135,30 @@
                                 "The SAC provides input on department policies and operations, coordinates student activities, and organizes department-wide social events like picnics."
                             ]
                         },
-
+                        {
+                            "question": "How does the Student Advisory Council (SAC) contribute to the Lane Department?",
+                            "answer": [
+                              "The Student Advisory Council (SAC) contributes to the Lane Department by offering student perspectives on policies and operations, managing student activities, and arranging social events for the department, such as picnics."
+                            ]
+                        },
+                        {
+                            "question": "What are the responsibilities of the Student Advisory Council (SAC) within the Lane Department?",
+                            "answer": [
+                              "The responsibilities of the Student Advisory Council (SAC) within the Lane Department include providing student feedback on department policies and operations, coordinating various student activities, and organizing social gatherings for the department, like picnics."
+                            ]
+                        },
+                        {
+                            "question": "In what ways does the Student Advisory Council (SAC) serve the Lane Department and its students?",
+                            "answer": [
+                              "The Student Advisory Council (SAC) serves the Lane Department and its students by offering student insights on policies and operations, coordinating student-led initiatives, and organizing social events for the department, for example, picnics."
+                            ]
+                        },
+                        {
+                            "question": "What functions does the Student Advisory Council (SAC) perform for the Lane Department?",
+                            "answer": [
+                              "The Student Advisory Council (SAC) performs functions such as offering student opinions on department policies and operations, coordinating student events, and organizing social activities for the department, including picnics."
+                            ]
+                        },
 
 
                         {
@@ -1914,6 +2203,24 @@
                                 "Statler College Student Services helps students achieve their academic and personal goals by providing support and resources for student success."
                             ]
                         },
+                        {
+                            "question": "How does Statler College Student Services assist its students?",
+                            "answer": [
+                                "Statler College Student Services assists its students by offering support and resources aimed at helping them reach their academic and personal goals, ultimately fostering student success."
+                            ]
+                        },
+                        {
+                            "question": "In what ways does Statler College Student Services support the success of its students?",
+                            "answer": [
+                                "Statler College Student Services supports the success of its students by providing various forms of assistance and resources designed to help them achieve their academic and personal objectives."
+                            ]
+                        },
+                        {
+                            "question": "What kind of support and resources can students access through Statler College Student Services?",
+                            "answer": [
+                                "Students can access support and resources through Statler College Student Services that are designed to help them achieve their academic and personal goals, contributing to their overall success."
+                            ]
+                        },
 
 
 
@@ -1921,6 +2228,24 @@
                             "question": "How does WVU Career Services assist students in their career development?",
                             "answer": [
                                 "WVU Career Services assists students with resume reviews, practice interviews, job search coaching, and other career development resources."
+                            ]
+                        },
+                        {
+                            "question": "What kind of support does WVU Career Services offer to students for their career advancement?",
+                            "answer": [
+                              "WVU Career Services offers support to students through services like resume reviews, mock interviews, guidance on job searching, and various other career development tools."
+                            ]
+                        },
+                        {
+                            "question": "In what ways does WVU Career Services help students prepare for their future careers?",
+                            "answer": [
+                              "WVU Career Services helps students prepare for their future careers by providing assistance with resume building, offering practice interview sessions, coaching on job searching strategies, and supplying other valuable career development resources."
+                            ]
+                        },
+                        {
+                            "question": "What resources are available at WVU Career Services to aid students in their job search and career planning?",
+                            "answer": [
+                              "WVU Career Services provides students with resources such as resume reviews, practice interview opportunities, job search coaching, and a range of other tools to support their career planning and job search efforts."
                             ]
                         },
 
@@ -1939,6 +2264,24 @@
                             "question": "What activities does the SAC coordinate for Lane Department students?",
                             "answer": [
                                 "The SAC coordinates activities like picnics, provides feedback on courses and labs, and organizes student services and social events."
+                            ]
+                        },
+                        {
+                            "question": "What kind of events and services are organized by the SAC for students in the Lane Department?",
+                            "answer": [
+                                "The SAC organizes events and services such as picnics, course/lab feedback sessions, and various student services and social gatherings."
+                            ]
+                        },
+                        {
+                            "question": "How does the SAC support students within the Lane Department?",
+                            "answer": [
+                                "The SAC supports students within the Lane Department by coordinating activities like picnics, offering course and lab feedback opportunities, and arranging student services and social events."
+                            ]
+                        },
+                        {
+                            "question": "What role does the SAC play in enhancing the student experience in the Lane Department?",
+                            "answer": [
+                                "The SAC enhances the student experience in the Lane Department by coordinating activities like picnics, facilitating course/lab feedback, and organizing student services and social events."
                             ]
                         },
 
@@ -1994,6 +2337,241 @@
                             "answer": [
                                 "The WVU Amateur Radio Club contributes to public service by providing emergency communications support during natural disasters and training students in amateur radio operations."
                             ]
+                        },
+
+                        {
+                        "question": "What is the primary objective of the AI Club at WVU?",
+                        "answer": [
+                            "The primary objective of the AI Club at WVU is to make artificial intelligence more accessible to students through discussions and practical workshops."
+                        ]
+                        },
+                        {
+                        "question": "What kind of activities does the AI Club at WVU organize for its members?",
+                        "answer": [
+                            "The AI Club at WVU organizes activities such as discussions on AI topics and hands-on workshops to help students develop AI skills."
+                        ]
+                        },
+                        {
+                        "question": "What does the AI Club at WVU typically offer in its meetings?",
+                        "answer": [
+                            "AI Club meetings at WVU typically offer presentations on AI concepts, discussions about the latest advancements, and opportunities for collaborative coding projects or AI challenges."
+                        ]
+                        },
+                        {
+                        "question": "What professional development opportunities are available through the Association for Computing Machinery (ACM) at WVU?",
+                        "answer": [
+                            "The Association for Computing Machinery (ACM) at WVU offers professional development opportunities such as guest speaker presentations and networking connections within the computer science field."
+                        ]
+                        },
+                        {
+                        "question": "How does the Association for Computing Machinery (ACM) support computer science students at WVU?",
+                        "answer": [
+                            "The Association for Computing Machinery (ACM) supports computer science students at WVU by providing access to experts in the field through speakers and facilitating professional networking."
+                        ]
+                        },
+                        {
+                        "question": "In addition to speakers, what resources does the ACM provide to students at WVU?",
+                        "answer": [
+                            "Beyond speakers, the ACM at WVU also offers resources like technical skill workshops, programming competition opportunities, and access to their digital library."
+                        ]
+                        },
+                        {
+                        "question": "What are the core interests of the CyberWVU organization?",
+                        "answer": [
+                            "CyberWVU's core interests are cybersecurity and Free and Open Source Software (FOSS), with activities including competitions and security training."
+                        ]
+                        },
+                        {
+                        "question": "What are the key activities and focuses of CyberWVU?",
+                        "answer": [
+                            "The key activities and focuses of CyberWVU include participation in cybersecurity competitions and hosting training sessions, with a strong emphasis on Free and Open Source Software."
+                        ]
+                        },
+                        {
+                        "question": "How does CyberWVU engage with cybersecurity competitions?",
+                        "answer": [
+                            "CyberWVU engages with cybersecurity competitions by actively participating in events like capture-the-flag (CTF) to enhance its members' skills."
+                        ]
+                        },
+                        {
+                        "question": "What is the significance of being a member of Eta Kappa Nu (HKN)?",
+                        "answer": [
+                            "Being a member of Eta Kappa Nu (HKN) signifies recognition as an outstanding student in electrical and computer engineering."
+                        ]
+                        },
+                        {
+                        "question": "What are the qualifications for membership in Eta Kappa Nu (HKN)?",
+                        "answer": [
+                            "Qualifications for membership in Eta Kappa Nu (HKN) are based on a student's excellent academic record and character in electrical and computer engineering."
+                        ]
+                        },
+                        {
+                        "question": "What types of activities do Eta Kappa Nu (HKN) members participate in at WVU?",
+                        "answer": [
+                            "Eta Kappa Nu (HKN) members at WVU may participate in tutoring, technical workshops, and outreach to promote electrical and computer engineering."
+                        ]
+                        },
+                        {
+                        "question": "What is the primary focus of the Homebrew Computer Club?",
+                        "answer": [
+                            "The primary focus of the Homebrew Computer Club is on hobbyist electronics and retro-computing, where members design and build projects."
+                        ]
+                        },
+                        {
+                        "question": "What kind of hands-on experience does the Homebrew Computer Club provide?",
+                        "answer": [
+                            "The Homebrew Computer Club provides hands-on experience in electronics and retro-computing through design and construction projects."
+                        ]
+                        },
+                        {
+                        "question": "What background is needed to join the Homebrew Computer Club?",
+                        "answer": [
+                            "No specific background is needed to join the Homebrew Computer Club; it welcomes both beginners and those with prior experience in electronics."
+                        ]
+                        },
+                        {
+                        "question": "What opportunities does the IEEE student chapter offer to its members at WVU?",
+                        "answer": [
+                            "The IEEE student chapter at WVU offers its members opportunities like hands-on projects, professional networking, and academic support."
+                        ]
+                        },
+                        {
+                        "question": "How does the IEEE student chapter at WVU assist engineering students?",
+                        "answer": [
+                            "The IEEE student chapter at WVU assists engineering students by providing practical projects, networking with professionals, and academic resources."
+                        ]
+                        },
+                        {
+                        "question": "What are some ways the IEEE student chapter at WVU engages with industry?",
+                        "answer": [
+                            "The IEEE student chapter at WVU engages with industry through activities like guest lectures, site visits, and professional networking events."
+                        ]
+                        },
+                        {
+                        "question": "What types of activities might students undertake in the Robotics Club at WVU?",
+                        "answer": [
+                            "Students in the Robotics Club at WVU might undertake activities such as designing, building, and programming robots, possibly for competitions."
+                        ]
+                        },
+                        {
+                        "question": "What is the nature of the projects or competitions in the Robotics Club?",
+                        "answer": [
+                            "The projects or competitions in the Robotics Club at WVU often involve designing and constructing robots for demonstrations or competitions."
+                        ]
+                        },
+                        {
+                        "question": "Are there different areas of focus within the Robotics Club at WVU?",
+                        "answer": [
+                            "Yes, the Robotics Club at WVU might have subgroups specializing in areas like mechanical design, electrical systems, and software."
+                        ]
+                        },
+                        {
+                        "question": "What is the primary role of the Upsilon Pi Epsilon honor society?",
+                        "answer": [
+                            "The primary role of Upsilon Pi Epsilon is to recognize academic excellence in computing and information disciplines."
+                        ]
+                        },
+                        {
+                        "question": "What recognition does Upsilon Pi Epsilon provide to its members?",
+                        "answer": [
+                            "Upsilon Pi Epsilon provides recognition for academic achievement and offers professional development opportunities in computing."
+                        ]
+                        },
+                        {
+                        "question": "How does Upsilon Pi Epsilon help students connect with professionals?",
+                        "answer": [
+                            "Upsilon Pi Epsilon helps students connect with professionals through events, meetings, and alumni networking in the IT field."
+                        ]
+                        },
+                        {
+                        "question": "What is the central purpose of the Game Developers Club at WVU?",
+                        "answer": [
+                            "The central purpose of the Game Developers Club at WVU is to offer a space for students interested in all aspects of video game development."
+                        ]
+                        },
+                        {
+                        "question": "What kind of skill development is facilitated by the Game Developers Club?",
+                        "answer": [
+                            "The Game Developers Club facilitates skill development in areas like programming, game design, art, and project management."
+                        ]
+                        },
+                        {
+                        "question": "What types of game development does the Game Developers Club explore?",
+                        "answer": [
+                            "The Game Developers Club explores various types of game development, potentially including video games, board games, and interactive media."
+                        ]
+                        },
+                        {
+                        "question": "What is the main objective of the University Rover Challenge team?",
+                        "answer": [
+                            "The main objective of the University Rover Challenge team is to design and build a rover for the University Rover Challenge competition."
+                        ]
+                        },
+                        {
+                        "question": "What is the nature of the competition that the University Rover Challenge team participates in?",
+                        "answer": [
+                            "The University Rover Challenge competition tasks student teams with challenges that simulate the exploration of Mars."
+                        ]
+                        },
+                        {
+                        "question": "What kind of tasks are involved in the University Rover Challenge?",
+                        "answer": [
+                            "Tasks in the University Rover Challenge typically involve traversing terrain, manipulating objects, autonomous navigation, and scientific analysis."
+                        ]
+                        },
+                        {
+                        "question": "What is the primary focus of the Student Society for the Advancement of Biometrics (SSAB)?",
+                        "answer": [
+                            "The primary focus of the Student Society for the Advancement of Biometrics (SSAB) is the interdisciplinary field of biometrics."
+                        ]
+                        },
+                        {
+                        "question": "What topics or areas of study does the Student Society for the Advancement of Biometrics (SSAB) cover?",
+                        "answer": [
+                            "The Student Society for the Advancement of Biometrics (SSAB) covers topics like fingerprint, facial, and iris recognition technologies."
+                        ]
+                        },
+                        {
+                        "question": "What activities or events might the Student Society for the Advancement of Biometrics (SSAB) organize?",
+                        "answer": [
+                            "The Student Society for the Advancement of Biometrics (SSAB) might organize workshops, competitions, or challenges related to biometrics."
+                        ]
+                        },
+                        {
+                        "question": "What is the core purpose of Women in Computer Science and Electrical Engineering (WiCSE) at WVU?",
+                        "answer": [
+                            "The core purpose of Women in Computer Science and Electrical Engineering (WiCSE) at WVU is to support and promote women in these fields."
+                        ]
+                        },
+                        {
+                        "question": "What type of support and resources does Women in Computer Science and Electrical Engineering (WiCSE) provide?",
+                        "answer": [
+                            "Women in Computer Science and Electrical Engineering (WiCSE) provides resources like mentorship, networking, and technical workshops."
+                        ]
+                        },
+                        {
+                        "question": "What kinds of events does Women in Computer Science and Electrical Engineering (WiCSE) host?",
+                        "answer": [
+                            "Women in Computer Science and Electrical Engineering (WiCSE) hosts events such as networking socials, technical workshops, and discussions on women in STEM."
+                        ]
+                        },
+                        {
+                        "question": "What is the central interest that brings students together in the WVU Amateur Radio Club?",
+                        "answer": [
+                            "The central interest that brings students together in the WVU Amateur Radio Club is amateur radio communication."
+                        ]
+                        },
+                        {
+                        "question": "What kind of learning opportunities does the WVU Amateur Radio Club offer?",
+                        "answer": [
+                            "The WVU Amateur Radio Club offers opportunities to learn about and participate in radio communication and related activities."
+                        ]
+                        },
+                        {
+                        "question": "Does the WVU Amateur Radio Club engage in any emergency preparedness activities?",
+                        "answer": [
+                            "Yes, the WVU Amateur Radio Club may participate in emergency communication drills and collaborate with local organizations."
+                        ]
                         },
 
 
@@ -2513,6 +3091,7 @@
                             ]
                         },
 
+
                         {
                             "question": "What types of companies do Statler College students intern with?",
                             "answer": [
@@ -2528,27 +3107,28 @@
                         {
                             "question": "What industries do Statler College students typically intern with?",
                             "answer": [
-                                "Statler College students typically intern with industries in software development, cybersecurity, computer engineering, and electrical systems, including government and private sector companies."
+                                "Lane Department students typically intern with industries in software development, cybersecurity, computer engineering, and electrical systems, including government and private sector companies."
                             ]    
                         },
                         {
                             "question": "What industries do students from Statler College commonly intern with?",
                             "answer": [
-                                "Students from Statler College often intern in industries such as cybersecurity, software development, and computer engineering, working with both private companies and government organizations."
+                                "Students from Lane Department often intern in industries such as cybersecurity, software development, and computer engineering, working with both private companies and government organizations."
                             ]    
                         },
 
-                        {
-                            "question": "How does Statler College assist with international internship placements?",
-                            "answer": [
-                                "Statler College facilitates global internship opportunities through partnerships with international companies, enabling students in fields like CPE, EE, CS, and CYBE to gain international career experience."
-                            ]
-                        },
                         {
                             "question": "Does Statler College offer assistance for securing internships abroad?",
                             "answer": [
                                 "Yes, Statler College supports students by connecting them with international internship opportunities, helping with visa processes, and offering guidance on cultural adaptation for students in engineering and technology fields."
                             ]
+                        },
+
+                        {
+                            "question": "How does the Lane Department help students prepare for internships?",
+                            "answer": [
+                                "The Lane Department provides resources like career fairs, networking events, and industry connections to help students in CPE, EE, CS, and CYBE prepare for internships."
+                            ]    
                         },
                         {
                             "question": "How does the Lane Department prepare students for internships in engineering and computer science?",
@@ -2563,16 +3143,17 @@
                             ]    
                         },
 
+
                         {
                             "question": "Do Lane Department students have opportunities for research internships?",
                             "answer": [
-                                "Yes, Lane Department students, especially in CS, CYBE, and EE, can participate in research internships through faculty-led labs, working on cutting-edge topics like artificial intelligence and cybersecurity."
+                                "Yes, Lane Department students, can participate in research internships through faculty-led labs, working on cutting-edge topics like artificial intelligence, cybersecurity, and robotics."
                             ]
                         },
                         {
                             "question": "Can students in the Lane Department take part in research internships?",
                             "answer": [
-                                "Students in the Lane Department, particularly those studying CS, CYBE, and EE, have the opportunity to engage in research internships through faculty-led labs focusing on innovative technologies like AI and cybersecurity."
+                                "Students in the Lane Department have the opportunity to engage in research internships through faculty-led labs focusing on innovative technologies like AI and cybersecurity."
                             ]
                         },
 
@@ -2585,9 +3166,28 @@
                         {
                             "question": "Is it possible for Lane Department students to earn credit for internships?",
                             "answer": [
-                                "Yes, students in the Lane Department, particularly those pursuing CPE, EE, CS, and CYBE degrees, can earn academic credit for internships, integrating both professional experience and academic progress."
+                                "Yes, students in the Lane Department can earn academic credit for internships, integrating both professional experience and academic progress."
                             ]    
                         },
+                        {
+                            "question": "Do internships count for academic credit in the Lane Department?",
+                            "answer": [
+                                "Yes, internships can count for academic credit in the Lane Department."
+                            ]
+                        },
+                        {
+                            "question": "Can students in the Lane Department get credit toward their degree by doing an internship?",
+                            "answer": [
+                                "Yes, Lane Department students can receive academic credit for internships, which can fulfill part of their degree requirements depending on their program."
+                            ]
+                        },
+                        {
+                            "question": "Are internships eligible for academic credit for Lane Department majors?",
+                            "answer": [
+                                "Yes, students majoring in Lane Department programs are eligible to earn academic credit for internships, allowing them to apply real-world experience toward their academic goals."
+                            ]
+                        },
+                        
 
                         {
                             "question": "What is the Lane Department's co-op program?",
@@ -2629,6 +3229,203 @@
                             "question": "Can students in the Lane Department apply for co-op positions while studying?",
                             "answer": [
                                 "Yes, students in the Lane Department, particularly those studying CPE, EE, CS, and CYBE, can apply for co-op positions that allow them to alternate between academic studies and industry roles."
+                            ]
+                        },
+
+                        {
+                            "question": "Are internships required or strongly encouraged for students in the Lane Department?",
+                            "answer": [
+                                "While internships are not mandatory for students in the Lane Department, they are strongly encouraged. Engaging in internships provides valuable real-world experience and enhances career readiness."
+                            ]
+                        },
+                        {
+                            "question": "When should students start looking for internships at WVU?",
+                            "answer": [
+                                "Students are advised to begin their internship search early, ideally in their sophomore year. This allows ample time to utilize resources like the Statler College Career Resources Center and to attend career fairs."
+                            ]
+                        },
+                        {
+                            "question": "Is gaining internship experience recommended for Lane Department students?",
+                            "answer": [
+                                "Yes, internships are highly recommended for Lane Department students. Although not required, they offer hands-on experience that can significantly benefit future job prospects."
+                            ]
+                        },
+                        {
+                            "question": "At what point in their studies should Lane Department students begin applying for internships?",
+                            "answer": [
+                                "Lane Department students are encouraged to start applying for internships by their sophomore year to maximize opportunities and take advantage of resources like career fairs and resume workshops."
+                            ]
+                        },
+                        {
+                            "question": "Do Lane Department students benefit from completing internships during their studies?",
+                            "answer": [
+                                "Yes, completing internships during their academic career greatly benefits Lane Department students by providing practical skills, professional connections, and improved job readiness after graduation."
+                            ]
+                        },
+                        {
+                            "question": "What is the best time for students to start looking for internships?",
+                            "answer": [
+                                "The best time for students to start looking for internships is during their sophomore year, allowing them to build experience and take advantage of career fairs and networking opportunities."
+                            ]
+                        },
+                        
+
+                        {
+                            "question": "Does Statler College provide help with resume building and interview prep?",
+                            "answer": [
+                                "Yes, the Statler College Career Resources Center, in collaboration with WVU Career Services, offers assistance with resume reviews, practice interviews, and job search coaching to help students prepare for internships and job placements."
+                            ]
+                        },
+                        {
+                            "question": "Are most internships paid, and what kind of compensation can students expect?",
+                            "answer": [
+                                "Many internships secured through Statler College are paid positions. Compensation varies by employer, industry, and the student's experience level."
+                            ]
+                        },
+                        {
+                            "question": "Do students typically get paid for internships through the Lane Department?",
+                            "answer": [
+                                "Yes, many internships obtained through the Lane Department and Statler College are paid. The pay rate depends on the employer, job role, and the student’s qualifications."
+                            ]
+                        },
+                        {
+                            "question": "What type of pay can Lane Department students expect from internships?",
+                            "answer": [
+                                "Internships for Lane Department students are often paid, with compensation depending on factors such as the industry, company size, and the student’s skill level or year in school."
+                            ]
+                        },
+                        
+                        {
+                            "question": "Do most students intern locally, or do they travel for internships?",
+                            "answer": [
+                                "Students at Statler College secure internships both locally and nationally. Opportunities are available with local companies in West Virginia as well as with organizations across the country."
+                            ]
+                        },
+                        {
+                            "question": "Are remote or hybrid internships available for Lane Department students?",
+                            "answer": [
+                                "Yes, remote and hybrid internships have become more prevalent. Students in the Lane Department have access to such opportunities, especially in fields like computer science and cybersecurity."
+                            ]
+                        },
+                        {
+                            "question": "Are there alumni who help current students find internships or offer mentorship?",
+                            "answer": [
+                                "Yes, the Statler College maintains a strong alumni network. Alumni often participate in mentorship programs and assist current students in securing internships and employment."
+                            ]
+                        },
+                        {
+                            "question": "Do Lane Department alumni support current students with internships or career advice?",
+                            "answer": [
+                                "Yes, Lane Department alumni frequently support current students by offering mentorship, networking opportunities, and guidance in finding internships or full-time positions."
+                            ]
+                        },
+                        {
+                            "question": "Can students in the Lane Department connect with alumni for mentorship or internship opportunities?",
+                            "answer": [
+                                "Yes, students can connect with alumni through the Statler College’s alumni network, where many graduates offer mentorship and help students explore internship and career paths."
+                            ]
+                        },
+                        
+                        {
+                            "question": "Does WVU offer any courses or workshops that help students prepare for internships?",
+                            "answer": [
+                                "Yes, WVU offers workshops and courses focused on professional development, including resume writing, interview skills, and job search strategies, to prepare students for internships and future careers."
+                            ]
+                        },
+                        {
+                            "question": "Is completing an internship a requirement for Lane Department students?",
+                            "answer": [
+                                "Internships are not required for graduation in the Lane Department, but they are highly encouraged as they provide hands-on experience and significantly improve job prospects after college."
+                            ]
+                        },
+                        {
+                            "question": "When is the best time for students at WVU to start applying for internships?",
+                            "answer": [
+                                "Students should begin looking for internships as early as their second year, giving them time to explore options, attend career fairs, and build a strong resume before applying."
+                            ]
+                        },
+                        {
+                            "question": "Does the Statler College help students get ready for interviews and improve their resumes?",
+                            "answer": [
+                                "Yes, Statler College supports students with resume writing workshops, mock interviews, and personalized feedback through its Career Resources Center and WVU Career Services."
+                            ]
+                        },
+                        {
+                            "question": "Do students usually get paid for internships, and what does the pay typically look like?",
+                            "answer": [
+                                "Many internships available through the Lane Department are paid. The pay range depends on the company and the role, with tech and engineering internships often offering competitive wages."
+                            ]
+                        },
+                        {
+                            "question": "Where do most students do their internships—close to campus or farther away?",
+                            "answer": [
+                                "Lane Department students intern in a variety of locations. Some stay local in Morgantown or West Virginia, while others travel to major tech hubs or complete internships in different states."
+                            ]
+                        },
+                        {
+                            "question": "Can students in the Lane Department do remote or hybrid internships?",
+                            "answer": [
+                                "Yes, many students in the Lane Department participate in remote or hybrid internships, particularly in areas like software development and cybersecurity where virtual work is common."
+                            ]
+                        },
+                        {
+                            "question": "Do WVU alumni support students in finding internships or offer professional guidance?",
+                            "answer": [
+                                "WVU has an active alumni network, and many Lane Department alumni give back by offering internships, participating in career events, or mentoring current students."
+                            ]
+                        },
+                        {
+                            "question": "Are there any classes or workshops at WVU that help prepare students for internships?",
+                            "answer": [
+                                "Yes, WVU provides professional development workshops and courses that help students build job-search skills, including how to network, craft resumes, and succeed in interviews."
+                            ]
+                        },
+                        {
+                            "question": "Do Lane Department students have to complete internships before graduating?",
+                            "answer": [
+                                "Internships aren't a formal requirement for graduation in the Lane Department, but students are strongly encouraged to pursue them to gain industry experience and strengthen their resumes."
+                            ]
+                        },
+                        {
+                            "question": "At what point in their college journey should students start applying for internships?",
+                            "answer": [
+                                "Students are encouraged to begin applying for internships in their sophomore year, allowing them to build experience early and take full advantage of career fairs and advising resources."
+                            ]
+                        },
+                        {
+                            "question": "What kind of career prep does Statler College offer for students looking for internships?",
+                            "answer": [
+                                "Statler College helps students prepare for internships through services like resume critiques, interview practice sessions, and professional development events tailored to engineering and tech fields."
+                            ]
+                        },
+                        {
+                            "question": "Are most internships through the Lane Department paid, and how much do they pay?",
+                            "answer": [
+                                "The majority of internships offered to Lane Department students are paid. Compensation varies, but internships in tech and engineering tend to offer competitive hourly rates or stipends."
+                            ]
+                        },
+                        {
+                            "question": "Do Lane Department students typically stay nearby for internships or go elsewhere?",
+                            "answer": [
+                                "Students intern both locally and nationally. Some find positions near WVU, while others accept internships in larger cities or even out of state depending on the company and field."
+                            ]
+                        },
+                        {
+                            "question": "Is it possible for Lane Department students to do internships online or in hybrid formats?",
+                            "answer": [
+                                "Yes, remote and hybrid internships are available and common in areas like computer science and cybersecurity, giving students flexibility while gaining experience."
+                            ]
+                        },
+                        {
+                            "question": "Are there WVU graduates who help students find internships or act as mentors?",
+                            "answer": [
+                                "Yes, WVU alumni often engage with students through mentorship programs, employer connections, and networking events, helping current students explore internships and career paths."
+                            ]
+                        },
+                        {
+                            "question": "Does WVU have anything like classes or events that help students get ready for internships?",
+                            "answer": [
+                                "Yes, WVU offers career readiness workshops, special-topic classes, and co-curricular events that help students develop skills for landing and succeeding in internships."
                             ]
                         }
                     ]
@@ -2819,6 +3616,30 @@
                             ]  
                           },
                           {
+                            "question": "What types of financial aid are available for graduate students in LCSEE?",
+                            "answer": [
+                              "LCSEE graduate students have opportunities to secure financial support through assistantships, fellowships, and by seeking external grants, which can also enhance their research experience."
+                            ]
+                          },
+                          {
+                            "question": "Are there funding options for graduate students studying in the Lane Department of Computer Science and Electrical Engineering?",
+                            "answer": [
+                              "Yes, graduate students within the Lane Department of Computer Science and Electrical Engineering can pursue financial support by applying for assistantships, fellowships, and external grants. These options often provide both financial aid and research opportunities."
+                            ]
+                          },
+                          {
+                            "question": "How can I fund my graduate studies in the LCSEE department?",
+                            "answer": [
+                              "To fund graduate studies in the LCSEE department, students can explore opportunities like applying for assistantships, fellowships, and seeking external grant funding, which can offer financial support and valuable research experience."
+                            ]
+                          },
+                          {
+                            "question": "What are the primary sources of financial support for graduate students in the Lane Department?",
+                            "answer": [
+                              "The primary sources of financial support for graduate students in the Lane Department include the option to apply for assistantships, fellowships, and external grants, which can help cover expenses and provide research opportunities."
+                            ]
+                          },
+                          {
                             "question": "Are there teaching assistant (TA) positions available for graduate students?",
                             "answer": [
                                 "Yes, LCSEE offers TA positions where graduate students assist in teaching courses and receive stipends along with tuition waivers."
@@ -2829,6 +3650,24 @@
                             "question": "Does the LCSEE department offer research funding for undergraduate students?",
                             "answer": [
                                 "Yes, the LCSEE department provides research funding opportunities for undergraduate students through programs such as the WVU Research Apprenticeship Program (RAP) and faculty-led research grants."
+                            ]
+                          },
+                          {
+                            "question": "Are there financial support options for undergraduates who want to participate in research within the LCSEE department?",
+                            "answer": [
+                              "Yes, undergraduate students interested in research in the LCSEE department can access funding through avenues like the WVU Research Apprenticeship Program (RAP) and grants secured by faculty members for their research projects."
+                            ]
+                          },
+                          {
+                            "question": "How can undergraduate students in LCSEE get funding to support their research endeavors?",
+                            "answer": [
+                              "Undergraduate students in the LCSEE department can find financial support for research through programs like the WVU Research Apprenticeship Program (RAP) and by engaging with faculty who have their own research grants that may include undergraduate involvement."
+                            ]
+                          },
+                          {
+                            "question": "What kind of financial assistance is available for undergraduate research within the Lane Department of Computer Science and Electrical Engineering?",
+                            "answer": [
+                              "The Lane Department of Computer Science and Electrical Engineering (LCSEE) offers financial assistance for undergraduate research via programs such as the WVU Research Apprenticeship Program (RAP) and through funding obtained by faculty for their research initiatives, which may support undergraduate researchers."
                             ]
                           },
 
@@ -2880,6 +3719,103 @@
                             "answer": [
                                 "Yes, some scholarships are designated for transfer students who meet eligibility requirements."
                             ]  
+                          },
+
+                          {
+                            "question": "What scholarships or assistantships are available to graduate Computer Science (CS) students?",
+                            "answer": [
+                              "Financial aid for CS graduate students often includes assistantships, which provide a stipend and tuition waiver. Additional funding opportunities may be found through fellowships and external grants listed on the WVU Graduate Education site."
+                            ]
+                          },
+                          {
+                            "question": "Are there any fellowships or assistantships for graduate students in Computer Science (CS)?",
+                            "answer": [
+                              "Graduate students in CS can typically secure funding through graduate assistantships, which cover tuition and offer a living stipend. Fellowships and externally funded grants, detailed on the WVU Graduate Education webpage, are also avenues for financial support."
+                            ]
+                          },
+                          {
+                            "question": "What funding like grants or assistantships can graduate Computer Science (CS) students apply for?",
+                            "answer": [
+                              "Graduate CS students can apply for various funding options, primarily graduate assistantships that include tuition waivers and stipends. They should also explore fellowships and external grant possibilities highlighted on the WVU Graduate Education website."
+                            ]
+                          },
+                          {
+                            "question": "How can graduate Computer Science (CS) students find financial aid such as assistantships?",
+                            "answer": [
+                              "Finding financial aid for graduate CS studies often involves applying for graduate assistantships, which provide both a tuition waiver and a stipend. Students should also investigate fellowships and external funding sources listed on the WVU Graduate Education webpage."
+                            ]
+                          },
+                          {
+                            "question": "What scholarships or assistantships are available to graduate Electrical Engineering (EE) students?",
+                            "answer": [
+                              "Graduate students in EE can often obtain financial support through assistantships, which include a tuition waiver and a stipend. Further funding possibilities can be explored via fellowships and external grants detailed on the WVU Graduate Education site."
+                            ]
+                          },
+                          {
+                            "question": "Are there any fellowships or assistantships for graduate students in Electrical Engineering (EE)?",
+                            "answer": [
+                              "Funding opportunities for EE graduate students commonly include graduate assistantships that cover tuition and provide a living stipend. Fellowships and externally funded grants, which can be found on the WVU Graduate Education webpage, are also potential sources of support."
+                            ]
+                          },
+                          {
+                            "question": "What funding like grants or assistantships can graduate Electrical Engineering (EE) students apply for?",
+                            "answer": [
+                              "Graduate EE students can apply for various funding options, with graduate assistantships being a primary source, offering tuition waivers and stipends. They should also look into fellowships and external grant opportunities listed on the WVU Graduate Education website."
+                            ]
+                          },
+                          {
+                            "question": "How can graduate Electrical Engineering (EE) students find financial aid such as assistantships?",
+                            "answer": [
+                              "Securing financial aid for graduate EE studies typically involves applying for graduate assistantships, which provide both a tuition waiver and a stipend. Students are also encouraged to research fellowships and external funding sources available on the WVU Graduate Education webpage."
+                            ]
+                          },
+                          {
+                            "question": "What scholarships or assistantships are available to graduate Computer Engineering (CPE) students?",
+                            "answer": [
+                              "Financial support for graduate CPE students frequently comes in the form of assistantships, which include a stipend and tuition coverage. Additional funding options may be available through fellowships and external grants mentioned on the WVU Graduate Education site."
+                            ]
+                          },
+                          {
+                            "question": "Are there any fellowships or assistantships for graduate students in Computer Engineering (CPE)?",
+                            "answer": [
+                              "Graduate students in CPE can often find funding through graduate assistantships, which cover tuition and offer a living stipend. Fellowships and externally funded grants, detailed on the WVU Graduate Education webpage, are also possibilities for financial aid."
+                            ]
+                          },
+                          {
+                            "question": "What funding like grants or assistantships can graduate Computer Engineering (CPE) students apply for?",
+                            "answer": [
+                              "Graduate CPE students can apply for various funding opportunities, primarily graduate assistantships that provide tuition waivers and stipends. They should also explore fellowships and external grant possibilities highlighted on the WVU Graduate Education website."
+                            ]
+                          },
+                          {
+                            "question": "How can graduate Computer Engineering (CPE) students find financial aid such as assistantships?",
+                            "answer": [
+                              "Finding financial aid for graduate CPE studies often involves applying for graduate assistantships, which provide both a tuition waiver and a stipend. Students should also investigate fellowships and external funding sources listed on the WVU Graduate Education webpage."
+                            ]
+                          },
+                          {
+                            "question": "What scholarships or assistantships are available to graduate Cybersecurity (CYBE) students?",
+                            "answer": [
+                              "Graduate students in CYBE can often obtain financial support through assistantships, which include a tuition waiver and a stipend. Further funding possibilities can be explored via fellowships and external grants detailed on the WVU Graduate Education site."
+                            ]
+                          },
+                          {
+                            "question": "Are there any fellowships or assistantships for graduate students in Cybersecurity (CYBE)?",
+                            "answer": [
+                              "Funding opportunities for CYBE graduate students commonly include graduate assistantships that cover tuition and provide a living stipend. Fellowships and externally funded grants, which can be found on the WVU Graduate Education webpage, are also potential sources of support."
+                            ]
+                          },
+                          {
+                            "question": "What funding like grants or assistantships can graduate Cybersecurity (CYBE) students apply for?",
+                            "answer": [
+                              "Graduate CYBE students can apply for various funding options, with graduate assistantships being a primary source, offering tuition waivers and stipends. They should also look into fellowships and external grant opportunities listed on the WVU Graduate Education website."
+                            ]
+                          },
+                          {
+                            "question": "How can graduate Cybersecurity (CYBE) students find financial aid such as assistantships?",
+                            "answer": [
+                              "Securing financial aid for graduate CYBE studies typically involves applying for graduate assistantships, which provide both a tuition waiver and a stipend. Students are also encouraged to research fellowships and external funding sources available on the WVU Graduate Education webpage."
+                            ]
                           }
 
                     ]
@@ -2892,7 +3828,388 @@
                 {
                     "context": "Provide an overview of faculty expertise.",
                     "qas": [
+                        {
+                            "question": "What is the faculty's area of expertise in the Lane Department?",
+                            "answer": [
+                                "The Lane Department's faculty specialize in areas including cybersecurity, data analytics, software engineering, power system operation, and robotics. For example, Professor Anurag Srivastava focuses on power system operation and cybersecurity, while Professor Katerina Goseva-Popstojanova specializes in cybersecurity, data analytics, and software engineering. Additionally, Professor Guilherme Pereira is an expert in field and aerial robotics."
+                            ]
+                        },
+                        {
+                            "question": "What are the areas of expertise of the Lane Department faculty?",
+                            "answer": [
+                                "The faculty in the Lane Department are specialists in areas such as cybersecurity, software engineering, data analytics, robotics, and power system operations. For instance, Professor Anurag Srivastava has expertise in power systems and cybersecurity, while Professor Katerina Goseva-Popstojanova focuses on cybersecurity and software engineering. Additionally, Professor Guilherme Pereira specializes in robotics, especially in field and aerial applications."
+                            ]
+                        },
+                        {
+                            "question": "What fields do the Lane Department faculty specialize in?",
+                            "answer": [
+                                "Faculty in the Lane Department have expertise in a range of fields including cybersecurity, data analytics, robotics, software engineering, and power system operation. Professors like Anurag Srivastava bring expertise in power systems and cybersecurity, Katerina Goseva-Popstojanova specializes in software engineering and data analytics, and Guilherme Pereira is an expert in robotics, with a focus on field and aerial robotics."
+                            ]
+                        },
+                        
+                        {
+                            "question": "How experienced are the faculty members in the Lane Department?",
+                            "answer": [
+                                "The Lane Department boasts a diverse and experienced faculty, with members recognized as experts in their respective fields. Faculty members have been instrumental in driving growth in interdisciplinary research areas such as health, energy, artificial intelligence, cybersecurity, and astronomy."
+                            ]
+                        },
+                        {
+                            "question": "What is the level of experience of the faculty in the Lane Department?",
+                            "answer": [
+                                "The faculty at the Lane Department are highly experienced, with many being recognized leaders in their fields. Their expertise spans across areas like artificial intelligence, cybersecurity, energy, health, and astronomy, making them well-equipped to guide students in their academic and professional development."
+                            ]
+                        },
+                        {
+                            "question": "How qualified are the faculty members in the Lane Department?",
+                            "answer": [
+                                "The Lane Department's faculty are highly qualified professionals with extensive experience in their specialized fields. They are recognized for their contributions to areas such as cybersecurity, artificial intelligence, energy, and health, ensuring students receive top-tier education and mentorship."
+                            ]
+                        },
+                        {
+                            "question": "What is the background of the Lane Department faculty?",
+                            "answer": [
+                                "The faculty in the Lane Department come with a wealth of experience and a strong background in disciplines such as cybersecurity, artificial intelligence, energy, health, and astronomy. Many are recognized experts who bring real-world insights into the classroom, enhancing the learning experience for students."
+                            ]
+                        },
+                        
+                        {
+                            "question": "Are faculty members involved in industry projects or collaborations?",
+                            "answer": [
+                                "Yes, faculty members in the Lane Department actively engage in industry collaborations, contributing to advancements in various sectors. Their involvement spans areas like cybersecurity, robotics, and energy systems, reflecting a strong commitment to bridging academic knowledge with industry applications."
+                            ]
+                        },
+                        {
+                            "question": "Do faculty members in the Lane Department collaborate with industry?",
+                            "answer": [
+                                "Yes, faculty in the Lane Department are deeply involved in industry partnerships, working on projects related to cybersecurity, robotics, energy, and other fields. These collaborations help bridge the gap between academic research and real-world applications."
+                            ]
+                        },
+                        {
+                            "question": "Are the Lane Department faculty engaged with industry projects?",
+                            "answer": [
+                                "Faculty members in the Lane Department collaborate with industries in fields such as robotics, cybersecurity, and energy systems. These partnerships help students gain practical insights and provide faculty with opportunities to apply academic knowledge to real-world challenges."
+                            ]
+                        },
+                        {
+                            "question": "How do faculty members in the Lane Department work with industry?",
+                            "answer": [
+                                "Faculty in the Lane Department work closely with industry leaders on various projects, including those in cybersecurity, robotics, and energy systems. These collaborations not only enrich the department’s educational offerings but also ensure that students are exposed to cutting-edge industry practices."
+                            ]
+                        },
+                        
+                        {
+                            "question": "How accessible are faculty members for mentoring and academic guidance?",
+                            "answer": [
+                                "Faculty members in the Lane Department are dedicated to student success and offer mentorship and academic guidance. The department encourages student engagement through organizations like the Student Advisory Council, which provides a platform for students to share insights and collaborate with faculty to enhance the learning environment."
+                            ]
+                        },
+                        {
+                            "question": "How easy is it to connect with faculty for mentorship and guidance in the Lane Department?",
+                            "answer": [
+                                "Faculty members in the Lane Department are committed to providing mentorship and academic support. They are approachable and available to help students, and through organizations like the Student Advisory Council, students can actively engage with faculty to improve their academic experience."
+                            ]
+                        },
+                        {
+                            "question": "Are Lane Department faculty available to guide students academically and professionally?",
+                            "answer": [
+                                "Yes, Lane Department faculty are highly accessible and offer valuable academic and professional guidance. They actively participate in student engagement through initiatives like the Student Advisory Council, which fosters communication and collaboration between students and faculty."
+                            ]
+                        },
+                        {
+                            "question": "How do faculty in the Lane Department support students in their academic journey?",
+                            "answer": [
+                                "Faculty in the Lane Department are dedicated to student success and provide both academic mentorship and guidance. They are readily available to support students, and platforms like the Student Advisory Council allow for direct collaboration to enhance students' academic and professional growth."
+                            ]
+                        },
+                        
+                        {
+                            "question": "Do the faculty in the Lane Department have industry experience?",
+                            "answer": [
+                                "Many faculty members in the Lane Department bring valuable industry experience to their academic roles. This diverse expertise enriches the learning environment, offering students practical perspectives alongside theoretical knowledge."
+                            ]
+                        },
+        
+                        {
+                            "question": "How can I get in touch with faculty members to learn more about their teaching interests?",
+                            "answer": [
+                                "Prospective students can explore faculty profiles and contact information through the Lane Department's official website. Engaging with faculty via email or attending department events provides opportunities to learn more about their teaching interests and ongoing projects."
+                            ]
+                        },
+                        {
+                            "question": "How can I contact faculty members to learn about their teaching interests?",
+                            "answer": [
+                                "You can find faculty profiles and contact information on the Lane Department's website. Reaching out via email or attending departmental events are great ways to connect with faculty and learn more about their research and teaching areas."
+                            ]
+                        },
+                        {
+                            "question": "Where can I find information about the teaching interests of faculty members?",
+                            "answer": [
+                                "Faculty members' teaching interests are detailed on their individual profiles on the Lane Department's website. You can also contact them directly through email or attend events like seminars and workshops to learn more about their areas of expertise."
+                            ]
+                        },
+                        {
+                            "question": "How do I reach out to faculty to learn more about their academic interests?",
+                            "answer": [
+                                "The Lane Department website provides faculty profiles that include their contact details and areas of academic interest. Students are encouraged to email faculty members or participate in department events to gain a deeper understanding of their teaching focuses and current projects."
+                            ]
+                        },
+                        
+                        {
+                            "question": "Are faculty members actively involved in professional organizations or conferences?",
+                            "answer": [
+                                "Yes, faculty members in the Lane Department are actively engaged in professional organizations and regularly participate in conferences. This involvement ensures they remain at the forefront of technological advancements and bring current industry insights into their teaching."
+                            ]
+                        },
+                        {
+                            "question": "Do faculty members in the Lane Department participate in professional organizations or conferences?",
+                            "answer": [
+                                "Absolutely! Faculty members in the Lane Department are involved in various professional organizations and frequently attend or present at conferences. This keeps them updated on the latest trends and innovations in their fields, which they incorporate into their teaching."
+                            ]
+                        },
+                        {
+                            "question": "Are Lane Department faculty members active in professional networks and conferences?",
+                            "answer": [
+                                "Yes, faculty members in the Lane Department are deeply involved in professional networks and regularly attend key conferences. Their participation allows them to stay informed on industry trends and ensure that students are exposed to the most current knowledge and practices."
+                            ]
+                        },
+                        {
+                            "question": "How involved are Lane Department faculty in industry conferences and professional organizations?",
+                            "answer": [
+                                "Lane Department faculty are highly involved in industry conferences and professional organizations. This engagement not only helps them stay on the cutting edge of technology but also enriches their teaching by integrating the latest advancements and best practices into their courses."
+                            ]
+                        },
+                        
+                        {
+                            "question": "What is the faculty-to-student ratio in the Lane Department?",
+                            "answer": [
+                                "The student-to-faculty ratio in the Lane Department varies by program. For instance, 21:1 for Computer Engineering, 33:1 for Computer Science, 16:1 for Electrical Engineering, and 25:1 for Cybersecurity."
+                            ]
+                        },
+                        {
+                            "question": "What is the student-to-faculty ratio in the Lane Department?",
+                            "answer": [
+                                "The student-to-faculty ratio in the Lane Department differs depending on the program. For example, it's 21:1 for Computer Engineering, 33:1 for Computer Science, 16:1 for Electrical Engineering, and 25:1 for Cybersecurity."
+                            ]
+                        },
+                        {
+                            "question": "How many students are there per faculty member in the Lane Department?",
+                            "answer": [
+                                "The faculty-to-student ratio in the Lane Department varies by program. For Computer Engineering, it’s 21:1, Computer Science is 33:1, Electrical Engineering is 16:1, and Cybersecurity has a ratio of 25:1."
+                            ]
+                        },
+                        {
+                            "question": "What is the ratio of students to faculty in the Lane Department?",
+                            "answer": [
+                                "The student-to-faculty ratio in the Lane Department varies by program. For example, it is 21:1 for Computer Engineering, 33:1 for Computer Science, 16:1 for Electrical Engineering, and 25:1 for Cybersecurity."
+                            ]
+                        },
 
+                        {
+                            "question": "Who is the current Chairperson of the Lane Department of Computer Science and Electrical Engineering at WVU?",
+                            "answer": [
+                                "Anurag Srivastava is the Chairperson of the department."
+                            ]
+                        },
+                        {
+                            "question": "Who is the current Chair of the Lane Department of Computer Science and Electrical Engineering at WVU?",
+                            "answer": [
+                                "Anurag Srivastava currently serves as the Chairperson of the department."
+                            ]
+                        },
+                        {
+                            "question": "Who currently leads the Lane Department of Computer Science and Electrical Engineering at WVU?",
+                            "answer": [
+                                "Anurag Srivastava is the current Chairperson of the department."
+                            ]
+                        },
+                        {
+                            "question": "Which professor holds the role of Associate Chair for Computer Science and also directs the Computer Science Graduate Studies program?",
+                            "answer": [
+                                "Donald Adjeroh is both the Associate Chair for Computer Science and the Program Director for Computer Science Graduate Studies."
+                            ]
+                        },
+                        {
+                            "question": "Which professor serves as the Associate Chair for Computer Science and Program Director for Computer Science Graduate Studies?",
+                            "answer": [
+                                "Donald Adjeroh holds these positions within the department."
+                            ]
+                        },
+                        {
+                            "question": "Which professor holds the position of Associate Chair for Computer Science and directs the Computer Science Graduate Studies program?",
+                            "answer": [
+                                "Donald Adjeroh serves as both the Associate Chair for Computer Science and the Program Director for Computer Science Graduate Studies."
+                            ]
+                        },
+                        {
+                            "question": "Who is the Program Coordinator for the BS Cybersecurity program?",
+                            "answer": [
+                                "Katerina Goseva-Popstojanova serves as the Program Coordinator for BS Cybersecurity."
+                            ]
+                        },
+                        {
+                            "question": "Who coordinates the BS Cybersecurity program at WVU?",
+                            "answer": [
+                                "Katerina Goseva-Popstojanova is the Program Coordinator for the BS Cybersecurity program."
+                            ]
+                        },
+                        {
+                            "question": "Who is in charge of the BS Cybersecurity program at WVU?",
+                            "answer": [
+                                "Katerina Goseva-Popstojanova is the Program Coordinator for the BS Cybersecurity program."
+                            ]
+                        },
+                        {
+                            "question": "Who is responsible for the MS in Software Engineering program at WVU?",
+                            "answer": [
+                                "Dale Dzielski is the Program Director of the MS in Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Which faculty member is the Program Director of the MS in Software Engineering?",
+                            "answer": [
+                                "Dale Dzielski is the Program Director of the MS in Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Which faculty member is in charge of the MS in Software Engineering program?",
+                            "answer": [
+                                "Dale Dzielski is the Program Director for the MS in Software Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Who is responsible for coordinating Senior Design Capstone Projects?",
+                            "answer": [
+                                "Ramana Reddy coordinates the Senior Design Capstone Projects."
+                            ]
+                        },
+                        {
+                            "question": "Who manages the Senior Design Capstone Projects in the department?",
+                            "answer": [
+                                "Ramana Reddy oversees the Senior Design Capstone Projects."
+                            ]
+                        },
+                        {
+                            "question": "Who oversees the Senior Design Capstone Projects in the Lane Department?",
+                            "answer": [
+                                "Ramana Reddy is responsible for coordinating the Senior Design Capstone Projects."
+                            ]
+                        },
+                        {
+                            "question": "Which professor is the Program Director of Undergraduate Studies in Computer Science?",
+                            "answer": [
+                                "Brian Powell serves as the Program Director of Undergraduate Studies in Computer Science."
+                            ]
+                        },
+                        {
+                            "question": "Which professor serves as the Program Director for Undergraduate Studies in Computer Science?",
+                            "answer": [
+                                "Brian Powell is the Program Director for Undergraduate Studies in Computer Science."
+                            ]
+                        },
+                        {
+                            "question": "Which professor directs Undergraduate Studies in Computer Science?",
+                            "answer": [
+                                "Brian Powell is the Program Director for Undergraduate Studies in Computer Science."
+                            ]
+                        },
+                        {
+                            "question": "Who is in charge of the LCSEE Learning Center?",
+                            "answer": [
+                                "Tom Devine is the Director of the LCSEE Learning Center."
+                            ]
+                        },
+                        {
+                            "question": "Who is the Director of the LCSEE Learning Center?",
+                            "answer": [
+                                "Tom Devine holds these roles within the department."
+                            ]
+                        },
+                        {
+                            "question": "Who is the Director of the LCSEE Learning Center?",
+                            "answer": [
+                                "Tom Devine is the Director of the LCSEE Learning Center."
+                            ]
+                        },
+                        {
+                            "question": "Which professor is the Coordinator for Research Innovation?",
+                            "answer": [
+                                "Gianfranco Doretto serves as the Coordinator for Research Innovation."
+                            ]
+                        },
+                        {
+                            "question": "Which faculty member is responsible for Research Innovation coordination?",
+                            "answer": [
+                                "Gianfranco Doretto is the Coordinator for Research Innovation."
+                            ]
+                        },
+                        {
+                            "question": "Who is responsible for coordinating Research Innovation at the Lane Department?",
+                            "answer": [
+                                "Gianfranco Doretto serves as the Coordinator for Research Innovation."
+                            ]
+                        },
+
+                        {
+                            "question": "What is the total number of professors in the Lane Department?",
+                            "answer": [
+                                "There are over 40 professors in the Lane Department of Computer Science and Electrical Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Approximately how many professors teach at the Lane Department at WVU?",
+                            "answer": [
+                                "Around 40 professors teach and conduct research in the department."
+                            ]
+                        },
+                        {
+                            "question": "How large is the faculty team in WVU's Lane Department?",
+                            "answer": [
+                                "The Lane Department has a faculty team of over 40 professors and instructors."
+                            ]
+                        },
+                        {
+                            "question": "How many faculty members are there in the Lane Department?",
+                            "answer": [
+                                "The Lane Department has a faculty of over 40 members."
+                            ]
+                        },
+                        {
+                            "question": "Who is the Program Director for the Computer Science Graduate program?",
+                            "answer": [
+                            "Donald Adjeroh is the Program Director for Computer Science Graduate Studies."
+                            ]
+                        },
+                        {
+                            "question": "Who is the Program Coordinator for the BS Cybersecurity program?",
+                            "answer": [
+                            "Katerina Goseva-Popstojanova is the Program Coordinator for the BS Cybersecurity program."
+                            ]
+                        },
+                        {
+                            "question": "Who is responsible for the Robotics program in the Electrical Engineering department?",
+                            "answer": [
+                            "Amr El-Wakeel is the Program Coordinator for Robotics in the Electrical Engineering department."
+                            ]
+                        },
+                        {
+                            "question": "Who is the Director of Undergraduate Studies in Electrical and Computer Engineering?",
+                            "answer": [
+                            "Parviz Famouri is the Director of Undergraduate Studies for Electrical and Computer Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Who is the Coordinator for Senior Design Capstone Projects in Computer Engineering?",
+                            "answer": [
+                            "Ramana Reddy is the Coordinator of Senior Design Capstone Projects in the Computer Engineering program."
+                            ]
+                        },
+                        {
+                            "question": "Who is the Program Director for the MS in Software Engineering?",
+                            "answer": [
+                            "Dale Dzielski is the Program Director for the MS in Software Engineering."
+                            ]
+                        }
+                          
                     ]
                 }
             ]
@@ -2903,7 +4220,377 @@
                 {
                     "context": "Describe the application and admissions process.",
                     "qas": [
+                        {
+                            "question": "Where can I find more information?",
+                            "answer": [
+                                "You can find more information on the admissions webpage at admissions.wvu.edu."
+                            ]
+                        },
+                        {
+                            "question": "Where can I learn more about the admissions process?",
+                            "answer": [
+                                "For more details, head to the official admissions page at admissions.wvu.edu."
+                            ]
+                        },
+                        {
+                            "question": "Where can I get additional information on applying to WVU?",
+                            "answer": [
+                                "Visit the admissions website at admissions.wvu.edu for all the information you need."
+                            ]
+                        },
+                        {
+                            "question": "Where can I find more details about applying to WVU?",
+                            "answer": [
+                                "You can explore all the details on the admissions page at admissions.wvu.edu."
+                            ]
+                        },
+                        {
+                            "question": "Where should I go for more information about admissions?",
+                            "answer": [
+                                "For comprehensive details, check out the admissions webpage at admissions.wvu.edu."
+                            ]
+                        },
+                        
 
+                        {
+                            "question": "What are the admission requirements for undergraduate programs in the Lane Department?",
+                            "answer": [
+                                "Statler College admission for 2025-2026 is based on high school grade point average and math placement. Students must also meet all other WVU admission requirements. For Engineering and Computing Programs, a 3.00 cumulative high school GPA or meeting entry requirements to College Algebra is required for admission. Students applying to engineering disciplines will be admitted to the Statler College engineering program initially. Students applying to Computer Science or Cybersecurity will be admitted directly into their major. For the Engineering Technology Program, any incoming students entering under regular or transfer admissions that meet WVU admission requirements are directly admitted. Transfer students, internal or external to WVU, will be admitted if they meet the WVU Math Department’s requirements of starting in Calculus I and have a cumulative 2.25 GPA or higher. Transfer students with less than 24 credit hours who do not meet these criteria will be evaluated based on regular admission criteria."
+                            ]
+                        },
+                        {
+                            "question": "Can you outline the criteria for undergraduate admission to the Lane Department for the 2025-2026 academic year?",
+                            "answer": [
+                                "For the 2025-2026 academic year, admission to the Statler College, which houses the Lane Department, considers high school GPA and math placement, in addition to WVU's general admission standards. Specifics include a 3.00 high school GPA or meeting College Algebra prerequisites for Engineering and Computing programs, direct admission to Engineering Technology for students meeting WVU requirements, and for transfer students, eligibility to begin Calculus I with a minimum GPA of 2.25."
+                            ]
+                        },
+                        {
+                            "question": "What are the general admission requirements for undergraduate students applying to the Lane Department?",
+                            "answer": [
+                                "General admission to the Statler College for 2025-2026 requires meeting all other WVU admission requirements in addition to specific criteria for the Statler College. For Engineering and Computing Programs, this includes a 3.00 cumulative high school GPA or meeting entry requirements for College Algebra. The Engineering Technology Program admits any incoming students (regular or transfer) who meet WVU admission requirements. Transfer students need to meet the WVU Math Department’s requirements for starting Calculus I and have a cumulative 2.25 GPA or higher."
+                            ]
+                        },
+                        {
+                            "question": "Besides WVU's general requirements, what are the specific admission criteria for undergraduate programs within the Lane Department?",
+                            "answer": [
+                                "Beyond the standard WVU admissions, entry into the Statler College for 2025-2026 is based on high school GPA and math readiness. For those interested in Engineering and Computing, a 3.00 high school GPA or qualification for College Algebra is necessary. Admission to Engineering Technology programs aligns with WVU's general criteria. Transfer students must demonstrate readiness for Calculus I and hold a minimum 2.25 GPA."
+                            ]
+                        },
+                        {
+                            "question": "What are the admission requirements for undergraduate programs in the Lane Department?",
+                            "answer": [
+                                "For the 2025-2026 academic year, admission to the Statler College is determined by high school grade point average and math placement, alongside meeting all other WVU admission requirements. For Engineering and Computing programs, applicants need a 3.00 high school GPA or must meet the requirements for College Algebra. Admission to Engineering Technology programs is granted to any incoming student (regular or transfer) meeting WVU's general admission criteria. Transfer students must be eligible to start Calculus I and have a GPA of 2.25 or higher."
+                            ]
+                        },
+                        {
+                            "question": "Could you summarize the undergraduate admission prerequisites for the Lane Department for the upcoming academic year?",
+                            "answer": [
+                                "In the 2025-2026 academic year, prospective undergraduate students for the Lane Department (within the Statler College) are evaluated based on their high school GPA and math placement, in addition to satisfying WVU's broader admission criteria. A 3.00 high school GPA or readiness for College Algebra is needed for Engineering and Computing programs. The Engineering Technology program follows WVU's general admission guidelines. Transfer students must be prepared for Calculus I and have a minimum 2.25 GPA."
+                            ]
+                        },
+                        {
+                            "question": "What are the general admission requirements for undergraduate students applying to the Lane Department?",
+                            "answer": [
+                                "To apply to the Lane Department (within the Statler College) for 2025-2026, you must first meet all general WVU admission requirements. Additionally, for Engineering and Computing programs, you'll need a minimum 3.00 high school GPA or meet the requirements for College Algebra. Admission to the Engineering Technology program requires meeting standard WVU admission criteria. Transfer students must be qualified to begin Calculus I and possess a cumulative GPA of 2.25 or higher."
+                            ]
+                        },
+                        {
+                            "question": "What are the overarching admission criteria for undergraduates seeking to join the Lane Department at WVU?",
+                            "answer": [
+                                "For those applying to the Lane Department for the 2025-2026 academic year, the primary factors for admission to the Statler College are meeting WVU's general requirements, alongside high school GPA and math placement. Specifically, a 3.00 GPA or College Algebra readiness is needed for Engineering and Computing. Engineering Technology admission aligns with WVU's general criteria. Transfer students must be eligible for Calculus I and have at least a 2.25 GPA."
+                            ]
+                        },
+                        {
+                            "question": "What documents are required for undergraduate applications to the Lane Department?",
+                            "answer": [
+                                "The provided text does not specify the exact documents required for undergraduate applications to the Lane Department. However, it mentions that admission is based on high school grade point average and math placement, implying that high school transcripts would be necessary. Transfer students may also need to provide transcripts from previous institutions."
+                            ]
+                        },
+                        {
+                            "question": "Based on the provided information, what documentation is likely needed for undergraduate admission to the Lane Department?",
+                            "answer": [
+                                "Given that admission to the Statler College is based on high school GPA and math placement, it is highly probable that submission of high school transcripts is a requirement. For transfer students, academic records from prior institutions would also likely be necessary to evaluate their GPA and math readiness for Calculus I."
+                            ]
+                        },
+                        {
+                            "question": "Is there a minimum GPA requirement for applying to the Lane Department?",
+                            "answer": [
+                                "Yes, for the 2025-2026 academic year, students applying to Engineering and Computing Programs within the Statler College must achieve a 3.00 cumulative high school GPA or meet entry requirements for College Algebra. Transfer students need a cumulative 2.25 GPA or higher and must meet the requirements to start Calculus I."
+                            ]
+                        },
+                        {
+                            "question": "What is the lowest GPA considered for admission to undergraduate programs within the Lane Department for the 2025-2026 academic year?",
+                            "answer": [
+                                "For the 2025-2026 admissions cycle, a minimum high school GPA of 3.00 is specified for Engineering and Computing programs, or applicants must demonstrate readiness for College Algebra. Transfer students are required to have a cumulative GPA of at least 2.25 and be eligible to enroll in Calculus I."
+                            ]
+                        },
+                        {
+                            "question": "How can I apply to the Lane Department at WVU?",
+                            "answer": [
+                                "To apply to the Lane Department (within the Statler College) for the 2025-2026 academic year, you will need to complete the standard WVU admissions process. Your application will be evaluated based on your high school grade point average and math placement. For Engineering and Computing programs, ensure you meet the 3.00 GPA or College Algebra prerequisites. Transfer students should ensure they meet the criteria for starting Calculus I and have a GPA of 2.25 or higher. Once admitted, you will work with an academic advisor to create your degree plan."
+                            ]
+                        },
+                        {
+                            "question": "What is the recommended procedure for applying to undergraduate programs in the Lane Department for the 2025-2026 academic year?",
+                            "answer": [
+                                "The process for applying to the Lane Department for the 2025-2026 academic year involves completing the standard WVU admissions application. Your high school GPA and math placement will be key factors in the evaluation, especially needing a 3.00 GPA or College Algebra readiness for Engineering and Computing. Transfer applicants should ensure they qualify for Calculus I and have a minimum 2.25 GPA. Upon acceptance, you'll collaborate with an advisor to plan your coursework."
+                            ]
+                        },
+                        
+                        {
+                            "question": "How can I apply to the Lane Department's graduate programs?",
+                            "answer": [
+                                "Applications are submitted online through WVU's Graduate Admissions portal. Required materials include academic transcripts, letters of recommendation, a statement of purpose, and GRE scores."
+                            ]
+                        },
+                        {
+                            "question": "What is the process for applying to graduate programs in the Lane Department?",
+                            "answer": [
+                                "To apply, submit your application online through WVU’s Graduate Admissions portal. Required documents include your academic transcripts, recommendation letters, a statement of purpose, and, depending on the program, GRE scores."
+                            ]
+                        },
+                        {
+                            "question": "How do I apply for graduate programs in the Lane Department?",
+                            "answer": [
+                                "Applications for graduate programs in the Lane Department are submitted via the Graduate Admissions portal. You’ll need to provide transcripts, letters of recommendation, a personal statement, and GRE scores, if required."
+                            ]
+                        },
+                        {
+                            "question": "What steps are involved in applying to the Lane Department's graduate programs?",
+                            "answer": [
+                                "Graduate applicants should apply online through the WVU Graduate Admissions site. You’ll need to submit your transcripts, letters of recommendation, a personal statement, and GRE scores for certain programs."
+                            ]
+                        },
+                        
+                        {
+                            "question": "What is the application process for graduate programs in the Lane Department?",
+                            "answer": [
+                                "Prospective graduate students can apply online through the WVU Graduate Admissions website. They must submit transcripts, recommendations, a personal statement, and GRE scores, depending on the program."
+                            ]
+                        },
+                        {
+                            "question": "How do I apply to graduate programs in the Lane Department?",
+                            "answer": [
+                                "You can apply through the WVU Graduate Admissions website. You will need to submit your academic transcripts, recommendation letters, personal statement, and GRE scores if they are required by your program."
+                            ]
+                        },
+                        {
+                            "question": "What materials do I need to apply to the Lane Department's graduate programs?",
+                            "answer": [
+                                "The application requires your online submission through the WVU Graduate Admissions portal, including transcripts, recommendation letters, a statement of purpose, and GRE scores where applicable."
+                            ]
+                        },
+                        {
+                            "question": "What are the required documents to apply for graduate programs in the Lane Department?",
+                            "answer": [
+                                "To apply, submit your application online, including academic transcripts, letters of recommendation, a statement of purpose, and GRE scores, depending on the specific graduate program you are applying to."
+                            ]
+                        },
+                        
+                        {
+                            "question": "Is the GRE required for all graduate programs in the Lane Department?",
+                            "answer": [
+                                "Yes, a satisfactory score in the quantitative component of the GRE is required for regular admission to the Master's programs."
+                            ]
+                        },
+
+                        {
+                            "question": "Do I need to take the GRE for graduate admissions to the Lane Department?",
+                            "answer": [
+                                "GRE scores are required for most graduate programs at the Lane Department, though some exceptions may apply based on prior academic performance or professional experience."
+                            ]
+                        },
+                        {
+                            "question": "Is the GRE required for applying to graduate programs in the Lane Department?",
+                            "answer": [
+                                "For most graduate programs at the Lane Department, GRE scores are required. However, certain applicants may be exempt based on their academic background or work experience."
+                            ]
+                        },
+                        {
+                            "question": "Is the GRE mandatory for graduate admissions in the Lane Department?",
+                            "answer": [
+                                "While GRE scores are typically required for most graduate programs, there may be exceptions depending on your academic achievements or professional experience."
+                            ]
+                        },
+                        {
+                            "question": "Are GRE scores necessary for applying to the Lane Department's graduate programs?",
+                            "answer": [
+                                "GRE scores are generally required for graduate admissions, though some programs may waive this requirement based on prior academic performance or relevant professional experience."
+                            ]
+                        },
+                        
+                        {
+                            "question": "Are there specific deadlines for applying to graduate programs?",
+                            "answer": [
+                                "Application deadlines vary by program and semester. It's recommended to check the Lane Department's graduate admissions page for the most current information."
+                            ]
+                        },
+                        {
+                            "question": "What are the application deadlines for graduate programs in the Lane Department?",
+                            "answer": [
+                                "Application deadlines for the Lane Department's graduate programs are typically in the following months: Fall semester – April; Spring semester – October; Summer semester – May. It's recommended to check the Lane Department's graduate admissions page for the most current information."
+                            ]
+                        },
+                        {
+                            "question": "When should I submit my application for graduate programs in the Lane Department?",
+                            "answer": [
+                                "To ensure timely consideration, applications should be submitted by the following months: Fall semester – April; Spring semester – October; Summer semester – May. Be sure to verify the latest deadlines on the Lane Department's graduate admissions page."
+                            ]
+                        },
+                        {
+                            "question": "Are there specific deadlines for applying to graduate programs in the Lane Department?",
+                            "answer": [
+                                "Yes, the deadlines for graduate program applications are as follows: Fall – April; Spring – October; Summer – May. For the most accurate and updated information, refer to the Lane Department's graduate admissions page."
+                            ]
+                        },
+
+                        {
+                            "question": "When are the application deadlines for graduate programs in the Lane Department?",
+                            "answer": [
+                                "Deadlines for graduate applications depend on the specific program and semester. Be sure to visit the Lane Department’s admissions page to find the most up-to-date deadlines."
+                            ]
+                        },
+                        {
+                            "question": "Can international students apply to the Lane Department's programs?",
+                            "answer": [
+                                "Yes, international students are welcome to apply. They must meet additional requirements, such as English language proficiency tests. Details are available on WVU's International Admissions page."
+                            ]
+                        },
+                        {
+                            "question": "Are international students eligible to apply for the Lane Department's programs?",
+                            "answer": [
+                                "Yes, international applicants can apply to both undergraduate and graduate programs. They will need to submit proof of English proficiency and follow additional application steps outlined on the WVU International Admissions page."
+                            ]
+                        },
+
+                        {
+                            "question": "Beyond transcripts, what other documents might WVU require for undergraduate admission?",
+                            "answer": [
+                                "While WVU has a test-optional policy, some specific majors or scholarships may still require ACT or SAT scores. WVU encourages submitting all score dates for potential superscoring. Essays and letters of recommendation are generally not required for first-time freshman applicants."
+                            ]
+                        },
+                        {
+                            "question": "Are there any supplemental materials, besides transcripts, that undergraduate applicants to WVU should be aware of?",
+                            "answer": [
+                                "Although WVU is primarily test-optional, it's important to check if your intended major or any scholarships you're applying for have a specific requirement for ACT or SAT results. WVU advises submitting all test attempts. Typically, essays and recommendation letters are not part of the standard first-year application."
+                            ]
+                        },
+                        {
+                            "question": "Besides my high school record, what else could WVU ask for during the undergraduate application process?",
+                            "answer": [
+                                "For most undergraduate programs, WVU operates under a test-optional policy, meaning ACT/SAT scores are not mandatory. However, certain programs or scholarships might have this as a condition. WVU suggests sending all test scores if you choose to submit them. Generally, essays and recommendations are not a standard requirement for first-year students."
+                            ]
+                        },
+                        {
+                            "question": "In addition to my transcript, are there any other specific documents WVU needs for undergraduate admission?",
+                            "answer": [
+                                "While a test-optional approach is in place at WVU, it's wise to verify if your specific major or any scholarship applications necessitate ACT or SAT scores. If you submit scores, WVU recommends sending all testing dates. As a rule, essays and letters of recommendation are not required for first-time freshmen."
+                            ]
+                        },
+                        {
+                            "question": "Is it necessary to submit ACT or SAT scores with my undergraduate application to WVU?",
+                            "answer": [
+                                "No, WVU offers a test-optional application process for most undergraduate programs. However, it is noted that a few specific majors and certain scholarships might still have a test score requirement. You can indicate if you are applying test-optional on the application."
+                            ]
+                        },
+                        {
+                            "question": "Under WVU's test-optional policy, are there any circumstances where ACT or SAT scores are still required for undergraduate admission?",
+                            "answer": [
+                                "Yes, even with the test-optional policy at WVU, some specific academic programs or particular scholarship opportunities may still mandate the submission of ACT or SAT scores. The application will allow you to specify if you are applying under the test-optional route."
+                            ]
+                        },
+                        {
+                            "question": "If I choose the test-optional route for my WVU undergraduate application, are there any benefits to still submitting my ACT or SAT scores?",
+                            "answer": [
+                                "While not required under the test-optional policy for most programs, submitting ACT or SAT scores to WVU can be beneficial, especially if you believe your scores are strong. WVU also uses a superscoring method, considering your best scores across all test dates submitted, which could potentially strengthen your application for certain programs or scholarships that still consider scores."
+                            ]
+                        },
+                        {
+                            "question": "For undergraduate admission to WVU, if I'm unsure whether to submit ACT/SAT scores under the test-optional policy, what should I do?",
+                            "answer": [
+                                "If you are uncertain about submitting ACT/SAT scores under WVU's test-optional policy, it's recommended to first check the specific admission requirements for your intended major and any scholarships you plan to apply for, as some may still require them. If there's no specific requirement, and you have strong scores, submitting them might enhance your application due to WVU's superscoring policy."
+                            ]
+                        },
+                        {
+                            "question": "Does WVU require an admission essay or personal statement for undergraduate applicants?",
+                            "answer": [
+                                "No, first-time undergraduate applicants to WVU are generally not required to submit a personal statement or essay as part of their application."
+                            ]
+                        },
+                        {
+                            "question": "Is a written essay a standard component of the WVU undergraduate application for first-year students?",
+                            "answer": [
+                                "Typically, WVU does not mandate a written essay or personal statement for students applying as first-time undergraduates."
+                            ]
+                        },
+                        {
+                            "question": "Are there any specific undergraduate programs at WVU that might require an essay as part of the admission process?",
+                            "answer": [
+                                "While a general essay is not a standard requirement for most WVU undergraduate admissions, it is always prudent to review the specific admission criteria for your intended program, as some specialized programs (like honors programs or direct admit programs within certain colleges) might have additional requirements, potentially including an essay."
+                            ]
+                        },
+                        {
+                            "question": "If I want to highlight certain experiences or qualifications beyond my academic record when applying to WVU as an undergraduate, is there an opportunity to do so if an essay isn't required?",
+                            "answer": [
+                                "Even though a general essay isn't typically required for WVU undergraduate admission, the application often includes sections for extracurricular activities, volunteer work, and other achievements. Utilizing these sections can be a way to provide a more comprehensive picture of your qualifications and experiences beyond your academic transcript."
+                            ]
+                        },
+                        {
+                            "question": "Are letters of recommendation needed for undergraduate admission to WVU?",
+                            "answer": [
+                                "No, WVU does not require first-time undergraduate applicants to submit letters of recommendation with their application."
+                            ]
+                        },
+                        {
+                            "question": "Is it standard practice for WVU to ask for recommendation letters from teachers or counselors for undergraduate admission?",
+                            "answer": [
+                                "Generally, WVU does not include letters of recommendation as a standard component of the application process for first-time undergraduate students."
+                            ]
+                        },
+                        {
+                            "question": "Are there any specific undergraduate programs or scholarships at WVU that might request letters of recommendation?",
+                            "answer": [
+                                "While not a general requirement for WVU undergraduate admission, certain specialized programs, such as honors colleges or direct admission pathways within specific colleges, and some competitive scholarships may have additional requirements, which could include submitting letters of recommendation. It's essential to check the specific requirements for the program or scholarship you are interested in."
+                            ]
+                        },
+                        {
+                            "question": "If I believe a letter of recommendation would strengthen my undergraduate application to WVU, can I still submit one even though it's not required?",
+                            "answer": [
+                                "While WVU does not typically require letters of recommendation for undergraduate admission, if you feel a letter would significantly enhance your application, you may be able to submit it as supplemental material. However, keep in mind that admissions committees primarily focus on the required application components. It's best to ensure all required materials are strong first."
+                            ]
+                        },
+
+                        {
+                            "question": "Whom should I contact if I have specific questions about undergraduate admissions to the Lane Department?",
+                            "answer": [
+                                "For specific questions about undergraduate admissions to the Lane Department, you have a few great options! You can reach out to the Statler College Office of Outreach and Recruitment. **Norman Mihelic** is available at norman.mihelic@mail.wvu.edu or by phone at (304) 293-0896. Alternatively, you can contact **Julie Gruber** at julie.gruber@mail.wvu.edu or by phone at (304) 293-0399. They are both part of the Statler College and can likely assist you directly. You can also contact the general Statler College at statler-info@mail.wvu.edu or by phone at 304.293.4821."
+                            ]
+                        },
+                        {
+                            "question": "I have inquiries about Lane Department undergraduate admissions. Who can provide assistance?",
+                            "answer": [
+                                "If you need help with undergraduate admissions questions related to the Lane Department, consider reaching out to the Statler College Office of Outreach and Recruitment. **Norman Mihelic** can be reached via email at norman.mihelic@mail.wvu.edu or by phone at (304) 293-0896. You can also contact **Julie Gruber** at julie.gruber@mail.wvu.edu or by phone at (304) 293-0399. For more general inquiries, you can contact the Statler College directly at statler-info@mail.wvu.edu or by calling 304.293.4821."
+                            ]
+                        },
+                        {
+                            "question": "Who are the best contacts for undergraduate admissions information within the Lane Department?",
+                            "answer": [
+                                "To get the most accurate and specific information about undergraduate admissions for the Lane Department, you should contact the Statler College Office of Outreach and Recruitment. **Norman Mihelic** is a good point of contact; you can email him at norman.mihelic@mail.wvu.edu or call him at (304) 293-0896. **Julie Gruber** is also available via email at julie.gruber@mail.wvu.edu or by phone at (304) 293-0399. For general inquiries, the Statler College can be reached at statler-info@mail.wvu.edu or by phone at 304.293.4821."
+                            ]
+                        },
+                        {
+                            "question": "I'm interested in applying to the Lane Department for my undergraduate degree. Who should I contact for details on the application process?",
+                            "answer": [
+                                "For details on the application process for undergraduate degrees in the Lane Department, you have several options. The Statler College Office of Outreach and Recruitment has staff who can help. **Norman Mihelic** is available at norman.mihelic@mail.wvu.edu or (304) 293-0896, and **Julie Gruber** can be contacted at julie.gruber@mail.wvu.edu or (304) 293-0399. You can also contact the Statler College in general at statler-info@mail.wvu.edu or by calling 304.293.4821."
+                            ]
+                        },
+                        {
+                            "question": "Where can I get information about undergraduate admissions requirements for the Lane Department?",
+                            "answer": [
+                                "To find out about undergraduate admissions requirements for the Lane Department, you can connect with the Statler College Office of Outreach and Recruitment. **Norman Mihelic** can be reached at norman.mihelic@mail.wvu.edu or by phone at (304) 293-0896, and **Julie Gruber** is available at julie.gruber@mail.wvu.edu or by phone at (304) 293-0399. You can also contact the Statler College directly at statler-info@mail.wvu.edu or by phone at 304.293.4821."
+                            ]
+                        }
+                        
                     ]
                 }
             ]
@@ -2977,11 +4664,37 @@
             ]
         },
         {
-            "title": "Name and Greeting",
+            "title": "Generic",
             "paragraphs": [
                 {
-                    "context": "Introduce the robot and greet prospective students.",
+                    "context": "Questions to not stump the robot.",
                     "qas": [
+                        {
+                            "question": "Hi",
+                            "answer": [
+                                "Hello, how can I help you?"
+                            ]
+                        },
+                        {
+                            "question": "Hello",
+                            "answer": [
+                                "Hi there! How can I assist you?"
+                            ]
+                        },
+                        {
+                            "question": "Hey there!",
+                            "answer": [
+                                "Hey! How can I help you today?"
+                            ]
+                        },
+                        {
+                            "question": "Good morning!",
+                            "answer": [
+                                "Good morning! How can I help you?"
+                            ]
+                        },
+
+
                         {
                             "question": "What is your name?",
                             "answer": [
@@ -2999,7 +4712,46 @@
                             "answer": [
                                 "My name is Lain, glad to make you acquintance."
                             ]
+                        },
+
+
+                        {
+                            "question": "When was the Lane Department of Computer Science and Electrical Engineering established at WVU?",
+                            "answer": [
+                                "The Lane Department was named in honor of Raymond J. Lane, an alumnus who graduated with a B.S. in Mathematics from WVU in 1968. While the exact date of the department's naming isn't specified, it was named to recognize Lane's significant contributions and support to the university."
+                            ]
+                        },
+                        {
+                            "question": "How did the Lane Department at WVU get its name?",
+                            "answer": [
+                                "The department is named after Raymond J. Lane, a WVU graduate and successful tech executive. His support and dedication to the university led to the naming of the department in his honor."
+                            ]
+                        },
+                        {
+                            "question": "Why is the department called the Lane Department at WVU?",
+                            "answer": [
+                                "It’s named after Raymond J. Lane, who graduated from WVU in 1968 with a degree in Mathematics. His generous contributions to the university helped establish and grow the department."
+                            ]
+                        },
+                        {
+                            "question": "Who is Raymond J. Lane, and what is his connection to the department?",
+                            "answer": [
+                                "Raymond J. Lane is a WVU alumnus who earned his B.S. in Mathematics in 1968. He became a prominent figure in Silicon Valley and has been a generous supporter of WVU, leading to the department being named in his honor."
+                            ]
+                        },
+                        {
+                            "question": "What makes Raymond J. Lane important to the WVU engineering program?",
+                            "answer": [
+                                "Raymond J. Lane is an alumnus of WVU and a major supporter of the university. His professional success and philanthropic efforts led to the naming of the Lane Department of Computer Science and Electrical Engineering."
+                            ]
+                        },
+                        {
+                            "question": "Why was the department named after Raymond J. Lane?",
+                            "answer": [
+                                "Raymond J. Lane, a 1968 graduate of WVU, has had a major impact on the tech world and has given back significantly to WVU. To honor his achievements and generosity, the department was named after him."
+                            ]
                         }
+                        
                     ]
                 }
             ]

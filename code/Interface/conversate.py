@@ -7,7 +7,7 @@ Date: 03/26/2025
 '''
 
 import time
-import pyttsx3 as tts
+import pyttsx3
 import sys
 import os
 
