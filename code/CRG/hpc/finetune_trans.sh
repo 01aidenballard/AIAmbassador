@@ -15,4 +15,4 @@ module purge
 module load lang/gcc/12.2.0 lang/python/cpython_3.10.11_gcc122 parallel/cuda/11.8
 
 source /scratch/isj0001/AIAmbassador/code/CRG/venv/bin/activate
-python3 /scratch/isj0001/AIAmbassador/code/CRG/classify/finetune_transformer.py --force --BERT
+python3 /scratch/isj0001/AIAmbassador/code/CRG/classify/finetune_transformer.py --force --DistilBERT

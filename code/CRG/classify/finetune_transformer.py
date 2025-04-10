@@ -150,7 +150,7 @@ def main(args):
                 learning_rate=2e-5,
                 per_device_train_batch_size=8,
                 per_device_eval_batch_size=8,
-                num_train_epochs=3,
+                num_train_epochs=40,
                 weight_decay=0.01,
                 logging_dir=f"./classify/logs/BERT",
                 logging_steps=10,
@@ -257,7 +257,7 @@ def main(args):
                 learning_rate=2e-5,
                 per_device_train_batch_size=8,
                 per_device_eval_batch_size=8,
-                num_train_epochs=5,
+                num_train_epochs=40,
                 weight_decay=0.01,
                 logging_dir=f"./classify/logs/DistilBERT",
                 logging_steps=10,
@@ -284,6 +284,7 @@ def main(args):
 
         # evaluate BERT on test dataset
         model.eval()
+        model.to(device)
 
         true_labels = []
         predicted_labels = []
@@ -295,6 +296,7 @@ def main(args):
 
             # tokenize question
             inputs = tokenizer(question, return_tensors="pt")
+            inputs = {key: val.to(device) for key, val in inputs.items()}
 
             start_time = time.time()
 
