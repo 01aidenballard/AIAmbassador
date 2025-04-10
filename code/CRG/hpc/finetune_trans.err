@@ -1,0 +1,16 @@
+Loading gcc version 12.2.0 : lang/gcc/12.2.0
+2025-04-10 12:04:08.204579: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Loading gcc version 12.2.0 : lang/gcc/12.2.0
+Loading python version cpython_3.10.11_gcc122 : lang/python/cpython_3.10.11_gcc122
+Loading cuda version 11.8 : parallel/cuda/11.8
+slurmstepd: error: *** JOB 1915244 ON tbmgq100 CANCELLED AT 2025-04-10T12:04:20 ***
+Traceback (most recent call last):
+  File "/scratch/isj0001/AIAmbassador/code/CRG/classify/finetune_transformer.py", line 338, in <module>
+    main(args)
+  File "/scratch/isj0001/AIAmbassador/code/CRG/classify/finetune_transformer.py", line 142, in main
+    model = BertForSequenceClassification.from_pretrained("/scratch/isj0001/huggingface_models/bert-base-uncased", num_labels=len(label_encoder.classes_)) # HPC
+  File "/users/isj0001/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 262, in _wrapper
+    return func(*args, **kwargs)
+  File "/users/isj0001/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3808, in from_pretrained
+    raise EnvironmentError(
+OSError: Error no file named pytorch_model.bin, model.safetensors, tf_model.h5, model.ckpt.index or flax_model.msgpack found in directory /scratch/isj0001/huggingface_models/bert-base-uncased.
