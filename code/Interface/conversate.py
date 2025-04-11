@@ -10,12 +10,15 @@ import time
 import pyttsx3
 import sys
 import os
+import speech_recognition_api as sr
+
 
 # Add the CRG directory to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'CRG')))
 
 # Now you can import the modules
 from crg_api import CRG, ClassifyMethod, RetrieveMethod, ExtractMethod
+
 
 def main():
     engine = pyttsx3.init()
@@ -38,19 +41,25 @@ def main():
         print_info=False)
 
     # while loop to ask questions
-    user_ans = ''
-    while user_ans != 'exit':
-        user_ans = input('Type your question (or type "exit" to quit): ')
-        if user_ans.lower() == 'exit':
-            break
-        st = time.time()
-        answer = crg.answer_question(user_ans)
-        et = time.time()
-        print(f'Answer: {answer}')
-        print(f'Time taken: {et - st:.2f} seconds\n')
+    while True:
+        print("Please type 'q' when you are ready to ask a question, or 'exit' to quit: ")
+        user_ans = input()
+        if user_ans == 'q':
+            
+            user_q = sr.speech_recognition()
+            
+            if user_q is None:
+                continue
+            st = time.time()
+            answer = crg.answer_question(user_q)
+            et = time.time()
+            print(f'Answer: {answer}')
+            print(f'Time taken: {et - st:.2f} seconds\n')
 
-        engine.say(answer)
-        engine.runAndWait()
+            engine.say(answer)
+            engine.runAndWait()
+        elif user_ans == 'exit':
+            break
 
     
     # question = 'What degrees are offered for undergraduate?'
@@ -61,6 +70,7 @@ def main():
 
     # print(f'Question: {question}\nAnswer: {answer}')
     # print(f'Time taken: {et - st:.2f} seconds')
+
 
 if __name__ == '__main__':
     main()
