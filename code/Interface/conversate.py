@@ -10,7 +10,7 @@ import time
 import pyttsx3
 import sys
 import os
-from pynput import keyboard
+import pynput
 
 import speech_recognition_api as sr
 
@@ -47,13 +47,13 @@ def main():
     def on_press(key):
         nonlocal stop_listening
         try:
-            if key == keyboard.Key.esc:
+            if key == pynput.keyboard.Key.esc:
                 stop_listening = True  # Set flag to stop the loop
                 return False  # Stop listener
         except AttributeError:
             pass
 
-    listener = keyboard.Listener(on_press=on_press)
+    listener = pynput.keyboard.Listener(on_press=on_press)
     listener.start()
 
     # while loop to ask questions
