@@ -11,6 +11,9 @@ import pyttsx3
 import sys
 import os
 
+import speech_recognition_api as sr
+
+
 # Add the CRG directory to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'CRG')))
 
@@ -40,11 +43,12 @@ def main():
     # while loop to ask questions
     user_ans = ''
     while user_ans != 'exit':
-        user_ans = input('Type your question (or type "exit" to quit): ')
+        user_ans = input('Type "exit" to quit): ')
+        user_q = sr.speech_recognition()
         if user_ans.lower() == 'exit':
             break
         st = time.time()
-        answer = crg.answer_question(user_ans)
+        answer = crg.answer_question(user_q)
         et = time.time()
         print(f'Answer: {answer}')
         print(f'Time taken: {et - st:.2f} seconds\n')
