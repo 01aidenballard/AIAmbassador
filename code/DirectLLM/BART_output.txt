@@ -1,0 +1,160 @@
+=== Sun Apr  6 18:29:49 EDT 2025 ===
+Using device: cuda
+{'loss': 12.4962, 'grad_norm': 13.394848823547363, 'learning_rate': 2.9172413793103448e-05, 'epoch': 0.17}
+{'loss': 10.0043, 'grad_norm': 17.99201774597168, 'learning_rate': 2.813793103448276e-05, 'epoch': 0.34}
+{'loss': 8.8204, 'grad_norm': 24.106060028076172, 'learning_rate': 2.710344827586207e-05, 'epoch': 0.52}
+{'loss': 7.9211, 'grad_norm': 33.15391159057617, 'learning_rate': 2.606896551724138e-05, 'epoch': 0.69}
+{'loss': 6.6725, 'grad_norm': 33.309635162353516, 'learning_rate': 2.503448275862069e-05, 'epoch': 0.86}
+{'eval_loss': 5.3718743324279785, 'eval_runtime': 17.2893, 'eval_samples_per_second': 26.722, 'eval_steps_per_second': 1.677, 'epoch': 1.0}
+{'loss': 6.1979, 'grad_norm': 32.214290618896484, 'learning_rate': 2.4e-05, 'epoch': 1.03}
+{'loss': 5.8297, 'grad_norm': 31.525320053100586, 'learning_rate': 2.296551724137931e-05, 'epoch': 1.21}
+{'loss': 5.4098, 'grad_norm': 29.81671142578125, 'learning_rate': 2.1931034482758622e-05, 'epoch': 1.38}
+{'loss': 5.2629, 'grad_norm': 57.74684143066406, 'learning_rate': 2.089655172413793e-05, 'epoch': 1.55}
+{'loss': 5.0278, 'grad_norm': 32.13010787963867, 'learning_rate': 1.986206896551724e-05, 'epoch': 1.72}
+{'loss': 4.7702, 'grad_norm': 31.040576934814453, 'learning_rate': 1.8827586206896553e-05, 'epoch': 1.9}
+{'eval_loss': 4.153709411621094, 'eval_runtime': 17.4961, 'eval_samples_per_second': 26.406, 'eval_steps_per_second': 1.658, 'epoch': 2.0}
+{'loss': 4.663, 'grad_norm': 31.197973251342773, 'learning_rate': 1.7793103448275862e-05, 'epoch': 2.07}
+{'loss': 4.5586, 'grad_norm': 32.25732421875, 'learning_rate': 1.675862068965517e-05, 'epoch': 2.24}
+{'loss': 4.397, 'grad_norm': 33.0932731628418, 'learning_rate': 1.5724137931034484e-05, 'epoch': 2.41}
+{'loss': 4.2023, 'grad_norm': 31.914304733276367, 'learning_rate': 1.4689655172413793e-05, 'epoch': 2.59}
+{'loss': 4.0544, 'grad_norm': 31.428903579711914, 'learning_rate': 1.3655172413793104e-05, 'epoch': 2.76}
+{'loss': 3.9909, 'grad_norm': 33.07749557495117, 'learning_rate': 1.2620689655172415e-05, 'epoch': 2.93}
+{'eval_loss': 3.416543960571289, 'eval_runtime': 16.9842, 'eval_samples_per_second': 27.202, 'eval_steps_per_second': 1.707, 'epoch': 3.0}
+{'loss': 3.851, 'grad_norm': 31.327627182006836, 'learning_rate': 1.1586206896551724e-05, 'epoch': 3.1}
+{'loss': 3.7047, 'grad_norm': 32.28348922729492, 'learning_rate': 1.0551724137931035e-05, 'epoch': 3.28}
+{'loss': 3.8951, 'grad_norm': 33.09191131591797, 'learning_rate': 9.517241379310346e-06, 'epoch': 3.45}
+{'loss': 3.613, 'grad_norm': 33.55879211425781, 'learning_rate': 8.482758620689656e-06, 'epoch': 3.62}
+{'loss': 3.5041, 'grad_norm': 34.61330032348633, 'learning_rate': 7.448275862068966e-06, 'epoch': 3.79}
+{'loss': 3.4115, 'grad_norm': 34.0550422668457, 'learning_rate': 6.4137931034482765e-06, 'epoch': 3.97}
+{'eval_loss': 2.9429666996002197, 'eval_runtime': 17.3134, 'eval_samples_per_second': 26.685, 'eval_steps_per_second': 1.675, 'epoch': 4.0}
+{'loss': 3.3666, 'grad_norm': 32.018795013427734, 'learning_rate': 5.3793103448275865e-06, 'epoch': 4.14}
+{'loss': 3.2978, 'grad_norm': 32.3961181640625, 'learning_rate': 4.344827586206897e-06, 'epoch': 4.31}
+{'loss': 3.2445, 'grad_norm': 31.465547561645508, 'learning_rate': 3.310344827586207e-06, 'epoch': 4.48}
+{'loss': 3.245, 'grad_norm': 33.96469497680664, 'learning_rate': 2.2758620689655173e-06, 'epoch': 4.66}
+{'loss': 3.2572, 'grad_norm': 34.71767044067383, 'learning_rate': 1.2413793103448275e-06, 'epoch': 4.83}
+{'loss': 3.1929, 'grad_norm': 33.339202880859375, 'learning_rate': 2.0689655172413793e-07, 'epoch': 5.0}
+{'eval_loss': 2.7759318351745605, 'eval_runtime': 17.2417, 'eval_samples_per_second': 26.795, 'eval_steps_per_second': 1.682, 'epoch': 5.0}
+{'train_runtime': 355.4469, 'train_samples_per_second': 6.499, 'train_steps_per_second': 0.408, 'train_loss': 5.02974072160392, 'epoch': 5.0}
+[94mBART:[0m
+
+Question: What degree programs does the department offer?
+
+=== Sun Apr  6 19:00:08 EDT 2025 ===
+Using device: cpu
+Loading finetuned model
+[94mBART:[0m
+
+Question: What degree programs does the department offer?
+Answer: Yes, the department offers degree programs in Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE).
+
+Question: What dual degrees can I pursue?
+Answer: Yes, dual degrees can be pursued in Computer Engineering (CPE) and Electrical Engineering (EE).
+
+Question: What are the various research areas in the Lane Department?
+Answer: The Lane Department focuses on various research areas such as biometrics, nanotechnology, nanoelectronics, energy systems, energy and power systems, and nanotechnology.
+
+Question: What research is done in the biometrics field?
+Answer: Biometrics research focuses on biometrics for identification and authentication of biological signatures such as fingerprints, face, voice, and DNA.
+
+Question: What are the student orgs I can join as a LCSEE student?
+Answer: Yes, LCSEE students can join student organizations such as the Society for Computing Machinery, IEEE, Eta Kappa Nu, Student Society for the Advancement of Biometrics, Women in Computer Science, and IEEE.
+
+Question: What kind of activities do CyberWVU students do?
+Answer: CyberWVU students participate in competitions, volunteer projects, and social events such as picnics and picnicking.
+
+Question: What can I do with a computer engineering degree?
+Answer: Yes, computer engineering graduates can work in fields such as software engineering, hardware engineering, and embedded systems design.
+
+Question: What can I do with a computer science degree?
+Answer: Yes, computer science graduates can work in fields such as software engineering, cybersecurity, data science, and database management.
+
+F1 Score: 57.14512532454813
+BLEU Score: 78.50149794130962
+Avg Resp Time: 13.2061s
+
+=== Thu Apr 10 10:54:01 EDT 2025 ===
+Using device: cuda
+Training model
+{'loss': 12.5915, 'grad_norm': 12.893671035766602, 'learning_rate': 2.948936170212766e-05, 'epoch': 0.11}
+{'loss': 10.1628, 'grad_norm': 12.88007926940918, 'learning_rate': 2.8851063829787232e-05, 'epoch': 0.21}
+{'loss': 8.8732, 'grad_norm': 20.160425186157227, 'learning_rate': 2.821276595744681e-05, 'epoch': 0.32}
+{'loss': 8.0129, 'grad_norm': 27.114397048950195, 'learning_rate': 2.7574468085106385e-05, 'epoch': 0.43}
+{'loss': 6.9205, 'grad_norm': 29.169235229492188, 'learning_rate': 2.6936170212765958e-05, 'epoch': 0.53}
+{'loss': 6.25, 'grad_norm': 32.495182037353516, 'learning_rate': 2.6297872340425534e-05, 'epoch': 0.64}
+{'loss': 5.7459, 'grad_norm': 31.277118682861328, 'learning_rate': 2.5659574468085107e-05, 'epoch': 0.74}
+{'loss': 5.4132, 'grad_norm': 28.392576217651367, 'learning_rate': 2.502127659574468e-05, 'epoch': 0.85}
+{'loss': 5.1253, 'grad_norm': 29.594009399414062, 'learning_rate': 2.4382978723404253e-05, 'epoch': 0.96}
+{'eval_loss': 4.3954668045043945, 'eval_runtime': 28.1964, 'eval_samples_per_second': 26.493, 'eval_steps_per_second': 1.667, 'epoch': 1.0}
+{'loss': 4.9074, 'grad_norm': 31.267879486083984, 'learning_rate': 2.374468085106383e-05, 'epoch': 1.06}
+{'loss': 4.7132, 'grad_norm': 31.823209762573242, 'learning_rate': 2.3106382978723406e-05, 'epoch': 1.17}
+{'loss': 4.4913, 'grad_norm': 30.90676498413086, 'learning_rate': 2.246808510638298e-05, 'epoch': 1.28}
+{'loss': 4.2693, 'grad_norm': 31.008026123046875, 'learning_rate': 2.1829787234042556e-05, 'epoch': 1.38}
+{'loss': 4.1644, 'grad_norm': 31.859859466552734, 'learning_rate': 2.119148936170213e-05, 'epoch': 1.49}
+{'loss': 3.8958, 'grad_norm': 28.5080623626709, 'learning_rate': 2.05531914893617e-05, 'epoch': 1.6}
+{'loss': 3.8239, 'grad_norm': 32.22016525268555, 'learning_rate': 1.9914893617021275e-05, 'epoch': 1.7}
+{'loss': 3.578, 'grad_norm': 30.442901611328125, 'learning_rate': 1.927659574468085e-05, 'epoch': 1.81}
+{'loss': 3.4405, 'grad_norm': 30.8537654876709, 'learning_rate': 1.8638297872340427e-05, 'epoch': 1.91}
+{'eval_loss': 2.7455058097839355, 'eval_runtime': 28.1405, 'eval_samples_per_second': 26.545, 'eval_steps_per_second': 1.67, 'epoch': 2.0}
+{'loss': 3.2666, 'grad_norm': 33.50896453857422, 'learning_rate': 1.8e-05, 'epoch': 2.02}
+{'loss': 3.0866, 'grad_norm': 33.416748046875, 'learning_rate': 1.7361702127659573e-05, 'epoch': 2.13}
+{'loss': 2.9274, 'grad_norm': 31.321701049804688, 'learning_rate': 1.672340425531915e-05, 'epoch': 2.23}
+{'loss': 2.7818, 'grad_norm': 32.94826889038086, 'learning_rate': 1.6085106382978723e-05, 'epoch': 2.34}
+{'loss': 2.7629, 'grad_norm': 40.344871520996094, 'learning_rate': 1.5446808510638296e-05, 'epoch': 2.45}
+{'loss': 2.4872, 'grad_norm': 30.426454544067383, 'learning_rate': 1.4808510638297872e-05, 'epoch': 2.55}
+{'loss': 2.3406, 'grad_norm': 29.07305145263672, 'learning_rate': 1.4170212765957447e-05, 'epoch': 2.66}
+{'loss': 2.2196, 'grad_norm': 31.79297637939453, 'learning_rate': 1.3531914893617022e-05, 'epoch': 2.77}
+{'loss': 2.1349, 'grad_norm': 27.113359451293945, 'learning_rate': 1.2893617021276596e-05, 'epoch': 2.87}
+{'loss': 2.0149, 'grad_norm': 30.795318603515625, 'learning_rate': 1.225531914893617e-05, 'epoch': 2.98}
+{'eval_loss': 1.5142418146133423, 'eval_runtime': 28.5789, 'eval_samples_per_second': 26.138, 'eval_steps_per_second': 1.645, 'epoch': 3.0}
+{'loss': 1.8837, 'grad_norm': 30.1630859375, 'learning_rate': 1.1617021276595746e-05, 'epoch': 3.09}
+{'loss': 1.7939, 'grad_norm': 30.171659469604492, 'learning_rate': 1.0978723404255319e-05, 'epoch': 3.19}
+{'loss': 1.68, 'grad_norm': 27.345252990722656, 'learning_rate': 1.0340425531914894e-05, 'epoch': 3.3}
+{'loss': 1.6918, 'grad_norm': 26.18071174621582, 'learning_rate': 9.702127659574468e-06, 'epoch': 3.4}
+{'loss': 1.6594, 'grad_norm': 23.439237594604492, 'learning_rate': 9.063829787234043e-06, 'epoch': 3.51}
+{'loss': 1.6259, 'grad_norm': 22.69820213317871, 'learning_rate': 8.425531914893618e-06, 'epoch': 3.62}
+{'loss': 1.3818, 'grad_norm': 25.040616989135742, 'learning_rate': 7.78723404255319e-06, 'epoch': 3.72}
+{'loss': 1.4137, 'grad_norm': 24.50408935546875, 'learning_rate': 7.148936170212766e-06, 'epoch': 3.83}
+{'loss': 1.3382, 'grad_norm': 22.74809455871582, 'learning_rate': 6.510638297872341e-06, 'epoch': 3.94}
+{'eval_loss': 0.9120007753372192, 'eval_runtime': 28.9596, 'eval_samples_per_second': 25.795, 'eval_steps_per_second': 1.623, 'epoch': 4.0}
+{'loss': 1.2496, 'grad_norm': 23.421043395996094, 'learning_rate': 5.872340425531916e-06, 'epoch': 4.04}
+{'loss': 1.1574, 'grad_norm': 22.940160751342773, 'learning_rate': 5.2340425531914895e-06, 'epoch': 4.15}
+{'loss': 1.1413, 'grad_norm': 21.464468002319336, 'learning_rate': 4.595744680851064e-06, 'epoch': 4.26}
+{'loss': 1.1378, 'grad_norm': 21.15215301513672, 'learning_rate': 3.957446808510638e-06, 'epoch': 4.36}
+{'loss': 1.0971, 'grad_norm': 19.364147186279297, 'learning_rate': 3.3191489361702127e-06, 'epoch': 4.47}
+{'loss': 1.0875, 'grad_norm': 20.156333923339844, 'learning_rate': 2.6808510638297874e-06, 'epoch': 4.57}
+{'loss': 1.2006, 'grad_norm': 19.754579544067383, 'learning_rate': 2.0425531914893617e-06, 'epoch': 4.68}
+{'loss': 1.087, 'grad_norm': 19.391895294189453, 'learning_rate': 1.4042553191489362e-06, 'epoch': 4.79}
+{'loss': 0.9693, 'grad_norm': 20.007184982299805, 'learning_rate': 7.659574468085106e-07, 'epoch': 4.89}
+{'loss': 1.0165, 'grad_norm': 19.898452758789062, 'learning_rate': 1.276595744680851e-07, 'epoch': 5.0}
+{'eval_loss': 0.7573562264442444, 'eval_runtime': 28.077, 'eval_samples_per_second': 26.605, 'eval_steps_per_second': 1.674, 'epoch': 5.0}
+{'train_runtime': 579.1333, 'train_samples_per_second': 6.449, 'train_steps_per_second': 0.406, 'train_loss': 3.3620113433675565, 'epoch': 5.0}
+[94mBART:[0m
+
+Question: What degree programs does the department offer?
+Answer: The department offers degrees in Computer Engineering (CPE), Electrical Engineering (EE), and Cybersecurity (CYBE).
+
+Question: What dual degrees can I pursue?
+Answer: Dual degrees can be pursued in Computer Engineering (CPE), Electrical Engineering (EE), and Computer Science (CS).
+
+Question: What are the various research areas in the Lane Department?
+Answer: The various research areas in the Lane Department include nanotechnology, nanoelectronics, power systems, energy systems, robotics, and autonomous vehicles.
+
+Question: What research is done in the biometrics field?
+Answer: Biometrics research at WVU focuses on biometrics for identification and authentication of biological signatures.
+
+Question: What are the student orgs I can join as a LCSEE student?
+Answer: LCSEE students can join student organizations such as the Student Association for Computing Machinery (SAM), IEEE, IEEE, WVU Student Society for the Advancement of Biometrics, Women in Computer Science and Electrical Engineering (WVU), and the Amateur Radio Club.
+
+Question: What kind of activities do CyberWVU students do?
+Answer: CyberWVU students engage in activities such as network security training, ethical hacking, and ethical hacking.
+
+Question: What can I do with a computer engineering degree?
+Answer: Yes, computer engineering graduates can work in fields such as software engineering, hardware engineering, and embedded systems design.
+
+Question: What can I do with a computer science degree?
+Answer: Yes, computer science graduates can work in fields such as software engineering, cybersecurity, database management, and database management.
+
+F1 Score: 56.488388731894105
+BLEU Score: 87.29168122113153
+Avg Resp Time: 0.4834s
+

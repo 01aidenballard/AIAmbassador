@@ -1,0 +1,337 @@
+Removing cuda version 11.8 : parallel/cuda/11.8
+Removing gcc version 12.2.0 : lang/gcc/12.2.0
+Removing python version cpython_3.10.11_gcc122 : lang/python/cpython_3.10.11_gcc122
+Loading gcc version 12.2.0 : lang/gcc/12.2.0
+Loading gcc version 12.2.0 : lang/gcc/12.2.0
+Loading python version cpython_3.10.11_gcc122 : lang/python/cpython_3.10.11_gcc122
+Loading cuda version 11.8 : parallel/cuda/11.8
+2025-04-10 13:34:25.345770: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-04-10 13:34:34.538777: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/users/isj0001/.local/lib/python3.10/site-packages/transformers/training_args.py:1594: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+  0%|          | 0/400 [00:00<?, ?it/s]/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+  0%|          | 1/400 [00:01<11:27,  1.72s/it]  1%|          | 3/400 [00:01<03:23,  1.95it/s]  1%|▏         | 5/400 [00:02<01:57,  3.38it/s]  2%|▏         | 7/400 [00:02<01:22,  4.78it/s]  2%|▏         | 9/400 [00:02<01:04,  6.07it/s]                                                 2%|▎         | 10/400 [00:02<01:04,  6.07it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.27it/s][A
+100%|██████████| 10/10 [00:00<00:00, 35.29it/s][A                                                
+                                               [A  2%|▎         | 10/400 [00:02<01:04,  6.07it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.29it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+  3%|▎         | 11/400 [00:04<02:53,  2.24it/s]  3%|▎         | 13/400 [00:04<02:06,  3.05it/s]  4%|▍         | 15/400 [00:04<01:36,  3.98it/s]  4%|▍         | 17/400 [00:04<01:16,  4.98it/s]  5%|▍         | 19/400 [00:05<01:03,  6.00it/s]                                                  5%|▌         | 20/400 [00:05<01:03,  6.00it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.16it/s][A
+100%|██████████| 10/10 [00:00<00:00, 35.08it/s][A                                                
+                                               [A  5%|▌         | 20/400 [00:05<01:03,  6.00it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.08it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+  5%|▌         | 21/400 [00:07<02:40,  2.36it/s]  6%|▌         | 23/400 [00:07<02:01,  3.11it/s]  6%|▋         | 25/400 [00:07<01:34,  3.97it/s]  7%|▋         | 27/400 [00:07<01:15,  4.92it/s]  7%|▋         | 29/400 [00:07<01:02,  5.90it/s]                                                  8%|▊         | 30/400 [00:07<01:02,  5.90it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.11it/s][A
+100%|██████████| 10/10 [00:00<00:00, 35.30it/s][A                                                
+                                               [A  8%|▊         | 30/400 [00:08<01:02,  5.90it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.30it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+  8%|▊         | 31/400 [00:09<02:28,  2.48it/s]  8%|▊         | 33/400 [00:09<01:53,  3.24it/s]  9%|▉         | 35/400 [00:10<01:28,  4.11it/s]  9%|▉         | 37/400 [00:10<01:11,  5.06it/s] 10%|▉         | 39/400 [00:10<00:59,  6.04it/s]                                                 10%|█         | 40/400 [00:10<00:59,  6.04it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.55it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.25it/s][A                                                
+                                              [A 10%|█         | 40/400 [00:10<00:59,  6.04it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.25it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 10%|█         | 41/400 [00:12<02:25,  2.47it/s] 11%|█         | 43/400 [00:12<01:50,  3.22it/s] 11%|█▏        | 45/400 [00:12<01:26,  4.08it/s] 12%|█▏        | 47/400 [00:12<01:10,  5.03it/s] 12%|█▏        | 49/400 [00:13<00:58,  6.01it/s]                                                 12%|█▎        | 50/400 [00:13<00:58,  6.01it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.07it/s][A
+100%|██████████| 10/10 [00:00<00:00, 34.92it/s][A                                                
+                                               [A 12%|█▎        | 50/400 [00:13<00:58,  6.01it/s]
+100%|██████████| 10/10 [00:00<00:00, 34.92it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 13%|█▎        | 51/400 [00:14<02:16,  2.55it/s] 13%|█▎        | 53/400 [00:15<01:44,  3.31it/s] 14%|█▍        | 55/400 [00:15<01:22,  4.19it/s] 14%|█▍        | 57/400 [00:15<01:06,  5.14it/s] 15%|█▍        | 59/400 [00:15<00:55,  6.12it/s]                                                 15%|█▌        | 60/400 [00:15<00:55,  6.12it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.92it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.21it/s][A                                                
+                                              [A 15%|█▌        | 60/400 [00:16<00:55,  6.12it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.21it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 15%|█▌        | 61/400 [00:17<02:15,  2.51it/s] 16%|█▌        | 63/400 [00:17<01:43,  3.26it/s] 16%|█▋        | 65/400 [00:17<01:21,  4.13it/s] 17%|█▋        | 67/400 [00:18<01:05,  5.08it/s] 17%|█▋        | 69/400 [00:18<00:54,  6.05it/s]                                                 18%|█▊        | 70/400 [00:18<00:54,  6.05it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.85it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.01it/s][A                                                
+                                              [A 18%|█▊        | 70/400 [00:18<00:54,  6.05it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.01it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 18%|█▊        | 71/400 [00:20<02:15,  2.43it/s] 18%|█▊        | 73/400 [00:20<01:43,  3.17it/s] 19%|█▉        | 75/400 [00:20<01:20,  4.03it/s] 19%|█▉        | 77/400 [00:20<01:05,  4.97it/s] 20%|█▉        | 79/400 [00:21<00:54,  5.94it/s]                                                 20%|██        | 80/400 [00:21<00:53,  5.94it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.48it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.35it/s][A                                                
+                                              [A 20%|██        | 80/400 [00:21<00:53,  5.94it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.35it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 20%|██        | 81/400 [00:22<02:01,  2.63it/s] 21%|██        | 83/400 [00:22<01:33,  3.40it/s] 21%|██▏       | 85/400 [00:23<01:13,  4.29it/s] 22%|██▏       | 87/400 [00:23<00:59,  5.25it/s] 22%|██▏       | 89/400 [00:23<00:50,  6.22it/s]                                                 22%|██▎       | 90/400 [00:23<00:49,  6.22it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.87it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.23it/s][A                                                
+                                              [A 22%|██▎       | 90/400 [00:23<00:49,  6.22it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.23it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 23%|██▎       | 91/400 [00:25<01:47,  2.88it/s] 23%|██▎       | 93/400 [00:25<01:23,  3.69it/s] 24%|██▍       | 95/400 [00:25<01:06,  4.61it/s] 24%|██▍       | 97/400 [00:25<00:54,  5.58it/s] 25%|██▍       | 99/400 [00:25<00:46,  6.54it/s]                                                 25%|██▌       | 100/400 [00:25<00:45,  6.54it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.89it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.00it/s][A                                                 
+                                              [A 25%|██▌       | 100/400 [00:26<00:45,  6.54it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.00it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 25%|██▌       | 101/400 [00:27<01:47,  2.78it/s] 26%|██▌       | 103/400 [00:27<01:22,  3.58it/s] 26%|██▋       | 105/400 [00:27<01:05,  4.49it/s] 27%|██▋       | 107/400 [00:28<00:53,  5.45it/s] 27%|██▋       | 109/400 [00:28<00:45,  6.42it/s]                                                  28%|██▊       | 110/400 [00:28<00:45,  6.42it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.42it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 34.85it/s][A                                                 
+                                              [A 28%|██▊       | 110/400 [00:28<00:45,  6.42it/s]
+100%|██████████| 10/10 [00:00<00:00, 34.85it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 28%|██▊       | 111/400 [00:29<01:42,  2.82it/s] 28%|██▊       | 113/400 [00:30<01:19,  3.63it/s] 29%|██▉       | 115/400 [00:30<01:02,  4.54it/s] 29%|██▉       | 117/400 [00:30<00:51,  5.50it/s] 30%|██▉       | 119/400 [00:30<00:43,  6.47it/s]                                                  30%|███       | 120/400 [00:30<00:43,  6.47it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.96it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.39it/s][A                                                 
+                                              [A 30%|███       | 120/400 [00:30<00:43,  6.47it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.39it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 30%|███       | 121/400 [00:32<01:41,  2.76it/s] 31%|███       | 123/400 [00:32<01:17,  3.56it/s] 31%|███▏      | 125/400 [00:32<01:01,  4.46it/s] 32%|███▏      | 127/400 [00:32<00:50,  5.42it/s] 32%|███▏      | 129/400 [00:33<00:42,  6.39it/s]                                                  32%|███▎      | 130/400 [00:33<00:42,  6.39it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.94it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.14it/s][A                                                 
+                                              [A 32%|███▎      | 130/400 [00:33<00:42,  6.39it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.14it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 33%|███▎      | 131/400 [00:34<01:40,  2.68it/s] 33%|███▎      | 133/400 [00:34<01:17,  3.46it/s] 34%|███▍      | 135/400 [00:35<01:00,  4.36it/s] 34%|███▍      | 137/400 [00:35<00:49,  5.32it/s] 35%|███▍      | 139/400 [00:35<00:41,  6.29it/s]                                                  35%|███▌      | 140/400 [00:35<00:41,  6.29it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.27it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.14it/s][A                                                 
+                                              [A 35%|███▌      | 140/400 [00:35<00:41,  6.29it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.14it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 35%|███▌      | 141/400 [00:37<01:37,  2.65it/s] 36%|███▌      | 143/400 [00:37<01:14,  3.43it/s] 36%|███▋      | 145/400 [00:37<00:59,  4.32it/s] 37%|███▋      | 147/400 [00:37<00:47,  5.28it/s] 37%|███▋      | 149/400 [00:37<00:40,  6.26it/s]                                                  38%|███▊      | 150/400 [00:38<00:39,  6.26it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.21it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.40it/s][A                                                 
+                                              [A 38%|███▊      | 150/400 [00:38<00:39,  6.26it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.40it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 38%|███▊      | 151/400 [00:39<01:36,  2.57it/s] 38%|███▊      | 153/400 [00:40<01:14,  3.34it/s] 39%|███▉      | 155/400 [00:40<00:58,  4.21it/s] 39%|███▉      | 157/400 [00:40<00:47,  5.16it/s] 40%|███▉      | 159/400 [00:40<00:39,  6.14it/s]                                                  40%|████      | 160/400 [00:40<00:39,  6.14it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.36it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.04it/s][A                                                 
+                                              [A 40%|████      | 160/400 [00:40<00:39,  6.14it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.04it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 40%|████      | 161/400 [00:42<01:34,  2.52it/s] 41%|████      | 163/400 [00:42<01:12,  3.28it/s] 41%|████▏     | 165/400 [00:42<00:56,  4.15it/s] 42%|████▏     | 167/400 [00:43<00:45,  5.10it/s] 42%|████▏     | 169/400 [00:43<00:38,  6.07it/s]                                                  42%|████▎     | 170/400 [00:43<00:37,  6.07it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.00it/s][A
+100%|██████████| 10/10 [00:00<00:00, 34.68it/s][A                                                 
+                                               [A 42%|████▎     | 170/400 [00:43<00:37,  6.07it/s]
+100%|██████████| 10/10 [00:00<00:00, 34.68it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 43%|████▎     | 171/400 [00:44<01:27,  2.60it/s] 43%|████▎     | 173/400 [00:45<01:07,  3.38it/s] 44%|████▍     | 175/400 [00:45<00:52,  4.26it/s] 44%|████▍     | 177/400 [00:45<00:42,  5.22it/s] 45%|████▍     | 179/400 [00:45<00:35,  6.19it/s]                                                  45%|████▌     | 180/400 [00:45<00:35,  6.19it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.16it/s][A
+100%|██████████| 10/10 [00:00<00:00, 35.05it/s][A                                                 
+                                               [A 45%|████▌     | 180/400 [00:46<00:35,  6.19it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.05it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 45%|████▌     | 181/400 [00:47<01:23,  2.62it/s] 46%|████▌     | 183/400 [00:47<01:03,  3.39it/s] 46%|████▋     | 185/400 [00:47<00:50,  4.28it/s] 47%|████▋     | 187/400 [00:48<00:40,  5.24it/s] 47%|████▋     | 189/400 [00:48<00:33,  6.21it/s]                                                  48%|████▊     | 190/400 [00:48<00:33,  6.21it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.26it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.08it/s][A                                                 
+                                              [A 48%|████▊     | 190/400 [00:48<00:33,  6.21it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.08it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 48%|████▊     | 191/400 [00:49<01:14,  2.79it/s] 48%|████▊     | 193/400 [00:50<00:57,  3.60it/s] 49%|████▉     | 195/400 [00:50<00:45,  4.50it/s] 49%|████▉     | 197/400 [00:50<00:37,  5.47it/s] 50%|████▉     | 199/400 [00:50<00:31,  6.43it/s]                                                  50%|█████     | 200/400 [00:50<00:31,  6.43it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.60it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.07it/s][A                                                 
+                                              [A 50%|█████     | 200/400 [00:51<00:31,  6.43it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.07it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 50%|█████     | 201/400 [00:52<01:22,  2.40it/s] 51%|█████     | 203/400 [00:52<01:02,  3.14it/s] 51%|█████▏    | 205/400 [00:53<00:48,  3.98it/s] 52%|█████▏    | 207/400 [00:53<00:39,  4.93it/s] 52%|█████▏    | 209/400 [00:53<00:32,  5.90it/s]                                                  52%|█████▎    | 210/400 [00:53<00:32,  5.90it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.27it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.46it/s][A                                                 
+                                              [A 52%|█████▎    | 210/400 [00:53<00:32,  5.90it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.46it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 53%|█████▎    | 211/400 [00:55<01:08,  2.75it/s] 53%|█████▎    | 213/400 [00:55<00:52,  3.55it/s] 54%|█████▍    | 215/400 [00:55<00:41,  4.45it/s] 54%|█████▍    | 217/400 [00:55<00:33,  5.41it/s] 55%|█████▍    | 219/400 [00:55<00:28,  6.38it/s]                                                  55%|█████▌    | 220/400 [00:55<00:28,  6.38it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.90it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.02it/s][A                                                 
+                                              [A 55%|█████▌    | 220/400 [00:56<00:28,  6.38it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.02it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 55%|█████▌    | 221/400 [00:57<01:07,  2.65it/s] 56%|█████▌    | 223/400 [00:57<00:51,  3.42it/s] 56%|█████▋    | 225/400 [00:57<00:40,  4.31it/s] 57%|█████▋    | 227/400 [00:58<00:32,  5.27it/s] 57%|█████▋    | 229/400 [00:58<00:27,  6.24it/s]                                                  57%|█████▊    | 230/400 [00:58<00:27,  6.24it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.76it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.27it/s][A                                                 
+                                              [A 57%|█████▊    | 230/400 [00:58<00:27,  6.24it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.27it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 58%|█████▊    | 231/400 [00:59<00:59,  2.84it/s] 58%|█████▊    | 233/400 [01:00<00:45,  3.65it/s] 59%|█████▉    | 235/400 [01:00<00:36,  4.57it/s] 59%|█████▉    | 237/400 [01:00<00:29,  5.52it/s] 60%|█████▉    | 239/400 [01:00<00:24,  6.48it/s]                                                  60%|██████    | 240/400 [01:00<00:24,  6.48it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.46it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.20it/s][A                                                 
+                                              [A 60%|██████    | 240/400 [01:01<00:24,  6.48it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.20it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 60%|██████    | 241/400 [01:01<00:49,  3.19it/s] 61%|██████    | 243/400 [01:02<00:38,  4.05it/s] 61%|██████▏   | 245/400 [01:02<00:31,  4.99it/s] 62%|██████▏   | 247/400 [01:02<00:25,  5.96it/s] 62%|██████▏   | 249/400 [01:02<00:21,  6.91it/s]                                                  62%|██████▎   | 250/400 [01:02<00:21,  6.91it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.74it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.00it/s][A                                                 
+                                              [A 62%|██████▎   | 250/400 [01:03<00:21,  6.91it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.00it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 63%|██████▎   | 251/400 [01:04<00:51,  2.89it/s] 63%|██████▎   | 253/400 [01:04<00:39,  3.71it/s] 64%|██████▍   | 255/400 [01:04<00:31,  4.63it/s] 64%|██████▍   | 257/400 [01:04<00:25,  5.60it/s] 65%|██████▍   | 259/400 [01:05<00:21,  6.57it/s]                                                  65%|██████▌   | 260/400 [01:05<00:21,  6.57it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.36it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.20it/s][A                                                 
+                                              [A 65%|██████▌   | 260/400 [01:05<00:21,  6.57it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.20it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 65%|██████▌   | 261/400 [01:06<00:48,  2.88it/s] 66%|██████▌   | 263/400 [01:06<00:37,  3.69it/s] 66%|██████▋   | 265/400 [01:07<00:29,  4.61it/s] 67%|██████▋   | 267/400 [01:07<00:23,  5.58it/s] 67%|██████▋   | 269/400 [01:07<00:20,  6.55it/s]                                                  68%|██████▊   | 270/400 [01:07<00:19,  6.55it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.02it/s][A
+100%|██████████| 10/10 [00:00<00:00, 35.05it/s][A                                                 
+                                               [A 68%|██████▊   | 270/400 [01:07<00:19,  6.55it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.05it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 68%|██████▊   | 271/400 [01:09<00:45,  2.82it/s] 68%|██████▊   | 273/400 [01:09<00:34,  3.63it/s] 69%|██████▉   | 275/400 [01:09<00:27,  4.55it/s] 69%|██████▉   | 277/400 [01:09<00:22,  5.52it/s] 70%|██████▉   | 279/400 [01:09<00:18,  6.49it/s]                                                  70%|███████   | 280/400 [01:09<00:18,  6.49it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.62it/s][A
+100%|██████████| 10/10 [00:00<00:00, 35.06it/s][A                                                 
+                                               [A 70%|███████   | 280/400 [01:10<00:18,  6.49it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.06it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 70%|███████   | 281/400 [01:11<00:46,  2.55it/s] 71%|███████   | 283/400 [01:11<00:35,  3.32it/s] 71%|███████▏  | 285/400 [01:12<00:27,  4.19it/s] 72%|███████▏  | 287/400 [01:12<00:21,  5.15it/s] 72%|███████▏  | 289/400 [01:12<00:18,  6.12it/s]                                                  72%|███████▎  | 290/400 [01:12<00:17,  6.12it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.90it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.28it/s][A                                                 
+                                              [A 72%|███████▎  | 290/400 [01:12<00:17,  6.12it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.28it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 73%|███████▎  | 291/400 [01:14<00:40,  2.68it/s] 73%|███████▎  | 293/400 [01:14<00:30,  3.47it/s] 74%|███████▍  | 295/400 [01:14<00:24,  4.36it/s] 74%|███████▍  | 297/400 [01:14<00:19,  5.32it/s] 75%|███████▍  | 299/400 [01:14<00:16,  6.29it/s]                                                  75%|███████▌  | 300/400 [01:14<00:15,  6.29it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.45it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.16it/s][A                                                 
+                                              [A 75%|███████▌  | 300/400 [01:15<00:15,  6.29it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.16it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 75%|███████▌  | 301/400 [01:16<00:39,  2.48it/s] 76%|███████▌  | 303/400 [01:16<00:30,  3.23it/s] 76%|███████▋  | 305/400 [01:17<00:23,  4.09it/s] 77%|███████▋  | 307/400 [01:17<00:18,  5.04it/s] 77%|███████▋  | 309/400 [01:17<00:15,  6.01it/s]                                                  78%|███████▊  | 310/400 [01:17<00:14,  6.01it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.73it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.29it/s][A                                                 
+                                              [A 78%|███████▊  | 310/400 [01:17<00:14,  6.01it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.29it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 78%|███████▊  | 311/400 [01:19<00:35,  2.50it/s] 78%|███████▊  | 313/400 [01:19<00:26,  3.26it/s] 79%|███████▉  | 315/400 [01:19<00:20,  4.13it/s] 79%|███████▉  | 317/400 [01:19<00:16,  5.08it/s] 80%|███████▉  | 319/400 [01:20<00:13,  6.05it/s]                                                  80%|████████  | 320/400 [01:20<00:13,  6.05it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.03it/s][A
+100%|██████████| 10/10 [00:00<00:00, 34.99it/s][A                                                 
+                                               [A 80%|████████  | 320/400 [01:20<00:13,  6.05it/s]
+100%|██████████| 10/10 [00:00<00:00, 34.99it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 80%|████████  | 321/400 [01:22<00:33,  2.39it/s] 81%|████████  | 323/400 [01:22<00:24,  3.12it/s] 81%|████████▏ | 325/400 [01:22<00:18,  3.97it/s] 82%|████████▏ | 327/400 [01:22<00:14,  4.91it/s] 82%|████████▏ | 329/400 [01:22<00:12,  5.88it/s]                                                  82%|████████▎ | 330/400 [01:22<00:11,  5.88it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.20it/s][A
+100%|██████████| 10/10 [00:00<00:00, 34.99it/s][A                                                 
+                                               [A 82%|████████▎ | 330/400 [01:23<00:11,  5.88it/s]
+100%|██████████| 10/10 [00:00<00:00, 34.99it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 83%|████████▎ | 331/400 [01:24<00:28,  2.46it/s] 83%|████████▎ | 333/400 [01:25<00:20,  3.20it/s] 84%|████████▍ | 335/400 [01:25<00:15,  4.07it/s] 84%|████████▍ | 337/400 [01:25<00:12,  5.01it/s] 85%|████████▍ | 339/400 [01:25<00:10,  5.99it/s]                                                  85%|████████▌ | 340/400 [01:25<00:10,  5.99it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 20%|██        | 2/10 [00:00<00:01,  5.48it/s][A
+ 60%|██████    | 6/10 [00:00<00:00, 14.83it/s][A
+100%|██████████| 10/10 [00:00<00:00, 20.45it/s][A                                                 
+                                               [A 85%|████████▌ | 340/400 [01:26<00:10,  5.99it/s]
+100%|██████████| 10/10 [00:00<00:00, 20.45it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 85%|████████▌ | 341/400 [01:27<00:25,  2.36it/s] 86%|████████▌ | 343/400 [01:27<00:18,  3.09it/s] 86%|████████▋ | 345/400 [01:27<00:13,  3.93it/s] 87%|████████▋ | 347/400 [01:28<00:10,  4.87it/s] 87%|████████▋ | 349/400 [01:28<00:08,  5.85it/s]                                                  88%|████████▊ | 350/400 [01:28<00:08,  5.85it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.26it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.52it/s][A                                                 
+                                              [A 88%|████████▊ | 350/400 [01:28<00:08,  5.85it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.52it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 88%|████████▊ | 351/400 [01:30<00:20,  2.42it/s] 88%|████████▊ | 353/400 [01:30<00:14,  3.15it/s] 89%|████████▉ | 355/400 [01:30<00:11,  4.01it/s] 89%|████████▉ | 357/400 [01:30<00:08,  4.95it/s] 90%|████████▉ | 359/400 [01:31<00:06,  5.94it/s]                                                  90%|█████████ | 360/400 [01:31<00:06,  5.94it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.74it/s][A
+100%|██████████| 10/10 [00:00<00:00, 35.03it/s][A                                                 
+                                               [A 90%|█████████ | 360/400 [01:31<00:06,  5.94it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.03it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 90%|█████████ | 361/400 [01:32<00:15,  2.49it/s] 91%|█████████ | 363/400 [01:33<00:11,  3.24it/s] 91%|█████████▏| 365/400 [01:33<00:08,  4.11it/s] 92%|█████████▏| 367/400 [01:33<00:06,  5.06it/s] 92%|█████████▏| 369/400 [01:33<00:05,  6.03it/s]                                                  92%|█████████▎| 370/400 [01:33<00:04,  6.03it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 39.20it/s][A
+ 90%|█████████ | 9/10 [00:00<00:00, 35.14it/s][A                                                 
+                                              [A 92%|█████████▎| 370/400 [01:34<00:04,  6.03it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.14it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 93%|█████████▎| 371/400 [01:35<00:10,  2.74it/s] 93%|█████████▎| 373/400 [01:35<00:07,  3.53it/s] 94%|█████████▍| 375/400 [01:35<00:05,  4.44it/s] 94%|█████████▍| 377/400 [01:35<00:04,  5.40it/s] 95%|█████████▍| 379/400 [01:36<00:03,  6.38it/s]                                                  95%|█████████▌| 380/400 [01:36<00:03,  6.38it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.17it/s][A
+100%|██████████| 10/10 [00:00<00:00, 35.21it/s][A                                                 
+                                               [A 95%|█████████▌| 380/400 [01:36<00:03,  6.38it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.21it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 95%|█████████▌| 381/400 [01:37<00:06,  2.92it/s] 96%|█████████▌| 383/400 [01:37<00:04,  3.74it/s] 96%|█████████▋| 385/400 [01:37<00:03,  4.66it/s] 97%|█████████▋| 387/400 [01:38<00:02,  5.64it/s] 97%|█████████▋| 389/400 [01:38<00:01,  6.60it/s]                                                  98%|█████████▊| 390/400 [01:38<00:01,  6.60it/s]
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.02it/s][A
+100%|██████████| 10/10 [00:00<00:00, 34.86it/s][A                                                 
+                                               [A 98%|█████████▊| 390/400 [01:38<00:01,  6.60it/s]
+100%|██████████| 10/10 [00:00<00:00, 34.86it/s][A
+                                               [A/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+ 98%|█████████▊| 391/400 [01:39<00:03,  2.82it/s] 98%|█████████▊| 393/400 [01:40<00:01,  3.63it/s] 99%|█████████▉| 395/400 [01:40<00:01,  4.54it/s] 99%|█████████▉| 397/400 [01:40<00:00,  5.50it/s]100%|█████████▉| 399/400 [01:40<00:00,  6.47it/s]                                                 100%|██████████| 400/400 [01:40<00:00,  6.47it/s]/shared/software/lang/python/3.10.11_gcc122/lib/python3.10/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 50%|█████     | 5/10 [00:00<00:00, 40.21it/s][A
+100%|██████████| 10/10 [00:00<00:00, 35.22it/s][A                                                 
+                                               [A100%|██████████| 400/400 [01:42<00:00,  6.47it/s]
+100%|██████████| 10/10 [00:00<00:00, 35.22it/s][A
+                                               [A                                                 100%|██████████| 400/400 [01:43<00:00,  6.47it/s]100%|██████████| 400/400 [01:43<00:00,  3.87it/s]

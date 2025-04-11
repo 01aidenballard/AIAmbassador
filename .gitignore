@@ -8,8 +8,11 @@
 # models
 **/*.pth
 **/bert-question-classifier
+**/distilbert-question-classifier
 **/BERT*
 **/DistilBERT*
+**/bart_finetuned
+**/flan_t5_finetuned
 
 # model log files
 code/CRG/classify/logs/*
