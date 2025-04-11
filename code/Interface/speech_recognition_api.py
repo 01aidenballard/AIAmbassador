@@ -1,7 +1,5 @@
 import sys
 import os
-# Ignore useless ALSA warnings
-os.environ["ALSA_NO_WARN"] = "1"
 
 import speech_recognition as sr
 import time
@@ -15,6 +13,11 @@ import time
 MIC_INDEX = 3 # default
 
 def speech_recognition():
+
+    # Ignore useless ALSA warnings, comment out for debugging purposes
+    # Redirect stderr to /dev/null globally
+    sys.stderr = open(os.devnull, 'w')
+
     """
     Function to recognize speech from audio input.
     """
@@ -36,7 +39,7 @@ def speech_recognition():
         start_time = time.time()
         text = recognizer.recognize_google(audio)
         end_time = time.time()
-        print(f"Google Web Speech API: {text} (Time taken: {(end_time - start_time):.2f} s)")
+        print(f"Your Question: {text} (Time taken: {(end_time - start_time):.2f} s)")
 
         # Measure time for Sphinx
         #print("Testing Sphinx...")Testing Google Web Speech API...
@@ -74,10 +77,8 @@ def speech_recognition():
     return text
 
 
-
 def main():
     speech_recognition()
-
 
 if __name__ == "__main__":
     main()

@@ -10,8 +10,6 @@ import time
 import pyttsx3
 import sys
 import os
-# Ignore useless ALSA warnings
-os.environ["ALSA_NO_WARN"] = "1"
 import speech_recognition_api as sr
 
 
@@ -44,9 +42,14 @@ def main():
 
     # while loop to ask questions
     while True:
-        user_ans = input("Please type 'q' when you are ready to ask a question, or 'exit' to quit: ")
+        print("Please type 'q' when you are ready to ask a question, or 'exit' to quit: ")
+        user_ans = input()
         if user_ans == 'q':
+            
             user_q = sr.speech_recognition()
+            
+            if user_q is None:
+                continue
             st = time.time()
             answer = crg.answer_question(user_q)
             et = time.time()
@@ -67,6 +70,7 @@ def main():
 
     # print(f'Question: {question}\nAnswer: {answer}')
     # print(f'Time taken: {et - st:.2f} seconds')
+
 
 if __name__ == '__main__':
     main()
