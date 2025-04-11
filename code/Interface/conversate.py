@@ -10,6 +10,7 @@ import time
 import pyttsx3
 import sys
 import os
+import keyboard
 
 import speech_recognition_api as sr
 
@@ -41,12 +42,10 @@ def main():
         print_info=False)
 
     # while loop to ask questions
-    user_ans = ''
-    while user_ans != 'exit':
-        user_ans = input('Type "exit" to quit): ')
+
+    print('Press "Esc" to quit.')
+    while not keyboard.is_pressed('esc'):
         user_q = sr.speech_recognition()
-        if user_ans.lower() == 'exit':
-            break
         st = time.time()
         answer = crg.answer_question(user_q)
         et = time.time()
@@ -55,6 +54,7 @@ def main():
 
         engine.say(answer)
         engine.runAndWait()
+        user_q = sr.speech_recognition()
 
     
     # question = 'What degrees are offered for undergraduate?'
