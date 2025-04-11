@@ -10,7 +10,7 @@ import time
 import pyttsx3
 import sys
 import os
-import keyboard
+from pynput import keyboard
 
 import speech_recognition_api as sr
 
@@ -20,6 +20,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'C
 
 # Now you can import the modules
 from crg_api import CRG, ClassifyMethod, RetrieveMethod, ExtractMethod
+
 
 def main():
     engine = pyttsx3.init()
@@ -41,10 +42,23 @@ def main():
         retrieve_method=retrieve_method,
         print_info=False)
 
-    # while loop to ask questions
+    # Keyboard listener to stop the program
+    stop_listening = False # Flag to control the while loop
+    def on_press(key):
+        nonlocal stop_listening
+        try:
+            if key == keyboard.Key.esc:
+                stop_listening = True  # Set flag to stop the loop
+                return False  # Stop listener
+        except AttributeError:
+            pass
 
+    listener = keyboard.Listener(on_press=on_press)
+    listener.start()
+
+    # while loop to ask questions
     print('Press "Esc" to quit.')
-    while not keyboard.is_pressed('esc'):
+    while not stop_listening:
         user_q = sr.speech_recognition()
         st = time.time()
         answer = crg.answer_question(user_q)
@@ -54,7 +68,6 @@ def main():
 
         engine.say(answer)
         engine.runAndWait()
-        user_q = sr.speech_recognition()
 
     
     # question = 'What degrees are offered for undergraduate?'
