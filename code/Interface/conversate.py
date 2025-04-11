@@ -10,7 +10,6 @@ import time
 import pyttsx3
 import sys
 import os
-import pynput
 
 import speech_recognition_api as sr
 
@@ -42,32 +41,21 @@ def main():
         retrieve_method=retrieve_method,
         print_info=False)
 
-    # Keyboard listener to stop the program
-    stop_listening = False # Flag to control the while loop
-    def on_press(key):
-        nonlocal stop_listening
-        try:
-            if key == pynput.keyboard.Key.esc:
-                stop_listening = True  # Set flag to stop the loop
-                return False  # Stop listener
-        except AttributeError:
-            pass
-
-    listener = pynput.keyboard.Listener(on_press=on_press)
-    listener.start()
-
     # while loop to ask questions
-    print('Press "Esc" to quit.')
-    while not stop_listening:
-        user_q = sr.speech_recognition()
-        st = time.time()
-        answer = crg.answer_question(user_q)
-        et = time.time()
-        print(f'Answer: {answer}')
-        print(f'Time taken: {et - st:.2f} seconds\n')
+    while True:
+        user_ans = input("Please type 'q' when you are ready to ask a question, or 'exit' to quit: ")
+        if user_ans == 'q':
+            user_q = sr.speech_recognition()
+            st = time.time()
+            answer = crg.answer_question(user_q)
+            et = time.time()
+            print(f'Answer: {answer}')
+            print(f'Time taken: {et - st:.2f} seconds\n')
 
-        engine.say(answer)
-        engine.runAndWait()
+            engine.say(answer)
+            engine.runAndWait()
+        elif user_ans == 'exit':
+            break
 
     
     # question = 'What degrees are offered for undergraduate?'
