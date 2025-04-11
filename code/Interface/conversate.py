@@ -10,7 +10,8 @@ import time
 import pyttsx3
 import sys
 import os
-
+# Ignore useless ALSA warnings
+os.environ["ALSA_NO_WARN"] = "1"
 import speech_recognition_api as sr
 
 
