@@ -137,6 +137,16 @@ def main():
             "answer" : "Research in biometrics focuses on using biological signatures like fingerprints, voice, face, and DNA for identification or authentication in applications such as criminal justice, e-commerce, and medical fields."
         },
         {
+            "question": "What is the Lane Innovation Hub?",
+            "context": "Highlight department facilities.",
+            "answer": "It is a hands-on innovation center providing advanced tools and workspace for students."
+        },
+        {
+            "question": "What labs are available for students studying electrical engineering?",
+            "context": "Highlight department facilities.",
+            "answer": "Labs for circuit design, energy systems, electronics, and embedded systems."
+        },
+        {
             "question": "What are the student orgs I can join as a LCSEE student?", 
             "context": "Mention student organizations and extracurricular activities.",
             "answer" : "You can get involved in groups such as the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
@@ -155,6 +165,66 @@ def main():
             "question": "What can I do with a computer science degree?", 
             "context": "Discuss career paths for graduates.",
             "answer" : "Computer science graduates can enter professions like software development, data science, artificial intelligence, cybersecurity, game design, database management, and IT consulting."
+        },
+        {
+            "question": "What types of internships do students get?",
+            "context": "Explain internship programs and support.",
+            "answer": "Students in computer science, electrical engineering, and computer engineering intern in areas like software development, embedded systems, cybersecurity, and power systems.",
+        },
+        {
+            "question": "How can students get internships?",
+            "context": "Explain internship prgrograms and support.",
+            "answer": "Students can find internships through career fairs, faculty connections, the WVU Career Services Center, and departmental partnerships with industry."
+        },
+        {
+            "question": "What type of scholarships are available for incoming students?",
+            "context": "Detail funding opportunities.",
+            "answer": "Incoming freshmen in the LCSEE department at WVU can apply for undergraduate scholarships offered by the Statler College. A single application allows consideration for all general scholarships for first-time freshmen or transfer students for Fall 2025."
+        },
+        {
+            "question": "How can freshman get scholarships?",
+            "context": "Detail funding opportunities.",
+            "answer": "Freshmen entering LCSEE are eligible for scholarships through the Statler College, which automatically considers students who submit a general application. These scholarships are awarded based on academic achievement, financial need, and other criteria."
+        },
+        {
+            "question": "What is the Lane Departments student to faculty ratio?",
+            "context": "Provide an overview of faculty expertise.",
+            "answer": "The student-to-faculty ratio in the Lane Department differs depending on the program. For example, it's 21:1 for Computer Engineering, 33:1 for Computer Science, 16:1 for Electrical Engineering, and 25:1 for Cybersecurity."
+        },
+        {
+            "question": "Where can I find more information about the department's professors?",
+            "context": "Provide an overview of faculty expertise.",
+            "answer": "You can learn more about the professors on the department’s faculty and staff webpage, which includes bios, research areas, and contact info."
+        },
+        {
+            "question": "What materials do I need to submit during the admissions process?",
+            "context": "Describe the application and admissions process.",
+            "answer": "You need to submit an application, official transcripts, test scores (if required), and a personal statement"
+        },
+        {
+            "question": "If I have more questions, where can I find more information about the admissions process?",
+            "context": "Describe the application and admissions process.",
+            "answer": "If you need help with undergraduate admissions questions related to the Lane Department, consider reaching out to the Statler College Office of Outreach and Recruitment. Norman Mihelic can be reached via email at norman.mihelic@mail.wvu.edu or by phone at (304) 293-0896. You can also contact Julie Gruber at julie.gruber@mail.wvu.edu or by phone at (304) 293-0399. For more general inquiries, you can contact the Statler College directly at statler-info@mail.wvu.edu or by calling 304.293.4821."
+        },
+        {
+            "question": "How can I get into contact with the Lane Department?",
+            "context": "Describe the department's location and how to get in touch.",
+            "answer": "The department's contact number is 304-293-5263, or send mail to P.O. Box 6109, Morgantown, West Virginia, 26506-6109."
+        },
+        {
+            "question": "Where is the Lane Department located?",
+            "context": "Describe the department's location and how to get in touch.",
+            "answer": "The department is located at 1220 Evansdale Drive, Morgantown, West Virginia, in the Advanced Engineering Research (AER) building."
+        },
+        {
+            "question": "Who is the Lane Department named after?",
+            "context": "Questions to not stump the robot.",
+            "answer": "The department is named after Raymond J. Lane, a WVU graduate and successful tech executive. His support and dedication to the university led to the naming of the department in his honor."
+        },
+        {
+            "question": "Hi, what is your name?",
+            "context": "Questions to not stump the robot.",
+            "answer": "Greetings, my name is LAIN."
         }
         
     ]
