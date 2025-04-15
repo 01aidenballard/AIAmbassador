@@ -1,4 +1,18 @@
 # AI Ambassador
+Implementation of an AI-powered robotic tour guide system for the Lane Department
+of Computer Science and Electrical Engineering (LCSEE) at West Virginia University. 
+Two methodologies were explored: 
+1. DirectLLM approach that fine-tunes a large language model on
+a custom dataset
+2. a Classify-Retrieve-Generate (CRG) pipeline that modularizes classification, answer retrieval, and natural response generation. 
+
+A custom SQuAD-style dataset was developed using LCSEE data, supporting both pipelines. The system was deployed on a Raspberry Pi 4 integrated with a Mang-Dang Mini Pupper robot. 
+
+![LCSEE Logo](report/assets/lcsee_logo.png)
+
+## Implementation
+
+![System Diagram](report/assets/system_diagram.png)
 
 ## Project Directory & Resources 
 **Folders**
