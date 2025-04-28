@@ -2,12 +2,15 @@ import json
 import argparse
 import torch
 import time
+import os
+import psutil
+import threading
+from contextlib import contextmanager
 from transformers import BartTokenizer, BartForConditionalGeneration, Trainer, TrainingArguments
-from datasets import Dataset, DatasetDict
-import evaluate
-import sacrebleu
-
+from datasets import Dataset
 from flan_t5 import calculate_bleu, calculate_f1
+
+EVAL_RESP = False
 
 class bcolors:
     HEADER = '\033[95m'
@@ -19,6 +22,68 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+@contextmanager
+def cpu_usage_monitor(sample_interval=0.05):
+    process = psutil.Process(os.getpid())
+    memory_samples = []
+    running = True
+
+    # mem based sampling function
+    def sample_memory():
+        while running:
+            memory_samples.append(process.memory_info().rss)
+            time.sleep(sample_interval)
+
+    # start memory sampling
+    sampler_thread = threading.Thread(target=sample_memory)
+    sampler_thread.start()
+
+    # before execution
+    start_wall = time.time()
+    start_cpu = process.cpu_times().user + process.cpu_times().system
+    start_mem = process.memory_info().rss
+    process.cpu_percent(interval=None)
+
+    try:
+        # during execution
+        yield_value = {}
+        yield yield_value
+    finally:
+        # after execution
+        end_wall = time.time()
+        end_cpu = process.cpu_times().user + process.cpu_times().system
+        end_mem = process.memory_info().rss
+        end_cpu_percent = process.cpu_percent(interval=None)
+
+        # stop memory sampling
+        running = False
+        sampler_thread.join()
+
+        # calculate averages
+        if memory_samples:
+            avg_ram_usage_bytes = sum(memory_samples) / len(memory_samples)
+        else:
+            avg_ram_usage_bytes = 0
+
+        # calc metrics
+        wall_time_elapsed = end_wall - start_wall
+        cpu_time_used = end_cpu - start_cpu
+        cpu_utilization_percent = (cpu_time_used / wall_time_elapsed) * 100
+        ram_used_bytes = end_mem - start_mem
+        ram_used_mb = ram_used_bytes / (1024 * 1024)
+
+        # store in dict
+        yield_value.update({
+            'wall_time': wall_time_elapsed,
+            'cpu_time': cpu_time_used,
+            'cpu_utilization_calculated': cpu_utilization_percent,
+            'cpu_utilization_psutil': end_cpu_percent,
+            'ram_usage_change_mb': ram_used_mb,
+            'ram_usage_start_mb': start_mem / (1024 * 1024),
+            'ram_usage_end_mb': end_mem / (1024 * 1024),
+            'ram_usage_avg_mb': avg_ram_usage_bytes / (1024 * 1024)  # Convert to MB
+        })
 
 def load_and_process_dataset(file_path):
     with open(file_path, 'r') as f:
@@ -115,54 +180,127 @@ def main():
         print('Loading finetuned model')
         model, tokenizer = load_fine_tuned_model()
 
-    test_data = [
-        {
-            "question": "What degree programs does the department offer?", 
-            "context": "Describe the degree programs offered by the department.",
-            "answer" : "The department offers undergraduate degrees in Computer Engineering (CPE), Computer Science (CS), Electrical Engineering (EE), and Cybersecurity (CYBE)."
-        },
-        {
-            "question": "What dual degrees can I pursue?", 
-            "context": "Describe the degree programs offered by the department.",
-            "answer" : "Students can pursue a dual degree in Computer Science (CS) and Computer Engineering (CPE) or in Electrical Engineering (EE) and Computer Science (CS)"
-        },
-        {
-            "question": "What are the various research areas in the Lane Department?", 
-            "context": "Provide an overview of research areas and opportunities.",
-            "answer" : "Research areas include biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
-        },
-        {
-            "question": "What research is done in the biometrics field?", 
-            "context": "Provide an overview of research areas and opportunities.",
-            "answer" : "Research in biometrics focuses on using biological signatures like fingerprints, voice, face, and DNA for identification or authentication in applications such as criminal justice, e-commerce, and medical fields."
-        },
-        {
-            "question": "What are the student orgs I can join as a LCSEE student?", 
-            "context": "Mention student organizations and extracurricular activities.",
-            "answer" : "You can get involved in groups such as the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
-        },
-        {
-            "question": "What kind of activities do CyberWVU students do?", 
-            "context": "Mention student organizations and extracurricular activities.",
-            "answer" : "CyberWVU offers activities like competitions, security training sessions, speaker events, open-source volunteer projects, and tutoring hours."
-        },
-        {
-            "question": "What can I do with a computer engineering degree?", 
-            "context": "Discuss career paths for graduates.",
-            "answer" : "Computer engineering graduates can pursue careers in embedded systems, robotics, hardware design, software-hardware integration, telecommunications, and IoT development."
-        },
-        {
-            "question": "What can I do with a computer science degree?", 
-            "context": "Discuss career paths for graduates.",
-            "answer" : "Computer science graduates can enter professions like software development, data science, artificial intelligence, cybersecurity, game design, database management, and IT consulting."
-        }
-        
-    ]
+        test_data = [
+            {
+                "question": "What degree programs does the department offer?", 
+                "context": "Describe the degree programs offered by the department.",
+                "answer" : "The department offers undergraduate degrees in Computer Engineering (CPE), Computer Science (CS), Electrical Engineering (EE), and Cybersecurity (CYBE)."
+            },
+            {
+                "question": "What dual degrees can I pursue?", 
+                "context": "Describe the degree programs offered by the department.",
+                "answer" : "Students can pursue a dual degree in Computer Science (CS) and Computer Engineering (CPE) or in Electrical Engineering (EE) and Computer Science (CS)"
+            },
+            {
+                "question": "What are the various research areas in the Lane Department?", 
+                "context": "Provide an overview of research areas and opportunities.",
+                "answer" : "Research areas include biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+            },
+            {
+                "question": "What research is done in the biometrics field?", 
+                "context": "Provide an overview of research areas and opportunities.",
+                "answer" : "Research in biometrics focuses on using biological signatures like fingerprints, voice, face, and DNA for identification or authentication in applications such as criminal justice, e-commerce, and medical fields."
+            },
+            {
+                "question": "What is the Lane Innovation Hub?",
+                "context": "Highlight department facilities.",
+                "answer": "It is a hands-on innovation center providing advanced tools and workspace for students."
+            },
+            {
+                "question": "What labs are available for students studying electrical engineering?",
+                "context": "Highlight department facilities.",
+                "answer": "Labs for circuit design, energy systems, electronics, and embedded systems."
+            },
+            {
+                "question": "What are the student orgs I can join as a LCSEE student?", 
+                "context": "Mention student organizations and extracurricular activities.",
+                "answer" : "You can get involved in groups such as the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
+            },
+            {
+                "question": "What kind of activities do CyberWVU students do?", 
+                "context": "Mention student organizations and extracurricular activities.",
+                "answer" : "CyberWVU offers activities like competitions, security training sessions, speaker events, open-source volunteer projects, and tutoring hours."
+            },
+            {
+                "question": "What can I do with a computer engineering degree?", 
+                "context": "Discuss career paths for graduates.",
+                "answer" : "Computer engineering graduates can pursue careers in embedded systems, robotics, hardware design, software-hardware integration, telecommunications, and IoT development."
+            },
+            {
+                "question": "What can I do with a computer science degree?", 
+                "context": "Discuss career paths for graduates.",
+                "answer" : "Computer science graduates can enter professions like software development, data science, artificial intelligence, cybersecurity, game design, database management, and IT consulting."
+            },
+            {
+                "question": "What types of internships do students get?",
+                "context": "Explain internship programs and support.",
+                "answer": "Students in computer science, electrical engineering, and computer engineering intern in areas like software development, embedded systems, cybersecurity, and power systems.",
+            },
+            {
+                "question": "How can students get internships?",
+                "context": "Explain internship prgrograms and support.",
+                "answer": "Students can find internships through career fairs, faculty connections, the WVU Career Services Center, and departmental partnerships with industry."
+            },
+            {
+                "question": "What type of scholarships are available for incoming students?",
+                "context": "Detail funding opportunities.",
+                "answer": "Incoming freshmen in the LCSEE department at WVU can apply for undergraduate scholarships offered by the Statler College. A single application allows consideration for all general scholarships for first-time freshmen or transfer students for Fall 2025."
+            },
+            {
+                "question": "How can freshman get scholarships?",
+                "context": "Detail funding opportunities.",
+                "answer": "Freshmen entering LCSEE are eligible for scholarships through the Statler College, which automatically considers students who submit a general application. These scholarships are awarded based on academic achievement, financial need, and other criteria."
+            },
+            {
+                "question": "What is the Lane Departments student to faculty ratio?",
+                "context": "Provide an overview of faculty expertise.",
+                "answer": "The student-to-faculty ratio in the Lane Department differs depending on the program. For example, it's 21:1 for Computer Engineering, 33:1 for Computer Science, 16:1 for Electrical Engineering, and 25:1 for Cybersecurity."
+            },
+            {
+                "question": "Where can I find more information about the department's professors?",
+                "context": "Provide an overview of faculty expertise.",
+                "answer": "You can learn more about the professors on the department’s faculty and staff webpage, which includes bios, research areas, and contact info."
+            },
+            {
+                "question": "What materials do I need to submit during the admissions process?",
+                "context": "Describe the application and admissions process.",
+                "answer": "You need to submit an application, official transcripts, test scores (if required), and a personal statement"
+            },
+            {
+                "question": "If I have more questions, where can I find more information about the admissions process?",
+                "context": "Describe the application and admissions process.",
+                "answer": "If you need help with undergraduate admissions questions related to the Lane Department, consider reaching out to the Statler College Office of Outreach and Recruitment. Norman Mihelic can be reached via email at norman.mihelic@mail.wvu.edu or by phone at (304) 293-0896. You can also contact Julie Gruber at julie.gruber@mail.wvu.edu or by phone at (304) 293-0399. For more general inquiries, you can contact the Statler College directly at statler-info@mail.wvu.edu or by calling 304.293.4821."
+            },
+            {
+                "question": "How can I get into contact with the Lane Department?",
+                "context": "Describe the department's location and how to get in touch.",
+                "answer": "The department's contact number is 304-293-5263, or send mail to P.O. Box 6109, Morgantown, West Virginia, 26506-6109."
+            },
+            {
+                "question": "Where is the Lane Department located?",
+                "context": "Describe the department's location and how to get in touch.",
+                "answer": "The department is located at 1220 Evansdale Drive, Morgantown, West Virginia, in the Advanced Engineering Research (AER) building."
+            },
+            {
+                "question": "Who is the Lane Department named after?",
+                "context": "Questions to not stump the robot.",
+                "answer": "The department is named after Raymond J. Lane, a WVU graduate and successful tech executive. His support and dedication to the university led to the naming of the department in his honor."
+            },
+            {
+                "question": "Hi, what is your name?",
+                "context": "Questions to not stump the robot.",
+                "answer": "Greetings, my name is LAIN."
+            }
+        ]
 
     predictions = []
     references = []
 
     total_time = 0
+    total_cpu_time = 0
+    total_cpu_utilization = 0
+    tot_avg_ram_usage = 0
+    tot_correct = 0
     num_questions = 0
 
     print(f"{bcolors.OKBLUE}BART:{bcolors.ENDC}")
@@ -173,26 +311,45 @@ def main():
         ground_truth = item["answer"]
 
         print(f"\nQuestion: {question}")
-        start_time = time.time()
-        answer = generate_answer(model, tokenizer, question, context)
-        end_time = time.time()
+        with cpu_usage_monitor() as monitor:
+            answer = generate_answer(model, tokenizer, question, context)
         print(f"Answer: {answer}")
 
-        response_time = end_time - start_time
+        response_time = monitor['wall_time']
+        cpu_time = monitor['cpu_time']
+        cpu_utilization = monitor['cpu_utilization_psutil']
+        avg_ram_usage = monitor['ram_usage_avg_mb']
+
         total_time += response_time
+        total_cpu_time += cpu_time
+        total_cpu_utilization += cpu_utilization
+        tot_avg_ram_usage += avg_ram_usage
         num_questions += 1
+
+        if EVAL_RESP:
+            is_correct = input(f"Is the answer correct? (y/n): ").strip().lower()
+            if is_correct == 'y': tot_correct += 1
 
         # Store predictions and references for metrics
         predictions.append({"id": str(len(predictions) + 1), "prediction_text": answer})
         references.append({"id": str(len(references) + 1), "answers": [{"text": ground_truth, "answer_start": 0}]})
 
     f1_score = calculate_f1(predictions, references)
+    accuracy = tot_correct / num_questions
     bleu_score = calculate_bleu(predictions, references)
     average_response_time = total_time / num_questions
+    average_cpu_time = total_cpu_time / num_questions
+    average_cpu_utilization = total_cpu_utilization / num_questions
+    average_ram_usage = tot_avg_ram_usage / num_questions
 
-    print(f"\nF1 Score: {f1_score}")
-    print(f"BLEU Score: {bleu_score}")
+    print(f"\nF1 Score: {f1_score:.6f}")
+    print(f"Accuracy: {accuracy*100:.3f}")
+    print(f"BLEU Score: {bleu_score:.6f}")
     print(f"Avg Resp Time: {average_response_time:.4f}s")
+    print(f"Avg CPU Time: {average_cpu_time:.4f}s")
+    print(f"Avg CPU Utilization: {average_cpu_utilization:.2f}%")
+    print(f"Avg RAM Usage: {average_ram_usage:.2f} MB")
+
 
 if __name__ == "__main__":
     main()
