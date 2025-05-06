@@ -63,7 +63,7 @@
                         {
                             "question": "Does the department provide undergraduate degrees? If so, which ones?",
                             "answer": [
-                                "Yes, the department provides undergraduate degrees in Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                                "The department provides undergraduate degrees in Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
                             ]
                         },
                         {
@@ -96,13 +96,13 @@
                         {
                             "question": "Are there any dual degree options for undergraduate students?",
                             "answer": [
-                                "Yes, students can pursue a dual degree in Computer Science (CS) and Computer Engineering (CPE) or in Electrical Engineering (EE) and Computer Science (CS)."
+                                "Students can pursue a dual degree in Computer Science (CS) and Computer Engineering (CPE) or in Electrical Engineering (EE) and Computer Science (CS)."
                             ]
                         },
                         {
                             "question": "Can undergraduate students pursue dual degrees in this department?",
                             "answer": [
-                                "Yes, undergraduate students can pursue dual degrees in Computer Science (CS) and Computer Engineering (CPE) or in Electrical Engineering (EE) and Computer Science (CS)."
+                                "Undergraduate students can pursue dual degrees in Computer Science (CS) and Computer Engineering (CPE) or in Electrical Engineering (EE) and Computer Science (CS)."
                             ]
                         },
                         {
@@ -114,7 +114,7 @@
                         {
                             "question": "Does the department offer any dual-degree programs for undergraduate students?",
                             "answer": [
-                                "Yes, the department provides dual-degree programs such as Computer Science (CS) with Computer Engineering (CPE) or Electrical Engineering (EE) with Computer Science (CS)."
+                                "The department provides dual-degree programs such as Computer Science (CS) with Computer Engineering (CPE) or Electrical Engineering (EE) with Computer Science (CS)."
                             ]
                         },
                         {
@@ -138,13 +138,13 @@
                         {
                             "question": "Does this department support dual-degree paths for its undergraduate students?",
                             "answer": [
-                                "Yes, the department supports dual-degree paths like Computer Science (CS) and Computer Engineering (CPE) or Electrical Engineering (EE) and Computer Science (CS)."
+                                "The department supports dual-degree paths like Computer Science (CS) and Computer Engineering (CPE) or Electrical Engineering (EE) and Computer Science (CS)."
                             ]
                         },
                         {
                             "question": "Are there options for undergraduates to combine two fields of study into a dual degree?",
                             "answer": [
-                                "Yes, undergraduates can combine fields like Computer Science (CS) with Computer Engineering (CPE) or Electrical Engineering (EE) into dual degrees."
+                                "Undergraduates can combine fields like Computer Science (CS) with Computer Engineering (CPE) or Electrical Engineering (EE) into dual degrees."
                             ]
                         },
                         {
@@ -176,7 +176,7 @@
                         {
                             "question": "Can Lane students take any minors?",
                             "answer": [
-                                "Yes, students in the Lane Department at WVU can choose from minors like Computer Science, Cybersecurity, Electrical Engineering, and Robotics. More minor programs can be found at http://catalog.wvu.edu/undergraduate/minors/."
+                                "Students in the Lane Department at WVU can choose from minors like Computer Science, Cybersecurity, Electrical Engineering, and Robotics. More minor programs can be found at http://catalog.wvu.edu/undergraduate/minors/."
                             ]
                         },
                         {
@@ -261,7 +261,7 @@
                         {
                             "question": "Does the department provide any graduate degree programs?",
                             "answer": [
-                                "Yes, the department provides graduate degree programs, including an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
+                                "The department provides graduate degree programs, including an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
                             ]
                         },
                         {
@@ -274,12 +274,6 @@
                             "question": "What are the available graduate study options in this department?",
                             "answer": [
                                 "Available graduate study options include an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
-                            ]
-                        },
-                        {
-                            "question": "Are there any graduate degree options in engineering or computer science?",
-                            "answer": [
-                                "Yes, graduate degree options include an MS in Computer Science (CS), Electrical Engineering (EE), and Software Engineering."
                             ]
                         },
                         {
@@ -297,7 +291,7 @@
                         {
                             "question": "Does the department offer graduate degrees in software and electrical engineering?",
                             "answer": [
-                                "Yes, the department offers an MS in Software Engineering, Electrical Engineering (EE), and Computer Science (CS)."
+                                "The department offers an MS in Software Engineering, Electrical Engineering (EE), and Computer Science (CS)."
                             ]
                         },
                         {
@@ -324,13 +318,13 @@
                         {
                             "question": "Are there any doctoral programs available in the department?",
                             "answer": [
-                                "Yes, the department provides doctoral programs in Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                                "The department provides doctoral programs in Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
                             ]
                         },
                         {
                             "question": "Can students pursue a PhD in this department? If so, in what fields?",
                             "answer": [
-                                "Yes, students can pursue a PhD in fields like Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                                "Students can pursue a PhD in fields like Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
                             ]
                         },
                         {
@@ -342,7 +336,7 @@
                         {
                             "question": "Does the department offer PhD programs in engineering or science disciplines?",
                             "answer": [
-                                "Yes, PhD programs are offered in Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
+                                "PhD programs are offered in Computer Engineering (CPE), Computer Science (CS), Information Science, and Electrical Engineering (EE)."
                             ]
                         },
                         {
@@ -354,7 +348,7 @@
                         {
                             "question": "Are there PhD programs in Computer Engineering and Computer Science?",
                             "answer": [
-                                "Yes, the department offers PhD programs in both Computer Engineering (CPE) and Computer Science (CS), as well as Information Science and Electrical Engineering (EE)."
+                                "The department offers PhD programs in both Computer Engineering (CPE) and Computer Science (CS), as well as Information Science and Electrical Engineering (EE)."
                             ]
                         },
                         {
@@ -366,7 +360,7 @@
                         {
                             "question": "Does the department provide PhD opportunities in Electrical Engineering or Information Science?",
                             "answer": [
-                                "Yes, the department provides PhD opportunities in Electrical Engineering (EE), Information Science, Computer Science (CS), and Computer Engineering (CPE)."
+                                "The department provides PhD opportunities in Electrical Engineering (EE), Information Science, Computer Science (CS), and Computer Engineering (CPE)."
                             ]
                         },
                         {
@@ -379,25 +373,25 @@
                         {
                             "question": "Does the Lane Department offer a Robotics Degree?",
                             "answer": [
-                                "Yes, the Lane Department offers a Robotics Engineering (ROBE) program with the Mechanical, Materials and Aerospace Engineering Department."
+                                "The Lane Department offers a Robotics Engineering (ROBE) program with the Mechanical, Materials and Aerospace Engineering Department."
                             ]
                         },
                         {
                             "question": "Is there a robotics program available at WVU through the Lane Department?",
                             "answer": [
-                                "Yes, WVU offers a Robotics Engineering program through a collaboration between the Lane Department and the Mechanical, Materials and Aerospace Engineering Department."
+                                "WVU offers a Robotics Engineering program through a collaboration between the Lane Department and the Mechanical, Materials and Aerospace Engineering Department."
                             ]
                         },
                         {
                             "question": "Can I study Robotics Engineering at WVU through the Lane Department?",
                             "answer": [
-                                "Yes, the Lane Department partners with the Mechanical, Materials and Aerospace Engineering Department to offer a Robotics Engineering program."
+                                "The Lane Department partners with the Mechanical, Materials and Aerospace Engineering Department to offer a Robotics Engineering program."
                             ]
                         },
                         {
                             "question": "Does WVU have a Robotics Engineering degree?",
                             "answer": [
-                                "Yes, WVU provides a Robotics Engineering (ROBE) degree program that is a joint effort between the Lane Department and the Mechanical, Materials and Aerospace Engineering Department."
+                                "WVU provides a Robotics Engineering (ROBE) degree program that is a joint effort between the Lane Department and the Mechanical, Materials and Aerospace Engineering Department."
                             ]
                         },
 
@@ -434,7 +428,7 @@
                         {
                             "question": "Do Lane Department undergraduate programs take four years to finish?",
                             "answer": [
-                                "Yes, undergraduate programs offered by the Lane Department are generally structured to be completed in four years of full-time study."
+                                "Undergraduate programs offered by the Lane Department are generally structured to be completed in four years of full-time study."
                             ]
                         },
                         {
@@ -690,7 +684,7 @@
                         {
                             "question": "Does the Lane Department have specific research focus areas?",
                             "answer": [
-                                "Yes, the department focuses on biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
+                                "The department focuses on biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
                             ]
                         },
                         {
@@ -828,7 +822,7 @@
                         {
                             "question": "Does WVU collaborate with NASA on AI and robotics research?",
                             "answer": [
-                                "Yes, WVU collaborates with NASA on AI and robotics research, particularly through projects like satellite refueling and repair conducted at the West Virginia Robotic Technology Center."
+                                "WVU collaborates with NASA on AI and robotics research, particularly through projects like satellite refueling and repair conducted at the West Virginia Robotic Technology Center."
                             ]
                         },
                         {
@@ -885,7 +879,7 @@
                         {
                             "question": "Does WVU provide any academic support for big data research?",
                             "answer": [
-                                "Yes, WVU supports big data research through academic programs like the Big Data Engineering course, where students learn to organize and analyze large datasets using advanced algorithms."
+                                "WVU supports big data research through academic programs like the Big Data Engineering course, where students learn to organize and analyze large datasets using advanced algorithms."
                             ]
                         },
                         {
@@ -1305,25 +1299,25 @@
                     {
                         "question": "Does the Lane Department provide access to industry-grade software?",
                         "answer": [
-                            "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                            "Students and faculty have access to licensed industry-grade software for simulations and development."
                         ]
                     },
                     {
                         "question": "Can students and faculty use professional-level software in the Lane Department?",
                         "answer": [
-                            "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                            "Students and faculty have access to licensed industry-grade software for simulations and development."
                         ]
                     },
                     {
                         "question": "Does the Lane Department provide software used in the industry?",
                         "answer": [
-                            "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                            "Students and faculty have access to licensed industry-grade software for simulations and development."
                         ]
                     },
                     {
                         "question": "Are students in the Lane Department given access to industry-standard software?",
                         "answer": [
-                            "Yes, students and faculty have access to licensed industry-grade software for simulations and development."
+                            "Students and faculty have access to licensed industry-grade software for simulations and development."
                         ]
                     },
 
@@ -1355,50 +1349,50 @@
                     {
                         "question": "Do students have access to labs outside of class hours in the Lane Department?",
                         "answer": [
-                            "Yes, many labs have extended or 24/7 access for students working on projects."
+                            "Many labs have extended or 24/7 access for students working on projects."
                         ]
                     },
                     {
                         "question": "Are the Lane Department’s labs available for student use beyond scheduled class times?",
                         "answer": [
-                            "Yes, many labs have extended or 24/7 access for students working on projects."
+                            "Many labs have extended or 24/7 access for students working on projects."
                         ]
                     },
                     {
                         "question": "Can students use the Lane Department’s labs outside of their class hours?",
                         "answer": [
-                            "Yes, many labs have extended or 24/7 access for students working on projects."
+                            "Many labs have extended or 24/7 access for students working on projects."
                         ]
                     },
                     {
                         "question": "Are the Lane Department’s laboratories accessible to students beyond normal hours?",
                         "answer": [
-                            "Yes, many labs have extended or 24/7 access for students working on projects."
+                            "Many labs have extended or 24/7 access for students working on projects."
                         ]
                     },
 
                     {
                         "question": "Are undergraduate students allowed to use specialized facilities in the Lane Department?",
                         "answer": [
-                            "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                            "Undergraduate students can access specialized facilities through coursework and faculty guidance."
                         ]
                     },
                     {
                         "question": "Can undergraduate students use advanced facilities in the Lane Department?",
                         "answer": [
-                            "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                            "Undergraduate students can access specialized facilities through coursework and faculty guidance."
                         ]
                     },
                     {
                         "question": "Are undergraduate students permitted to use specialized research spaces in the Lane Department?",
                         "answer": [
-                            "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                            "Undergraduate students can access specialized facilities through coursework and faculty guidance."
                         ]
                     },
                     {
                         "question": "Can undergraduate students work in the Lane Department’s specialized labs?",
                         "answer": [
-                            "Yes, undergraduate students can access specialized facilities through coursework and faculty guidance."
+                            "Undergraduate students can access specialized facilities through coursework and faculty guidance."
                         ]
                     },
 
@@ -1430,76 +1424,76 @@
                     {
                         "question": "Do students receive training on how to use the Lane Department’s facilities?",
                         "answer": [
-                            "Yes, students receive training through coursework, workshops, and faculty guidance."
+                            "Students receive training through coursework, workshops, and faculty guidance."
                         ]
                     },
                     {
                         "question": "Are students trained on how to operate the Lane Department’s facilities?",
                         "answer": [
-                            "Yes, students receive training through coursework, workshops, and faculty guidance."
+                            "Students receive training through coursework, workshops, and faculty guidance."
                         ]
                     },
                     {
                         "question": "Are there any instructional sessions available for students to learn about the Lane Department’s resources?",
                         "answer": [
-                            "Yes, students receive training through coursework, workshops, and faculty guidance."
+                            "Students receive training through coursework, workshops, and faculty guidance."
                         ]
                     },
                     {
                         "question": "Does the Lane Department offer training to students for using department resources?",
                         "answer": [
-                            "Yes, students receive training through coursework, workshops, and faculty guidance."
+                            "Students receive training through coursework, workshops, and faculty guidance."
                         ]
                     },
 
                     {
                         "question": "Are there dedicated labs for specific areas of study in the Lane Department?",
                         "answer": [
-                            "Yes, the Lane Department has specialized labs for cybersecurity, robotics, and artificial intelligence."
+                            "The Lane Department has specialized labs for cybersecurity, robotics, and artificial intelligence."
                         ]
                     },
                     {
                         "question": "Does the Lane Department offer specialized labs for different fields of study?",
                         "answer": [
-                            "Yes, the Lane Department has specialized labs for cybersecurity, robotics, and artificial intelligence."
+                            "The Lane Department has specialized labs for cybersecurity, robotics, and artificial intelligence."
                         ]
                     },
                     {
                         "question": "Does the Lane Department maintain a robotics lab?",
                         "answer": [
-                            "Yes, the robotics lab provides resources for autonomous systems, machine learning, and hardware prototyping."
+                            "The robotics lab provides resources for autonomous systems, machine learning, and hardware prototyping."
                         ]
                     },
                     {
                         "question": "Is there a dedicated robotics lab in the Lane Department?",
                         "answer": [
-                            "Yes, the robotics lab provides resources for autonomous systems, machine learning, and hardware prototyping."
+                            "The robotics lab provides resources for autonomous systems, machine learning, and hardware prototyping."
                         ]
                     },
 
                     {
                         "question": "Does the Lane Department have an AI-focused lab?",
                         "answer": [
-                            "Yes, the Lane Department maintains an AI lab dedicated to machine learning and data science."
+                            "The Lane Department maintains an AI lab dedicated to machine learning and data science."
                         ]
                     },
                     {
                         "question": "Is there an artificial intelligence lab in the Lane Department?",
                         "answer": [
-                            "Yes, the Lane Department maintains an AI lab dedicated to machine learning and data science."
+                            "The Lane Department maintains an AI lab dedicated to machine learning and data science."
                         ]
                     },
 
                     {
                         "question": "Does the Lane Department have a cybersecurity lab?",
                         "answer": [
-                            "Yes, the Lane Department provides a lab dedicated to network security, cryptography, and ethical hacking."
+                            "The Lane Department provides a lab dedicated to network security, cryptography, and ethical hacking."
                         ]
                     },
                     {
                         "question": "Does the Lane Department offer resources for cybersecurity education?",
                         "answer": [
-                            "Yes, the Lane Department provides a lab dedicated to network security, cryptography, and ethical hacking."
+                            "The Lane Department provides a lab dedicated to network security, cryptography, and ethical hacking."
                         ]
                     },
 
@@ -1519,61 +1513,61 @@
                     {
                         "question": "Does the Lane Department offer tutoring services for students?",
                         "answer": [
-                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                            "The Lane Department provides tutoring services for various courses, offering academic support to students."
                         ]
                     },
                     {
                         "question": "Are tutoring services available in the Lane Department to help students with their studies?",
                         "answer": [
-                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                            "The Lane Department provides tutoring services for various courses, offering academic support to students."
                         ]
                     },
                     {
                         "question": "Does the Lane Department provide any academic assistance to students in the form of tutoring?",
                         "answer": [
-                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                            "The Lane Department provides tutoring services for various courses, offering academic support to students."
                         ]
                     },
                     {
                         "question": "Are there tutoring options available in the Lane Department for students?",
                         "answer": [
-                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                            "The Lane Department provides tutoring services for various courses, offering academic support to students."
                         ]
                     },
                     {
                         "question": "Can students receive tutoring support through the Lane Department?",
                         "answer": [
-                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                            "The Lane Department provides tutoring services for various courses, offering academic support to students."
                         ]
                     },
                     {
                         "question": "Does the Lane Department have tutoring programs for students?",
                         "answer": [
-                            "Yes, the Lane Department provides tutoring services for various courses, offering academic support to students."
+                            "The Lane Department provides tutoring services for various courses, offering academic support to students."
                         ]
                     },
                     {
                         "question": "Are there tutoring resources available in the Lane Department?",
                         "answer": [
-                            "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                            "Students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
                         ]
                     },
                     {
                         "question": "Does the Lane Department provide academic support through tutoring?",
                         "answer": [
-                            "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                            "Students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
                         ]
                     },
                     {
                         "question": "Can students receive tutoring help for coursework in the Lane Department?",
                         "answer": [
-                            "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                            "Students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
                         ]
                     },
                     {
                         "question": "Does the Lane Department provide free tutoring services?",
                         "answer": [
-                            "Yes, students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
+                            "Students can access tutoring services in the Lane Department for assistance with coursework and academic challenges."
                         ]
                     },
                     {
@@ -1680,7 +1674,7 @@
                     },
                     {
                         "question": "Does the Innovation Hub support startups and entrepreneurship?",
-                        "answer": ["Yes, it provides prototyping resources, business development support, and networking opportunities."]
+                        "answer": ["The Hub provides prototyping resources, business development support, and networking opportunities."]
                     },
                     {
                         "question": "What is WVU Lane's Innovation Hub, and what is its purpose?",
@@ -1716,7 +1710,7 @@
                     },
                     {
                         "question": "Does the Innovation Hub support startups and entrepreneurship?",
-                        "answer": ["Yes, it helps students turn ideas into businesses by providing resources and mentorship."]
+                        "answer": ["The Hub helps students turn ideas into businesses by providing resources and mentorship."]
                     },
                     {
                         "question": "How does the Innovation Hub assist students in launching startups?",
@@ -1732,7 +1726,7 @@
                     },
                     {
                         "question": "Does the Innovation Hub offer training on how to use the equipment?",
-                        "answer": ["Yes, students can attend safety and skills training to use tools like 3D printers and CNC machines."]
+                        "answer": ["Students can attend safety and skills training to use tools like 3D printers and CNC machines."]
                     },
                     {
                         "question": "How can students learn to use the tools at the Innovation Hub?",
@@ -1740,7 +1734,7 @@
                     },
                     {
                         "question": "Are there safety guidelines for using the equipment at the Innovation Hub?",
-                        "answer": ["Yes, students must complete safety training before using certain machines and tools."]
+                        "answer": ["Students must complete safety training before using certain machines and tools."]
                     },
                     {
                         "question": "What safety measures are in place for students using the Innovation Hub’s equipment?",
@@ -1748,7 +1742,7 @@
                     },
                     {
                         "question": "Does the Innovation Hub provide software training for design and prototyping?",
-                        "answer": ["Yes, students can learn CAD software, circuit design, and programming for prototyping projects."]
+                        "answer": ["Students can learn CAD software, circuit design, and programming for prototyping projects."]
                     },
                     {
                         "question": "What software skills can students learn at the Innovation Hub?",
@@ -1764,7 +1758,7 @@
                     },
                     {
                         "question": "Does the Innovation Hub offer training on how to use the equipment?",
-                        "answer": ["Yes, students can attend safety and skills training to use tools like 3D printers and CNC machines."]
+                        "answer": ["Students can attend safety and skills training to use tools like 3D printers and CNC machines."]
                     },
                     {
                         "question": "How can students learn to use the tools at the Innovation Hub?",
@@ -1772,7 +1766,7 @@
                     },
                     {
                         "question": "Are there safety guidelines for using the equipment at the Innovation Hub?",
-                        "answer": ["Yes, students must complete safety training before using certain machines and tools."]
+                        "answer": ["Students must complete safety training before using certain machines and tools."]
                     },
                     {
                         "question": "What safety measures are in place for students using the Innovation Hub’s equipment?",
@@ -1780,7 +1774,7 @@
                     },
                     {
                         "question": "Does the Innovation Hub provide software training for design and prototyping?",
-                        "answer": ["Yes, students can learn CAD software, circuit design, and programming for prototyping projects."]
+                        "answer": ["Students can learn CAD software, circuit design, and programming for prototyping projects."]
                     },
                     {
                         "question": "What software skills can students learn at the Innovation Hub?",
@@ -1811,7 +1805,7 @@
                         {
                             "question": "Are there any student organizations for CSEE students at WVU?",
                             "answer": [
-                                "Yes, CSEE students at WVU can participate in groups like the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
+                                "CSEE students at WVU can participate in groups like the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
                             ]
                         },
                         {
@@ -1847,7 +1841,7 @@
                         {
                             "question": "Are there any clubs for computer science and electrical engineering students at WVU?",
                             "answer": [
-                                "Yes, clubs for these students include the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
+                                "Clubs for these students include the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
                             ]
                         },
                         {
@@ -2483,7 +2477,7 @@
                         {
                         "question": "Are there different areas of focus within the Robotics Club at WVU?",
                         "answer": [
-                            "Yes, the Robotics Club at WVU might have subgroups specializing in areas like mechanical design, electrical systems, and software."
+                            "The Robotics Club at WVU might have subgroups specializing in areas like mechanical design, electrical systems, and software."
                         ]
                         },
                         {
@@ -2591,7 +2585,7 @@
                         {
                         "question": "Does the WVU Amateur Radio Club engage in any emergency preparedness activities?",
                         "answer": [
-                            "Yes, the WVU Amateur Radio Club may participate in emergency communication drills and collaborate with local organizations."
+                            "The WVU Amateur Radio Club may participate in emergency communication drills and collaborate with local organizations."
                         ]
                         },
 
@@ -3141,7 +3135,7 @@
                         {
                             "question": "Does Statler College offer assistance for securing internships abroad?",
                             "answer": [
-                                "Yes, Statler College supports students by connecting them with international internship opportunities, helping with visa processes, and offering guidance on cultural adaptation for students in engineering and technology fields."
+                                "Statler College supports students by connecting them with international internship opportunities, helping with visa processes, and offering guidance on cultural adaptation for students in engineering and technology fields."
                             ]
                         },
 
@@ -3168,7 +3162,7 @@
                         {
                             "question": "Do Lane Department students have opportunities for research internships?",
                             "answer": [
-                                "Yes, Lane Department students, can participate in research internships through faculty-led labs, working on cutting-edge topics like artificial intelligence, cybersecurity, and robotics."
+                                "Lane Department students, can participate in research internships through faculty-led labs, working on cutting-edge topics like artificial intelligence, cybersecurity, and robotics."
                             ]
                         },
                         {
@@ -3181,31 +3175,31 @@
                         {
                             "question": "Can Lane Department students earn academic credit for internships?",
                             "answer": [
-                                "Yes, Lane Department students can earn academic credit for internships, with these internships counting toward their degree requirements, especially for students in CPE, EE, CS, and CYBE programs."
+                                "Lane Department students can earn academic credit for internships, with these internships counting toward their degree requirements, especially for students in CPE, EE, CS, and CYBE programs."
                             ]    
                         },
                         {
                             "question": "Is it possible for Lane Department students to earn credit for internships?",
                             "answer": [
-                                "Yes, students in the Lane Department can earn academic credit for internships, integrating both professional experience and academic progress."
+                                "Students in the Lane Department can earn academic credit for internships, integrating both professional experience and academic progress."
                             ]    
                         },
                         {
                             "question": "Do internships count for academic credit in the Lane Department?",
                             "answer": [
-                                "Yes, internships can count for academic credit in the Lane Department."
+                                "Internships can count for academic credit in the Lane Department."
                             ]
                         },
                         {
                             "question": "Can students in the Lane Department get credit toward their degree by doing an internship?",
                             "answer": [
-                                "Yes, Lane Department students can receive academic credit for internships, which can fulfill part of their degree requirements depending on their program."
+                                "Lane Department students can receive academic credit for internships, which can fulfill part of their degree requirements depending on their program."
                             ]
                         },
                         {
                             "question": "Are internships eligible for academic credit for Lane Department majors?",
                             "answer": [
-                                "Yes, students majoring in Lane Department programs are eligible to earn academic credit for internships, allowing them to apply real-world experience toward their academic goals."
+                                "Students majoring in Lane Department programs are eligible to earn academic credit for internships, allowing them to apply real-world experience toward their academic goals."
                             ]
                         },
                         
@@ -3249,7 +3243,7 @@
                         {
                             "question": "Can students in the Lane Department apply for co-op positions while studying?",
                             "answer": [
-                                "Yes, students in the Lane Department, particularly those studying CPE, EE, CS, and CYBE, can apply for co-op positions that allow them to alternate between academic studies and industry roles."
+                                "Students in the Lane Department, particularly those studying CPE, EE, CS, and CYBE, can apply for co-op positions that allow them to alternate between academic studies and industry roles."
                             ]
                         },
 
@@ -3268,7 +3262,7 @@
                         {
                             "question": "Is gaining internship experience recommended for Lane Department students?",
                             "answer": [
-                                "Yes, internships are highly recommended for Lane Department students. Although not required, they offer hands-on experience that can significantly benefit future job prospects."
+                                "Internships are highly recommended for Lane Department students. Although not required, they offer hands-on experience that can significantly benefit future job prospects."
                             ]
                         },
                         {
@@ -3280,7 +3274,7 @@
                         {
                             "question": "Do Lane Department students benefit from completing internships during their studies?",
                             "answer": [
-                                "Yes, completing internships during their academic career greatly benefits Lane Department students by providing practical skills, professional connections, and improved job readiness after graduation."
+                                "Completing internships during their academic career greatly benefits Lane Department students by providing practical skills, professional connections, and improved job readiness after graduation."
                             ]
                         },
                         {
@@ -3294,7 +3288,7 @@
                         {
                             "question": "Does Statler College provide help with resume building and interview prep?",
                             "answer": [
-                                "Yes, the Statler College Career Resources Center, in collaboration with WVU Career Services, offers assistance with resume reviews, practice interviews, and job search coaching to help students prepare for internships and job placements."
+                                "The Statler College Career Resources Center, in collaboration with WVU Career Services, offers assistance with resume reviews, practice interviews, and job search coaching to help students prepare for internships and job placements."
                             ]
                         },
                         {
@@ -3306,7 +3300,7 @@
                         {
                             "question": "Do students typically get paid for internships through the Lane Department?",
                             "answer": [
-                                "Yes, many internships obtained through the Lane Department and Statler College are paid. The pay rate depends on the employer, job role, and the student’s qualifications."
+                                "YMany internships obtained through the Lane Department and Statler College are paid. The pay rate depends on the employer, job role, and the student’s qualifications."
                             ]
                         },
                         {
@@ -3325,32 +3319,32 @@
                         {
                             "question": "Are remote or hybrid internships available for Lane Department students?",
                             "answer": [
-                                "Yes, remote and hybrid internships have become more prevalent. Students in the Lane Department have access to such opportunities, especially in fields like computer science and cybersecurity."
+                                "Remote and hybrid internships have become more prevalent. Students in the Lane Department have access to such opportunities, especially in fields like computer science and cybersecurity."
                             ]
                         },
                         {
                             "question": "Are there alumni who help current students find internships or offer mentorship?",
                             "answer": [
-                                "Yes, the Statler College maintains a strong alumni network. Alumni often participate in mentorship programs and assist current students in securing internships and employment."
+                                "The Statler College maintains a strong alumni network. Alumni often participate in mentorship programs and assist current students in securing internships and employment."
                             ]
                         },
                         {
                             "question": "Do Lane Department alumni support current students with internships or career advice?",
                             "answer": [
-                                "Yes, Lane Department alumni frequently support current students by offering mentorship, networking opportunities, and guidance in finding internships or full-time positions."
+                                "Lane Department alumni frequently support current students by offering mentorship, networking opportunities, and guidance in finding internships or full-time positions."
                             ]
                         },
                         {
                             "question": "Can students in the Lane Department connect with alumni for mentorship or internship opportunities?",
                             "answer": [
-                                "Yes, students can connect with alumni through the Statler College’s alumni network, where many graduates offer mentorship and help students explore internship and career paths."
+                                "Students can connect with alumni through the Statler College’s alumni network, where many graduates offer mentorship and help students explore internship and career paths."
                             ]
                         },
                         
                         {
                             "question": "Does WVU offer any courses or workshops that help students prepare for internships?",
                             "answer": [
-                                "Yes, WVU offers workshops and courses focused on professional development, including resume writing, interview skills, and job search strategies, to prepare students for internships and future careers."
+                                "WVU offers workshops and courses focused on professional development, including resume writing, interview skills, and job search strategies, to prepare students for internships and future careers."
                             ]
                         },
                         {
@@ -3368,7 +3362,7 @@
                         {
                             "question": "Does the Statler College help students get ready for interviews and improve their resumes?",
                             "answer": [
-                                "Yes, Statler College supports students with resume writing workshops, mock interviews, and personalized feedback through its Career Resources Center and WVU Career Services."
+                                "Statler College supports students with resume writing workshops, mock interviews, and personalized feedback through its Career Resources Center and WVU Career Services."
                             ]
                         },
                         {
@@ -3386,7 +3380,7 @@
                         {
                             "question": "Can students in the Lane Department do remote or hybrid internships?",
                             "answer": [
-                                "Yes, many students in the Lane Department participate in remote or hybrid internships, particularly in areas like software development and cybersecurity where virtual work is common."
+                                "Many students in the Lane Department participate in remote or hybrid internships, particularly in areas like software development and cybersecurity where virtual work is common."
                             ]
                         },
                         {
@@ -3398,7 +3392,7 @@
                         {
                             "question": "Are there any classes or workshops at WVU that help prepare students for internships?",
                             "answer": [
-                                "Yes, WVU provides professional development workshops and courses that help students build job-search skills, including how to network, craft resumes, and succeed in interviews."
+                                "WVU provides professional development workshops and courses that help students build job-search skills, including how to network, craft resumes, and succeed in interviews."
                             ]
                         },
                         {
@@ -3434,19 +3428,19 @@
                         {
                             "question": "Is it possible for Lane Department students to do internships online or in hybrid formats?",
                             "answer": [
-                                "Yes, remote and hybrid internships are available and common in areas like computer science and cybersecurity, giving students flexibility while gaining experience."
+                                "Remote and hybrid internships are available and common in areas like computer science and cybersecurity, giving students flexibility while gaining experience."
                             ]
                         },
                         {
                             "question": "Are there WVU graduates who help students find internships or act as mentors?",
                             "answer": [
-                                "Yes, WVU alumni often engage with students through mentorship programs, employer connections, and networking events, helping current students explore internships and career paths."
+                                "WVU alumni often engage with students through mentorship programs, employer connections, and networking events, helping current students explore internships and career paths."
                             ]
                         },
                         {
                             "question": "Does WVU have anything like classes or events that help students get ready for internships?",
                             "answer": [
-                                "Yes, WVU offers career readiness workshops, special-topic classes, and co-curricular events that help students develop skills for landing and succeeding in internships."
+                                "WVU offers career readiness workshops, special-topic classes, and co-curricular events that help students develop skills for landing and succeeding in internships."
                             ]
                         }
                     ]
@@ -3474,7 +3468,7 @@
                           {
                             "question": "Are there specific scholarships for undergraduates in the Lane Department?",
                             "answer": [
-                                "Yes, undergraduates in Lane Department can apply for scholarships offered by the Statler College and external organizations such as IEEE and the Mickey Leland Energy Fellowship Program."
+                                "Undergraduates in Lane Department can apply for scholarships offered by the Statler College and external organizations such as IEEE and the Mickey Leland Energy Fellowship Program."
                             ]  
                           },
                           {
@@ -3486,19 +3480,19 @@
                           {
                             "question": "Are there scholarship opportunities for first-year Lane Department students at WVU?",
                             "answer": [
-                                "Yes, first-year Lane Department students can apply for scholarships through the Statler College, which offers financial aid based on merit and need. The application process for incoming students is streamlined, allowing for multiple scholarship considerations.  "
+                                "First-year Lane Department students can apply for scholarships through the Statler College, which offers financial aid based on merit and need. The application process for incoming students is streamlined, allowing for multiple scholarship considerations.  "
                             ]  
                           },
                           {
                             "question": "Does Lane Department offer scholarships for freshmen entering the program?",
                             "answer": [
-                                "Yes, freshmen entering Lane Department are eligible for scholarships through the Statler College, which automatically considers students who submit a general application. These scholarships are awarded based on academic achievement, financial need, and other criteria.  "
+                                "Freshmen entering Lane Department are eligible for scholarships through the Statler College, which automatically considers students who submit a general application. These scholarships are awarded based on academic achievement, financial need, and other criteria.  "
                             ]  
                           },
                           {
                             "question": "Are there scholarships specifically for West Virginia residents in the Lane Department?",
                             "answer": [
-                                "Yes, there are scholarships specifically for West Virginia residents in the Lane Department. For example, the Statler College offers endowed scholarships for West Virginia residents majoring in engineering disciplines, including electrical engineering and computer science.  "
+                                "There are scholarships specifically for West Virginia residents in the Lane Department. For example, the Statler College offers endowed scholarships for West Virginia residents majoring in engineering disciplines, including electrical engineering and computer science.  "
                             ]  
                           },
                           {
@@ -3528,31 +3522,31 @@
                           {
                             "question": "Are there dedicated resources for Lane Department students seeking scholarships?",
                             "answer": [
-                                "Yes, Lane Department students can access scholarship listings through the Statler College website and consult faculty or advisors for guidance. Many scholarships are awarded annually, and applications should be submitted before the specified deadlines.  "
+                                "Lane Department students can access scholarship listings through the Statler College website and consult faculty or advisors for guidance. Many scholarships are awarded annually, and applications should be submitted before the specified deadlines.  "
                             ]  
                           },
                           {
                             "question": "Does WVU offer scholarships based on financial need for Lane Department students?",
                             "answer": [
-                                "Yes, WVU offers scholarships based on financial need for Lane Department students. Many endowed scholarships within the Statler College consider financial need as a criterion for eligibility.  "
+                                "WVU offers scholarships based on financial need for Lane Department students. Many endowed scholarships within the Statler College consider financial need as a criterion for eligibility.  "
                             ]  
                           },
                           {
                             "question": "Can Lane Department students apply for need-based financial aid?",
                             "answer": [
-                                "Yes, Lane Department students can apply for need-based scholarships through the Statler College. FAFSA submission is required for consideration, and awards are granted based on demonstrated financial need.  "
+                                "Lane Department students can apply for need-based scholarships through the Statler College. FAFSA submission is required for consideration, and awards are granted based on demonstrated financial need.  "
                             ]  
                           },
                           {
                             "question": "Are there any scholarships specifically for financially disadvantaged Lane Department students?",
                             "answer": [
-                                "Yes, some scholarships within the Statler College are designated for students with financial need. These scholarships may also consider academic performance and extracurricular involvement.  "
+                                "some scholarships within the Statler College are designated for students with financial need. These scholarships may also consider academic performance and extracurricular involvement.  "
                             ]  
                           },
                           {
                             "question": "Are there external scholarships available for Lane Department undergraduates?",
                             "answer": [
-                                "Yes, Lane Department undergraduates can apply for external scholarships offered by various organizations. While specific external scholarships are not listed on the Lane Department website, students are encouraged to explore opportunities through professional organizations related to computer science and electrical engineering."
+                                "Lane Department undergraduates can apply for external scholarships offered by various organizations. While specific external scholarships are not listed on the Lane Department website, students are encouraged to explore opportunities through professional organizations related to computer science and electrical engineering."
                             ]  
                           },
                           {
@@ -3564,7 +3558,7 @@
                           {
                             "question": "Can Lane Department students receive financial support from industry-related organizations?",
                             "answer": [
-                                "Yes, students in Lane Department may qualify for scholarships provided by professional engineering and technology organizations. These scholarships often require a strong academic record and may include internship opportunities as part of the award."
+                                "Students in Lane Department may qualify for scholarships provided by professional engineering and technology organizations. These scholarships often require a strong academic record and may include internship opportunities as part of the award."
                             ]  
                           },
                             
@@ -3590,13 +3584,13 @@
                           {
                             "question": "Are international students eligible to apply for Statler College scholarships?",
                             "answer": [
-                                "Yes, international students can apply for Statler College scholarships. While they cannot complete the FAFSA, there are merit-based awards that do not require a financial need component."
+                                "International students can apply for Statler College scholarships. While they cannot complete the FAFSA, there are merit-based awards that do not require a financial need component."
                             ]  
                           },
                           {
                             "question": "Are international students eligible for Lane Department scholarships?",
                             "answer": [
-                                "Yes, international students can apply for merit-based scholarships, even though they do not qualify for FAFSA-based need-based aid."
+                                "International students can apply for merit-based scholarships, even though they do not qualify for FAFSA-based need-based aid."
                             ]  
                           },
                           {
@@ -3645,7 +3639,7 @@
                           {
                             "question": "Are there funding options for graduate students studying in the Lane Department of Computer Science and Electrical Engineering?",
                             "answer": [
-                              "Yes, graduate students within the Lane Department of Computer Science and Electrical Engineering can pursue financial support by applying for assistantships, fellowships, and external grants. These options often provide both financial aid and research opportunities."
+                              "Graduate students within the Lane Department of Computer Science and Electrical Engineering can pursue financial support by applying for assistantships, fellowships, and external grants. These options often provide both financial aid and research opportunities."
                             ]
                           },
                           {
@@ -3663,20 +3657,20 @@
                           {
                             "question": "Are there teaching assistant (TA) positions available for graduate students?",
                             "answer": [
-                                "Yes, Lane Department offers TA positions where graduate students assist in teaching courses and receive stipends along with tuition waivers."
+                                "The Lane Department offers TA positions where graduate students assist in teaching courses and receive stipends along with tuition waivers."
                             ]
                           },
 
                           {
                             "question": "Does the Lane Department offer research funding for undergraduate students?",
                             "answer": [
-                                "Yes, the Lane Department provides research funding opportunities for undergraduate students through programs such as the WVU Research Apprenticeship Program (RAP) and faculty-led research grants."
+                                "The Lane Department provides research funding opportunities for undergraduate students through programs such as the WVU Research Apprenticeship Program (RAP) and faculty-led research grants."
                             ]
                           },
                           {
                             "question": "Are there financial support options for undergraduates who want to participate in research within the Lane Department?",
                             "answer": [
-                              "Yes, undergraduate students interested in research in the Lane Department can access funding through avenues like the WVU Research Apprenticeship Program (RAP) and grants secured by faculty members for their research projects."
+                              "Undergraduate students interested in research in the Lane Department can access funding through avenues like the WVU Research Apprenticeship Program (RAP) and grants secured by faculty members for their research projects."
                             ]
                           },
                           {
@@ -3720,13 +3714,13 @@
                           {
                             "question": "Are transfer students eligible for scholarships at the Statler College?",
                             "answer": [
-                                "Yes, transfer students are eligible for scholarships at the Statler College. They must apply within the designated application period and meet the eligibility criteria, including GPA and enrollment requirements."
+                                "Transfer students are eligible for scholarships at the Statler College. They must apply within the designated application period and meet the eligibility criteria, including GPA and enrollment requirements."
                             ]  
                           },
                           {
                             "question": "Are transfer students eligible for Lane Department scholarships?",
                             "answer": [
-                                "Yes, transfer students can apply for scholarships if they meet eligibility criteria such as GPA and enrollment requirements."
+                                "Transfer students can apply for scholarships if they meet eligibility criteria such as GPA and enrollment requirements."
                             ]  
                           },
                           {
@@ -3738,7 +3732,7 @@
                           {
                             "question": "Does Lane Department offer scholarships specifically for transfer students?",
                             "answer": [
-                                "Yes, some scholarships are designated for transfer students who meet eligibility requirements."
+                                "Some scholarships are designated for transfer students who meet eligibility requirements."
                             ]  
                           },
 
@@ -3896,13 +3890,13 @@
                         {
                             "question": "Are faculty members involved in industry projects or collaborations?",
                             "answer": [
-                                "Yes, faculty members in the Lane Department actively engage in industry collaborations, contributing to advancements in various sectors. Their involvement spans areas like cybersecurity, robotics, and energy systems, reflecting a strong commitment to bridging academic knowledge with industry applications."
+                                "Faculty members in the Lane Department actively engage in industry collaborations, contributing to advancements in various sectors. Their involvement spans areas like cybersecurity, robotics, and energy systems, reflecting a strong commitment to bridging academic knowledge with industry applications."
                             ]
                         },
                         {
                             "question": "Do faculty members in the Lane Department collaborate with industry?",
                             "answer": [
-                                "Yes, faculty in the Lane Department are deeply involved in industry partnerships, working on projects related to cybersecurity, robotics, energy, and other fields. These collaborations help bridge the gap between academic research and real-world applications."
+                                "Faculty in the Lane Department are deeply involved in industry partnerships, working on projects related to cybersecurity, robotics, energy, and other fields. These collaborations help bridge the gap between academic research and real-world applications."
                             ]
                         },
                         {
@@ -3933,7 +3927,7 @@
                         {
                             "question": "Are Lane Department faculty available to guide students academically and professionally?",
                             "answer": [
-                                "Yes, Lane Department faculty are highly accessible and offer valuable academic and professional guidance. They actively participate in student engagement through initiatives like the Student Advisory Council, which fosters communication and collaboration between students and faculty."
+                                "The Lane Department faculty are highly accessible and offer valuable academic and professional guidance. They actively participate in student engagement through initiatives like the Student Advisory Council, which fosters communication and collaboration between students and faculty."
                             ]
                         },
                         {
@@ -3978,7 +3972,7 @@
                         {
                             "question": "Are faculty members actively involved in professional organizations or conferences?",
                             "answer": [
-                                "Yes, faculty members in the Lane Department are actively engaged in professional organizations and regularly participate in conferences. This involvement ensures they remain at the forefront of technological advancements and bring current industry insights into their teaching."
+                                "Faculty members in the Lane Department are actively engaged in professional organizations and regularly participate in conferences. This involvement ensures they remain at the forefront of technological advancements and bring current industry insights into their teaching."
                             ]
                         },
                         {
@@ -3990,7 +3984,7 @@
                         {
                             "question": "Are Lane Department faculty members active in professional networks and conferences?",
                             "answer": [
-                                "Yes, faculty members in the Lane Department are deeply involved in professional networks and regularly attend key conferences. Their participation allows them to stay informed on industry trends and ensure that students are exposed to the most current knowledge and practices."
+                                "Faculty members in the Lane Department are deeply involved in professional networks and regularly attend key conferences. Their participation allows them to stay informed on industry trends and ensure that students are exposed to the most current knowledge and practices."
                             ]
                         },
                         {
@@ -4336,7 +4330,7 @@
                         {
                             "question": "Is there a minimum GPA requirement for applying to the Lane Department?",
                             "answer": [
-                                "Yes, for the 2025-2026 academic year, students applying to Engineering and Computing Programs within the Statler College must achieve a 3.00 cumulative high school GPA or meet entry requirements for College Algebra. Transfer students need a cumulative 2.25 GPA or higher and must meet the requirements to start Calculus I."
+                                "For the 2025-2026 academic year, students applying to Engineering and Computing Programs within the Statler College must achieve a 3.00 cumulative high school GPA or meet entry requirements for College Algebra. Transfer students need a cumulative 2.25 GPA or higher and must meet the requirements to start Calculus I."
                             ]
                         },
                         {
@@ -4411,7 +4405,7 @@
                         {
                             "question": "Is the GRE required for all graduate programs in the Lane Department?",
                             "answer": [
-                                "Yes, a satisfactory score in the quantitative component of the GRE is required for regular admission to the Master's programs."
+                                "A satisfactory score in the quantitative component of the GRE is required for regular admission to the Master's programs."
                             ]
                         },
 
@@ -4461,7 +4455,7 @@
                         {
                             "question": "Are there specific deadlines for applying to graduate programs in the Lane Department?",
                             "answer": [
-                                "Yes, the deadlines for graduate program applications are as follows: Fall – April; Spring – October; Summer – May. For the most accurate and updated information, refer to the Lane Department's graduate admissions page."
+                                "The deadlines for graduate program applications are as follows: Fall – April; Spring – October; Summer – May. For the most accurate and updated information, refer to the Lane Department's graduate admissions page."
                             ]
                         },
 
@@ -4474,13 +4468,13 @@
                         {
                             "question": "Can international students apply to the Lane Department's programs?",
                             "answer": [
-                                "Yes, international students are welcome to apply. They must meet additional requirements, such as English language proficiency tests. Details are available on WVU's International Admissions page."
+                                "International students are welcome to apply. They must meet additional requirements, such as English language proficiency tests. Details are available on WVU's International Admissions page."
                             ]
                         },
                         {
                             "question": "Are international students eligible to apply for the Lane Department's programs?",
                             "answer": [
-                                "Yes, international applicants can apply to both undergraduate and graduate programs. They will need to submit proof of English proficiency and follow additional application steps outlined on the WVU International Admissions page."
+                                "International applicants can apply to both undergraduate and graduate programs. They will need to submit proof of English proficiency and follow additional application steps outlined on the WVU International Admissions page."
                             ]
                         },
 
@@ -4517,7 +4511,7 @@
                         {
                             "question": "Under WVU's test-optional policy, are there any circumstances where ACT or SAT scores are still required for undergraduate admission?",
                             "answer": [
-                                "Yes, even with the test-optional policy at WVU, some specific academic programs or particular scholarship opportunities may still mandate the submission of ACT or SAT scores. The application will allow you to specify if you are applying under the test-optional route."
+                                "Some specific academic programs or particular scholarship opportunities may still mandate the submission of ACT or SAT scores. The application will allow you to specify if you are applying under the test-optional route."
                             ]
                         },
                         {
@@ -4629,7 +4623,7 @@
                             ]  
                           },
                           {
-                            "question": "What is the physical address of the Lane Department?",
+                            "question": "What is the address of the Lane Department?",
                             "answer": [
                                 "You can find the Lane Department at 1220 Evansdale Drive, Morgantown, West Virginia, in the AER building."
                             ]
