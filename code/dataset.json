@@ -19,6 +19,24 @@
                             ]
                         },
                         {
+                            "question": "What can undergraduate students enroll in within the department?",
+                            "answer": [
+                                "Students can enroll in undergraduate programs such as Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "Which degrees can students enroll in within the department?",
+                            "answer": [
+                                "Students can enroll in undergraduate programs such as Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
+                            "question": "What degrees can students take within the department?",
+                            "answer": [
+                                "Students can enroll in undergraduate programs such as Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
+                            ]
+                        },
+                        {
                             "question": "Can you list the undergraduate degrees provided by the department?",
                             "answer": [
                                 "Undergraduate degrees available include Computer Engineering (CPE), Electrical Engineering (EE), Computer Science (CS), and Cybersecurity (CYBE)."
@@ -143,6 +161,33 @@
                         },
 
 
+                        {
+                            "question": "What minors can students take?",
+                            "answer": [
+                                "Students in WVU's Lane Department have the option to pursue minors like Computer Science, Cybersecurity, Electrical Engineering, and Robotics. For other minor options, visit http://catalog.wvu.edu/undergraduate/minors/."
+                            ]
+                        },
+                        {
+                            "question": "Which minors are available to Lane Department students?",
+                            "answer": [
+                                "Minors such as Computer Science, Cybersecurity, Electrical Engineering, and Robotics are available to students in WVU's Lane Department. To explore additional minors, see http://catalog.wvu.edu/undergraduate/minors/."
+                            ]
+                        },
+                        {
+                            "question": "Can Lane students take any minors?",
+                            "answer": [
+                                "Yes, students in the Lane Department at WVU can choose from minors like Computer Science, Cybersecurity, Electrical Engineering, and Robotics. More minor programs can be found at http://catalog.wvu.edu/undergraduate/minors/."
+                            ]
+                        },
+                        {
+                            "question": "Are there any minors offered to Lane Department students?",
+                            "answer": [
+                                "WVU Lane Department students can pursue minors in areas like Computer Science, Cybersecurity, Electrical Engineering, and Robotics. For a full list of minor programs, check http://catalog.wvu.edu/undergraduate/minors/."
+                            ]
+                        },
+                        
+
+
 
                         {
                             "question": "Can students minor in Computer Science?",
@@ -175,18 +220,6 @@
                             ]
                         },
                         {
-                            "question": "What are the minor options for students interested in Computer Science?",
-                            "answer": [
-                                "Students interested in Computer Science can opt for a minor in the subject."
-                            ]
-                        },
-                        {
-                            "question": "Does the department provide a program for minoring in Computer Science?",
-                            "answer": [
-                                "Yes, the department provides a program for students to minor in Computer Science (CS)."
-                            ]
-                        },
-                        {
                             "question": "Can a student pursue a minor in Computer Science at this department?",
                             "answer": [
                                 "Yes, students can pursue a minor in Computer Science (CS) through this department."
@@ -202,12 +235,6 @@
                             "question": "Are there opportunities to minor in Computer Science for students in this program?",
                             "answer": [
                                 "Yes, students in this program can minor in Computer Science (CS)."
-                            ]
-                        },
-                        {
-                            "question": "Can students complement their major with a minor in Computer Science?",
-                            "answer": [
-                                "Yes, students can complement their major by pursuing a minor in Computer Science (CS)."
                             ]
                         },
 
@@ -1241,12 +1268,6 @@
                         "question": "What labs do electrical engineering students use for circuit design?",
                         "answer": [
                             "Labs for analog and digital circuit design, testing, and fabrication."
-                        ]
-                    },
-                    {
-                        "question": "How do electrical engineering students gain practical experience in circuit design?",
-                        "answer": [
-                            "Labs for circuit design, testing, and fabrication."
                         ]
                     },
 
@@ -3439,111 +3460,111 @@
                     "context": "Detail funding opportunities.",
                     "qas": [
                         {
-                            "question": "What types of scholarships are available for undergraduate students in the LCSEE at WVU?",
+                            "question": "What types of scholarships are available for undergraduate students in the Lane Department at WVU?",
                             "answer": [
-                                "Undergraduate students in the LCSEE at WVU have access to various scholarships, including those offered by the Statler College for incoming first-time freshmen and current students. Additionally, external scholarships are available through organizations such as the Renewable Energy Scholarship Foundation, Mickey Leland Energy Fellowship Program, IEEE Power and Energy Plus Scholarship, and the ARRL Foundation."
+                                "Undergraduate students in the Lane Department at WVU have access to various scholarships, including those offered by the Statler College for incoming first-time freshmen and current students. Additionally, external scholarships are available through organizations such as the Renewable Energy Scholarship Foundation, Mickey Leland Energy Fellowship Program, IEEE Power and Energy Plus Scholarship, and the ARRL Foundation."
                             ]  
                           },
                           {
-                            "question": "What types of scholarships does LCSEE offer for undergraduate students?",
+                            "question": "What types of scholarships does Lane Department offer for undergraduate students?",
                             "answer": [
-                                "LCSEE offers multiple scholarships for undergraduate students, including merit-based, need-based, and external scholarships such as those from IEEE and the Renewable Energy Scholarship Foundation."
+                                "Lane Department offers multiple scholarships for undergraduate students, including merit-based, need-based, and external scholarships such as those from IEEE and the Renewable Energy Scholarship Foundation."
                             ]  
                           },
                           {
-                            "question": "Are there specific scholarships for undergraduates in the LCSEE department?",
+                            "question": "Are there specific scholarships for undergraduates in the Lane Department?",
                             "answer": [
-                                "Yes, undergraduates in LCSEE can apply for scholarships offered by the Statler College and external organizations such as IEEE and the Mickey Leland Energy Fellowship Program."
+                                "Yes, undergraduates in Lane Department can apply for scholarships offered by the Statler College and external organizations such as IEEE and the Mickey Leland Energy Fellowship Program."
                             ]  
                           },
                           {
-                            "question": "What scholarships are available for incoming freshmen in the LCSEE department at WVU?",
+                            "question": "What scholarships are available for incoming freshmen in the Lane Department at WVU?",
                             "answer": [
-                                "Incoming freshmen in the LCSEE department at WVU can apply for undergraduate scholarships offered by the Statler College. A single application allows consideration for all general scholarships for first-time freshmen or transfer students for fall 2025.  "
+                                "Incoming freshmen in the Lane Department at WVU can apply for undergraduate scholarships offered by the Statler College. A single application allows consideration for all general scholarships for first-time freshmen or transfer students for fall 2025."
                             ]  
                           },
                           {
-                            "question": "Are there scholarship opportunities for first-year LCSEE students at WVU?",
+                            "question": "Are there scholarship opportunities for first-year Lane Department students at WVU?",
                             "answer": [
-                                "Yes, first-year LCSEE students can apply for scholarships through the Statler College, which offers financial aid based on merit and need. The application process for incoming students is streamlined, allowing for multiple scholarship considerations.  "
+                                "Yes, first-year Lane Department students can apply for scholarships through the Statler College, which offers financial aid based on merit and need. The application process for incoming students is streamlined, allowing for multiple scholarship considerations.  "
                             ]  
                           },
                           {
-                            "question": "Does LCSEE offer scholarships for freshmen entering the program?",
+                            "question": "Does Lane Department offer scholarships for freshmen entering the program?",
                             "answer": [
-                                "Yes, freshmen entering LCSEE are eligible for scholarships through the Statler College, which automatically considers students who submit a general application. These scholarships are awarded based on academic achievement, financial need, and other criteria.  "
+                                "Yes, freshmen entering Lane Department are eligible for scholarships through the Statler College, which automatically considers students who submit a general application. These scholarships are awarded based on academic achievement, financial need, and other criteria.  "
                             ]  
                           },
                           {
-                            "question": "Are there scholarships specifically for West Virginia residents in the LCSEE department?",
+                            "question": "Are there scholarships specifically for West Virginia residents in the Lane Department?",
                             "answer": [
-                                "Yes, there are scholarships specifically for West Virginia residents in the LCSEE department. For example, the Statler College offers endowed scholarships for West Virginia residents majoring in engineering disciplines, including electrical engineering and computer science.  "
+                                "Yes, there are scholarships specifically for West Virginia residents in the Lane Department. For example, the Statler College offers endowed scholarships for West Virginia residents majoring in engineering disciplines, including electrical engineering and computer science.  "
                             ]  
                           },
                           {
-                            "question": "Do West Virginia residents have priority for LCSEE scholarships?",
+                            "question": "Do West Virginia residents have priority for Lane Department scholarships?",
                             "answer": [
-                                "Some LCSEE scholarships prioritize West Virginia residents, particularly those funded by the Statler College. These scholarships often focus on academic merit, financial need, and residency status.  "
+                                "Some Lane Department scholarships prioritize West Virginia residents, particularly those funded by the Statler College. These scholarships often focus on academic merit, financial need, and residency status.  "
                             ]
                           },
                           {
-                            "question": "What financial aid options are available for West Virginia students in LCSEE?",
+                            "question": "What financial aid options are available for West Virginia students in Lane Department?",
                             "answer": [
-                                "West Virginia students in LCSEE can apply for need-based and merit-based scholarships through the Statler College. Additionally, state-funded programs may provide financial assistance to in-state students pursuing engineering degrees.  "
+                                "West Virginia students in Lane Department can apply for need-based and merit-based scholarships through the Statler College. Additionally, state-funded programs may provide financial assistance to in-state students pursuing engineering degrees.  "
                             ]  
                           },
                           {
-                            "question": "How can current LCSEE undergraduates find scholarship opportunities?",
+                            "question": "How can current Lane Department undergraduates find scholarship opportunities?",
                             "answer": [
-                                "Current LCSEE undergraduates can explore scholarship opportunities by visiting the Statler College's scholarship funds page, which provides a comprehensive list of available scholarships for engineering students.  "
+                                "Current Lane Department undergraduates can explore scholarship opportunities by visiting the Statler College's scholarship funds page, which provides a comprehensive list of available scholarships for engineering students.  "
                             ]  
                           },
                           {
-                            "question": "Where can LCSEE students find information on available scholarships?",
+                            "question": "Where can Lane Department students find information on available scholarships?",
                             "answer": [
-                                "LCSEE students can check the Statler College’s scholarship webpage for details on available funding. Regularly checking departmental emails and contacting academic advisors can also help identify new scholarship opportunities.  "
+                                "Lane Department students can check the Statler College’s scholarship webpage for details on available funding. Regularly checking departmental emails and contacting academic advisors can also help identify new scholarship opportunities.  "
                             ]  
                           },
                           {
-                            "question": "Are there dedicated resources for LCSEE students seeking scholarships?",
+                            "question": "Are there dedicated resources for Lane Department students seeking scholarships?",
                             "answer": [
-                                "Yes, LCSEE students can access scholarship listings through the Statler College website and consult faculty or advisors for guidance. Many scholarships are awarded annually, and applications should be submitted before the specified deadlines.  "
+                                "Yes, Lane Department students can access scholarship listings through the Statler College website and consult faculty or advisors for guidance. Many scholarships are awarded annually, and applications should be submitted before the specified deadlines.  "
                             ]  
                           },
                           {
-                            "question": "Does WVU offer scholarships based on financial need for LCSEE students?",
+                            "question": "Does WVU offer scholarships based on financial need for Lane Department students?",
                             "answer": [
-                                "Yes, WVU offers scholarships based on financial need for LCSEE students. Many endowed scholarships within the Statler College consider financial need as a criterion for eligibility.  "
+                                "Yes, WVU offers scholarships based on financial need for Lane Department students. Many endowed scholarships within the Statler College consider financial need as a criterion for eligibility.  "
                             ]  
                           },
                           {
-                            "question": "Can LCSEE students apply for need-based financial aid?",
+                            "question": "Can Lane Department students apply for need-based financial aid?",
                             "answer": [
-                                "Yes, LCSEE students can apply for need-based scholarships through the Statler College. FAFSA submission is required for consideration, and awards are granted based on demonstrated financial need.  "
+                                "Yes, Lane Department students can apply for need-based scholarships through the Statler College. FAFSA submission is required for consideration, and awards are granted based on demonstrated financial need.  "
                             ]  
                           },
                           {
-                            "question": "Are there any scholarships specifically for financially disadvantaged LCSEE students?",
+                            "question": "Are there any scholarships specifically for financially disadvantaged Lane Department students?",
                             "answer": [
                                 "Yes, some scholarships within the Statler College are designated for students with financial need. These scholarships may also consider academic performance and extracurricular involvement.  "
                             ]  
                           },
                           {
-                            "question": "Are there external scholarships available for LCSEE undergraduates?",
+                            "question": "Are there external scholarships available for Lane Department undergraduates?",
                             "answer": [
-                                "Yes, LCSEE undergraduates can apply for external scholarships offered by various organizations. While specific external scholarships are not listed on the LCSEE website, students are encouraged to explore opportunities through professional organizations related to computer science and electrical engineering."
+                                "Yes, Lane Department undergraduates can apply for external scholarships offered by various organizations. While specific external scholarships are not listed on the Lane Department website, students are encouraged to explore opportunities through professional organizations related to computer science and electrical engineering."
                             ]  
                           },
                           {
-                            "question": "What external funding options exist for LCSEE students?",
+                            "question": "What external funding options exist for Lane Department students?",
                             "answer": [
-                                "LCSEE students can seek external scholarships from industry groups such as IEEE, the National Science Foundation, and private foundations that support STEM education. Researching and applying to these scholarships can provide additional financial aid beyond university funding."
+                                "Lane Department students can seek external scholarships from industry groups such as IEEE, the National Science Foundation, and private foundations that support STEM education. Researching and applying to these scholarships can provide additional financial aid beyond university funding."
                             ]  
                           },
                           {
-                            "question": "Can LCSEE students receive financial support from industry-related organizations?",
+                            "question": "Can Lane Department students receive financial support from industry-related organizations?",
                             "answer": [
-                                "Yes, students in LCSEE may qualify for scholarships provided by professional engineering and technology organizations. These scholarships often require a strong academic record and may include internship opportunities as part of the award."
+                                "Yes, students in Lane Department may qualify for scholarships provided by professional engineering and technology organizations. These scholarships often require a strong academic record and may include internship opportunities as part of the award."
                             ]  
                           },
                             
@@ -3573,7 +3594,7 @@
                             ]  
                           },
                           {
-                            "question": "Are international students eligible for LCSEE scholarships?",
+                            "question": "Are international students eligible for Lane Department scholarships?",
                             "answer": [
                                 "Yes, international students can apply for merit-based scholarships, even though they do not qualify for FAFSA-based need-based aid."
                             ]  
@@ -3592,33 +3613,33 @@
                           },
 
                           {
-                            "question": "What financial support options are available for graduate students in the LCSEE?",
+                            "question": "What financial support options are available for graduate students in the Lane Department?",
                             "answer": [
-                                "Graduate students in the LCSEE may receive financial support through Graduate Teaching Assistantships, Graduate Research Assistantships, and Graduate Service Assistantships. These positions often include a waiver of university tuition and a stipend for living expenses. Additionally, external funding opportunities such as scholarships and fellowships are available."
+                                "Graduate students in the Lane Department may receive financial support through Graduate Teaching Assistantships, Graduate Research Assistantships, and Graduate Service Assistantships. These positions often include a waiver of university tuition and a stipend for living expenses. Additionally, external funding opportunities such as scholarships and fellowships are available."
                             ]  
                           },
                           {
-                            "question": "What types of assistantships are available for graduate students in LCSEE?",
+                            "question": "What types of assistantships are available for graduate students in Lane Department?",
                             "answer": [
                                 "Graduate students can apply for teaching assistantships (TAs), research assistantships (RAs), and service assistantships (SAs), which often provide tuition waivers and stipends."
                             ]  
                           },
                           {
-                            "question": "What assistantship opportunities are available for graduate students in LCSEE?",
+                            "question": "What assistantship opportunities are available for graduate students in Lane Department?",
                             "answer": [
-                                "Graduate students in LCSEE can apply for teaching assistantships (TAs), research assistantships (RAs), and service assistantships (SAs), which provide tuition waivers and stipends."
+                                "Graduate students in Lane Department can apply for teaching assistantships (TAs), research assistantships (RAs), and service assistantships (SAs), which provide tuition waivers and stipends."
                             ]  
                           },
                           {
-                            "question": "How can graduate students receive financial support at LCSEE?",
+                            "question": "How can graduate students receive financial support at Lane Department?",
                             "answer": [
                                 "Graduate students can apply for assistantships, fellowships, and external grants that provide financial assistance and research opportunities."
                             ]  
                           },
                           {
-                            "question": "What types of financial aid are available for graduate students in LCSEE?",
+                            "question": "What types of financial aid are available for graduate students in Lane Department?",
                             "answer": [
-                              "LCSEE graduate students have opportunities to secure financial support through assistantships, fellowships, and by seeking external grants, which can also enhance their research experience."
+                              "Lane Department graduate students have opportunities to secure financial support through assistantships, fellowships, and by seeking external grants, which can also enhance their research experience."
                             ]
                           },
                           {
@@ -3628,9 +3649,9 @@
                             ]
                           },
                           {
-                            "question": "How can I fund my graduate studies in the LCSEE department?",
+                            "question": "How can I fund my graduate studies in the Lane Department?",
                             "answer": [
-                              "To fund graduate studies in the LCSEE department, students can explore opportunities like applying for assistantships, fellowships, and seeking external grant funding, which can offer financial support and valuable research experience."
+                              "To fund graduate studies in the Lane Department, students can explore opportunities like applying for assistantships, fellowships, and seeking external grant funding, which can offer financial support and valuable research experience."
                             ]
                           },
                           {
@@ -3642,32 +3663,32 @@
                           {
                             "question": "Are there teaching assistant (TA) positions available for graduate students?",
                             "answer": [
-                                "Yes, LCSEE offers TA positions where graduate students assist in teaching courses and receive stipends along with tuition waivers."
+                                "Yes, Lane Department offers TA positions where graduate students assist in teaching courses and receive stipends along with tuition waivers."
                             ]
                           },
 
                           {
-                            "question": "Does the LCSEE department offer research funding for undergraduate students?",
+                            "question": "Does the Lane Department offer research funding for undergraduate students?",
                             "answer": [
-                                "Yes, the LCSEE department provides research funding opportunities for undergraduate students through programs such as the WVU Research Apprenticeship Program (RAP) and faculty-led research grants."
+                                "Yes, the Lane Department provides research funding opportunities for undergraduate students through programs such as the WVU Research Apprenticeship Program (RAP) and faculty-led research grants."
                             ]
                           },
                           {
-                            "question": "Are there financial support options for undergraduates who want to participate in research within the LCSEE department?",
+                            "question": "Are there financial support options for undergraduates who want to participate in research within the Lane Department?",
                             "answer": [
-                              "Yes, undergraduate students interested in research in the LCSEE department can access funding through avenues like the WVU Research Apprenticeship Program (RAP) and grants secured by faculty members for their research projects."
+                              "Yes, undergraduate students interested in research in the Lane Department can access funding through avenues like the WVU Research Apprenticeship Program (RAP) and grants secured by faculty members for their research projects."
                             ]
                           },
                           {
-                            "question": "How can undergraduate students in LCSEE get funding to support their research endeavors?",
+                            "question": "How can undergraduate students in Lane Department get funding to support their research endeavors?",
                             "answer": [
-                              "Undergraduate students in the LCSEE department can find financial support for research through programs like the WVU Research Apprenticeship Program (RAP) and by engaging with faculty who have their own research grants that may include undergraduate involvement."
+                              "Undergraduate students in the Lane Department can find financial support for research through programs like the WVU Research Apprenticeship Program (RAP) and by engaging with faculty who have their own research grants that may include undergraduate involvement."
                             ]
                           },
                           {
                             "question": "What kind of financial assistance is available for undergraduate research within the Lane Department of Computer Science and Electrical Engineering?",
                             "answer": [
-                              "The Lane Department of Computer Science and Electrical Engineering (LCSEE) offers financial assistance for undergraduate research via programs such as the WVU Research Apprenticeship Program (RAP) and through funding obtained by faculty for their research initiatives, which may support undergraduate researchers."
+                              "The Lane Department of Computer Science and Electrical Engineering (Lane Department) offers financial assistance for undergraduate research via programs such as the WVU Research Apprenticeship Program (RAP) and through funding obtained by faculty for their research initiatives, which may support undergraduate researchers."
                             ]
                           },
 
@@ -3703,7 +3724,7 @@
                             ]  
                           },
                           {
-                            "question": "Are transfer students eligible for LCSEE scholarships?",
+                            "question": "Are transfer students eligible for Lane Department scholarships?",
                             "answer": [
                                 "Yes, transfer students can apply for scholarships if they meet eligibility criteria such as GPA and enrollment requirements."
                             ]  
@@ -3715,7 +3736,7 @@
                             ]  
                           },
                           {
-                            "question": "Does LCSEE offer scholarships specifically for transfer students?",
+                            "question": "Does Lane Department offer scholarships specifically for transfer students?",
                             "answer": [
                                 "Yes, some scholarships are designated for transfer students who meet eligibility requirements."
                             ]  
@@ -4107,27 +4128,27 @@
                             ]
                         },
                         {
-                            "question": "Which professor directs Undergraduate Studies in Computer Science?",
+                            "question": "Which professor is the Program Director for Undergraduate Studies in Computer Science?",
                             "answer": [
                                 "Brian Powell is the Program Director for Undergraduate Studies in Computer Science."
                             ]
                         },
                         {
-                            "question": "Who is in charge of the LCSEE Learning Center?",
+                            "question": "Who is in charge of the Lane Department Learning Center?",
                             "answer": [
-                                "Tom Devine is the Director of the LCSEE Learning Center."
+                                "Tom Devine is the Director of the Lane Department Learning Center."
                             ]
                         },
                         {
-                            "question": "Who is the Director of the LCSEE Learning Center?",
+                            "question": "Who is the Director of the Lane Department Learning Center?",
                             "answer": [
-                                "Tom Devine holds these roles within the department."
+                                "Tom Devine holds this role within the department."
                             ]
                         },
                         {
-                            "question": "Who is the Director of the LCSEE Learning Center?",
+                            "question": "Who is the Director of the Lane Department Learning Center?",
                             "answer": [
-                                "Tom Devine is the Director of the LCSEE Learning Center."
+                                "Tom Devine is the Director of the Lane Department Learning Center."
                             ]
                         },
                         {
@@ -4176,37 +4197,37 @@
                         {
                             "question": "Who is the Program Director for the Computer Science Graduate program?",
                             "answer": [
-                            "Donald Adjeroh is the Program Director for Computer Science Graduate Studies."
+                                "Donald Adjeroh is the Program Director for Computer Science Graduate Studies."
                             ]
                         },
                         {
                             "question": "Who is the Program Coordinator for the BS Cybersecurity program?",
                             "answer": [
-                            "Katerina Goseva-Popstojanova is the Program Coordinator for the BS Cybersecurity program."
+                                "Katerina Goseva-Popstojanova is the Program Coordinator for the BS Cybersecurity program."
                             ]
                         },
                         {
                             "question": "Who is responsible for the Robotics program in the Electrical Engineering department?",
                             "answer": [
-                            "Amr El-Wakeel is the Program Coordinator for Robotics in the Electrical Engineering department."
+                                "Amr El-Wakeel is the Program Coordinator for Robotics in the Electrical Engineering department."
                             ]
                         },
                         {
                             "question": "Who is the Director of Undergraduate Studies in Electrical and Computer Engineering?",
                             "answer": [
-                            "Parviz Famouri is the Director of Undergraduate Studies for Electrical and Computer Engineering."
+                                "Parviz Famouri is the Director of Undergraduate Studies for Electrical and Computer Engineering."
                             ]
                         },
                         {
                             "question": "Who is the Coordinator for Senior Design Capstone Projects in Computer Engineering?",
                             "answer": [
-                            "Ramana Reddy is the Coordinator of Senior Design Capstone Projects in the Computer Engineering program."
+                                "Ramana Reddy is the Coordinator of Senior Design Capstone Projects in the Computer Engineering program."
                             ]
                         },
                         {
                             "question": "Who is the Program Director for the MS in Software Engineering?",
                             "answer": [
-                            "Dale Dzielski is the Program Director for the MS in Software Engineering."
+                                "Dale Dzielski is the Program Director for the MS in Software Engineering."
                             ]
                         }
                           
@@ -4301,9 +4322,9 @@
                             ]
                         },
                         {
-                            "question": "What documents are required for undergraduate applications to the Lane Department?",
+                            "question": "What documents are required for undergraduate admission to the Lane Department?",
                             "answer": [
-                                "The provided text does not specify the exact documents required for undergraduate applications to the Lane Department. However, it mentions that admission is based on high school grade point average and math placement, implying that high school transcripts would be necessary. Transfer students may also need to provide transcripts from previous institutions."
+                                "The required documents for undergraduate admission include high school transcripts, standardized test scores (if applicable), and any additional materials specified by the WVU admissions office."
                             ]
                         },
                         {
@@ -4722,7 +4743,7 @@
                             ]
                         },
                         {
-                            "question": "How did the Lane Department at WVU get its name?",
+                            "question": "How did the Lane Departmentat WVU get its name?",
                             "answer": [
                                 "The department is named after Raymond J. Lane, a WVU graduate and successful tech executive. His support and dedication to the university led to the naming of the department in his honor."
                             ]
