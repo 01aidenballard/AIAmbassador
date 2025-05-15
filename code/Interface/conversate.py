@@ -7,7 +7,7 @@ Date: 03/26/2025
 '''
 
 import time
-import pyttsx3
+#import pyttsx3
 import sys
 import os
 import speech_recognition_api as sr
@@ -21,8 +21,8 @@ from crg_api import CRG, ClassifyMethod, RetrieveMethod, ExtractMethod
 
 
 def main():
-    engine = pyttsx3.init()
-    engine.setProperty('rate', 150)
+    #engine = pyttsx3.init()
+    #engine.setProperty('rate', 150)
 
     # set dataset path
     dataset_pth = '../dataset.json'
@@ -55,9 +55,13 @@ def main():
             et = time.time()
             print(f'Answer: {answer}')
             print(f'Time taken: {et - st:.2f} seconds\n')
+            
 
-            engine.say(answer)
-            engine.runAndWait()
+            command = 'flite -voice rms -t {answer}'
+            os.system(command)
+
+            #engine.say(answer)
+            #engine.runAndWait()
         elif user_ans == 'exit':
             break
 
