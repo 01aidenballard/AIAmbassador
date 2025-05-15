@@ -7,8 +7,7 @@ Date: 03/26/2025
 '''
 
 import time
-import pyttsx3
-from coqui_tts_api import speak
+#import pyttsx3
 import sys
 import os
 import speech_recognition_api as sr
@@ -63,7 +62,10 @@ def main():
             print(f'Answer: {answer}')
             print(f'Time taken: {et - st:.2f} seconds\n')
 
-            speak(answer)
+            command = f"flite -voice rms -t '{answer}'"
+            
+            os.system(command)
+            
 
             #engine.say(answer)
             #engine.runAndWait()
