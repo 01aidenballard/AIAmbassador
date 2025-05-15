@@ -10,7 +10,7 @@ from datasets import Dataset, DatasetDict
 import evaluate
 import sacrebleu
 
-EVAL_RESP = False
+EVAL_RESP = True
 
 class bcolors:
     HEADER = '\033[95m'

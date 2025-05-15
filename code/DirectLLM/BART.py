@@ -10,7 +10,7 @@ from transformers import BartTokenizer, BartForConditionalGeneration, Trainer, T
 from datasets import Dataset
 from flan_t5 import calculate_bleu, calculate_f1
 
-EVAL_RESP = False
+EVAL_RESP = True
 
 class bcolors:
     HEADER = '\033[95m'
