@@ -1,36 +1,33 @@
 import sys
 import os
 
+import pyaudio
 import speech_recognition as sr
 import time
 
 
-# Find Device Name using this
-#for index, name in enumerate(sr.Microphone.list_microphone_names()):
-#    print("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))
-
-
-MIC_INDEX = 3 # default
-
 def speech_recognition():
-
-    # Ignore useless ALSA warnings, comment out for debugging purposes
-    # Redirect stderr to /dev/null globally
-    sys.stderr = open(os.devnull, 'w')
-
+    
     """
     Function to recognize speech from audio input.
     """
+
+    # Find Device Name using this
+    for index, name in enumerate(sr.Microphone.list_microphone_names()):
+        if "USB PnP Sound Device:" in name:
+            MIC_INDEX = index
+
     try:
         # Initialize the recognizer
         recognizer = sr.Recognizer()
-
+        
         # Use the microphone as the audio source
         with sr.Microphone(device_index=MIC_INDEX) as source:
             print("Please say something...")
             # Adjust for ambient noise and record audio
             recognizer.adjust_for_ambient_noise(source)
             audio = recognizer.listen(source)
+    
         #TODO: Get a API key as the default is only good for personal/testing purposes 
 
         # Test multiple recognizers

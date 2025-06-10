@@ -605,7 +605,8 @@ def main(args):
         correct_ans_idx = item['correct_ans_idx']
 
         # get filtered data from class
-        filtered_data = filter_dataset(pred_class)
+        # filtered_data = filter_dataset(pred_class)
+        filtered_data = filter_dataset(gnd_class)
         filtered_data_gnd = filter_dataset(gnd_class)
         
         # get best answer (based on method)
