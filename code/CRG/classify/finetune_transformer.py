@@ -34,6 +34,8 @@ GB_test_dataset = {'data': [
     {'question': 'What dual degrees can I pursue?', 'label': 'Degree Programs'},
     {'question': 'What are the various research areas in the Lane Department?', 'label': 'Research Opportunities'},
     {'question': 'What research is done in the biometrics field?', 'label': 'Research Opportunities'},
+    {'question': 'What is the Lane Innovation Hub?', 'label': 'Facilities and Resources'},
+    {'question': 'What labs are available for students studying electrical engineering?', 'label': 'Facilities and Resources'},
     {'question': 'What are the student orgs I can join as a LCSEE student?', 'label': 'Clubs and Organizations'},
     {'question': 'What kind of activities do CyberWVU students do?', 'label': 'Clubs and Organizations'},
     {'question': 'What can I do with a computer engineering degree?', 'label': 'Career Opportunities'},
@@ -42,8 +44,14 @@ GB_test_dataset = {'data': [
     {'question': 'How can students get internships?', 'label': 'Internships'},
     {'question': 'What type of scholarships are available for incoming students?', 'label': 'Financial Aid and Scholarships'},
     {'question': 'How can freshmen get scholarships?', 'label': 'Financial Aid and Scholarships'},
+    {'question': 'What is the Lane Departments student to faculty ratio?', 'label': 'Faculty Information'},
+    {'question': 'Where can I found out more information about the department\'s professors?', 'label': 'Faculty Information'},
+    {'question': 'What materials do I need to submit during the admissions process?', 'label': 'Admissions Process'},
+    {'question': 'If I have more questions, where can I find more informations about the admissions process?', 'label': 'Admissions Process'},
     {'question': 'How can I get into contact with the Lane Department?', 'label': 'Location and Contact'},
     {'question': 'Where is the Lane Department Located?', 'label': 'Location and Contact'},
+    {'question': 'Who is the lane department named after?', 'label': 'Generic'},
+    {'question': 'Hi, what is your name?', 'label': 'Generic'},
 ]}
 
 #== Classes ==#

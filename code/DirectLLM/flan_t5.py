@@ -255,23 +255,23 @@ if __name__ == "__main__":
 
     # Test questions and context
     test_data = [
-        {
-            "question": "What degree programs does the department offer?", 
+            {
+            "question": "What degree programs does the department offer?",
             "context": "Describe the degree programs offered by the department.",
             "answer" : "The department offers undergraduate degrees in Computer Engineering (CPE), Computer Science (CS), Electrical Engineering (EE), and Cybersecurity (CYBE)."
         },
         {
-            "question": "What dual degrees can I pursue?", 
+            "question": "What dual degrees can I pursue?",
             "context": "Describe the degree programs offered by the department.",
             "answer" : "Students can pursue a dual degree in Computer Science (CS) and Computer Engineering (CPE) or in Electrical Engineering (EE) and Computer Science (CS)"
         },
         {
-            "question": "What are the various research areas in the Lane Department?", 
+            "question": "What are the various research areas in the Lane Department?",
             "context": "Provide an overview of research areas and opportunities.",
             "answer" : "Research areas include biometric systems, AI, robotics and autonomous vehicles, big data and visualization, nanotechnology/electronics, power and energy systems, radio and astronomy, software engineering, theoretical computer science, and wireless communications and sensor networks."
         },
         {
-            "question": "What research is done in the biometrics field?", 
+            "question": "What research is done in the biometrics field?",
             "context": "Provide an overview of research areas and opportunities.",
             "answer" : "Research in biometrics focuses on using biological signatures like fingerprints, voice, face, and DNA for identification or authentication in applications such as criminal justice, e-commerce, and medical fields."
         },
@@ -291,17 +291,17 @@ if __name__ == "__main__":
             "answer" : "You can get involved in groups such as the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
         },
         {
-            "question": "What kind of activities do CyberWVU students do?", 
+            "question": "What kind of activities do CyberWVU students do?",
             "context": "Mention student organizations and extracurricular activities.",
             "answer" : "CyberWVU offers activities like competitions, security training sessions, speaker events, open-source volunteer projects, and tutoring hours."
         },
         {
-            "question": "What can I do with a computer engineering degree?", 
+            "question": "What can I do with a computer engineering degree?",
             "context": "Discuss career paths for graduates.",
             "answer" : "Computer engineering graduates can pursue careers in embedded systems, robotics, hardware design, software-hardware integration, telecommunications, and IoT development."
         },
         {
-            "question": "What can I do with a computer science degree?", 
+            "question": "What can I do with a computer science degree?",
             "context": "Discuss career paths for graduates.",
             "answer" : "Computer science graduates can enter professions like software development, data science, artificial intelligence, cybersecurity, game design, database management, and IT consulting."
         },
