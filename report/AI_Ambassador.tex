@@ -11,6 +11,8 @@
 \usepackage{subcaption}
 \usepackage{lipsum} 
 \usepackage{dblfloatfix}
+\usepackage{multirow}   
+\usepackage{array} 
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -27,7 +29,9 @@
 
 % Title
 \title{Development of Microcontroller-Based AI Robot Tour Guide Utilizing Custom Language Models
-\thanks{Computational resources were provided by the WVU Research Computing Thorny Flat HPC cluster, partly funded by NSF OAC-1726534.}
+\thanks{\noindent This research was partially supported by the Defense Advanced
+Research Projects Agency (DARPA) Award No. 000842. \\
+Computational resources were provided by the WVU Research Computing Thorny Flat HPC cluster, partly funded by NSF OAC-1726534.}
 }
 
 % Authors 
@@ -65,27 +69,34 @@
             prashnna.gyawali@mail.wvu.edu}
 }
 
+% \author{\textbf{Anonymous submission}}
+
 \maketitle
 \thispagestyle{plain}
 \pagestyle{plain}
 
 %== ABSTRACT ==%
 \begin{abstract}
-    This paper presents the design and implementation of an AI-powered robotic tour guide system for the Lane Department of Computer Science and Electrical Engineering (LCSEE). 
+    This paper presents the design and implementation of an AI-powered robotic tour guide system for the West Virginia University Lane Department of Computer Science and Electrical Engineering (LCSEE). 
     The system enables prospective students to engage in real-time, natural language conversations with a robot equipped with department-specific knowledge. 
     Two methodologies were explored: (1) a DirectLLM approach that fine-tunes a large language model on a custom dataset, and (2) a Classify-Retrieve-Generate (CRG) pipeline that modularizes classification, answer retrieval, and natural response generation. 
     A custom SQuAD-style dataset was developed using LCSEE data, supporting both pipelines. 
     The system was deployed on a Raspberry Pi 4 integrated with a MangDang Mini Pupper robot. 
-    Evaluation results show that while DirectLLM excels in fluency, it suffers from retraining constraints and scalability issues. 
+    Evaluation results show that while DirectLLM excels in fluency, it is hindered by retraining requirements and limited scalability. 
     In contrast, the CRG method provides modularity and easier maintenance, with strong performance on classification and retrieval but pending refinement in response generation. 
     Future work includes dataset expansion, CRG generator improvements, DirectLLM fine-tuning, and exploration of hybrid fusion models. 
     This research demonstrates the feasibility of deploying compact, domain-aware AI agents for real-time educational engagement.
 \end{abstract}
 
 %== KEYWORDS ==%
-% \begin{IEEEkeywords}
-%     TODO: keywords
-% \end{IEEEkeywords}
+\begin{IEEEkeywords}
+    Robotic Tour Guide
+    Custom Language Models
+    DirectLLM
+    Classify-Retrieve-Generate (CRG)
+    Raspberry Pi Deployment
+    Domain-Specific NLP
+\end{IEEEkeywords}
 
 %== Introduction ==%
 \section{Introduction}
@@ -93,14 +104,14 @@ Advancements in artificial intelligence (AI) and natural language processing (NL
 Universities increasingly seek innovative ways to connect with prospective students, providing them with immersive experiences that showcase academic programs, research opportunities, and campus life. 
 One such approach is the integration of AI-powered robotic tour guides that allow visitors to interact dynamically with departmental resources.
 
-This research focuses on the development of an AI-driven robotic tour guide designed to enhance the experience of prospective students visiting the Lane Department of Computer Science and Electrical Engineering (LCSEE). 
+This research focuses on the development of an AI-driven robotic tour guide designed to enhance the experience of prospective students visiting the West Virginia University Lane Department of Computer Science and Electrical Engineering (LCSEE). 
 The goal is to create an interactive medium where students can ask questions about the department, and the robot, powered by language models, generates informative responses in real-time. 
-Unlike static presentations or pre-scripted responses, this approach enables natural, context-aware interactions, providing a more engaging and personalized tour experience.
+Unlike static presentations or scripted responses, this approach enables natural, context-aware interactions, providing a more engaging and personalized tour experience.
 
 To achieve this, two distinct methodologies were explored: 
-(1) DirectLLM, which fine-tunes a large language model (LLM) specifically for LCSEE-related queries, and 
+(1) DirectLLM, which fine-tunes a large language model (LLM) specifically for department-related queries, and 
 (2) a Classify-Retrieve-Generate (CRG) pipeline, which first classifies the user's question, retrieves relevant information, and then generates a response. 
-A custom Q\&A dataset was curated using LCSEE-specific data, ensuring that the AI model delivers accurate and contextually relevant information.
+A custom Q\&A dataset was curated using department-specific data, ensuring that the AI model delivers accurate and contextually relevant information.
 
 The system was deployed on a Raspberry Pi 4, paired with a MangDang Mini Pupper \cite{b1} robot as the physical embodiment of the tour guide. 
 The robot is equipped with a simple microphone and speaker interface, facilitating natural language communication with users. 
@@ -122,7 +133,7 @@ By comparing these methods, we aim to determine the most effective strategy for 
 \subsection{Fine-Tuning Large Language Models for Domain-Specific Tasks}
 Fine-tuning pre-trained LLMs has become a standard approach to adapting general-purpose models for domain-specific applications. 
 Studies show that fine-tuned LLMs outperform generic models in specialized domains, such as healthcare and legal services \cite{b2}, by leveraging tailored datasets. 
-The DirectLLM approach in this work applies the same principle, fine-tuning a model specifically on Lane Department of CSEE (LCSEE) information. 
+The DirectLLM approach in this work applies the same principle, fine-tuning a model specifically on LCSEE information. 
 However, fine-tuning requires significant computational resources, which poses challenges for deployment on edge devices like microcontrollers and single-board computers \cite{b3}.
 
 \subsection{Deploying AI Models on Resource-Constrained Devices}
@@ -136,22 +147,25 @@ This work integrates such optimizations to deploy a lightweight yet effective AI
 This section presents the overall architecture of the AI-powered robotic tour guide system, detailing the hardware platform,
 software architecture, and end-to-end data flow from voice input to generated response.
 
-Various mediums to house the underlying AI-powered tour guide were considered. The mediums can be broken up into two categories: kit based systems and custom systems.
-The first kit-based system is the MangDang Mini Pupper \cite{b1}, an open-source dog-like robot, powered by a Raspberry Pi 4B. It highlights a simple and quick assembly as well as an all-inclusive kit. 
-The second kit-based system is the Poppy Humaniod \cite{b6}, an open-source human-like robot. The Poppy Humaniod is powered by a Raspberry Pi as well, however most of the parts are 3D printed by the customer. The robot utilizes Dynamixel servos to provide stable and accurate movement, the downside being the high cost of the parts.
-The last medium considered is a custom system, designed from scratch. This opens up the possibility for the robotic medium to be custom to the department and college. 
+% Various mediums to house the underlying AI-powered tour guide were considered. The mediums can be broken up into two categories: kit based systems and custom systems.
+% The first kit-based system is the MangDang Mini Pupper \cite{b1}, an open-source dog-like robot, powered by a Raspberry Pi 4B. It highlights a simple and quick assembly as well as an all-inclusive kit. 
+% The second kit-based system is the Poppy Humaniod \cite{b6}, an open-source human-like robot. The Poppy Humaniod is powered by a Raspberry Pi as well, however most of the parts are 3D printed by the customer. The robot utilizes Dynamixel servos to provide stable and accurate movement, the downside being the high cost of the parts.
+% The last medium considered is a custom system, designed from scratch. This opens up the possibility for the robotic medium to be custom to the department and college. 
 
-Regardless of the robotic medium chosen, the robot will feature three main parts to facilitate an interactive experience: a microphone, a computer, and a speaker. 
+% Regardless of the robotic medium chosen, 
+The robot features three main parts to facilitate an interactive experience: a microphone, a computer, and a speaker. 
 A simplified system diagram can be seen in Figure \ref{fig:system}. The prospective student will interact with the robot via the microphone, where their question will be transcribed from audio to text.
-This question is then fed into either the DirectLLM pipeline or CRG pipeline. Once the pipeline processes the prompt, it is outputted back to the prospective student via a speaker.
+This question is then fed into either the DirectLLM pipeline or CRG pipeline. Once the pipeline processes the prompt, it returns a response to the prospective student via a speaker.
 
-Ultimately, the chosen robotic medium will be the MangDang Mini Pupper. 
+The chosen robotic medium is the MangDang Mini Pupper \cite{b1}. 
 The decision was made based on the cost, ease of assembly, and the all-inclusive kit.
+Speech recognition was handled via the Uberi SpeechRecognition library interfaced with Google’s API.
+For text-to-speech, the Flite engine by CMU was used.
 
 %== Custom Dataset Development ==%
 \section{Custom Dataset Development}
-Due to the niche nature of the application, a custom dataset of question and answer pairs about the LCSEE was developed.
-The dataset was created by curating information from various sources, including the LCSEE website, course catalogs, departmental brochures, and talking to tour guides of the department. 
+Due to the niche nature of the application, a custom dataset of question and answer pairs about the LCSEE department was developed.
+The dataset was created by curating information from various sources, including the LCSEE department website, course catalogs, departmental brochures, and talking to tour guides of the department. 
 The goal was to ensure that the dataset covered a wide range of topics relevant to prospective students, including academic programs, faculty research, campus facilities, and student life.
 
 % CRG Flow Figure
@@ -167,46 +181,51 @@ To expand the dataset and improve generalization, data augmentation techniques w
 This included paraphrasing questions, rephrasing answers, and introducing synonyms to create variations of the original pairs.
 To efficiently augment the dataset, each question answer pair was fed into ChatGPT to generate multiple variations of the same question and answer.
 
+\begin{table}[!h]
+    \centering
+    \caption{Custom Dataset Summary}
+    \begin{tabular}{l|c}
+        \toprule
+        \textbf{Category} & \textbf{Number of Pairs} \\
+        \midrule
+        Degree Programs & 102 \\
+        Research Opportunities & 77 \\
+        Facilities and Resources & 115 \\
+        Clubs and Organizations & 130 \\
+        Career Opportunities & 60 \\
+        Internships & 60 \\
+        Financial Aid and Scholarships & 62 \\
+        Faculty Information & 62 \\
+        Admission Process & 60 \\
+        Location and Contact & 9 \\
+        Generic & 13 \\
+        \bottomrule
+        \textbf{Total} & \textbf{750} \\
+    \end{tabular}
+    \label{tab:dataset}
+\end{table}
+
 The dataset is stored in the SQuAD format \cite{b7}. 
 The SQuAD format includes a list of topics as the top level, with each topic having a title. 
 In each topic exist paragraphs, these contain context to the topic and question-answer pairs.
 To fit the dataset to the task at hand, the topics were chosen based off of types of questions that could be asked about the department:
 degree programs, research opportunities, facilities and resources, clubs and organizations, career opportunities, internships, financial aid and scholarships, faculty information, admission process, and location and contact.
 
-The dataset consists of 421 question-answer pairs, with 10 categories.
+The dataset consists of 750 question-answer pairs, with 11 categories.
 A table summarizing the dataset can be seen in Table \ref{tab:dataset}.
-\begin{table}[h]
-    \centering
-    \caption{Custom Dataset Summary}
-    \begin{tabular}{|c|c|}
-        \hline
-        \textbf{Category} & \textbf{Number of Pairs} \\ \hline
-        Degree Programs & 55 \\ \hline
-        Research Opportunities & 77 \\ \hline
-        Facilities and Resources & 85 \\ \hline
-        Clubs and Organizations & 71 \\ \hline
-        Career Opportunities & 60 \\ \hline
-        Internships & 25 \\ \hline
-        Financial Aid and Scholarships & 39 \\ \hline
-        Faculty Information & 0 \\ \hline
-        Admission Process & 0 \\ \hline
-        Location and Contact & 9 \\ \hline
-    \end{tabular}
-    \label{tab:dataset}
-\end{table}
 
 %== DirectLLM Model ==%
 \section{DirectLLM Model}
 \subsection{Model Selection and Justification}
 The DirectLLM model consists of a pre-trained LLM that is fine-tuned on the custom dataset.
-To meet the project's objectives, the language model was developed with the following criteria in mind: it had to be open source, capable of effective training on both question-and-answer (Q\&A) datasets and web page content, and optimized for lightweight deployment with quick response times on a microcontroller platform.
+To meet the project's objectives, the language model was developed based on the following criteria: it needed to be open source, capable of effective training on question-and-answer (Q\&A) datasets, and optimized for lightweight deployment with quick response times on a microcontroller platform.
 
-An open-source language model was chosen due to their capabilities in lightweight implementations while maintaining high-quality natural language understanding and generation.
+An open-source language model was chosen due to its capabilities in lightweight implementations while maintaining high-quality natural language understanding and generation.
 Open-source models such as FLAN-T5 \cite{b8} and BART \cite{b9} provide a solid foundation due to their small size and performance on Q\&A task with minimal fine-tuning. 
 These models are well-suited for customization and can be fine-tuned with domain-specific data.
 
-Fine-tuned Langauge Agnostic Network (FLAN-T5) is a variant of the T5 (Text-to-Text Transfer Transformer) model, which is pretrained on a diverse range of tasks. 
-It features strong ability to be trained on a wide variety of datasets, including Q\&A tasks. 
+Fine-tuned Language-Agnostic Network (FLAN-T5) is a variant of the T5 (Text-to-Text Transfer Transformer) model, which is pretrained on a diverse range of tasks. 
+It is highly adaptable and can be trained on a wide variety of datasets, including Q\&A tasks. 
 It also meets the versatile, scalability, and open-source criteria. 
 The model used in this project has 77 million parameters, making it lightweight and suitable for deployment on resource-constrained devices.
 
@@ -218,7 +237,7 @@ The model used in this project has 139 million parameters, making it suitable fo
 
 \subsection{Training and Fine-Tuning Process} 
 Both FLAN-T5 and BART were finetuned on the same custom dataset. The model hyperparameters can be found in Table \ref{tab:hyperparams}.
-The test dataset included eight questions pertaining to the CSEE department, topics of the questions including: degree programs, research opportunities, student organizations, and career opportunities. 
+The test dataset included 22 questions pertaining to the LCSEE department, with 2 questions from each of the 11 categories. 
 
 \begin{table}[!ht]
     \centering
@@ -231,9 +250,9 @@ The test dataset included eight questions pertaining to the CSEE department, top
         Evaluation Strategy             & Epoch                   & Epoch                     \\ 
         Weight Decay                    & 0.01                    & 0.01                      \\ 
         Learning Rate                   & 5e-5                    & 3e-5                      \\ 
-        Logging Steps                   & 5                       & 5                         \\ 
-        Train Batch Size                & 8                       & 8                         \\ 
-        Evaluation Batch Size           & 8                       & 8                         \\ 
+        % Logging Steps                   & 5                       & 5                         \\ 
+        Batch Size                      & 8                       & 8                         \\ 
+        % Evaluation Batch Size           & 8                       & 8                         \\ 
         Number of Training Epochs       & 10                      & 5                         \\ 
         \bottomrule
     \end{tabular}
@@ -251,11 +270,21 @@ Each model utilized their own transformer: The T5 Tokenizer \cite{b10} for FLAN-
 
 %== Classify-Retrieve-Generate (CRG) Model ==%
 \section{Classify-Retrieve-Generate (CRG) Model}
-To address the issues of how to handle new information in the LCSEE, a new approach is needed. 
+To address the issues of how to handle new information in the LCSEE department, a new approach is needed. 
 Instead of a DirectLLM approach, which would need to be retrained with new information, the classify-retrieve-generate (CRG) approach is proposed. 
-The main approach here is to have a neural network classify the question asked into the type of question (i.e. degree programs, research, etc) with some encoded information to look up the answer in a database. 
-Once fetched, the raw data is fed into a basic LLM that will refine the response to a more natural response.
+% The main approach here is to have a neural network classify the question asked into the type of question (i.e. degree programs, research, etc) with some encoded information to look up the answer in a database. 
+% Once fetched, the raw data is fed into a basic LLM that will refine the response to a more natural response.
+This approach uses a neural network to \textit{classify} the user's question into one of the categories from Table \ref{tab:dataset}.
+Once classified, the best-matching answer is then \textit{retrieved} from the custom database based on the question, category, and extracted features.
+Finally, the retrieved answer is \textit{generated} into a more natural response using a lightweight generative model.
+This modular design allows classification and retrieval components to be updated independently of the generative model.
+New information can be added to the database without needing to retrain the entire model.
+Lastly, the CRG approach allows for a more efficient use of resources, as the generative model can be smaller and more lightweight than a full LLM.
 The CRG pipeline can be seen in Figure \ref{fig:crg_flow}.
+
+Each step of the CRG pipeline has various approaches that can be used to achieve the desired results.
+The following sections detail the best performing approaches for each step of the pipeline.
+A summary of the CRG pipeline components and methods can be seen in Table \ref{tab:crg_summary}.
 
 \subsection{Classification Step}
 To initiate the CRG pipeline, a classifier is used to determine the category of an incoming question. 
@@ -417,6 +446,40 @@ The question with the highest EKI score is selected.
 In case of a tie, the first candidate is returned or one is randomly selected. 
 While EKI is fast and easy to implement, it is sensitive to exact word matches and ignores synonyms or paraphrasing.
 
+\begin{table*}[t]
+    \centering
+    \caption{Summary of CRG Pipeline Components and Methods}
+    \label{tab:crg_summary}
+    \begin{tabular}{p{2.1cm} p{3.5cm} p{4.0cm} p{4.0cm} p{2.1cm}}
+        \toprule
+        \textbf{Step} & \textbf{Method} & \textbf{Advantages} & \textbf{Limitations} & \textbf{Edge Suitability} \\
+        \midrule
+        \multirow{4}{*}{Classification} 
+        & Logistic Regression (TF-IDF) & Fast, good for small datasets & Lower accuracy on complex inputs & High \\
+        & SVM (TF-IDF) & Higher accuracy, strong generalization & Ignores context, no semantic understanding & High \\
+        & BERT & Very high accuracy, context-aware & Slow inference, large model size & Low \\
+        & DistilBERT & Good trade-off of speed and accuracy & Slightly reduced accuracy & Medium \\
+        \midrule
+        \multirow{3}{*}{Feature Extraction}
+        & NER (spaCy) & Domain-agnostic, fast & Misses abstract academic terms & High \\
+        & TF-IDF Keyword Extraction & Lightweight, interpretable & No synonym/semantic handling & High \\
+        & Sentence Embeddings & Captures semantics, handles varied phrasing & Higher compute/memory cost & Medium \\
+        \midrule
+        \multirow{4}{*}{Retrieval}
+        & Exact Keyword Intersection & Simple, fast & Needs exact match, low recall & High \\
+        & Jaccard Similarity & Accounts for partial matches & Still keyword-based, no context & High \\
+        & JEKI (Hybrid) & Balances raw and normalized & Requires tuning $\lambda$ & Medium \\
+        & Cosine Similarity & Best semantic matching & Most compute-intensive & Medium \\
+        \midrule
+        \multirow{4}{*}{Generation}
+        & FLAN-T5-Small & Lightweight, open-source & Prompt adherence issues & High \\
+        & TinyLlama (1.1B) & Coherent output, promising & Needs fine-tuning & High \\
+        & GPT-Neo (1.3B) & Baseline benchmark & Medium resource use, inconsistent & Medium \\
+        & Mistral-7B & High-quality responses & Too large for edge deployment & Low \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
 \subsubsection{Jaccard Similarity}
 The Jaccard index is a set-based similarity measure used to assess the overlap between two sets of keywords. 
 Unlike EKI, it accounts for both shared and distinct elements.
@@ -456,7 +519,7 @@ The final step in the CRG (Classify-Retrieve-Generate) pipeline is the generatio
 This layer transforms a static Q\&A system into a dynamic tour experience, simulating human-like dialogue. 
 Rather than relying on a large end-to-end model like in the DirectLLM approach, this modular step uses lightweight generation models tailored for refinement, not inference.
 
-The inputs to the generation model include: the original user query, the retried answer, and a system prompt that defines the tone and style of the assistant.
+The inputs to the generation model include: the original user query, the retrieved answer, and a system prompt that defines the tone and style of the assistant.
 The generation model is prompted to use the retrieved answer directly, then follow it up with a question or elaboration to encourage ongoing interaction. 
 A sample system prompt used in experimentation was:
 
@@ -497,21 +560,22 @@ Further fine-tuning and prompt engineering are planned.
 %== Evaluation and Comparison ==%
 \section{Evaluation and Comparison} \label{sec:evaluation}
 This section compares the performance of the DirectLLM approaches and the CRG approaches in addressing question about the LCSEE department.
-The evaluation framework considers both quantitative metrics (accuracy, F1, BLEU, response time) and qualitative observations (response fluency, robustness, ease of update).
+The evaluation framework considers both quantitative metrics (accuracy, BLEU, response time, and memory usage) and qualitative observations (response fluency, robustness, ease of update).
 \subsection{DirectLLM Evaluation}
-To evaluate the performance of FLAN-T5 and BART, two metrics are employed: F1 Score and BLEU score. 
-These metrics provide insight to the models' precision, recall, and accuracy in text understanding and generation tasks.
+To evaluate the performance of FLAN-T5 and BART, two metrics are employed: Answer accuracy and BLEU Score. 
+These metrics provide insight to the models' understanding and generation tasks.
 Another metric used to evaluate the model is average response time, or the mean of the time it takes to process an input and provide an output over all test data.
+Lastly, the average memory usage is recorded to determine the feasibility of deploying the model on a microcontroller.
 
 \noindent
-\textbf{F1 Score:}
-The F1 Score is a harmonic mean of precision and recall, offering a single metric to evaluate a model's ability to balance false positives and false negatives.
-The calculation for the F1 Score is seen in Equation \ref{eq:F1}.
+% \textbf{F1 Score:}
+% The F1 Score is a harmonic mean of precision and recall, offering a single metric to evaluate a model's ability to balance false positives and false negatives.
+% The calculation for the F1 Score is seen in Equation \ref{eq:F1}.
 
-\begin{equation} \label{eq:F1}
-    \text{F1} = 2 \cdot \frac{P \cdot R}{P + R}
-\end{equation}
-where $P$ is the precision and $R$ is the recall over the test dataset. 
+% \begin{equation} \label{eq:F1}
+%     \text{F1} = 2 \cdot \frac{P \cdot R}{P + R}
+% \end{equation}
+% where $P$ is the precision and $R$ is the recall over the test dataset. 
 
 \noindent
 \textbf{BLEU Score:}
@@ -558,19 +622,19 @@ The retrieval is evaluated using a retrieval score ($\text{RS}$), which is a bin
     \text{RS} = \frac{1}{N} \sum_{i=1}^{N} \mathbb{I}(y_i = \hat{y}_i)
 \end{equation}
 
-Both DirectLLM and CRG are evaluated by their mean response time over the test dataset.
+Both DirectLLM and CRG are evaluated by their mean response time and average memory usage over the test dataset.
 The DirectLLM results are seen in Table \ref{tab:directllm_results}, while the CRG results are seen in Table \ref{tab:crg_results}.
 
 \begin{table}[!ht]
     \centering
     \caption{DirectLLM Evaluation}
     \label{tab:directllm_results}
-    \begin{tabular}{l|c|c|c}
+    \begin{tabular}{l|c|c|c|c}
         \toprule
-        \textbf{Model} & \textbf{F1 (\%)} & \textbf{BLEU Score (\%)} & \textbf{Avg. Resp. Time (s)} \\
+        \textbf{Model} & \textbf{Acc.} & \textbf{BLEU} & \textbf{Resp. Time (s)} & \textbf{Mem (MB)} \\
         \midrule
-        FLAN-T5        & 36.094                 & 74.275                   & 0.976                          \\
-        BART           & 40.546                 & 80.402                   & 1.442                          \\
+        FLAN-T5        & 68.18\%                & 91.17\%                   & 38.45 &  2115.1                         \\
+        BART           & 27.64\%                & 74.41\%                   & 9.961 &  648.86                         \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -579,18 +643,18 @@ The DirectLLM results are seen in Table \ref{tab:directllm_results}, while the C
     \centering
     \caption{CRG Evaluation}
     \label{tab:crg_results}
-    \begin{tabular}{l|c|c|c}
+    \begin{tabular}{l|c|c|c|c}
         \toprule
-        \textbf{Model} & \textbf{Class Accuracy (\%)} & \textbf{RS} & \textbf{Avg. Resp. Time (s)} \\
+        \textbf{Model} & \textbf{Class Acc.} & \textbf{RS} & \textbf{Resp. Time (s)} & \textbf{Mem (MB)} \\
         \midrule
-        CRG-1 & 85.71 & 0.875 & 1.798 \\
-        CRG-2 & 71.43 & 0.429 & 0.518 \\
-        CRG-3 & 75.00 & 0.750 & 2.215 \\
+        CRG-1 & 78.57\% & 0.929 & 12.78 & 996.7 \\
+        CRG-2 & 85.71\% & 0.750 & 1.596 & 613.6 \\
+        CRG-3 & 64.29\% & 0.929 & 14.21 & 1279.8\\
         \bottomrule
     \end{tabular}
 \end{table}
 
-Sample outputs from both DirectLLM and CRG models can be found in Appendix \ref{app:directllm_output} and \ref{app:crg_output}, respectively.
+% Sample outputs from both DirectLLM and CRG models can be found in Appendix \ref{app:directllm_output} and \ref{app:crg_output}, respectively.
 
 %== Discussion ==%
 \section{Discussion}
@@ -625,7 +689,7 @@ In contrast, the CRG system, particularly when using lightweight models like Log
 Furthermore, CRG's deterministic logic and rule-based fallback mechanisms enhance its reliability, which is crucial in educational contexts where incorrect or hallucinated responses could erode user trust.
 
 \section{Conclusion}
-This research presented the development of an AI-powered robotic tour guide for the Lane Department of Computer Science and Electrical Engineering (LCSEE), leveraging two natural language processing (NLP) pipelines: DirectLLM and Classify-Retrieve-Generate (CRG). 
+This research presented the development of an AI-powered robotic tour guide for the Lane Department of Computer Science and Electrical Engineering, leveraging two natural language processing (NLP) pipelines: DirectLLM and Classify-Retrieve-Generate (CRG). 
 Each approach was designed, implemented, and evaluated with the goal of enabling natural, accurate, and efficient interactions between prospective students and the department's offerings.
 
 The DirectLLM approach demonstrated strong performance in generating fluent and context-rich responses, benefiting from end-to-end fine-tuning on a curated dataset. 
@@ -654,7 +718,7 @@ Together, these enhancements aim to advance the system toward a fully autonomous
 \bibitem{b3} T. Dettmers et al., "Sparse fine-tuning for efficient deployment of large-scale language models," NeurIPS Conference Proceedings, 2022.
 \bibitem{b4} Z. Jiang et al., "Efficient deep learning inference on edge devices: Challenges and techniques," ACM Computing Surveys, vol. 55, no. 6, 2023.
 \bibitem{b5} H. Touvron et al., "Llama 2: Open foundation and fine-tuned chat models," arXiv:2307.09288, 2023.
-\bibitem{b6} Poppy Project, "Poppy Humanoid," Available: https://www.poppy-project.org/en/robots/poppy-humanoid/.
+% \bibitem{b6} Poppy Project, "Poppy Humanoid," Available: https://www.poppy-project.org/en/robots/poppy-humanoid/.
 \bibitem{b7} R. Rajpurkar, "SQuAD: The Stanford Question Answering Dataset," SQuAD Explorer.
 \bibitem{b8} Chung, Hyung Won, Le Hou, Shayne Longpre, Barret Zoph, Yi Tay, William Fedus, Eric Li, et al. "Scaling Instruction-Finetuned Language Models." arXiv (2022). https://doi.org/10.48550/arXiv.2210.11416.
 \bibitem{b9} M. Lewis, Y. Liu, N. Goyal, M. Ghazvininejad, A. Mohamed, O. Levy, V. Stoyanov, and L. Zettlemoyer, "BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension," CoRR, vol. abs/1910.13461, 2019. [Online]. Available: http://arxiv.org/abs/1910.13461.
@@ -668,48 +732,48 @@ Together, these enhancements aim to advance the system toward a fully autonomous
 \end{thebibliography}
 
 %-- Appendix --%
-\newpage
-\onecolumn
-\appendix
-\section{Appendix}
-\subsection{Sample Output from FLAN-T5 and BART} \label{app:directllm_output}
-\begin{figure*}[!h]
-    \centering
-    \includegraphics[width=\linewidth]{assets/Flan_out.png}
-    \caption{FLAN-T5 Output}
-    \label{fig:FLAN_Out}
-\end{figure*}
+% \newpage
+% \onecolumn
+% \appendix
+% \section{Appendix}
+% \subsection{Sample Output from FLAN-T5 and BART} \label{app:directllm_output}
+% \begin{figure*}[!h]
+%     \centering
+%     \includegraphics[width=\linewidth]{assets/Flan_out.png}
+%     \caption{FLAN-T5 Output}
+%     \label{fig:FLAN_Out}
+% \end{figure*}
 
-\begin{figure*}[!h]
-    \centering
-    \includegraphics[width=\linewidth]{assets/Bart_out.png}
-    \caption{BART Output}
-    \label{fig:BART_Out}
-\end{figure*}
+% \begin{figure*}[!h]
+%     \centering
+%     \includegraphics[width=\linewidth]{assets/Bart_out.png}
+%     \caption{BART Output}
+%     \label{fig:BART_Out}
+% \end{figure*}
 
-\newpage
-\subsection{Sample Output from CRG} \label{app:crg_output}
-\begin{figure*}[!h]
-    \centering
-    \includegraphics[width=\linewidth]{assets/CRG1_out.png}
-    \caption{CRG-1 Output: LR + Vector + Cosine Similarity}
-    \label{fig:CRG_1-Out}
-\end{figure*}
+% \newpage
+% \subsection{Sample Output from CRG} \label{app:crg_output}
+% \begin{figure*}[!h]
+%     \centering
+%     \includegraphics[width=\linewidth]{assets/CRG1_out.png}
+%     \caption{CRG-1 Output: LR + Vector + Cosine Similarity}
+%     \label{fig:CRG_1-Out}
+% \end{figure*}
 
-\begin{figure*}[!h]
-    \centering
-    \includegraphics[width=\linewidth]{assets/CRG2_out.png}
-    \caption{CRG-2 Output: SVM + NER + EKI}
-    \label{fig:CRG_2-Out}
-\end{figure*}
+% \begin{figure*}[!h]
+%     \centering
+%     \includegraphics[width=\linewidth]{assets/CRG2_out.png}
+%     \caption{CRG-2 Output: SVM + NER + EKI}
+%     \label{fig:CRG_2-Out}
+% \end{figure*}
 
-\newpage
-\begin{figure*}[!h]
-    \centering
-    \includegraphics[width=\linewidth]{assets/CRG3_out.png}
-    \caption{CRG-3 Output: DistilBERT + Vector + Cosine Similarity}
-    \label{fig:CRG_3-Out}
-\end{figure*}
+% \newpage
+% \begin{figure*}[!h]
+%     \centering
+%     \includegraphics[width=\linewidth]{assets/CRG3_out.png}
+%     \caption{CRG-3 Output: DistilBERT + Vector + Cosine Similarity}
+%     \label{fig:CRG_3-Out}
+% \end{figure*}
 
 
 \end{document}
