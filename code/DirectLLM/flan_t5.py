@@ -1,10 +1,16 @@
 import json
 import argparse
 import time
+import os
+import psutil
+import threading
+from contextlib import contextmanager
 from transformers import T5Tokenizer, T5ForConditionalGeneration, Trainer, TrainingArguments, DataCollatorForSeq2Seq, AutoModel, AutoTokenizer
 from datasets import Dataset, DatasetDict
 import evaluate
 import sacrebleu
+
+EVAL_RESP = True
 
 class bcolors:
     HEADER = '\033[95m'
@@ -23,6 +29,68 @@ class bcolors:
 
 # - MiniLM (microsoft/MiniLM-L12-H384-uncased) [MiniLM_L12_H384_finetuned]
 # - DistilBERT (distilbert-base-uncased)
+
+@contextmanager
+def cpu_usage_monitor(sample_interval=0.05):
+    process = psutil.Process(os.getpid())
+    memory_samples = []
+    running = True
+
+    # mem based sampling function
+    def sample_memory():
+        while running:
+            memory_samples.append(process.memory_info().rss)
+            time.sleep(sample_interval)
+
+    # start memory sampling
+    sampler_thread = threading.Thread(target=sample_memory)
+    sampler_thread.start()
+
+    # before execution
+    start_wall = time.time()
+    start_cpu = process.cpu_times().user + process.cpu_times().system
+    start_mem = process.memory_info().rss
+    process.cpu_percent(interval=None)
+
+    try:
+        # during execution
+        yield_value = {}
+        yield yield_value
+    finally:
+        # after execution
+        end_wall = time.time()
+        end_cpu = process.cpu_times().user + process.cpu_times().system
+        end_mem = process.memory_info().rss
+        end_cpu_percent = process.cpu_percent(interval=None)
+
+        # stop memory sampling
+        running = False
+        sampler_thread.join()
+
+        # calculate averages
+        if memory_samples:
+            avg_ram_usage_bytes = sum(memory_samples) / len(memory_samples)
+        else:
+            avg_ram_usage_bytes = 0
+
+        # calc metrics
+        wall_time_elapsed = end_wall - start_wall
+        cpu_time_used = end_cpu - start_cpu
+        cpu_utilization_percent = (cpu_time_used / wall_time_elapsed) * 100
+        ram_used_bytes = end_mem - start_mem
+        ram_used_mb = ram_used_bytes / (1024 * 1024)
+
+        # store in dict
+        yield_value.update({
+            'wall_time': wall_time_elapsed,
+            'cpu_time': cpu_time_used,
+            'cpu_utilization_calculated': cpu_utilization_percent,
+            'cpu_utilization_psutil': end_cpu_percent,
+            'ram_usage_change_mb': ram_used_mb,
+            'ram_usage_start_mb': start_mem / (1024 * 1024),
+            'ram_usage_end_mb': end_mem / (1024 * 1024),
+            'ram_usage_avg_mb': avg_ram_usage_bytes / (1024 * 1024)  # Convert to MB
+        })
 
 # Load the dataset.json
 def load_dataset(file_path):
@@ -218,7 +286,7 @@ if __name__ == "__main__":
             "answer": "Labs for circuit design, energy systems, electronics, and embedded systems."
         },
         {
-            "question": "What are the student orgs I can join as a LCSEE student?",
+            "question": "What are the student orgs I can join as a LCSEE student?", 
             "context": "Mention student organizations and extracurricular activities.",
             "answer" : "You can get involved in groups such as the Association for Computing Machinery, CyberWVU, Eta Kappa Nu, IEEE, Student Society for the Advancement of Biometrics, Upsilon Phi Epsilon, Women in Computer Science and Electrical Engineering, and WVU Amateur Radio Club."
         },
@@ -297,7 +365,6 @@ if __name__ == "__main__":
             "context": "Questions to not stump the robot.",
             "answer": "Greetings, my name is LAIN."
         }
-        
     ]
 
     # cahce of QA to evauluate
@@ -320,6 +387,10 @@ if __name__ == "__main__":
     references = []
 
     total_time = 0
+    total_cpu_time = 0
+    total_cpu_utilization = 0
+    tot_avg_ram_usage = 0
+    tot_correct = 0
     num_questions = 0
 
     for item in test_data:
@@ -328,23 +399,41 @@ if __name__ == "__main__":
         ground_truth = item["answer"]
 
         print(f"\nQuestion: {question}")
-        start_time = time.time()
-        answer = generate_answer(model, tokenizer, question, context)
-        end_time = time.time()
+        with cpu_usage_monitor() as monitor:
+            answer = generate_answer(model, tokenizer, question, context)
         print(f"Answer: {answer}")
 
-        response_time = end_time - start_time
+        response_time = monitor['wall_time']
+        cpu_time = monitor['cpu_time']
+        cpu_utilization = monitor['cpu_utilization_psutil']
+        avg_ram_usage = monitor['ram_usage_avg_mb']
+
         total_time += response_time
+        total_cpu_time += cpu_time
+        total_cpu_utilization += cpu_utilization
+        tot_avg_ram_usage += avg_ram_usage
         num_questions += 1
+
+        if EVAL_RESP:
+            is_correct = input(f"Is the answer correct? (y/n): ").strip().lower()
+            if is_correct == 'y': tot_correct += 1
 
         # Store predictions and references for metrics
         predictions.append({"id": str(len(predictions) + 1), "prediction_text": answer})
         references.append({"id": str(len(references) + 1), "answers": [{"text": ground_truth, "answer_start": 0}]})
 
     f1_score = calculate_f1(predictions, references)
+    accuracy = tot_correct / num_questions
     bleu_score = calculate_bleu(predictions, references)
     average_response_time = total_time / num_questions
+    average_cpu_time = total_cpu_time / num_questions
+    average_cpu_utilization = total_cpu_utilization / num_questions
+    average_ram_usage = tot_avg_ram_usage / num_questions
 
-    print(f"\nF1 Score: {f1_score}")
-    print(f"BLEU Score: {bleu_score}")
+    print(f"\nF1 Score: {f1_score:.6f}")
+    print(f"Accuracy: {accuracy*100:.3f}")
+    print(f"BLEU Score: {bleu_score:.6f}")
     print(f"Avg Resp Time: {average_response_time:.4f}s")
+    print(f"Avg CPU Time: {average_cpu_time:.4f}s")
+    print(f"Avg CPU Utilization: {average_cpu_utilization:.2f}%")
+    print(f"Avg RAM Usage: {average_ram_usage:.2f} MB")
