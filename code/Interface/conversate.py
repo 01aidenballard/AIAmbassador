@@ -7,7 +7,7 @@ Date: 03/26/2025
 '''
 
 import time
-import pyttsx3
+#import pyttsx3
 import sys
 import os
 import speech_recognition_api as sr
@@ -22,8 +22,8 @@ from crg_api import CRG, ClassifyMethod, RetrieveMethod, ExtractMethod
 
 def main():
     
-    engine = pyttsx3.init(driverName = 'espeak')
-    engine.setProperty('rate', 150)
+    #engine = pyttsx3.init(driverName = 'espeak')
+    #engine.setProperty('rate', 150)
 
 
     # set dataset path
@@ -49,7 +49,7 @@ def main():
         if user_ans == 'q':
            
     
-            engine.stop() # free resources for mic
+            #engine.stop() # free resources for mic
             print("One moment!")
             user_q = sr.speech_recognition()
              
@@ -62,9 +62,14 @@ def main():
             print(f'Answer: {answer}')
             print(f'Time taken: {et - st:.2f} seconds\n')
 
-            engine.say(answer)
-            engine.runAndWait()
-            engine.stop()
+            command = f"flite -voice rms -t '{answer}'"
+            
+            os.system(command)
+            
+
+            #engine.say(answer)
+            #engine.runAndWait()
+            #engine.stop()
         elif user_ans == 'exit':
             break
 
