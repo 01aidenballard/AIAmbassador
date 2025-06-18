@@ -14,7 +14,7 @@ import torch
 import spacy
 import random
 
-import numpy as np
+import numpy as np 
 import torch.nn as nn
 
 from enum import Enum
@@ -27,6 +27,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from classify.traditional_ML import LogisticRegression, SVM
 from transformers import BertTokenizer, BertForSequenceClassification 
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import T5Tokenizer, T5ForConditionalGeneration
+
 
 #== Enums ==#
 class ClassifyMethod(Enum):
@@ -46,6 +49,11 @@ class RetrieveMethod(Enum):
     JEKI = 3
     CSS_TFIDF = 4
     CSS_VEC = 5
+
+class GenerateMethod(Enum):
+    FLAN_T5 = 1
+    TINY_LLAMA = 2
+
 
 #== Global Variables ==#
 MODEL_LR_PTH = 'classify/lr_c_model.pth'
@@ -621,7 +629,157 @@ class Retrieve():
         return best_ans
 
 class Generate():
-    pass
+        '''
+        Class to represent the generation step using models from generate.py
+        '''
+        def __init__(self, method: GenerateMethod = GenerateMethod.FLAN_T5):
+            '''
+            Initialize the generation model
+
+            Args:
+                method (GenerateMethod): Enum to select the generation model
+            '''
+            self.method = method
+            if self.method == GenerateMethod.FLAN_T5:
+                model_name = "Flan-T5"
+            elif self.method == GenerateMethod.TINY_LLAMA:
+                model_name = "TinyLlama"
+            else:
+                raise ValueError(f"Unknown GenerateMethod: {self.method}")
+            self.model = model_name
+
+        def generate_answer(self, question: str, context: str = "") -> str:
+            '''
+            Generate an answer using the selected generation model
+
+            Args:
+                question (str): The input question
+                context (str, optional): Additional context or retrieved answer
+
+            Returns:
+                str: Generated answer
+            '''
+            generated_response = ""
+
+            if self.model == "Flan-T5":
+
+                # system prompt for Flan-T5
+                system_prompt = """
+                    Persona: You are "Lain," a friendly and enthusiastic university tour guide. Your audience is a group of prospective high school students and their families. Your tone should be welcoming, helpful, and engaging.
+
+                    Core Task: Your primary goal is to take a piece of factual information (the "Retreived Answer") and rephrase it into a natural, conversational response("Generated Response") to a "User Question."
+
+                    Instructions:
+                    1.  Natural Language: Transform the provided "Retrieved Answer" from a factual statement into a flowing, easy-to-understand sentence or two. Imagine you are speaking directly to someone on a campus tour.
+                    2.  Strict Information Adherence: You MUST only use the information provided in the "Retrieved Answer." Do not add any new facts, statistics, or details, even if they seem relevant. Do not hallucinate. Be concise, but thorough with the specifics.
+                    3.  No Meta-Commentary: Do not mention that you have been "given" or "provided" with information. The response should be seamless.
+                    4.  Engage with a Question: After providing the answer, always ask a relevant, open-ended follow-up question to encourage further conversation.
+                    5.  Structure: The final output should only be the conversational reply from Lain.
+
+                    Example of your task:
+
+                    User Question: "What's the student-to-faculty ratio?"
+                    Retrieved Answer: "The student-to-faculty ratio is 15 to 1."
+
+                    Generated Response:
+                    "That's a great question! We have a student-to-faculty ratio of 15 to 1, which means our professors get to know their students really well. Are you interested in any particular academic departments?"
+
+                    Now, use the following information to answer the user's question:
+                    """
+
+                # put together input text
+                input_text = (
+                    f"{system_prompt}"
+                    f"User Question: {question}\n"
+                    f"Retrieved Answer: {context}\n"
+                    f"Generated Response:"
+                )
+
+                
+                # load model
+                name = 'google/flan-t5-small'
+                tokenizer = T5Tokenizer.from_pretrained(name, legacy=False)
+                model = T5ForConditionalGeneration.from_pretrained(name)
+
+                # tokenize input
+                inputs = tokenizer(input_text, return_tensors='pt', max_length=512, truncation=True)
+
+                # generate response
+                output_tokens = model.generate(
+                    **inputs,
+                    max_length=256,
+                    do_sample=True,  # Enables creative responses
+                    temperature=0.7,  # Introduces variety
+                    top_p=0.9,  # Ensures diverse and high-quality generation
+                    repetition_penalty=1.2,  # Prevents repeating phrases
+                    num_return_sequences=1,  # Single response
+                    eos_token_id=tokenizer.eos_token_id  # Ensures proper sentence ending
+                )
+
+                # decode the generated response
+                response = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+
+                return response
+            
+            elif self.model == "TinyLlama":
+
+                # system prompt for TinyLlama
+                system_prompt = """
+                    You are a friendly and engaging tour guide for West Virginia University.
+                    Your role is to provide clear, conversational, and helpful responses based on the given information.
+
+                    - Rephrase the provided information in a natural, engaging way.
+                    - Do NOT mention that the information was 'given' or 'provided'.
+                    - Do NOT hallucinate or make up information, only use what is given.
+                    - Keep responses concise.
+                    """
+
+                # user prompt for TinyLlama
+                user_prompt = f"Answer the Users Question: {question} with this context: {context}"
+
+                # put together input text
+                input_text = (
+                    f"User Question: {question}\n"
+                    f"Retrieved Answer: {context}\n"
+                    f"Generated Response:"
+                )
+                
+                # load model
+                model = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+                tokenizer = AutoTokenizer.from_pretrained(model)
+                model = AutoModelForCausalLM.from_pretrained(model)
+
+                messages = [
+                    {"role": "system", "content": system_prompt},  
+                    {"role": "user", "content": user_prompt},  
+                ]
+
+                # tokenize input
+                inputs = tokenizer.apply_chat_template(messages, return_tensors="pt")
+                input_ids = inputs.unsqueeze(0) if inputs.dim() == 1 else inputs
+                # inputs = tokenizer(input_text, return_tensors="pt", max_length=512, truncation=True)
+                input_length = input_ids.shape[1]  # Get the length of the input tokens
+
+                # Generate response
+                with torch.no_grad():
+                    output_tokens = model.generate(
+                        # **inputs,
+                        input_ids=input_ids,
+                        max_length=512,
+                        repetition_penalty=1.2,  
+                        num_return_sequences=1,  
+                        eos_token_id=tokenizer.eos_token_id 
+                    )
+
+                # Decode the generated response
+                response = tokenizer.decode(output_tokens[0, input_length:], skip_special_tokens=True)
+                
+                return response
+
+            else:
+                raise ValueError(f"Unknown model: {self.model}")
+        
+
 
 class CRG():
     '''
@@ -632,6 +790,7 @@ class CRG():
                  classify_method: ClassifyMethod = ClassifyMethod.LR, 
                  extract_method: ExtractMethod = ExtractMethod.VEC,
                  retrieve_method: RetrieveMethod = RetrieveMethod.CSS_VEC,
+                 generate_method: GenerateMethod = GenerateMethod.FLAN_T5,
                  print_info: bool = False):
         # DOCUMENT: CRG initialization
 
@@ -648,7 +807,7 @@ class CRG():
         self.retrieve = Retrieve(self.dataset, retrieve_method, extract_method)
         if self.print_info: print('✓ Retrieval model initialized')
 
-        self.generate = Generate()
+        self.generate = Generate(generate_method)
         if self.print_info: print('✓ Generation model initialized')
 
     def answer_question(self, question: str) -> str:
@@ -670,10 +829,12 @@ class CRG():
 
         # retrieve best answer
         pred_answer = self.retrieve.retrieve_answer(question, question_info)
-        
+        print(f'[i] Retrieved answer: {pred_answer}')
+    
         # generation step
+        gen_answer = self.generate.generate_answer(question, pred_answer)
 
-        return pred_answer
+        return gen_answer
 
 #== Methods ==#
 def filter_dataset(dataset: dict, label: str) -> dict:
