@@ -1,0 +1,1116 @@
+{
+  "data": [
+    {
+      "question": "Which undergraduate programs can students enroll in within the department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "What can undergraduate students enroll in within the department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Which degrees can students enroll in within the department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "What degrees can students take within the department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Can you list the undergraduate degrees provided by the department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Which undergraduate majors are available through the department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "What are the available undergraduate study options in the department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Does the department provide undergraduate degrees? If so, which ones?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "What undergraduate programs does the department have in engineering and technology fields?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Could you outline the undergraduate degree options available in this department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "What degrees can undergraduate students pursue within the department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "What fields of study are covered by the undergraduate degrees offered by the department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Can undergraduate students pursue dual degrees in this department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "What dual degree options are available for undergraduates in the department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Does the department offer any dual-degree programs for undergraduate students?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Are there dual degree opportunities combining Computer Science and other fields for undergraduates?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Can a student earn a dual degree in Computer Engineering and Computer Science?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "What combinations of dual degrees are possible for undergraduates in the department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Does this department support dual-degree paths for its undergraduate students?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Are there options for undergraduates to combine two fields of study into a dual degree?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Which dual degree programs are specifically available for undergraduate students?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "What are the dual degree possibilities for students in this department?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "What minors can students take?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Which minors are available to Lane Department students?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Can Lane students take any minors?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "Are there any minors offered to Lane Department students?",
+      "label": "Degree Programs"
+    },
+    {
+      "question": "What research fields does the Lane Department focus on?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "Can you list the main research areas in the Lane Department of Computer Science and Electrical Engineering?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What are the key research topics covered by the Lane Department?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "Which areas of research are emphasized in the Lane Department?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What are the primary fields of study within the Lane Department's research initiatives?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "Does the Lane Department have specific research focus areas?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What are the focus areas for research at the Lane Department of Computer Science and Electrical Engineering?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "Which disciplines does the Lane Department prioritize in its research efforts?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What are the Lane Department’s main areas of research activity?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "In which research domains is the Lane Department actively involved?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What is the focus of research in the field of biometrics?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What does biometrics research focus on in this department?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What are the key applications of biometrics research at WVU?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "Which biological signatures are studied in biometrics research at WVU?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What is the role of the Biometrics and Identification Innovation Center in biometrics research?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What areas benefit from biometrics research conducted at WVU?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "How does WVU contribute to advancements in biometrics research?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What are the research priorities in the biometrics field at WVU?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What partnerships support biometrics research at WVU?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What is the academic role of WVU in the field of biometrics?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What makes biometrics research at WVU unique?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What is the focus of AI and robotics research at WVU?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "How does WVU contribute to AI and robotics research?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What kind of projects are supported by WVU Robotics in AI and robotics research?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What role does the West Virginia Robotic Technology Center play in AI and robotics research?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What advancements in AI and robotics are being pursued at WVU?",
+      "label": "Research Opportunities"
+    },
+    {
+      "question": "What labs are used by electrical engineering students to design and test circuits?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "What types of labs are available for computer engineering students at WVU?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Which labs are available for computer engineering students to apply hardware and software integration?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Are there labs where electrical engineering students can learn about power systems?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Which labs allow electrical engineering students to focus on energy systems and power generation?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "What labs are available for computer engineering students to study hardware design?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Which labs provide computer engineering students hands-on experience with hardware and circuits?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "What labs do electrical engineering students use for circuit design?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Which specific industry-grade software packages are available to students and faculty in the Lane Department?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "What professional software tools can students and faculty use in the Lane Department?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "What industry-standard software do students in the Lane Department have access to?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "What specialized software programs are available for students in the Lane Department?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Which licensed software applications are provided to Lane Department students for academic use?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Does the Lane Department provide access to industry-grade software?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Can students and faculty use professional-level software in the Lane Department?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Does the Lane Department provide software used in the industry?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Are students in the Lane Department given access to industry-standard software?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "How do the Lane Department’s facilities support student learning?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "In what ways do the Lane Department’s resources enhance student education?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "How do the facilities in the Lane Department facilitate student learning?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "How does the Lane Department’s infrastructure support student development?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Do students have access to labs outside of class hours in the Lane Department?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Are the Lane Department’s labs available for student use beyond scheduled class times?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Can students use the Lane Department’s labs outside of their class hours?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Are the Lane Department’s laboratories accessible to students beyond normal hours?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "Are undergraduate students allowed to use specialized facilities in the Lane Department?",
+      "label": "Facilities and Resources"
+    },
+    {
+      "question": "What clubs and organizations are available in the Lane Department of Computer Science and Electrical Engineering?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "Are there any student organizations for CSEE students at WVU?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "Which student groups can I get involved with in the Lane Department?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What opportunities are there for joining student organizations in the Lane Department?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What are some extracurricular groups for students in the Lane Department?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "Can you list the student organizations specific to the Lane Department of CSEE?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What are the main student organizations for Lane Department students?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "Are there any clubs for computer science and electrical engineering students at WVU?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What student societies are available for Lane Department students?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What groups can Lane Department students join to enhance their university experience?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What is the purpose of the WVU student chapter of the Association for Computing Machinery (ACM)?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What does the WVU student chapter of ACM offer to computer science students?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "How does the WVU student chapter of ACM support computer science students?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What activities are organized by the WVU student ACM chapter?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What is the mission of the WVU student chapter of the Association for Computing Machinery?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "Why should computer science students join the WVU ACM student chapter?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What benefits does the WVU ACM student chapter provide for its members?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What activities does CyberWVU organize for its members?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What events and activities are hosted by CyberWVU for its members?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What opportunities does CyberWVU provide for its members?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What kinds of activities does CyberWVU offer to its members?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "Who can join CyberWVU, and is prior experience required?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What is Eta Kappa Nu (HKN), and who can become a member?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What is the role of the Student Advisory Council (SAC) in the Lane Department?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What is a Capstone?",
+      "label": "Clubs and Organizations"
+    },
+    {
+      "question": "What job opportunities are open to computer science graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What professions can computer science graduates enter after completing their degree?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What industries hire computer science graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What are some popular career paths for CS graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "Which fields can a computer science graduate specialize in?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What technical roles are suitable for computer science graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What career paths are commonly pursued by computer science graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What opportunities exist for computer science graduates in IT consulting?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What are the main fields of work for a computer science graduate?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What job opportunities are available for computer engineering (CPE) graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What career options are available for computer engineering graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What fields can CPE graduates enter after completing their degree?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What industries hire graduates with a degree in computer engineering?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What are some common career paths for computer engineering graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What job roles are suitable for computer engineering graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What are the common career paths for electrical engineering (EE) graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What career opportunities are available for electrical engineering graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What industries commonly hire electrical engineering graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What are some typical career paths for EE graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What fields can electrical engineering graduates specialize in?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What industries hire graduates with a degree in cybersecurity (CYBE)?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What industries employ graduates with a degree in cybersecurity?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "Which sectors hire cybersecurity graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What are the key industries for cybersecurity graduates?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "Where can cybersecurity graduates find employment opportunities?",
+      "label": "Career Opportunities"
+    },
+    {
+      "question": "What resources does Statler College offer to help students land internships?",
+      "label": "Internships"
+    },
+    {
+      "question": "What types of support does Statler College offer to help students land internships?",
+      "label": "Internships"
+    },
+    {
+      "question": "How do faculty assist students in finding internships in the Lane Department?",
+      "label": "Internships"
+    },
+    {
+      "question": "How do professors in the Lane Department support students with internships?",
+      "label": "Internships"
+    },
+    {
+      "question": "What types of companies do Statler College students intern with?",
+      "label": "Internships"
+    },
+    {
+      "question": "What kinds of companies do students from Statler College intern with?",
+      "label": "Internships"
+    },
+    {
+      "question": "What industries do Statler College students typically intern with?",
+      "label": "Internships"
+    },
+    {
+      "question": "What industries do students from Statler College commonly intern with?",
+      "label": "Internships"
+    },
+    {
+      "question": "Does Statler College offer assistance for securing internships abroad?",
+      "label": "Internships"
+    },
+    {
+      "question": "How does the Lane Department help students prepare for internships?",
+      "label": "Internships"
+    },
+    {
+      "question": "How does the Lane Department prepare students for internships in engineering and computer science?",
+      "label": "Internships"
+    },
+    {
+      "question": "What preparation does the Lane Department provide to students for internships?",
+      "label": "Internships"
+    },
+    {
+      "question": "Do Lane Department students have opportunities for research internships?",
+      "label": "Internships"
+    },
+    {
+      "question": "Can students in the Lane Department take part in research internships?",
+      "label": "Internships"
+    },
+    {
+      "question": "Do internships count for academic credit in the Lane Department?",
+      "label": "Internships"
+    },
+    {
+      "question": "Can students in the Lane Department get credit toward their degree by doing an internship?",
+      "label": "Internships"
+    },
+    {
+      "question": "Are internships eligible for academic credit for Lane Department majors?",
+      "label": "Internships"
+    },
+    {
+      "question": "What is the Lane Department's co-op program?",
+      "label": "Internships"
+    },
+    {
+      "question": "How does the co-op program work in the Lane Department?",
+      "label": "Internships"
+    },
+    {
+      "question": "What opportunities does the Lane Department’s co-op program offer to students?",
+      "label": "Internships"
+    },
+    {
+      "question": "How do students in the Lane Department participate in the co-op program?",
+      "label": "Internships"
+    },
+    {
+      "question": "How is the co-op program structured for Lane Department students?",
+      "label": "Internships"
+    },
+    {
+      "question": "What is the benefit of the co-op program in the Lane Department?",
+      "label": "Internships"
+    },
+    {
+      "question": "Can students in the Lane Department apply for co-op positions while studying?",
+      "label": "Internships"
+    },
+    {
+      "question": "Are internships required or strongly encouraged for students in the Lane Department?",
+      "label": "Internships"
+    },
+    {
+      "question": "Are there specific scholarships for undergraduates in the Lane Department?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "What scholarships are available for incoming freshmen in the Lane Department at WVU?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Are there scholarship opportunities for first-year Lane Department students at WVU?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Does Lane Department offer scholarships for freshmen entering the program?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Are there scholarships specifically for West Virginia residents in the Lane Department?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Do West Virginia residents have priority for Lane Department scholarships?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "What financial aid options are available for West Virginia students in Lane Department?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "How can current Lane Department undergraduates find scholarship opportunities?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Where can Lane Department students find information on available scholarships?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Are there dedicated resources for Lane Department students seeking scholarships?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Does WVU offer scholarships based on financial need for Lane Department students?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Can Lane Department students apply for need-based financial aid?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Are there any scholarships specifically for financially disadvantaged Lane Department students?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Are there external scholarships available for Lane Department undergraduates?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "What external funding options exist for Lane Department students?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Can Lane Department students receive financial support from industry-related organizations?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "How can current undergraduate students apply for Statler College scholarships?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "How do current undergraduate students apply for scholarships at Statler College?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "What is the deadline for current students to apply for Statler College scholarships?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Are international students eligible to apply for Statler College scholarships?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "What assistantship opportunities are available for graduate students in Lane Department?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "How can graduate students receive financial support at Lane Department?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "What types of financial aid are available for graduate students in Lane Department?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "Are there funding options for graduate students studying in the Lane Department of Computer Science and Electrical Engineering?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "How can I fund my graduate studies in the Lane Department?",
+      "label": "Financial Aid and Scholarships"
+    },
+    {
+      "question": "What fields do the Lane Department faculty specialize in?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "How experienced are the faculty members in the Lane Department?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "What is the level of experience of the faculty in the Lane Department?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "How qualified are the faculty members in the Lane Department?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "What is the background of the Lane Department faculty?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Are faculty members involved in industry projects or collaborations?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Do faculty members in the Lane Department collaborate with industry?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Are the Lane Department faculty engaged with industry projects?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "How do faculty members in the Lane Department work with industry?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Are Lane Department faculty available to guide students academically and professionally?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "How do faculty in the Lane Department support students in their academic journey?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Do the faculty in the Lane Department have industry experience?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "How can I get in touch with faculty members to learn more about their teaching interests?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "How can I contact faculty members to learn about their teaching interests?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Where can I find information about the teaching interests of faculty members?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "How do I reach out to faculty to learn more about their academic interests?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Are faculty members actively involved in professional organizations or conferences?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Do faculty members in the Lane Department participate in professional organizations or conferences?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Are Lane Department faculty members active in professional networks and conferences?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "What is the faculty-to-student ratio in the Lane Department?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "What is the student-to-faculty ratio in the Lane Department?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "How many students are there per faculty member in the Lane Department?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Who is the current Chairperson of the Lane Department of Computer Science and Electrical Engineering at WVU?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Who is the Program Coordinator for the BS Cybersecurity program?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "Who is responsible for the MS in Software Engineering program at WVU?",
+      "label": "Faculty Information"
+    },
+    {
+      "question": "What are the general admission requirements for undergraduate students applying to the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Besides WVU's general requirements, what are the specific admission criteria for undergraduate programs within the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Could you summarize the undergraduate admission prerequisites for the Lane Department for the upcoming academic year?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "What are the overarching admission criteria for undergraduates seeking to join the Lane Department at WVU?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "What documents are required for undergraduate admission to the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Based on the provided information, what documentation is likely needed for undergraduate admission to the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Is there a minimum GPA requirement for applying to the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "What is the lowest GPA considered for admission to undergraduate programs within the Lane Department for the 2025-2026 academic year?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "How can I apply to the Lane Department at WVU?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "What is the recommended procedure for applying to undergraduate programs in the Lane Department for the 2025-2026 academic year?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "How do I apply for graduate programs in the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "What steps are involved in applying to the Lane Department's graduate programs?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "What is the application process for graduate programs in the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "What materials do I need to apply to the Lane Department's graduate programs?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "What are the required documents to apply for graduate programs in the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Is the GRE required for all graduate programs in the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Do I need to take the GRE for graduate admissions to the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Is the GRE required for applying to graduate programs in the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Is the GRE mandatory for graduate admissions in the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Are there specific deadlines for applying to graduate programs?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "What are the application deadlines for graduate programs in the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "When should I submit my application for graduate programs in the Lane Department?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Can international students apply to the Lane Department's programs?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Are international students eligible to apply for the Lane Department's programs?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "Beyond transcripts, what other documents might WVU require for undergraduate admission?",
+      "label": "Admissions Process"
+    },
+    {
+      "question": "What building houses the Lane Department of Computer Science and Electrical Engineering?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "What is the phone number to contact the Lane Department?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "How can you reach the Lane Department by phone?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "What is the contact number for the Lane Department of Computer Science and Electrical Engineering?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "What is the mailing address for the Lane Department?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "Where should mail for the Lane Department be sent?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "What is the mailing address for the department?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "On which WVU campus is the Lane Department located?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "Is the AER building on the downtown campus or the Evansdale campus?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "Where would I find the engineering buildings at WVU?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "Which campus houses the Statler College of Engineering?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "What part of the university is the Lane Department in?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "Is there transportation available between WVU campuses?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "What is the PRT?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "How do I get around campus if I don't have a car?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "Where can visitors park when coming to the AER building?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "Is there visitor parking near the Lane Department?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "If I am visiting the campus, where should I park to see the engineering buildings?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "Where is the closest parking for a visitor to the AER building?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "How much does it cost to park as a visitor?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "What are the business hours for the main department office?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "When is the Lane Department office open?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "Can I visit the department office during the day?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "What are the operating hours for the department's administrative staff?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "Is the department office open on weekends?",
+      "label": "Location and Contact"
+    },
+    {
+      "question": "Do you have a name?",
+      "label": "Generic"
+    },
+    {
+      "question": "When was the Lane Department of Computer Science and Electrical Engineering established at WVU?",
+      "label": "Generic"
+    },
+    {
+      "question": "How did the Lane Departmentat WVU get its name?",
+      "label": "Generic"
+    },
+    {
+      "question": "Why is the department called the Lane Department at WVU?",
+      "label": "Generic"
+    },
+    {
+      "question": "Who is Raymond J. Lane, and what is his connection to the department?",
+      "label": "Generic"
+    },
+    {
+      "question": "What makes Raymond J. Lane important to the WVU engineering program?",
+      "label": "Generic"
+    },
+    {
+      "question": "Why was the department named after Raymond J. Lane?",
+      "label": "Generic"
+    },
+    {
+      "question": "What can you help me with?",
+      "label": "Generic"
+    },
+    {
+      "question": "What kind of information can you provide?",
+      "label": "Generic"
+    },
+    {
+      "question": "What are your capabilities?",
+      "label": "Generic"
+    },
+    {
+      "question": "What do you know about?",
+      "label": "Generic"
+    },
+    {
+      "question": "Tell me what you can do.",
+      "label": "Generic"
+    },
+    {
+      "question": "Are you a real person?",
+      "label": "Generic"
+    },
+    {
+      "question": "Am I talking to a robot?",
+      "label": "Generic"
+    },
+    {
+      "question": "Are you human?",
+      "label": "Generic"
+    },
+    {
+      "question": "Is this a chatbot?",
+      "label": "Generic"
+    },
+    {
+      "question": "Are you an AI?",
+      "label": "Generic"
+    },
+    {
+      "question": "Who developed you?",
+      "label": "Generic"
+    },
+    {
+      "question": "Where do you come from?",
+      "label": "Generic"
+    },
+    {
+      "question": "Who programmed you?",
+      "label": "Generic"
+    },
+    {
+      "question": "What is your purpose?",
+      "label": "Generic"
+    },
+    {
+      "question": "Why were you created?",
+      "label": "Generic"
+    },
+    {
+      "question": "What is your goal?",
+      "label": "Generic"
+    },
+    {
+      "question": "What are you designed to do?",
+      "label": "Generic"
+    },
+    {
+      "question": "What's your mission?",
+      "label": "Generic"
+    }
+  ]
+}
