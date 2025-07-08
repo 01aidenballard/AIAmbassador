@@ -53,6 +53,7 @@ class RetrieveMethod(Enum):
 class GenerateMethod(Enum):
     FLAN_T5 = 1
     TINY_LLAMA = 2
+    CONTEXT_ONLY = 3
 
 
 #== Global Variables ==#
@@ -644,6 +645,8 @@ class Generate():
                 model_name = "Flan-T5"
             elif self.method == GenerateMethod.TINY_LLAMA:
                 model_name = "TinyLlama"
+            elif self.method == GenerateMethod.CONTEXT_ONLY:
+                model_name = "Context Only"
             else:
                 raise ValueError(f"Unknown GenerateMethod: {self.method}")
             self.model = model_name
@@ -659,7 +662,6 @@ class Generate():
             Returns:
                 str: Generated answer
             '''
-            generated_response = ""
 
             if self.model == "Flan-T5":
 
@@ -775,7 +777,9 @@ class Generate():
                 response = tokenizer.decode(output_tokens[0, input_length:], skip_special_tokens=True)
                 
                 return response
-
+            elif self.model == "Context Only":
+                # if no generation model is selected, return the context
+                return context
             else:
                 raise ValueError(f"Unknown model: {self.model}")
         
@@ -829,7 +833,6 @@ class CRG():
 
         # retrieve best answer
         pred_answer = self.retrieve.retrieve_answer(question, question_info)
-        print(f'[i] Retrieved answer: {pred_answer}')
     
         # generation step
         gen_answer = self.generate.generate_answer(question, pred_answer)
