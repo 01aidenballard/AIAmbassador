@@ -858,3 +858,40 @@ def filter_dataset(dataset: dict, label: str) -> dict:
             filtered_data['data'].append(data)
 
     return filtered_data
+
+def cache_vectors(self, force: bool = False):
+        '''
+        cache vector embeddings for all questions in dataset
+        '''
+        # check if path exist
+        if not os.path.exists():
+            raise FileNotFoundError(f"[E] Dataset not found at {self.path}")
+        
+        # load the JSON file
+        with open(self.path, 'r') as f:
+            data = json.load(f)
+
+        data = data['data']
+
+        # iterate through each label
+        vector_cache = {'data': []}
+
+        for vector in data:
+            # extract the label and qa data
+            label = vector['title']
+            qas = vector['paragraphs'][0]['qas']
+
+            # extract each question, adding it to the labeled dataset
+            for qa in qas:
+                question = qa['question']
+                answer = qa['answer'][0]
+
+                vector_cache['data'].append(
+                    {
+                        'question': question,
+                        'answer': answer,
+                        'label': label
+                    }
+                )
+
+        return vector_cache

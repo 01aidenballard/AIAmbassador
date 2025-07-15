@@ -364,7 +364,6 @@
                             "question": "Is there a robotics program available at WVU through the Lane Department?",
                             "answer": [
                                 "WVU offers a Robotics Engineering program through a collaboration between the Lane Department and the Mechanical, Materials and Aerospace Engineering Department."
-                                "WVU offers a Robotics Engineering program through a collaboration between the Lane Department and the Mechanical, Materials and Aerospace Engineering Department."
                             ]
                         },
                         {
@@ -376,7 +375,6 @@
                         {
                             "question": "Does WVU have a Robotics Engineering degree?",
                             "answer": [
-                                "WVU provides a Robotics Engineering (ROBE) degree program that is a joint effort between the Lane Department and the Mechanical, Materials and Aerospace Engineering Department."
                                 "WVU provides a Robotics Engineering (ROBE) degree program that is a joint effort between the Lane Department and the Mechanical, Materials and Aerospace Engineering Department."
                             ]
                         },
@@ -1102,8 +1100,7 @@
                             "question": "Does WVU collaborate with NASA on AI and robotics research?",
                             "answer": [
                                 "WVU collaborates with NASA on AI and robotics research, particularly through projects like satellite refueling and repair conducted at the West Virginia Robotic Technology Center."
-                                "WVU collaborates with NASA on AI and robotics research, particularly through projects like satellite refueling and repair conducted at the West Virginia Robotic Technology Center."
-                            ]
+                                ]
                         },
                         {
                             "question": "What is the significance of NASA's partnership with WVU in robotics research?",
@@ -1156,7 +1153,6 @@
                         {
                             "question": "Does WVU provide any academic support for big data research?",
                             "answer": [
-                                "WVU supports big data research through academic programs like the Big Data Engineering course, where students learn to organize and analyze large datasets using advanced algorithms."
                                 "WVU supports big data research through academic programs like the Big Data Engineering course, where students learn to organize and analyze large datasets using advanced algorithms."
                             ]
                         },
