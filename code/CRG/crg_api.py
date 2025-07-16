@@ -66,6 +66,7 @@ MODEL_SPACY = None
 MODEL_TFIDF_VEC = None
 MODEL_W2V = None
 
+
 #== Model Classes ==#
 class LogisticRegression(nn.Module):
     '''
@@ -134,7 +135,7 @@ class Dataset():
     '''
     class to represent labeled dataset
     '''
-    def __init__(self, path: str):
+    def __init__(self, path: str, cache_vectors: bool):
         '''
         initialize dataset
 
@@ -146,6 +147,12 @@ class Dataset():
         # load dataset 
         self.dataset = self._load_dataset()
         self.filtered_dataset = None
+
+        # load vector cache
+        if cache_vectors:
+            self.vector_cache = self._cache_vectors()
+        else:
+            self.vector_cache = None
 
         # get classes
         self.questions = [item['question'] for item in self.dataset['data']]
@@ -191,6 +198,46 @@ class Dataset():
                 )
 
         return labeled_data
+
+    def _cache_vectors(self) -> dict:
+        '''
+        cache vector embeddings for all questions in dataset
+        '''
+        
+        model = SentenceTransformer('all-MiniLM-L6-v2')
+            
+        global MODEL_W2V
+        MODEL_W2V = model
+
+        # load the JSON file
+        with open(self.path, 'r') as f:
+            data = json.load(f)
+
+        data = data['data']
+
+        # iterate through each label
+        vector_cache = {'data': []}
+
+        for vector in data:
+            # extract the label and qa data
+            label = vector['title']
+            qas = vector['paragraphs'][0]['qas']
+
+            # extract each question, adding it to the labeled dataset
+            for qa in qas:
+                vector = MODEL_W2V.encode(qa['question'])
+                vector = np.array(vector).reshape(1, -1)
+                answer = qa['answer'][0]
+
+                vector_cache['data'].append(
+                    {
+                        'vector': vector,
+                        'answer': answer,
+                        'label': label
+                    }
+                )
+
+        return vector_cache
 
 class Classify():
     '''
@@ -595,27 +642,30 @@ class Retrieve():
                 best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
 
         # CSS-vec
-        # TODO: Pre-Vectorize
+        # TODO: Batch processing
         elif self.retrieve_method == RetrieveMethod.CSS_VEC:
             # get vector embedding of asked question
             ask_question_vec = MODEL_W2V.encode(question)
             ask_question_vec = np.array(ask_question_vec).reshape(1, -1)
-            
-            for i,qa in enumerate(self.dataset.filtered_dataset['data']):
-                # get vector embedding of database question
-                db_question = qa['question']
-                db_question_vec = MODEL_W2V.encode(db_question)
-                db_question_vec = np.array(db_question_vec).reshape(1, -1)
 
-                # compute similarity
-                css = cosine_similarity(ask_question_vec, db_question_vec)[0, 0]
+            filtered_label = self.dataset.filtered_dataset['data'][0]['label']
 
-                # store score in dataset
-                self.dataset.filtered_dataset['data'][i]['score'] = css
+            # Only consider items in vector_cache with the filtered label
+            filtered_vectors = [item for item in self.dataset.vector_cache['data'] if item['label'] == filtered_label]
 
-            # get the highest scoring answers
-            max_score = max(item['score'] for item in self.dataset.filtered_dataset['data'])
-            best_ans = [item['answer'] for item in self.dataset.filtered_dataset['data'] if item['score'] == max_score]
+            if not filtered_vectors:
+                # If there are no items with the filtered label, return a default message or handle as needed
+                return "No answer found for this category."
+
+            # Assign scores only to filtered_vectors
+            for vector in filtered_vectors:
+                vector_embedding = vector['vector']
+                css = cosine_similarity(ask_question_vec, vector_embedding)[0, 0]
+                vector['score'] = css
+
+            # Now select the best answer from filtered_vectors
+            max_score = max(item['score'] for item in filtered_vectors)
+            best_ans = [item['answer'] for item in filtered_vectors if item['score'] == max_score]
 
             # if one answer, use that; otherwise choose randomly
             if len(best_ans) == 1:
@@ -801,8 +851,9 @@ class CRG():
         self.print_info = print_info
 
         # initialize dataset
-        self.dataset = Dataset(dataset_path)
+        self.dataset = Dataset(dataset_path, cache_vectors=True if retrieve_method == RetrieveMethod.CSS_VEC else False)
         if self.print_info: print('✓ Dataset initialized')
+
 
         # initialize the classes for each step
         self.classify = Classify(self.dataset, classify_method, extract_method)
@@ -859,39 +910,5 @@ def filter_dataset(dataset: dict, label: str) -> dict:
 
     return filtered_data
 
-def cache_vectors(self, force: bool = False):
-        '''
-        cache vector embeddings for all questions in dataset
-        '''
-        # check if path exist
-        if not os.path.exists():
-            raise FileNotFoundError(f"[E] Dataset not found at {self.path}")
-        
-        # load the JSON file
-        with open(self.path, 'r') as f:
-            data = json.load(f)
 
-        data = data['data']
 
-        # iterate through each label
-        vector_cache = {'data': []}
-
-        for vector in data:
-            # extract the label and qa data
-            label = vector['title']
-            qas = vector['paragraphs'][0]['qas']
-
-            # extract each question, adding it to the labeled dataset
-            for qa in qas:
-                question = qa['question']
-                answer = qa['answer'][0]
-
-                vector_cache['data'].append(
-                    {
-                        'question': question,
-                        'answer': answer,
-                        'label': label
-                    }
-                )
-
-        return vector_cache
