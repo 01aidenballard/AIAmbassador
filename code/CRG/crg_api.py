@@ -642,7 +642,7 @@ class Retrieve():
                 best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
 
         # CSS-vec
-        # TODO: Batch processing
+        # TODO: Batch Processing
         elif self.retrieve_method == RetrieveMethod.CSS_VEC:
             # get vector embedding of asked question
             ask_question_vec = MODEL_W2V.encode(question)
@@ -654,14 +654,16 @@ class Retrieve():
             filtered_vectors = [item for item in self.dataset.vector_cache['data'] if item['label'] == filtered_label]
 
             if not filtered_vectors:
-                # If there are no items with the filtered label, return a default message or handle as needed
                 return "No answer found for this category."
 
-            # Assign scores only to filtered_vectors
-            for vector in filtered_vectors:
-                vector_embedding = vector['vector']
-                css = cosine_similarity(ask_question_vec, vector_embedding)[0, 0]
-                vector['score'] = css
+            # Stack all candidate vectors for batch cosine similarity
+            candidate_vectors = np.vstack([item['vector'] for item in filtered_vectors])  # shape: (N, D)
+            # Compute cosine similarity in batch
+            css_scores = cosine_similarity(ask_question_vec, candidate_vectors)[0]  # shape: (N,)
+
+            # Assign scores back to filtered_vectors
+            for i, score in enumerate(css_scores):
+                filtered_vectors[i]['score'] = score
 
             # Now select the best answer from filtered_vectors
             max_score = max(item['score'] for item in filtered_vectors)
