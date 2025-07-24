@@ -95,6 +95,7 @@ class Listen:
         recognizer = sr.Recognizer()
         mic = sr.Microphone(device_index=find_microphone(self.device_name))
 
+        text = ""
         with mic as source:
             recognizer.adjust_for_ambient_noise(source)
             print("Listening for wake word...")
@@ -105,14 +106,16 @@ class Listen:
 
                     if self.recognizer_name == Recognizer.GOOGLE:
                         text = recognizer.recognize_google(audio).lower()
+                        print(f"Heard: {text}")
                         
                     elif self.recognizer_name == Recognizer.SPHINX:
                         text = recognizer.recognize_sphinx(audio).lower()
+                        print(f"Heard: {text}")
                         
                     elif self.recognizer_name == Recognizer.HOUNDIFY:
                         text = recognizer.recognize_houndify(audio).lower()
+                        print(f"Heard: {text}")
                     
-                    print(f"Heard: {text}")
                     
                     if self.wake_word in text:
                         print(f"Wake word '{self.wake_word}' detected!")
