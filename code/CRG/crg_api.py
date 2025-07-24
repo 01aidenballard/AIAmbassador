@@ -204,38 +204,53 @@ class Dataset():
         cache vector embeddings for all questions in dataset
         '''
         
-        model = SentenceTransformer('all-MiniLM-L6-v2')
+        # if file exists, pull
+        if os.path.exists('../vector_cache.json'):
+            with open('../vector_cache.json', 'r') as f:
+                vector_cache = json.load(f)
+            return vector_cache
+
+
+        # else, load model, cache vectors, and write to file
+        else: 
+            model = SentenceTransformer('all-MiniLM-L6-v2')
+                
+            global MODEL_W2V
+            MODEL_W2V = model
+
+
+
+            # load the JSON file
+            with open(self.path, 'r') as f:
+                data = json.load(f)
+
+            data = data['data']
+
+            # iterate through each label
+            vector_cache = {'data': []}
+
+            for vector in data:
+                # extract the label and qa data
+                label = vector['title']
+                qas = vector['paragraphs'][0]['qas']
+
+                # extract each question, adding it to the labeled dataset
+                for qa in qas:
+                    vector = MODEL_W2V.encode(qa['question'])
+                    vector = np.array(vector).reshape(1, -1).tolist()
+                    answer = qa['answer'][0]
+
+                    vector_cache['data'].append(
+                        {
+                            'vector': vector,  # Converted to list for JSON serialization
+                            'answer': answer,
+                            'label': label
+                        }
+                    )
             
-        global MODEL_W2V
-        MODEL_W2V = model
-
-        # load the JSON file
-        with open(self.path, 'r') as f:
-            data = json.load(f)
-
-        data = data['data']
-
-        # iterate through each label
-        vector_cache = {'data': []}
-
-        for vector in data:
-            # extract the label and qa data
-            label = vector['title']
-            qas = vector['paragraphs'][0]['qas']
-
-            # extract each question, adding it to the labeled dataset
-            for qa in qas:
-                vector = MODEL_W2V.encode(qa['question'])
-                vector = np.array(vector).reshape(1, -1)
-                answer = qa['answer'][0]
-
-                vector_cache['data'].append(
-                    {
-                        'vector': vector,
-                        'answer': answer,
-                        'label': label
-                    }
-                )
+            # write to file
+            with open('../vector_cache.json', 'w') as f:
+                json.dump(vector_cache, f, indent=4)
 
         return vector_cache
 
@@ -690,6 +705,7 @@ class Generate():
                 method (GenerateMethod): Enum to select the generation model
             '''
             self.method = method
+
             if self.method == GenerateMethod.FLAN_T5:
                 model_name = "Flan-T5"
             elif self.method == GenerateMethod.TINY_LLAMA:
@@ -697,7 +713,8 @@ class Generate():
             elif self.method == GenerateMethod.CONTEXT_ONLY:
                 model_name = "Context Only"
             else:
-                raise ValueError(f"Unknown GenerateMethod: {self.method}")
+                raise ValueError(f"Unknown GenerateMethod: {self.method}, options are FLAN_T5, TINY_LLAMA, CONTEXT_ONLY")
+            
             self.model = model_name
 
         def generate_answer(self, question: str, context: str = "") -> str:
