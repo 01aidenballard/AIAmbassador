@@ -30,6 +30,11 @@ from transformers import DistilBertTokenizer, DistilBertForSequenceClassificatio
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
+# Add the Log directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Logs')))
+
+from Logging import Log
+
 
 #== Enums ==#
 class ClassifyMethod(Enum):
@@ -168,6 +173,8 @@ class Dataset():
         '''
         # check if path exist
         if not os.path.exists(self.path):
+            Log.log("ERROR", f"Dataset not found at {self.path}")
+            Log.flush()
             raise FileNotFoundError(f"[E] Dataset not found at {self.path}")
         
         # load the JSON file
@@ -205,15 +212,19 @@ class Dataset():
         '''
         
         # if file exists, pull
+        Log.log("SYSTEM", "Checking for cached vector embeddings...")
         if os.path.exists('../vector_cache.json'):
             with open('../vector_cache.json', 'r') as f:
                 vector_cache = json.load(f)
+
+            Log.log("SYSTEM", "Cached vector embeddings found, loading...")
             return vector_cache
 
 
         # else, load model, cache vectors, and write to file
         else: 
             model = SentenceTransformer('all-MiniLM-L6-v2')
+            Log.log("SYSTEM", "No cached vector embeddings found, creating new cache...")
                 
             global MODEL_W2V
             MODEL_W2V = model
@@ -228,6 +239,8 @@ class Dataset():
 
             # iterate through each label
             vector_cache = {'data': []}
+
+            Log.log("SYSTEM", "Encoding vector embeddings...")
 
             for vector in data:
                 # extract the label and qa data
@@ -250,6 +263,7 @@ class Dataset():
             
             # write to file
             with open('../vector_cache.json', 'w') as f:
+                Log.log("SYSTEM", "Caching vector embedddings...")
                 json.dump(vector_cache, f, indent=4)
 
         return vector_cache
@@ -287,7 +301,8 @@ class Classify():
                 self.vectorizer = None
 
             else:
-                print(f'[E] Invalid classification method {classify_method}')
+                Log.log("ERROR", f"Invalid classification method: {self.classify_method}")
+                Log.flush()
                 quit()
 
     def _init_trad_model_vectorizer(self, classify_method: ClassifyMethod) -> Union[LogisticRegression | SVM, TfidfVectorizer, LabelEncoder]:
@@ -324,7 +339,8 @@ class Classify():
             if os.path.exists(MODEL_LR_PTH):
                 model.load_state_dict(torch.load(MODEL_LR_PTH))
             else:
-                print(f'[E] Pretrained LR model not found at {MODEL_LR_PTH}')
+                Log.log("ERROR", f"Pretrained LR model not found at {MODEL_LR_PTH}")
+                Log.flush()
                 quit()
 
         elif classify_method == ClassifyMethod.SVM:
@@ -333,7 +349,8 @@ class Classify():
             if os.path.exists(MODEL_SVM_PTH):
                 model.load_state_dict(torch.load(MODEL_SVM_PTH))
             else:
-                print(f'[E] Pretrained SVM model not found at {MODEL_SVM_PTH}')
+                Log.log("ERROR", f"Pretrained SVM model not found at {MODEL_SVM_PTH}")
+                Log.flush()
                 quit()
 
         # set model to evaluation mode
@@ -367,7 +384,8 @@ class Classify():
                 model = BertForSequenceClassification.from_pretrained(MODEL_BERT_PTH)
                 tokenizer = BertTokenizer.from_pretrained(MODEL_BERT_PTH)
             else:
-                print(f'[E] Pretrained BERT model not found at {MODEL_BERT_PTH}')
+                Log.log("ERROR", f"Pretrained BERT model not found at {MODEL_BERT_PTH}")
+                Log.flush()
                 quit()
 
         elif classify_method == ClassifyMethod.DISTILBERT:
@@ -376,7 +394,8 @@ class Classify():
                 model = DistilBertForSequenceClassification.from_pretrained(MODEL_DISTILBERT_PTH)
                 tokenizer = DistilBertTokenizer.from_pretrained(MODEL_DISTILBERT_PTH)
             else:
-                print(f'[E] Pretrained DistilBERT model not found at {MODEL_DISTILBERT_PTH}')
+                Log.log("ERROR", f"Pretrained DistilBERT model not found at {MODEL_DISTILBERT_PTH}")
+                Log.flush()
                 quit()
         
         # put model in eval mode
@@ -474,7 +493,8 @@ class Classify():
             info = model.encode(question)
 
         else:
-            print(f'[E] Invalid extraction method {self.extract_method}')
+            Log.log("ERROR", f"Invalid extraction method: {self.extract_method}")
+            Log.flush()
             quit()
 
         return info
@@ -688,7 +708,8 @@ class Retrieve():
                 best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
 
         else:
-            print(f'[E] Invalid retrieval method {self.retrieve_method}')
+            Log.log("ERROR", f"Invalid retrieval method: {self.retrieve_method}")
+            Log.flush()
             quit()
 
         return best_ans
@@ -713,6 +734,8 @@ class Generate():
             elif self.method == GenerateMethod.CONTEXT_ONLY:
                 model_name = "Context Only"
             else:
+                Log.log("ERROR", f"Unknown GenerateMethod: {self.method}, options are FLAN_T5, TINY_LLAMA, CONTEXT_ONLY")
+                Log.flush()
                 raise ValueError(f"Unknown GenerateMethod: {self.method}, options are FLAN_T5, TINY_LLAMA, CONTEXT_ONLY")
             
             self.model = model_name
@@ -847,6 +870,8 @@ class Generate():
                 # if no generation model is selected, return the context
                 return context
             else:
+                Log.log("ERROR", f"Unknown model: {self.model}")
+                Log.flush()
                 raise ValueError(f"Unknown model: {self.model}")
         
 
@@ -868,18 +893,18 @@ class CRG():
 
         # initialize dataset
         self.dataset = Dataset(dataset_path, cache_vectors=True if retrieve_method == RetrieveMethod.CSS_VEC else False)
-        if self.print_info: print('✓ Dataset initialized')
+        if self.print_info: print('✓ Dataset initialized'); Log.log("SYSTEM", "Dataset initialized")
 
 
         # initialize the classes for each step
         self.classify = Classify(self.dataset, classify_method, extract_method)
-        if self.print_info: print('✓ Classification model initialized')
+        if self.print_info: print('✓ Classification model initialized'); Log.log("SYSTEM", "Classification model initialized")
 
         self.retrieve = Retrieve(self.dataset, retrieve_method, extract_method)
-        if self.print_info: print('✓ Retrieval model initialized')
+        if self.print_info: print('✓ Retrieval model initialized'); Log.log("SYSTEM", "Retrieval model initialized")
 
         self.generate = Generate(generate_method)
-        if self.print_info: print('✓ Generation model initialized')
+        if self.print_info: print('✓ Generation model initialized'); Log.log("SYSTEM", "Generation model initialized")
 
     def answer_question(self, question: str) -> str:
         '''

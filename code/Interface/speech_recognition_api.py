@@ -5,6 +5,10 @@ from enum import Enum
 import speech_recognition as sr
 import time
 
+# Add the Log directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Logs')))
+
+from Logging import Log
 
 #== Global Variables ==#
 
@@ -24,11 +28,12 @@ class Listen:
     """
         Class to handle speech recognition using various APIs.
     """
-    def __init__(self, wake_word: str = "hey lane", recognizer_name: str = Recognizer.GOOGLE, device_name: str = "USB PnP Sound Device:"):
+    def __init__(self, wake_word: str = "hey lane", sleep_word: str = "stop", recognizer_name: str = Recognizer.GOOGLE, device_name: str = "USB PnP Sound Device:"):
         """
         Initialize the Speech class with a wake word.
         """
         self.wake_word = wake_word # "Hey Lain"
+        self.sleep_word = sleep_word # "Stop" or "Sleep"
         self.recognizer_name = recognizer_name  # Default recognizer name
         self.device_name = device_name
 
@@ -79,16 +84,16 @@ class Listen:
             
 
             except sr.UnknownValueError:
-                print(f"{self.recognizer_name} Recognition could not understand audio")
+                Log.log("ERROR", f"{self.recognizer_name} Recognition could not understand audio")
                 return None
         except sr.RequestError as e:
-            print(f"Could not request results from {self.recognizer_name} Recognition service; {e}")
+            Log.log("ERROR", f"Could not request results from {self.recognizer_name} Recognition service; {e}")
             return None
 
         return text
 
 
-    def listen_for_wake_word(self):
+    def listen_for_action_word(self):
         """
         Continuously listen for the wake word.
         """
@@ -98,7 +103,7 @@ class Listen:
         text = ""
         with mic as source:
             recognizer.adjust_for_ambient_noise(source)
-            print("Listening for wake word...")
+            Log.log("SYSTEM", "Listening for action...")
 
             while True:
                 try:
@@ -120,10 +125,13 @@ class Listen:
                     if self.wake_word in text:
                         print(f"Wake word '{self.wake_word}' detected!")
                         return True
+                    elif self.sleep_word in text:
+                        print(f"Sleep word '{self.sleep_word}' detected, stopping...")
+                        return False
                 except sr.UnknownValueError:
                     continue
                 except sr.RequestError as e:
-                    print(f"Could not request results; {e}")
+                    Log.log("ERROR", f"Could not request results from {self.recognizer_name} Recognition service; {e}")
 
 
 #== Methods ==#

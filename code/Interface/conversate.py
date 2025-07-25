@@ -17,6 +17,11 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'C
 
 from crg_api import CRG, ClassifyMethod, ExtractMethod, RetrieveMethod, GenerateMethod
 
+# Add the Log directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Logs')))
+
+from Logging import Log
+
 #== Global Variables ==#
 
 listening_responses=["Yes?", "How can I help you?", "I'm listening", "What can I do for you?", "How can I assist you?", "What would you like to know?", "What is question?", "How can I be of service?"]
@@ -34,6 +39,7 @@ def main():
     generate_method = GenerateMethod.CONTEXT_ONLY
 
     # init CRG
+    Log.log("SYSTEM", "Initializing conversation...")
     crg = CRG(
         dataset_pth, 
         classify_method=classify_method, 
@@ -47,31 +53,37 @@ def main():
 
     # while loop to ask questions
     while True:
-        print("System good, waiting to be awakened...")
-        if L.listen_for_wake_word(lain):
+        Log.log("SYSTEM", "Waiting for user...")
+        action = L.listen_for_action_word(lain)
+        if action:
            
-            print("Listening for user question...")
+            Log.log("SYSTEM", "Wake word detected, listening for user question...")
             # Use a random response from the listening_responses
             random.seed(time.time())
             response = listening_responses[random.randint(0, len(listening_responses)-1)]
             sys_command(f"flite -voice rms -t '{response}'")
-            print(f'Lain: {response}')
+            Log.log("INFO", f"Lain: {response}")
 
             user_q = L.listen(lain)
-            print(f'User Question: {user_q}')
+            Log.log("INFO", f"User question: {user_q}")
              
             if user_q is None:
-                error = "Error: Could not understand question"
-                sys_command(error)
+                # error = "Error: Could not understand question"
+                # sys_command(error)
+                Log.log("INFO", "No question detected, sleeping...")
                 continue
 
             st = time.time()
             answer = crg.answer_question(user_q)
             et = time.time()
-            print(f'Answer: {answer}')
-            print(f'Time taken: {et - st:.2f} seconds\n')
+            Log.log("INFO", f"Answer: {answer}\n(Time taken: {et - st:.2f} seconds)")
 
             sys_command(f"flite -voice rms -t '{answer}'")
+        elif not action:
+            Log.log("SYSTEM", "Sleep word detected, exiting...")
+            sys_command("flite -voice rms -t 'Goodbye'")
+            break
+        
             
             
 
