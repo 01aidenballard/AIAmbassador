@@ -28,36 +28,53 @@ from transformers import BertTokenizer, BertForSequenceClassification, Trainer, 
 from datasets import Dataset
 from torch.utils.data import DataLoader
 
+
+
 #== Global Variables ==#
-GB_test_dataset = {'data': [
-    {'question': 'What degree programs does the department offer?', 'label': 'Degree Programs'},
-    {'question': 'What dual degrees can I pursue?', 'label': 'Degree Programs'},
-    {'question': 'What are the various research areas in the Lane Department?', 'label': 'Research Opportunities'},
-    {'question': 'What research is done in the biometrics field?', 'label': 'Research Opportunities'},
-    {'question': 'What is the Lane Innovation Hub?', 'label': 'Facilities and Resources'},
-    {'question': 'What labs are available for students studying electrical engineering?', 'label': 'Facilities and Resources'},
-    {'question': 'What are the student orgs I can join as a LCSEE student?', 'label': 'Clubs and Organizations'},
-    {'question': 'What kind of activities do CyberWVU students do?', 'label': 'Clubs and Organizations'},
-    {'question': 'What can I do with a computer engineering degree?', 'label': 'Career Opportunities'},
-    {'question': 'What can I do with a computer science degree?', 'label': 'Career Opportunities'},
-    {'question': 'What type of internships do students get?', 'label': 'Internships'},
-    {'question': 'How can students get internships?', 'label': 'Internships'},
-    {'question': 'What type of scholarships are available for incoming students?', 'label': 'Financial Aid and Scholarships'},
-    {'question': 'How can freshmen get scholarships?', 'label': 'Financial Aid and Scholarships'},
-    {'question': 'What is the Lane Departments student to faculty ratio?', 'label': 'Faculty Information'},
-    {'question': 'Where can I found out more information about the department\'s professors?', 'label': 'Faculty Information'},
-    {'question': 'What materials do I need to submit during the admissions process?', 'label': 'Admissions Process'},
-    {'question': 'If I have more questions, where can I find more informations about the admissions process?', 'label': 'Admissions Process'},
-    {'question': 'How can I get into contact with the Lane Department?', 'label': 'Location and Contact'},
-    {'question': 'Where is the Lane Department Located?', 'label': 'Location and Contact'},
-    {'question': 'Who is the lane department named after?', 'label': 'Generic'},
-    {'question': 'Hi, what is your name?', 'label': 'Generic'},
-]}
+GB_test_dataset = {}
 
 #== Classes ==#
 
 
 #== Methods ==#
+def load_testset(path: str) -> dict:
+    '''
+    load the custom test dataset and label the questions for classification
+
+    Args:
+        path (str): path to custom test dataset
+
+    Returns:
+        dict: dataset with labeled questions
+    '''
+    # check if path exist
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"Dataset not found at {path}")
+    
+    # load the JSON file
+    with open(path, 'r') as f:
+        data = json.load(f)
+
+    data = data['data']
+
+    # iterate through each label
+    labeled_data = {'data': []}
+
+    for ql in data: # iterate through each question/label
+        # extract the label and q data
+        label = ql['label']
+        question = ql['question']
+
+        labeled_data['data'].append(
+            {
+                'question': question,
+                'label': label
+            }
+        )
+
+    return labeled_data
+
+
 def load_dataset(path: str) -> dict:
     '''
     load the custom dataset and label the questions for classification
@@ -112,6 +129,10 @@ def main(args):
     train_questions = [item['question'] for item in dataset['data']]
     train_labels = [item['label'] for item in dataset['data']]
 
+    #process the test dataset
+    global GB_test_dataset
+    GB_test_dataset = load_testset('../test_dataset.json')
+
     # encode labels to numerical values
     label_encoder = LabelEncoder()
     label_map = label_encoder.fit_transform(train_labels)
@@ -128,8 +149,8 @@ def main(args):
             print('Training BERT')
 
             # load the tokenizer
-            # tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-            tokenizer = BertTokenizer.from_pretrained("/scratch/isj0001/models/bert-base-uncased") # HPC
+            tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+            # tokenizer = BertTokenizer.from_pretrained("/scratch/isj0001/models/bert-base-uncased") # HPC
 
             # tokenize the training & test data
             train_encodings = tokenizer(train_questions, truncation=True, padding=True, max_length=512)
@@ -146,8 +167,8 @@ def main(args):
             eval_data = train_dataset.train_test_split(test_size=0.2, seed=42)['test']
 
             # load pretrained BERT model
-            # model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=len(label_encoder.classes_))
-            model = BertForSequenceClassification.from_pretrained("/scratch/isj0001/models/bert-base-uncased", num_labels=len(label_encoder.classes_)) # HPC
+            model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=len(label_encoder.classes_))
+            # model = BertForSequenceClassification.from_pretrained("/scratch/isj0001/models/bert-base-uncased", num_labels=len(label_encoder.classes_)) # HPC
             model.to(device)
 
             # define training args
@@ -236,8 +257,8 @@ def main(args):
             print('Training DistilBERT')
 
             # load the tokenizer
-            # tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased") 
-            tokenizer = DistilBertTokenizer.from_pretrained("/scratch/isj0001/models/distilbert-base-uncased") # HPC
+            tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased") 
+            # tokenizer = DistilBertTokenizer.from_pretrained("/scratch/isj0001/models/distilbert-base-uncased") # HPC
 
             # tokenize the training & test data
             train_encodings = tokenizer(train_questions, truncation=True, padding=True, max_length=512)
@@ -254,8 +275,8 @@ def main(args):
             eval_data = train_dataset.train_test_split(test_size=0.2, seed=42)['test']
 
             # load pretrained BERT model
-            # model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=len(label_encoder.classes_))
-            model = DistilBertForSequenceClassification.from_pretrained("/scratch/isj0001/models/distilbert-base-uncased", num_labels=len(label_encoder.classes_))
+            model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=len(label_encoder.classes_))
+            # model = DistilBertForSequenceClassification.from_pretrained("/scratch/isj0001/models/distilbert-base-uncased", num_labels=len(label_encoder.classes_))
 
             # define training args
             training_args = TrainingArguments(

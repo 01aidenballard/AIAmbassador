@@ -14,7 +14,7 @@ import torch
 import spacy
 import random
 
-import numpy as np
+import numpy as np 
 import torch.nn as nn
 
 from enum import Enum
@@ -27,6 +27,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from classify.traditional_ML import LogisticRegression, SVM
 from transformers import BertTokenizer, BertForSequenceClassification 
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import T5Tokenizer, T5ForConditionalGeneration
+
+# Add the Log directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Logs')))
+
+from Logging import Log
+
 
 #== Enums ==#
 class ClassifyMethod(Enum):
@@ -47,6 +55,12 @@ class RetrieveMethod(Enum):
     CSS_TFIDF = 4
     CSS_VEC = 5
 
+class GenerateMethod(Enum):
+    FLAN_T5 = 1
+    TINY_LLAMA = 2
+    CONTEXT_ONLY = 3
+
+
 #== Global Variables ==#
 MODEL_LR_PTH = 'classify/lr_c_model.pth'
 MODEL_SVM_PTH = 'classify/svm_c_model.pth'
@@ -56,6 +70,7 @@ MODEL_DISTILBERT_PTH = 'classify/distilbert-question-classifier'
 MODEL_SPACY = None
 MODEL_TFIDF_VEC = None
 MODEL_W2V = None
+
 
 #== Model Classes ==#
 class LogisticRegression(nn.Module):
@@ -125,7 +140,7 @@ class Dataset():
     '''
     class to represent labeled dataset
     '''
-    def __init__(self, path: str):
+    def __init__(self, path: str, cache_vectors: bool):
         '''
         initialize dataset
 
@@ -137,6 +152,12 @@ class Dataset():
         # load dataset 
         self.dataset = self._load_dataset()
         self.filtered_dataset = None
+
+        # load vector cache
+        if cache_vectors:
+            self.vector_cache = self._cache_vectors()
+        else:
+            self.vector_cache = None
 
         # get classes
         self.questions = [item['question'] for item in self.dataset['data']]
@@ -152,6 +173,8 @@ class Dataset():
         '''
         # check if path exist
         if not os.path.exists(self.path):
+            Log.log("ERROR", f"Dataset not found at {self.path}")
+            Log.flush()
             raise FileNotFoundError(f"[E] Dataset not found at {self.path}")
         
         # load the JSON file
@@ -182,6 +205,68 @@ class Dataset():
                 )
 
         return labeled_data
+
+    def _cache_vectors(self) -> dict:
+        '''
+        cache vector embeddings for all questions in dataset
+        '''
+        
+        # if file exists, pull
+        Log.log("SYSTEM", "Checking for cached vector embeddings...")
+        if os.path.exists('../vector_cache.json'):
+            with open('../vector_cache.json', 'r') as f:
+                vector_cache = json.load(f)
+
+            Log.log("SYSTEM", "Cached vector embeddings found, loading...")
+            return vector_cache
+
+
+        # else, load model, cache vectors, and write to file
+        else: 
+            model = SentenceTransformer('all-MiniLM-L6-v2')
+            Log.log("SYSTEM", "No cached vector embeddings found, creating new cache...")
+                
+            global MODEL_W2V
+            MODEL_W2V = model
+
+
+
+            # load the JSON file
+            with open(self.path, 'r') as f:
+                data = json.load(f)
+
+            data = data['data']
+
+            # iterate through each label
+            vector_cache = {'data': []}
+
+            Log.log("SYSTEM", "Encoding vector embeddings...")
+
+            for vector in data:
+                # extract the label and qa data
+                label = vector['title']
+                qas = vector['paragraphs'][0]['qas']
+
+                # extract each question, adding it to the labeled dataset
+                for qa in qas:
+                    vector = MODEL_W2V.encode(qa['question'])
+                    vector = np.array(vector).reshape(1, -1).tolist()
+                    answer = qa['answer'][0]
+
+                    vector_cache['data'].append(
+                        {
+                            'vector': vector,  # Converted to list for JSON serialization
+                            'answer': answer,
+                            'label': label
+                        }
+                    )
+            
+            # write to file
+            with open('../vector_cache.json', 'w') as f:
+                Log.log("SYSTEM", "Caching vector embedddings...")
+                json.dump(vector_cache, f, indent=4)
+
+        return vector_cache
 
 class Classify():
     '''
@@ -216,7 +301,8 @@ class Classify():
                 self.vectorizer = None
 
             else:
-                print(f'[E] Invalid classification method {classify_method}')
+                Log.log("ERROR", f"Invalid classification method: {self.classify_method}")
+                Log.flush()
                 quit()
 
     def _init_trad_model_vectorizer(self, classify_method: ClassifyMethod) -> Union[LogisticRegression | SVM, TfidfVectorizer, LabelEncoder]:
@@ -253,7 +339,8 @@ class Classify():
             if os.path.exists(MODEL_LR_PTH):
                 model.load_state_dict(torch.load(MODEL_LR_PTH))
             else:
-                print(f'[E] Pretrained LR model not found at {MODEL_LR_PTH}')
+                Log.log("ERROR", f"Pretrained LR model not found at {MODEL_LR_PTH}")
+                Log.flush()
                 quit()
 
         elif classify_method == ClassifyMethod.SVM:
@@ -262,7 +349,8 @@ class Classify():
             if os.path.exists(MODEL_SVM_PTH):
                 model.load_state_dict(torch.load(MODEL_SVM_PTH))
             else:
-                print(f'[E] Pretrained SVM model not found at {MODEL_SVM_PTH}')
+                Log.log("ERROR", f"Pretrained SVM model not found at {MODEL_SVM_PTH}")
+                Log.flush()
                 quit()
 
         # set model to evaluation mode
@@ -296,7 +384,8 @@ class Classify():
                 model = BertForSequenceClassification.from_pretrained(MODEL_BERT_PTH)
                 tokenizer = BertTokenizer.from_pretrained(MODEL_BERT_PTH)
             else:
-                print(f'[E] Pretrained BERT model not found at {MODEL_BERT_PTH}')
+                Log.log("ERROR", f"Pretrained BERT model not found at {MODEL_BERT_PTH}")
+                Log.flush()
                 quit()
 
         elif classify_method == ClassifyMethod.DISTILBERT:
@@ -305,7 +394,8 @@ class Classify():
                 model = DistilBertForSequenceClassification.from_pretrained(MODEL_DISTILBERT_PTH)
                 tokenizer = DistilBertTokenizer.from_pretrained(MODEL_DISTILBERT_PTH)
             else:
-                print(f'[E] Pretrained DistilBERT model not found at {MODEL_DISTILBERT_PTH}')
+                Log.log("ERROR", f"Pretrained DistilBERT model not found at {MODEL_DISTILBERT_PTH}")
+                Log.flush()
                 quit()
         
         # put model in eval mode
@@ -403,7 +493,8 @@ class Classify():
             info = model.encode(question)
 
         else:
-            print(f'[E] Invalid extraction method {self.extract_method}')
+            Log.log("ERROR", f"Invalid extraction method: {self.extract_method}")
+            Log.flush()
             quit()
 
         return info
@@ -586,27 +677,29 @@ class Retrieve():
                 best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
 
         # CSS-vec
-        # TODO: Pre-Vectorize
+        # TODO: Batch Processing
         elif self.retrieve_method == RetrieveMethod.CSS_VEC:
             # get vector embedding of asked question
             ask_question_vec = MODEL_W2V.encode(question)
             ask_question_vec = np.array(ask_question_vec).reshape(1, -1)
-            
-            for i,qa in enumerate(self.dataset.filtered_dataset['data']):
-                # get vector embedding of database question
-                db_question = qa['question']
-                db_question_vec = MODEL_W2V.encode(db_question)
-                db_question_vec = np.array(db_question_vec).reshape(1, -1)
 
-                # compute similarity
-                css = cosine_similarity(ask_question_vec, db_question_vec)[0, 0]
+            filtered_label = self.dataset.filtered_dataset['data'][0]['label']
 
-                # store score in dataset
-                self.dataset.filtered_dataset['data'][i]['score'] = css
+            # Only consider items in vector_cache with the filtered label
+            filtered_vectors = [item for item in self.dataset.vector_cache['data'] if item['label'] == filtered_label]
 
-            # get the highest scoring answers
-            max_score = max(item['score'] for item in self.dataset.filtered_dataset['data'])
-            best_ans = [item['answer'] for item in self.dataset.filtered_dataset['data'] if item['score'] == max_score]
+            if not filtered_vectors:
+                return "No answer found for this category."
+
+            # Assign scores only to filtered_vectors
+            for vector in filtered_vectors:
+                vector_embedding = vector['vector']
+                css = cosine_similarity(ask_question_vec, vector_embedding)[0, 0]
+                vector['score'] = css
+
+            # Now select the best answer from filtered_vectors
+            max_score = max(item['score'] for item in filtered_vectors)
+            best_ans = [item['answer'] for item in filtered_vectors if item['score'] == max_score]
 
             # if one answer, use that; otherwise choose randomly
             if len(best_ans) == 1:
@@ -615,13 +708,173 @@ class Retrieve():
                 best_ans = best_ans[random.randint(0, len(best_ans) - 1)]
 
         else:
-            print(f'[E] Invalid retrieval method {self.retrieve_method}')
+            Log.log("ERROR", f"Invalid retrieval method: {self.retrieve_method}")
+            Log.flush()
             quit()
 
         return best_ans
 
 class Generate():
-    pass
+        '''
+        Class to represent the generation step using models from generate.py
+        '''
+        def __init__(self, method: GenerateMethod = GenerateMethod.FLAN_T5):
+            '''
+            Initialize the generation model
+
+            Args:
+                method (GenerateMethod): Enum to select the generation model
+            '''
+            self.method = method
+
+            if self.method == GenerateMethod.FLAN_T5:
+                model_name = "Flan-T5"
+            elif self.method == GenerateMethod.TINY_LLAMA:
+                model_name = "TinyLlama"
+            elif self.method == GenerateMethod.CONTEXT_ONLY:
+                model_name = "Context Only"
+            else:
+                Log.log("ERROR", f"Unknown GenerateMethod: {self.method}, options are FLAN_T5, TINY_LLAMA, CONTEXT_ONLY")
+                Log.flush()
+                raise ValueError(f"Unknown GenerateMethod: {self.method}, options are FLAN_T5, TINY_LLAMA, CONTEXT_ONLY")
+            
+            self.model = model_name
+
+        def generate_answer(self, question: str, context: str = "") -> str:
+            '''
+            Generate an answer using the selected generation model
+
+            Args:
+                question (str): The input question
+                context (str, optional): Additional context or retrieved answer
+
+            Returns:
+                str: Generated answer
+            '''
+
+            if self.model == "Flan-T5":
+
+                # system prompt for Flan-T5
+                system_prompt = """
+                    Persona: You are "Lain," a friendly and enthusiastic university tour guide. Your audience is a group of prospective high school students and their families. Your tone should be welcoming, helpful, and engaging.
+
+                    Core Task: Your primary goal is to take a piece of factual information (the "Retreived Answer") and rephrase it into a natural, conversational response("Generated Response") to a "User Question."
+
+                    Instructions:
+                    1.  Natural Language: Transform the provided "Retrieved Answer" from a factual statement into a flowing, easy-to-understand sentence or two. Imagine you are speaking directly to someone on a campus tour.
+                    2.  Strict Information Adherence: You MUST only use the information provided in the "Retrieved Answer." Do not add any new facts, statistics, or details, even if they seem relevant. Do not hallucinate. Be concise, but thorough with the specifics.
+                    3.  No Meta-Commentary: Do not mention that you have been "given" or "provided" with information. The response should be seamless.
+                    4.  Engage with a Question: After providing the answer, always ask a relevant, open-ended follow-up question to encourage further conversation.
+                    5.  Structure: The final output should only be the conversational reply from Lain.
+
+                    Example of your task:
+
+                    User Question: "What's the student-to-faculty ratio?"
+                    Retrieved Answer: "The student-to-faculty ratio is 15 to 1."
+
+                    Generated Response:
+                    "That's a great question! We have a student-to-faculty ratio of 15 to 1, which means our professors get to know their students really well. Are you interested in any particular academic departments?"
+
+                    Now, use the following information to answer the user's question:
+                    """
+
+                # put together input text
+                input_text = (
+                    f"{system_prompt}"
+                    f"User Question: {question}\n"
+                    f"Retrieved Answer: {context}\n"
+                    f"Generated Response:"
+                )
+
+                
+                # load model
+                name = 'google/flan-t5-small'
+                tokenizer = T5Tokenizer.from_pretrained(name, legacy=False)
+                model = T5ForConditionalGeneration.from_pretrained(name)
+
+                # tokenize input
+                inputs = tokenizer(input_text, return_tensors='pt', max_length=512, truncation=True)
+
+                # generate response
+                output_tokens = model.generate(
+                    **inputs,
+                    max_length=256,
+                    do_sample=True,  # Enables creative responses
+                    temperature=0.7,  # Introduces variety
+                    top_p=0.9,  # Ensures diverse and high-quality generation
+                    repetition_penalty=1.2,  # Prevents repeating phrases
+                    num_return_sequences=1,  # Single response
+                    eos_token_id=tokenizer.eos_token_id  # Ensures proper sentence ending
+                )
+
+                # decode the generated response
+                response = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+
+                return response
+            
+            elif self.model == "TinyLlama":
+
+                # system prompt for TinyLlama
+                system_prompt = """
+                    You are a friendly and engaging tour guide for West Virginia University.
+                    Your role is to provide clear, conversational, and helpful responses based on the given information.
+
+                    - Rephrase the provided information in a natural, engaging way.
+                    - Do NOT mention that the information was 'given' or 'provided'.
+                    - Do NOT hallucinate or make up information, only use what is given.
+                    - Keep responses concise.
+                    """
+
+                # user prompt for TinyLlama
+                user_prompt = f"Answer the Users Question: {question} with this context: {context}"
+
+                # put together input text
+                input_text = (
+                    f"User Question: {question}\n"
+                    f"Retrieved Answer: {context}\n"
+                    f"Generated Response:"
+                )
+                
+                # load model
+                model = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+                tokenizer = AutoTokenizer.from_pretrained(model)
+                model = AutoModelForCausalLM.from_pretrained(model)
+
+                messages = [
+                    {"role": "system", "content": system_prompt},  
+                    {"role": "user", "content": user_prompt},  
+                ]
+
+                # tokenize input
+                inputs = tokenizer.apply_chat_template(messages, return_tensors="pt")
+                input_ids = inputs.unsqueeze(0) if inputs.dim() == 1 else inputs
+                # inputs = tokenizer(input_text, return_tensors="pt", max_length=512, truncation=True)
+                input_length = input_ids.shape[1]  # Get the length of the input tokens
+
+                # Generate response
+                with torch.no_grad():
+                    output_tokens = model.generate(
+                        # **inputs,
+                        input_ids=input_ids,
+                        max_length=512,
+                        repetition_penalty=1.2,  
+                        num_return_sequences=1,  
+                        eos_token_id=tokenizer.eos_token_id 
+                    )
+
+                # Decode the generated response
+                response = tokenizer.decode(output_tokens[0, input_length:], skip_special_tokens=True)
+                
+                return response
+            elif self.model == "Context Only":
+                # if no generation model is selected, return the context
+                return context
+            else:
+                Log.log("ERROR", f"Unknown model: {self.model}")
+                Log.flush()
+                raise ValueError(f"Unknown model: {self.model}")
+        
+
 
 class CRG():
     '''
@@ -632,24 +885,26 @@ class CRG():
                  classify_method: ClassifyMethod = ClassifyMethod.LR, 
                  extract_method: ExtractMethod = ExtractMethod.VEC,
                  retrieve_method: RetrieveMethod = RetrieveMethod.CSS_VEC,
+                 generate_method: GenerateMethod = GenerateMethod.FLAN_T5,
                  print_info: bool = False):
         # DOCUMENT: CRG initialization
 
         self.print_info = print_info
 
         # initialize dataset
-        self.dataset = Dataset(dataset_path)
-        if self.print_info: print('✓ Dataset initialized')
+        self.dataset = Dataset(dataset_path, cache_vectors=True if retrieve_method == RetrieveMethod.CSS_VEC else False)
+        if self.print_info: print('✓ Dataset initialized'); Log.log("SYSTEM", "Dataset initialized")
+
 
         # initialize the classes for each step
         self.classify = Classify(self.dataset, classify_method, extract_method)
-        if self.print_info: print('✓ Classification model initialized')
+        if self.print_info: print('✓ Classification model initialized'); Log.log("SYSTEM", "Classification model initialized")
 
         self.retrieve = Retrieve(self.dataset, retrieve_method, extract_method)
-        if self.print_info: print('✓ Retrieval model initialized')
+        if self.print_info: print('✓ Retrieval model initialized'); Log.log("SYSTEM", "Retrieval model initialized")
 
-        self.generate = Generate()
-        if self.print_info: print('✓ Generation model initialized')
+        self.generate = Generate(generate_method)
+        if self.print_info: print('✓ Generation model initialized'); Log.log("SYSTEM", "Generation model initialized")
 
     def answer_question(self, question: str) -> str:
         '''
@@ -670,10 +925,11 @@ class CRG():
 
         # retrieve best answer
         pred_answer = self.retrieve.retrieve_answer(question, question_info)
-        
+    
         # generation step
+        gen_answer = self.generate.generate_answer(question, pred_answer)
 
-        return pred_answer
+        return gen_answer
 
 #== Methods ==#
 def filter_dataset(dataset: dict, label: str) -> dict:
@@ -694,3 +950,6 @@ def filter_dataset(dataset: dict, label: str) -> dict:
             filtered_data['data'].append(data)
 
     return filtered_data
+
+
+

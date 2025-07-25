@@ -14,7 +14,7 @@ import threading
 
 from contextlib import contextmanager
 from crg_api import CRG
-from crg_api import ClassifyMethod, RetrieveMethod, ExtractMethod
+from crg_api import ClassifyMethod, RetrieveMethod, ExtractMethod, GenerateMethod
 
 #== Global Variables ==#
 test_dataset = {'data': [
@@ -113,11 +113,12 @@ def main():
 
     # change the model parameters
     classify_method = ClassifyMethod.LR
-    extract_method = ExtractMethod.NER
-    retrieve_method = RetrieveMethod.EKI
+    extract_method = ExtractMethod.VEC
+    retrieve_method = RetrieveMethod.CSS_VEC
+    generate_method = GenerateMethod.FLAN_T5
 
     # print the model parameters
-    print(f'[i] Running CRG with the following parameters: {classify_method.name}, {extract_method.name}, {retrieve_method.name}')
+    print(f'[i] Running CRG with the following parameters: {classify_method.name}, {extract_method.name}, {retrieve_method.name}, {generate_method.name}')
 
     # init CRG
     crg = CRG(
@@ -125,6 +126,7 @@ def main():
         classify_method=classify_method, 
         extract_method=extract_method,
         retrieve_method=retrieve_method,
+        generate_method=generate_method,
         print_info=False)
     
     # test dataset

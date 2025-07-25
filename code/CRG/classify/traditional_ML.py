@@ -27,30 +27,8 @@ from sklearn.metrics import accuracy_score, f1_score
 from sentence_transformers import SentenceTransformer
 
 #== Global Variables ==#
-test_dataset = {'data': [
-    {'question': 'What degree programs does the department offer?', 'label': 'Degree Programs'},
-    {'question': 'What dual degrees can I pursue?', 'label': 'Degree Programs'},
-    {'question': 'What are the various research areas in the Lane Department?', 'label': 'Research Opportunities'},
-    {'question': 'What research is done in the biometrics field?', 'label': 'Research Opportunities'},
-    {'question': 'What is the Lane Innovation Hub?', 'label': 'Facilities and Resources'},
-    {'question': 'What labs are available for students studying electrical engineering?', 'label': 'Facilities and Resources'},
-    {'question': 'What are the student orgs I can join as a LCSEE student?', 'label': 'Clubs and Organizations'},
-    {'question': 'What kind of activities do CyberWVU students do?', 'label': 'Clubs and Organizations'},
-    {'question': 'What can I do with a computer engineering degree?', 'label': 'Career Opportunities'},
-    {'question': 'What can I do with a computer science degree?', 'label': 'Career Opportunities'},
-    {'question': 'What type of internships do students get?', 'label': 'Internships'},
-    {'question': 'How can students get internships?', 'label': 'Internships'},
-    {'question': 'What type of scholarships are available for incoming students?', 'label': 'Financial Aid and Scholarships'},
-    {'question': 'How can freshmen get scholarships?', 'label': 'Financial Aid and Scholarships'},
-    {'question': 'What is the Lane Departments student to faculty ratio?', 'label': 'Faculty Information'},
-    {'question': 'Where can I found out more information about the department\'s professors?', 'label': 'Faculty Information'},
-    {'question': 'What materials do I need to submit during the admissions process?', 'label': 'Admissions Process'},
-    {'question': 'If I have more questions, where can I find more informations about the admissions process?', 'label': 'Admissions Process'},
-    {'question': 'How can I get into contact with the Lane Department?', 'label': 'Location and Contact'},
-    {'question': 'Where is the Lane Department Located?', 'label': 'Location and Contact'},
-    {'question': 'Who is the lane department named after?', 'label': 'Generic'},
-    {'question': 'Hi, what is your name?', 'label': 'Generic'},
-]}
+test_dataset = {}
+
 
 #== Classes ==#
 class LogisticRegression(nn.Module):
@@ -116,6 +94,44 @@ class SVM(nn.Module):
         return self.dropout(self.fc(x))
 
 #== Methods ==#
+def load_testset(path: str) -> dict:
+    '''
+    load the custom test dataset and label the questions for classification
+
+    Args:
+        path (str): path to custom test dataset
+
+    Returns:
+        dict: dataset with labeled questions
+    '''
+    # check if path exist
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"Dataset not found at {path}")
+    
+    # load the JSON file
+    with open(path, 'r') as f:
+        data = json.load(f)
+
+    data = data['data']
+
+    # iterate through each label
+    labeled_data = {'data': []}
+
+    for ql in data: # iterate through each question/label
+        # extract the label and q data
+        label = ql['label']
+        question = ql['question']
+
+        labeled_data['data'].append(
+            {
+                'question': question,
+                'label': label
+            }
+        )
+
+    return labeled_data
+
+
 def load_dataset(path: str) -> dict:
     '''
     load the custom dataset and label the questions for classification
@@ -157,25 +173,54 @@ def load_dataset(path: str) -> dict:
 
     return labeled_data
 
-def hinge_loss(output: torch.Tensor, target: torch.Tensor, num_classes: int) -> float:
-    '''
-    hinge loss for SVM
+# def hinge_loss(output: torch.Tensor, target: torch.Tensor, num_classes: int) -> float:
+#     '''
+#     hinge loss for SVM
+
+#     Args:
+#         output (torch.Tensor): output from model
+#         target (torch.Tensor): actual labels to compare against
+#         num_classes (int): number of classes
+
+#     Returns:
+#         float: hinge loss
+#     '''
+#     # convert labels to one-hot encoding
+#     target_one_hot = torch.eye(num_classes)[target] 
+
+#     # calculate the hinge loss
+#     margin = 1 - output * target_one_hot
+#     loss = torch.mean(torch.clamp(margin, min=0))  # max(0, 1 - y*f(x))
+#     return loss
+
+def hinge_loss(output: torch.Tensor, target: torch.Tensor, num_classes: int, margin: float = 1.0) -> torch.Tensor:
+    """
+    Multi-class hinge loss for SVM.
 
     Args:
-        output (torch.Tensor): output from model
-        target (torch.Tensor): actual labels to compare against
-        num_classes (int): number of classes
+        output (torch.Tensor): shape (batch_size, num_classes), raw model outputs
+        target (torch.Tensor): shape (batch_size,), correct class indices
+        num_classes (int): total number of classes
+        margin (float): margin between correct and incorrect scores
 
     Returns:
-        float: hinge loss
-    '''
-    # convert labels to one-hot encoding
-    target_one_hot = torch.eye(num_classes)[target] 
+        torch.Tensor: scalar loss
+    """
+    batch_size = output.size(0)
 
-    # calculate the hinge loss
-    margin = 1 - output * target_one_hot
-    loss = torch.mean(torch.clamp(margin, min=0))  # max(0, 1 - y*f(x))
+    # Gather the correct class scores using index selection
+    correct_class_scores = output[torch.arange(batch_size), target].unsqueeze(1)  # shape (batch_size, 1)
+
+    # Compute margin loss for all classes
+    margins = torch.clamp(output - correct_class_scores + margin, min=0)  # shape (batch_size, num_classes)
+
+    # Do not include correct class in the loss
+    margins[torch.arange(batch_size), target] = 0
+
+    # Return mean loss
+    loss = torch.mean(torch.sum(margins, dim=1))
     return loss
+
 
 def classify_question(question: str, vectorizer: TfidfVectorizer, model: LogisticRegression | SVM, label_encoder: LabelEncoder, show_output: bool = True) -> str:
     '''
@@ -253,6 +298,10 @@ def main(args):
 
     # load the dataset
     dataset = load_dataset('../dataset.json')
+
+    # load the test dataset
+    global test_dataset
+    test_dataset = load_testset('../test_dataset.json')
 
     #-- Logistic Regression --#
     if args.LR:
@@ -382,13 +431,13 @@ def main(args):
 
         # loss is hinge loss, use Adam optimizer
         # optimizer = optim.Adam(model.parameters(), lr=0.01)
-        optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=1e-4)
-        scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=100, gamma=0.5)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=0.004, weight_decay=1e-5)
+        scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=20, gamma=0.9)
 
         #- Train the Model -#
         if not os.path.exists("classify/svm_c_model.pth") or force:
-            num_epochs = 5000
-            batch_size = 16
+            num_epochs = 1500
+            batch_size = 1470
             loss_val = []
 
             for epoch in range(num_epochs):
