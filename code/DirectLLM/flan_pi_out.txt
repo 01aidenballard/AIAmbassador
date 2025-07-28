@@ -1,0 +1,71 @@
+FLAN-T5:
+
+Question: What degree programs does the department offer?
+Answer: The department offers degrees in Computer Science (CS), Electrical Engineering (EE), Computer Science (CS), Computer Science (CS), and Electrical Engineering (EE).
+
+Question: What dual degrees can I pursue?
+Answer: Dual degrees can be pursued by the department.
+
+Question: What are the various research areas in the Lane Department?
+Answer: The Lane Department offers research opportunities in the fields of biometrics, electrical engineering, and robotics.
+
+Question: What research is done in the biometrics field?
+Answer: Biometrics research is conducted in the biometrics field.
+
+Question: What is the Lane Innovation Hub?
+Answer: The Lane Innovation Hub is a hub for research and innovation in the field of robotics.
+
+Question: What labs are available for students studying electrical engineering?
+Answer: Labs for electrical engineering are available at the Department of Electrical Engineering (DEE).
+
+Question: What are the student orgs I can join as a LCSEE student?
+Answer: The student orgs I can join as a LCSEE student can be found on the Student Union's website.
+
+Question: What kind of activities do CyberWVU students do?
+Answer: CyberWVU students participate in activities such as games, chess tournaments, and teamwork events.
+
+Question: What can I do with a computer engineering degree?
+Answer: A computer engineering degree is a career path that involves working with software engineers, hardware engineers, and systems engineers.
+
+Question: What can I do with a computer science degree?
+Answer: A computer science degree can help you develop a career in computer science.
+
+Question: What types of internships do students get?
+Answer: Students get internships in the fields of computer science, engineering, and software engineering.
+
+Question: How can students get internships?
+Answer: Students can apply for internships through the College of Engineering and Technology (CET).
+
+Question: What type of scholarships are available for incoming students?
+Answer: The incoming students can apply for scholarships through the National Scholarship Fund, which provides scholarships for undergraduate students.
+
+Question: How can freshman get scholarships?
+Answer: Students can apply for scholarships through a scholarship program, or through an online application process.
+
+Question: What is the Lane Departments student to faculty ratio?
+Answer: The Lane Department's student to faculty ratio is based on the number of students who graduate.
+
+Question: Where can I find more information about the department's professors?
+Answer: The department's professors can be found at the Department of Electrical Engineering and Computer Science.
+
+Question: What materials do I need to submit during the admissions process?
+Answer: The materials required for admissions are: a letter of recommendation, a letter of recommendation, and an application form. You will need to submit your application in the following ways: 1. Complete the application by clicking on the "Submit" button at the top of the page. 2. Complete the application by clicking on the "Submit" button at the top of the page. 3. Complete the application by clicking on the "Submit" button at the top of the page. 4. Complete
+
+Question: If I have more questions, where can I find more information about the admissions process?
+Answer: The admissions process is based on the student's academic achievements, which include a high school diploma, a bachelor's degree, and a master's degree.
+
+Question: How can I get into contact with the Lane Department?
+Answer: The Lane Department is a member of the National Association of Colleges and Schools.
+
+Question: Where is the Lane Department located?
+Answer: The Lane Department is located in the city of St. Louis, Missouri.
+
+Question: Who is the Lane Department named after?
+Answer: The Lane Department is named after the inventor of the robot.
+
+Question: Hi, what is your name?
+Answer: Hi, how can I help you?
+
+F1 Score: 24.115454197780732
+BLEU Score: 62.081753227960135
+Avg Resp Time: 9.4045s

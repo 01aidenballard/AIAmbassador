@@ -1,0 +1,73 @@
+BART:
+
+Question: What degree programs does the department offer?
+Answer: The department offers degrees in Computer Engineering (CPE), Electrical Engineering (EE), and Cybersecurity (CYBE).
+
+Question: What dual degrees can I pursue?
+Answer: Dual degrees can be pursued in Computer Engineering (CPE), Electrical Engineering (EE), and Computer Science (CS).
+
+Question: What are the various research areas in the Lane Department?
+Answer: The various research areas in the Lane Department include nanotechnology, nanoelectronics, power systems, energy systems, robotics, and autonomous vehicles.
+
+Question: What research is done in the biometrics field?
+Answer: Biometrics research at WVU focuses on biometrics for identification and authentication of biological signatures.
+
+Question: What is the Lane Innovation Hub?
+Answer: The Lane Innovation Hub is a state-of-the-art facility dedicated to innovation and technology.
+
+Question: What labs are available for students studying electrical engineering?
+Answer: Students studying electrical engineering have access to state-of-the-art facilities such as a 4,000-square-foot test and measurement lab, a 3D printing lab, and a prototyping lab.
+
+Question: What are the student orgs I can join as a LCSEE student?
+Answer: LCSEE students can join student organizations such as the Student Association for Computing Machinery (SAM), IEEE, IEEE, WVU Student Society for the Advancement of Biometrics, Women in Computer Science and Electrical Engineering (WVU), and the Amateur Radio Club.
+
+Question: What kind of activities do CyberWVU students do?
+Answer: CyberWVU students engage in activities such as network security training, ethical hacking, and ethical hacking.
+
+Question: What can I do with a computer engineering degree?
+Answer: Yes, computer engineering graduates can work in fields such as software engineering, hardware engineering, and embedded systems design.
+
+Question: What can I do with a computer science degree?
+Answer: Yes, computer science graduates can work in fields such as software engineering, cybersecurity, database management, and database management.
+
+Question: What types of internships do students get?
+Answer: Internships at WVU include positions in software development, cybersecurity, software engineering, and software engineering.
+
+Question: How can students get internships?
+Answer: Yes, students can apply for internships through the WVU Career Services website.
+
+Question: What type of scholarships are available for incoming students?
+Answer: Incoming students can apply for scholarships through the WVU Graduate Scholarship Program, which provides financial aid based on their academic performance and academic achievement.
+
+Question: How can freshman get scholarships?
+Answer: Yes, freshman can apply for scholarships through the WVU College Alumni Association.
+
+Question: What is the Lane Departments student to faculty ratio?
+Answer: Yes, the student to faculty ratio in the Lane Departments is 25:1.
+
+Question: Where can I find more information about the department's professors?
+Answer: Yes, the department's professors are listed on the WVU Statler College website. You can also contact them directly through their faculty profiles.
+
+Question: What materials do I need to submit during the admissions process?
+Answer: Yes, you will need to submit all required materials, including transcripts, letters of recommendation, and SAT scores.
+
+Question: If I have more questions, where can I find more information about the admissions process?
+Answer: Yes, you can apply online at admissions.wvu.edu or by phone at (304) 293-0200.
+
+Question: How can I get into contact with the Lane Department?
+Answer: Yes, you can contact the Lane Department by phone at (304) 293-0200 or by email at info@lane.edu.
+
+Question: Where is the Lane Department located?
+Answer: Yes, the Lane Department is located in the College of Engineering building on the West Campus of WVU.
+
+Question: Who is the Lane Department named after?
+Answer: Yes, the Lane Department is named after Eugene W. Lane, an alumnus of the department.
+
+Question: Hi, what is your name?
+Answer: Hi, I’m Rob. What’s your name?
+Downloading builder script: 100%|██████| 4.53k/4.53k [00:00<00:00, 5.55MB/s]
+Downloading extra modules: 100%|███████| 3.32k/3.32k [00:00<00:00, 6.16MB/s]
+
+F1 Score: 38.669396050900815
+BLEU Score: 91.17068687871303
+Avg Resp Time: 41.6818s
