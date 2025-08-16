@@ -127,12 +127,14 @@ def load_testset(path: str) -> dict:
         label = ql['label']
         question = ql['question']
         context = ql['context']
+        answer = ql['answer']
 
         labeled_data['data'].append(
             {
                 'question': question,
                 'label': label,
-                'context': context
+                'context': context,
+                'answer': answer
             }
         )
 
@@ -222,6 +224,7 @@ def main():
 
     test_dataset_path = '../test_dataset.json'
     test_data = load_testset(test_dataset_path)
+    test_data = test_data['data']
 
     predictions = []
     references = []

@@ -126,12 +126,14 @@ def load_testset(path: str) -> dict:
         label = ql['label']
         question = ql['question']
         context = ql['context']
+        answer = ql['answer']
 
         labeled_data['data'].append(
             {
                 'question': question,
                 'label': label,
-                'context': context
+                'context': context,
+                'answer': answer
             }
         )
 
@@ -294,7 +296,7 @@ if __name__ == "__main__":
 
     # Test questions and context
     test_data = load_testset("../test_dataset.json")  # Path to your test dataset
-
+    test_data = test_data['data']
     # cahce of QA to evaluate
     '''
         {
