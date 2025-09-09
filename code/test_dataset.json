@@ -1667,6 +1667,18 @@
       "label": "Generic",
       "context": "Questions to not stump the robot.",
       "answer": "My mission is to be a helpful and reliable source of information for anything related to the Lane Department of Computer Science and Electrical Engineering."
+    },
+    {
+      "question": "Yes.",
+      "label": "Follow Up",
+      "context": "Understand user sentiment and readiness to continue conversation",
+      "answer": "Great! How can I assist you further?"
+    },
+    {
+      "question": "No.",
+      "label": "Follow Up",
+      "context": "Understand user sentiment and readiness to continue conversation",
+      "answer": "No problem! If you have any questions in the future, feel free to ask."
     }
   ]
 }

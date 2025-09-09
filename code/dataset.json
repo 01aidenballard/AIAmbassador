@@ -8585,18 +8585,6 @@
                             ]
                         },
                         {
-                            "question": "That's all for now",
-                            "answer": [
-                                "Goodbye! Have a great day and feel free to ask if you have more questions later. Let's Go Mountaineers!"
-                            ]
-                        },
-                        {
-                            "question": "I'm done",
-                            "answer": [
-                                "Goodbye! Have a great day and feel free to ask if you have more questions later. Let's Go Mountaineers!"
-                            ]
-                        },
-                        {
                             "question": "What are the school colors?",
                             "answer": [
                                 "The official colors of West Virginia University are old gold and blue. Let's Go Mountaineers!"
@@ -8717,66 +8705,6 @@
                             ]
                         },
                         {
-                            "question": "Can you repeat that?",
-                            "answer": [
-                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
-                            ]
-                        },
-                        {
-                            "question": "What was that?",
-                            "answer": [
-                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
-                            ]
-                        },
-                        {
-                            "question": "Could you say that again?",
-                            "answer": [
-                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
-                            ]
-                        },
-                        {
-                            "question": "I didn't catch that.",
-                            "answer": [
-                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
-                            ]
-                        },
-                        {
-                            "question": "Please repeat your answer.",
-                            "answer": [
-                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
-                            ]
-                        },
-                        {
-                            "question": "That's not what I asked.",
-                            "answer": [
-                                "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
-                            ]
-                        },
-                        {
-                            "question": "You misunderstood me.",
-                            "answer": [
-                                "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
-                            ]
-                        },
-                        {
-                            "question": "That answer is wrong.",
-                            "answer": [
-                                "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
-                            ]
-                        },
-                        {
-                            "question": "Try again.",
-                            "answer": [
-                                "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
-                            ]
-                        },
-                        {
-                            "question": "Incorrect.",
-                            "answer": [
-                                "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
-                            ]
-                        },
-                        {
                             "question": "Can you speak Spanish?",
                             "answer": [
                                 "Currently, I am only able to communicate in English. I apologize for any inconvenience."
@@ -8837,36 +8765,6 @@
                             ]
                         },
                         {
-                            "question": "What time is it?",
-                            "answer": [
-                                "Based on the last information I have, the current time is around 3:11 PM Central Daylight Time on Thursday, June 26, 2025. Please check a live clock for the exact time."
-                            ]
-                        },
-                        {
-                            "question": "Do you have the time?",
-                            "answer": [
-                                "Based on the last information I have, the current time is around 3:11 PM Central Daylight Time on Thursday, June 26, 2025. Please check a live clock for the exact time."
-                            ]
-                        },
-                        {
-                            "question": "Can you tell me the current time?",
-                            "answer": [
-                                "Based on the last information I have, the current time is around 3:11 PM Central Daylight Time on Thursday, June 26, 2025. Please check a live clock for the exact time."
-                            ]
-                        },
-                        {
-                            "question": "What's the time right now?",
-                            "answer": [
-                                "Based on the last information I have, the current time is around 3:11 PM Central Daylight Time on Thursday, June 26, 2025. Please check a live clock for the exact time."
-                            ]
-                        },
-                        {
-                            "question": "Could you give me the time?",
-                            "answer": [
-                                "Based on the last information I have, the current time is around 3:11 PM Central Daylight Time on Thursday, June 26, 2025. Please check a live clock for the exact time."
-                            ]
-                        },
-                        {
                             "question": "Tell me a joke.",
                             "answer": [
                                 "Why did the computer science student break up with the electrical engineer? There was no spark!"
@@ -8898,6 +8796,136 @@
                         }
                     ]
                 }
+            ]
+        },
+        {
+            "title": "Follow Up",
+            "paragraphs": [
+                {
+                    "context": "Understand user sentiment and readiness to continue conversation",
+                    "qas": [
+                        {
+                            "question": "Yes",
+                            "answer": [
+                                "Great! What else would other questions do you have?"
+                            ]
+                        },
+                        {
+                            "question": "I do",
+                            "answer": [
+                                "Okay! What can I help you with?"
+                            ]
+                        },
+                        {
+                            "question": "I have another question",
+                            "answer": [
+                                "Sure! What else would other questions do you have?"
+                            ]
+                        },
+                        {
+                            "question": "I need more help",
+                            "answer": [
+                                "Of course! What else would other questions do you have?"
+                            ]
+                        },
+                        {
+                            "question": "Can you help me with something else?",
+                            "answer": [
+                                "Absolutely! What else would other questions do you have?"
+                            ]
+                        },
+                        {
+                            "question": "No",
+                            "answer": [
+                                "No problem! If you have more questions later, feel free to ask. Have a great day!"
+                            ]
+                        },
+                        {
+                            "question": "I don't",
+                            "answer": [
+                                "Alright! If you think of any other questions later, just let me know. Have a wonderful day!"
+                            ]
+                        },
+                        {
+                            "question": "That's all for now",
+                            "answer": [
+                                "No problem! If you have more questions later, feel free to ask. Have a great day!"
+                            ]
+                        },
+                        {
+                            "question": "I'm good for now",
+                            "answer": [
+                                "Alright! If you think of any other questions later, just let me know. Have a wonderful day!"
+                            ]
+                        },
+                        {
+                            "question": "I don't need anything else",
+                            "answer": [
+                                "No problem! If you have more questions later, feel free to ask. Have a great day!"
+                            ]
+                        },
+                        {
+                            "question": "Can you repeat that?",
+                            "answer": [
+                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
+                            ]
+                        },
+                        {
+                            "question": "What was that?",
+                            "answer": [
+                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
+                            ]
+                        },
+                        {
+                            "question": "Could you say that again?",
+                            "answer": [
+                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
+                            ]
+                        },
+                        {
+                            "question": "I didn't catch that.",
+                            "answer": [
+                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
+                            ]
+                        },
+                        {
+                            "question": "Please repeat your answer.",
+                            "answer": [
+                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
+                            ]
+                        },
+                        {
+                            "question": "That's not what I asked.",
+                            "answer": [
+                                "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
+                            ]
+                        },
+                        {
+                            "question": "You misunderstood me.",
+                            "answer": [
+                                "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
+                            ]
+                        },
+                        {
+                            "question": "That answer is wrong.",
+                            "answer": [
+                                "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
+                            ]
+                        },
+                        {
+                            "question": "Try again.",
+                            "answer": [
+                                "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
+                            ]
+                        },
+                        {
+                            "question": "Incorrect.",
+                            "answer": [
+                                "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
+                            ]
+                        }
+                    ]
+                }        
             ]
         }
     ]
