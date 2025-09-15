@@ -114,7 +114,7 @@ class Listen:
                         print(f"Heard: {text}")
                         
                     elif self.recognizer_name == Recognizer.SPHINX:
-                        text = recognizer.recognize_sphinx(audio).lower()
+                        text = recognizer.recognize_sphinx(audio, keyword_entries=[("lane", 1.0)] ).lower()
                         print(f"Heard: {text}")
                         
                     elif self.recognizer_name == Recognizer.HOUNDIFY:
