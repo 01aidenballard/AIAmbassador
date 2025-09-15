@@ -28,7 +28,7 @@ class Listen:
     """
         Class to handle speech recognition using various APIs.
     """
-    def __init__(self, wake_word: str = "hey lane", sleep_word: str = "stop", recognizer_name: str = Recognizer.GOOGLE, device_name: str = "USB PnP Sound Device:"):
+    def __init__(self, wake_word: str = "hey lane", sleep_word: str = "stop", recognizer_name: str = Recognizer.SPHINX, device_name: str = "USB PnP Sound Device:"):
         """
         Initialize the Speech class with a wake word.
         """
@@ -36,6 +36,7 @@ class Listen:
         self.sleep_word = sleep_word # "Stop" or "Sleep"
         self.recognizer_name = recognizer_name  # Default recognizer name
         self.device_name = device_name
+        self.MIC = sr.Microphone(device_index=find_microphone(self.device_name))
 
 
     def listen(self) -> str:
@@ -49,7 +50,7 @@ class Listen:
             recognizer = sr.Recognizer()
             
             # Use the microphone as the audio source
-            with sr.Microphone(device_index=find_microphone(self.device_name)) as source:
+            with self.MIC as source:
                 print("Please say something...")
                 # Adjust for ambient noise and record audio
                 recognizer.adjust_for_ambient_noise(source)
@@ -98,10 +99,9 @@ class Listen:
         Continuously listen for the wake word.
         """
         recognizer = sr.Recognizer()
-        mic = sr.Microphone(device_index=find_microphone(self.device_name))
 
         text = ""
-        with mic as source:
+        with self.MIC as source:
             recognizer.adjust_for_ambient_noise(source)
             Log.log("SYSTEM", "Listening for action...")
 
