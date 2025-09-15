@@ -28,7 +28,7 @@ class Listen:
     """
         Class to handle speech recognition using various APIs.
     """
-    def __init__(self, wake_word: str = "hey lane", sleep_word: str = "stop", recognizer_name: str = Recognizer.SPHINX, device_name: str = "USB PnP Sound Device:"):
+    def __init__(self, wake_word: str = "hey lane", sleep_word: str = "stop", recognizer_name: str = Recognizer.GOOGLE, device_name: str = "USB PnP Sound Device:"):
         """
         Initialize the Speech class with a wake word.
         """
@@ -110,7 +110,7 @@ class Listen:
                     audio = recognizer.listen(source)
 
                     if self.recognizer_name == Recognizer.GOOGLE:
-                        text = recognizer.recognize_google(audio).lower()
+                        text = recognizer.recognize_google(audio, timeout=1).lower()
                         print(f"Heard: {text}")
                         
                     elif self.recognizer_name == Recognizer.SPHINX:
