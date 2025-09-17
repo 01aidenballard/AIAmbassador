@@ -26,46 +26,91 @@ from Logging import Log
 
 #== Global Variables ==#
 
-listening_responses=["Yes?", "How can I help you?", "I'm listening", "What can I do for you?", "How can I assist you?", "What would you like to know?", "What is question?", "How can I be of service?"]
 
-continuation_responses=["Do you have any other questions?", "Is there anything else you'd like to know?", "Can I help you with something else?", "Would you like to ask another question?", "Is there more you'd like to discuss?", "Do you need further assistance?", "Are there additional topics you're curious about?"]
+class Conversation():
+    """
+    Class to handle the conversation between the user and the CRG API.
+    """
+    def __init__(self, dataset_path: str, classify_method: ClassifyMethod, extract_method: ExtractMethod, retrieve_method: RetrieveMethod, generate_method: GenerateMethod, wake_word: str = "lane", sleep_word: str = "go to sleep"):
+        """
+        Initialize the Conversation class with the CRG API and speech recognizer.
+        """
+        Log.log("SYSTEM", "Initializing conversation...")
 
-def main():
+        self.crg = CRG(
+            dataset_path, 
+            classify_method=classify_method, 
+            extract_method=extract_method,
+            retrieve_method=retrieve_method,
+            generate_method=generate_method,
+            print_info=False)
+        
+        self.lain = L(wake_word, sleep_word)
 
-    # set dataset path
-    dataset_pth = '../dataset.json'
+        self.listening_responses=["Yes?", "How can I help you?", "I'm listening", "What can I do for you?", "How can I assist you?", "What would you like to know?", "What is question?", "How can I be of service?"]
 
-    # change the model parameters
-    classify_method = ClassifyMethod.SVM
-    extract_method = ExtractMethod.VEC
-    retrieve_method = RetrieveMethod.CSS_VEC
-    generate_method = GenerateMethod.CONTEXT_ONLY
+        self.continuation_responses=["Do you have any other questions?", "Is there anything else you'd like to know?", "Can I help you with something else?", "Would you like to ask another question?", "Is there more you'd like to discuss?", "Do you need further assistance?", "Are there additional topics you're curious about?"]
 
-    # init CRG
-    Log.log("SYSTEM", "Initializing conversation...")
-    crg = CRG(
-        dataset_pth, 
-        classify_method=classify_method, 
-        extract_method=extract_method,
-        retrieve_method=retrieve_method,
-        generate_method=generate_method,
-        print_info=False)
-    
-    # init Speech Recognition
-    lain = L(wake_word="lane", sleep_word="go to sleep")
+
+    def respond(self, user_audio: str): 
+
+        """
+        Process the user audio and return the answer from CRG API
+        
+        Inputs:
+            user_audio: str - the user's question in text form
+
+        Returns:
+            answer_text: str - the answer from CRG API, with a follow-up question if applicable
+        """
+        
+        # process response
+        st = time.time()
+        answer = CRG.answer_question(user_audio)
+        
+        answer_text = answer['generated_answer']
+        answer_class = answer['question_class']
+
+
+        if answer_class != "Follow Up":
+
+            random.seed(time.time())
+            followup = self.continuation_responses[random.randint(0, len(self.continuation_responses)-1)]
+            Log.log("INFO", f"Answer: {answer}\nFollow Up: {followup}\n(Time taken: {et - st:.2f} seconds)")
+
+            return f"{answer_text} {followup}"
+
+        et = time.time()
+        Log.log("INFO", f"Answer: {answer}\n(Time taken: {et - st:.2f} seconds)")
+
+        return answer_text
+
+
+def main(self):
+
+    conversation = Conversation(
+        dataset_path = '../dataset.json',
+        classify_method = ClassifyMethod.SVM,
+        extract_method = ExtractMethod.VEC,
+        retrieve_method = RetrieveMethod.CSS_VEC,
+        generate_method = GenerateMethod.CONTEXT_ONLY,
+        wake_word="lane",
+        sleep_word="go to sleep"
+    )
+
 
     # while loop to ask questions
     while True:
 
         Log.log("SYSTEM", "Waiting for user...")
-        action = L.listen_for_action_word(lain)
+        action = L.listen_for_action_word(self.lain)
 
         if action:
             
             Log.log("SYSTEM", "Wake word detected, listening for user question...")
             # Use a random response from the listening_responses
             random.seed(time.time())
-            response = listening_responses[random.randint(0, len(listening_responses)-1)]
+            response = self.listening_responses[random.randint(0, len(self.listening_responses)-1)]
             sys_command(f"flite -voice rms -t '{response}'")
             Log.log("INFO", f"Lain: {response}")
 
@@ -74,7 +119,7 @@ def main():
             while True:
                 
                 # listen for user question
-                user_statement = L.listen(lain)
+                user_statement = L.listen(self.lain)
                 Log.log("INFO", f"User question: {user_statement}")
                 
                 if user_statement is None:
@@ -92,19 +137,14 @@ def main():
 
                 null_count = 0 # reset null count if we got a valid question
 
-                st = time.time()
-                answer = crg.answer_question(user_statement)
-                et = time.time()
+                answer = conversation.respond(user_statement) # process response
+                
 
                 # print(f'Answer: {answer}')
                 # print(f'Time taken: {et - st:.2f} seconds\n')
-
-                random.seed(time.time())
-                followup = continuation_responses[random.randint(0, len(continuation_responses)-1)]
                 
-                Log.log("INFO", f"Answer: {answer}\nFollow Up: {followup}\n(Time taken: {et - st:.2f} seconds)")
 
-                completed_response = subprocess.run(f"flite -voice rms -t \"{answer}. {followup}\"", shell=True, check=True)
+                completed_response = subprocess.run(f"flite -voice rms -t \"{answer}", shell=True, check=True)
                 continue # go back to listening for another question
 
         elif not action:
@@ -112,7 +152,6 @@ def main():
             sys_command("flite -voice rms -t 'Goodbye'")
             break
         
-            
 
 def sys_command(command):
     os.system(command)
