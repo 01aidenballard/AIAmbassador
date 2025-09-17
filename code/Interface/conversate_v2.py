@@ -96,8 +96,8 @@ def main():
                 answer = crg.answer_question(user_statement)
                 et = time.time()
 
-                print(f'Answer: {answer}')
-                print(f'Time taken: {et - st:.2f} seconds\n')
+                # print(f'Answer: {answer}')
+                # print(f'Time taken: {et - st:.2f} seconds\n')
 
                 random.seed(time.time())
                 followup = continuation_responses[random.randint(0, len(continuation_responses)-1)]

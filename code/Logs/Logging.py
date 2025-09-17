@@ -23,7 +23,7 @@ class Log:
 
 
         log_entry = f"{formatted_time}: {level}: {message}"
-        # print(log_entry) # For real-time feedback in console
+        print(log_entry) # For real-time feedback in console
         Log._buffer.append(log_entry) # For stored logs
         if len(Log._buffer) >= Log._buffer_limit:
             Log.flush()
