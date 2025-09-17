@@ -48,7 +48,7 @@ class Listen:
 
         try:
 
-            self.recognizer.pause_threshold = 1.5 # allow longer pauses
+            self.recognizer.pause_threshold = 2.0 # allow longer pauses
             
             # Use the microphone as the audio source
             with self.MIC as source:
@@ -109,7 +109,7 @@ class Listen:
 
             while True:
                 try:
-                    audio = self.recognizer.listen(source, phrase_time_limit=1)
+                    audio = self.recognizer.listen(source, phrase_time_limit=0.5)
 
                     if self.recognizer_name == Recognizer.GOOGLE:
                         text = self.recognizer.recognize_google(audio).lower()
