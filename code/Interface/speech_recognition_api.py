@@ -66,23 +66,23 @@ class Listen:
                     start_time = time.time()
                     text = self.recognizer.recognize_google(audio)
                     end_time = time.time()
-                    print(f"Your Question: {text} (Time taken: {(end_time - start_time):.2f} s)")
+                    # print(f"Your Question: {text} (Time taken: {(end_time - start_time):.2f} s)")
 
                 elif self.recognizer_name == Recognizer.SPHINX:
                     # Measure time for Sphinx
                     print("Using Sphinx...")
                     start_time = time.time()
-                    sphinx_text = self.recognizer.recognize_sphinx(audio)
+                    text = self.recognizer.recognize_sphinx(audio)
                     end_time = time.time()
-                    print(f"Your Question: {sphinx_text} (Time taken: {(end_time - start_time):.2f} s)")
+                    # print(f"Your Question: {text} (Time taken: {(end_time - start_time):.2f} s)")
 
                 elif self.recognizer_name == Recognizer.HOUNDIFY:
                     #Measure time for Houndify
                     print("Using Houndify...")
                     start_time = time.time()
-                    houndify_text = self.recognizer.recognize_houndify(audio, client_id="QGbfTnsp6zpB8m6yFC4Cfg==", client_key="xsISiTIHIsCKckTShaOay6sBX8zduFibr3v3DhKYDN3UvOMpZTCa66NDw6tFMLRlDW9KGkjtVCWC0l-uX5h_eg==")
+                    text = self.recognizer.recognize_houndify(audio, client_id="QGbfTnsp6zpB8m6yFC4Cfg==", client_key="xsISiTIHIsCKckTShaOay6sBX8zduFibr3v3DhKYDN3UvOMpZTCa66NDw6tFMLRlDW9KGkjtVCWC0l-uX5h_eg==")
                     end_time = time.time()
-                    print(f"Your Question: {houndify_text} (Time taken: {(end_time - start_time):.2f} s)")
+                    # print(f"Your Question: {text} (Time taken: {(end_time - start_time):.2f} s)")
             
 
             except sr.UnknownValueError:
