@@ -28,7 +28,7 @@ class Listen:
     """
         Class to handle speech recognition using various APIs.
     """
-    def __init__(self, wake_word: str = "hey lane", sleep_word: str = "stop", recognizer_name: str = Recognizer.GOOGLE, device_name: str = "USB PnP Sound Device:"):
+    def __init__(self, wake_word: str = "lane", sleep_word: str = "stop", recognizer_name: str = Recognizer.GOOGLE, device_name: str = "USB PnP Sound Device:"):
         """
         Initialize the Speech class with a wake word.
         """
