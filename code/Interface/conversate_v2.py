@@ -52,7 +52,7 @@ def main():
         print_info=False)
     
     # init Speech Recognition
-    lain = L(device_name="Microphone (Realtek High Definition Audio)", wake_word="lane", sleep_word="go to sleep")
+    lain = L(wake_word="lane", sleep_word="go to sleep")
 
     # while loop to ask questions
     while True:
@@ -69,6 +69,8 @@ def main():
             sys_command(f"flite -voice rms -t '{response}'")
             Log.log("INFO", f"Lain: {response}")
 
+            null_count = 0
+
             while True:
                 
                 # listen for user question
@@ -78,8 +80,17 @@ def main():
                 if user_statement is None:
                     # error = "Error: Could not understand question"
                     # sys_command(error)
-                    Log.log("INFO", "No question detected, sleeping...")
-                    break
+                    Log.log("ERROR", "Could not understand question, please try again...")
+                    sys_command("flite -voice rms -t 'Could not understand question, please try again...'")
+
+                    # count null messages, if 3 in a row, go back to sleep
+                    null_count += 1
+                    if null_count == 3:
+                        Log.log("SYSTEM", "Too many null messages, going back to sleep...")
+                        break
+                    continue
+
+                null_count = 0 # reset null count if we got a valid question
 
                 st = time.time()
                 answer = crg.answer_question(user_statement)

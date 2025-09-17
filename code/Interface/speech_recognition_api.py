@@ -37,7 +37,8 @@ class Listen:
         self.recognizer_name = recognizer_name  # Default recognizer name
         self.device_name = device_name
         self.MIC = sr.Microphone(device_index=find_microphone(self.device_name))
-        self.recognizer = sr.Recognizer()
+        self.recognizer = sr.Recognizer(pause_threshold=1.5) # pause_threshold default = 0.8
+        self.ww_recognizer = sr.Recognizer(phrase_time_limit=1)
 
 
     def listen(self) -> str:
@@ -47,15 +48,13 @@ class Listen:
         """
 
         try:
-            # Initialize the recognizer
-            recognizer = self.recognizer
             
             # Use the microphone as the audio source
             with self.MIC as source:
                 print("Please say something...")
                 # Adjust for ambient noise and record audio
-                recognizer.adjust_for_ambient_noise(source)
-                audio = recognizer.listen(source)
+                self.recognizer.adjust_for_ambient_noise(source)
+                audio = self.recognizer.listen(source)
         
             #TODO: Get a API key as the default is only good for personal/testing purposes 
 
@@ -64,7 +63,7 @@ class Listen:
                     # Measure time for Google Web Speech API
                     print("Using Google Web Speech API...") 
                     start_time = time.time()
-                    text = recognizer.recognize_google(audio)
+                    text = self.recognizer.recognize_google(audio)
                     end_time = time.time()
                     print(f"Your Question: {text} (Time taken: {(end_time - start_time):.2f} s)")
 
@@ -72,7 +71,7 @@ class Listen:
                     # Measure time for Sphinx
                     print("Using Sphinx...")
                     start_time = time.time()
-                    sphinx_text = recognizer.recognize_sphinx(audio)
+                    sphinx_text = self.recognizer.recognize_sphinx(audio)
                     end_time = time.time()
                     print(f"Your Question: {sphinx_text} (Time taken: {(end_time - start_time):.2f} s)")
 
@@ -80,7 +79,7 @@ class Listen:
                     #Measure time for Houndify
                     print("Using Houndify...")
                     start_time = time.time()
-                    houndify_text = recognizer.recognize_houndify(audio, client_id="QGbfTnsp6zpB8m6yFC4Cfg==", client_key="xsISiTIHIsCKckTShaOay6sBX8zduFibr3v3DhKYDN3UvOMpZTCa66NDw6tFMLRlDW9KGkjtVCWC0l-uX5h_eg==")
+                    houndify_text = self.recognizer.recognize_houndify(audio, client_id="QGbfTnsp6zpB8m6yFC4Cfg==", client_key="xsISiTIHIsCKckTShaOay6sBX8zduFibr3v3DhKYDN3UvOMpZTCa66NDw6tFMLRlDW9KGkjtVCWC0l-uX5h_eg==")
                     end_time = time.time()
                     print(f"Your Question: {houndify_text} (Time taken: {(end_time - start_time):.2f} s)")
             
@@ -99,27 +98,26 @@ class Listen:
         """
         Continuously listen for the wake word.
         """
-        recognizer = self.recognizer
 
         text = ""
         with self.MIC as source:
-            recognizer.adjust_for_ambient_noise(source)
+            self.ww_recognizer.adjust_for_ambient_noise(source)
             Log.log("SYSTEM", "Listening for action...")
 
             while True:
                 try:
-                    audio = recognizer.listen(source)
+                    audio = self.ww_recognizer.listen(source)
 
                     if self.recognizer_name == Recognizer.GOOGLE:
-                        text = recognizer.recognize_google(audio).lower()
+                        text = self.ww_recognizer.recognize_google(audio).lower()
                         print(f"Heard: {text}")
                         
                     elif self.recognizer_name == Recognizer.SPHINX:
-                        text = recognizer.recognize_sphinx(audio, keyword_entries=[("lane", 1.0)] ).lower()
+                        text = self.ww_recognizer.recognize_sphinx(audio, keyword_entries=[("lane", 1.0)] ).lower()
                         print(f"Heard: {text}")
                         
                     elif self.recognizer_name == Recognizer.HOUNDIFY:
-                        text = recognizer.recognize_houndify(audio).lower()
+                        text = self.ww_recognizer.recognize_houndify(audio).lower()
                         print(f"Heard: {text}")
                     
                     
