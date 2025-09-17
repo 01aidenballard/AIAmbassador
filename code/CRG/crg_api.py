@@ -816,56 +816,48 @@ class Generate():
 
                 # system prompt for TinyLlama
                 system_prompt = """
-                    You are a friendly and engaging tour guide for West Virginia University.
-                    Your role is to provide clear, conversational, and helpful responses based on the given information.
+                    You are Lain, a friendly university tour guide. 
+                    Your task is to read the User Question and respond with ONE open-ended follow-up question.
+                    - Do not answer the question.
+                    - Do not explain your reasoning.
+                    - Do not output anything except the single follow-up question.
 
-                    - Rephrase the provided information in a natural, engaging way.
-                    - Do NOT mention that the information was 'given' or 'provided'.
-                    - Do NOT hallucinate or make up information, only use what is given.
-                    - Keep responses concise.
+                    Format:
+                    Follow-up Question: <your question here>
                     """
 
-                # user prompt for TinyLlama
-                user_prompt = f"Answer the Users Question: {question} with this context: {context}"
+                user_prompt = f"User Question: {question}\nFollow-up Question:"
 
-                # put together input text
-                input_text = (
-                    f"User Question: {question}\n"
-                    f"Retrieved Answer: {context}\n"
-                    f"Generated Response:"
-                )
-                
                 # load model
-                model = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
-                tokenizer = AutoTokenizer.from_pretrained(model)
-                model = AutoModelForCausalLM.from_pretrained(model)
+                model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+                tokenizer = AutoTokenizer.from_pretrained(model_name)
+                model = AutoModelForCausalLM.from_pretrained(model_name)
 
                 messages = [
                     {"role": "system", "content": system_prompt},  
                     {"role": "user", "content": user_prompt},  
                 ]
 
+                
                 # tokenize input
                 inputs = tokenizer.apply_chat_template(messages, return_tensors="pt")
                 input_ids = inputs.unsqueeze(0) if inputs.dim() == 1 else inputs
-                # inputs = tokenizer(input_text, return_tensors="pt", max_length=512, truncation=True)
-                input_length = input_ids.shape[1]  # Get the length of the input tokens
+                input_length = input_ids.shape[1]
 
-                # Generate response
+                # Generate SHORT response
                 with torch.no_grad():
                     output_tokens = model.generate(
-                        # **inputs,
-                        input_ids=input_ids,
-                        max_length=512,
-                        repetition_penalty=1.2,  
-                        num_return_sequences=1,  
-                        eos_token_id=tokenizer.eos_token_id 
+                    input_ids=input_ids,
+                    max_new_tokens=30,
+                    do_sample=False, 
+                    eos_token_id=tokenizer.eos_token_id,
                     )
 
-                # Decode the generated response
                 response = tokenizer.decode(output_tokens[0, input_length:], skip_special_tokens=True)
-                
+
+                # Just return the stripped question
                 return response
+
             elif self.model == "Context Only":
                 # if no generation model is selected, return the context
                 return context
@@ -906,7 +898,7 @@ class CRG():
         self.generate = Generate(generate_method)
         if self.print_info: print('✓ Generation model initialized'); Log.log("SYSTEM", "Generation model initialized")
 
-    def answer_question(self, question: str) -> str:
+    def answer_question(self, question: str) -> dict:
         '''
         Uses CRG flow to answer a given question
 
@@ -914,7 +906,7 @@ class CRG():
             question (str): question to be asked about LCSEE
 
         Returns:
-            str: Best answer
+            dict: Best answer and classification info
         '''
         # classify and extract question
         question_class = self.classify.classify_question(question)
@@ -929,7 +921,12 @@ class CRG():
         # generation step
         gen_answer = self.generate.generate_answer(question, pred_answer)
 
-        return gen_answer
+        question_info = {
+            'generated_answer': gen_answer,
+            'question_class': question_class
+        }
+
+        return question_info
 
 #== Methods ==#
 def filter_dataset(dataset: dict, label: str) -> dict:
