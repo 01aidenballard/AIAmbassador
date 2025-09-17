@@ -101,7 +101,6 @@ class Listen:
         """
 
         self.recognizer.pause_threshold = 0.8 # default
-        self.recognizer.wait
 
         text = ""
         with self.MIC as source:
