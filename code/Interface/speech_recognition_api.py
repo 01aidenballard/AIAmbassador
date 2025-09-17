@@ -37,6 +37,7 @@ class Listen:
         self.recognizer_name = recognizer_name  # Default recognizer name
         self.device_name = device_name
         self.MIC = sr.Microphone(device_index=find_microphone(self.device_name))
+        self.recognizer = sr.Recognizer()
 
 
     def listen(self) -> str:
@@ -47,7 +48,7 @@ class Listen:
 
         try:
             # Initialize the recognizer
-            recognizer = sr.Recognizer()
+            recognizer = self.recognizer
             
             # Use the microphone as the audio source
             with self.MIC as source:
@@ -98,7 +99,7 @@ class Listen:
         """
         Continuously listen for the wake word.
         """
-        recognizer = sr.Recognizer()
+        recognizer = self.recognizer
 
         text = ""
         with self.MIC as source:
@@ -110,7 +111,7 @@ class Listen:
                     audio = recognizer.listen(source)
 
                     if self.recognizer_name == Recognizer.GOOGLE:
-                        text = recognizer.recognize_google(audio, timeout=1).lower()
+                        text = recognizer.recognize_google(audio).lower()
                         print(f"Heard: {text}")
                         
                     elif self.recognizer_name == Recognizer.SPHINX:
