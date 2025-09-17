@@ -115,7 +115,7 @@ class Listen:
                     #     text = self.recognizer.recognize_google(audio).lower()
                     #     print(f"Heard: {text}")
                         
-                    if self.recognizer_name == Recognizer.SPINX:
+                    if self.recognizer_name == Recognizer.SPHINX:
                         text = self.recognizer.recognize_sphinx(audio, keyword_entries=[("lane", 1.0)] ).lower()
                         print(f"Heard: {text}")
                         
