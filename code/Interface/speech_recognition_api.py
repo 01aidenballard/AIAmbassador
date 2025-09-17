@@ -109,7 +109,7 @@ class Listen:
 
             while True:
                 try:
-                    audio = self.recognizer.listen(source, phrase_time_limit=0.6)
+                    audio = self.recognizer.listen(source, phrase_time_limit=0.9)
 
                     if self.recognizer_name == Recognizer.GOOGLE:
                         text = self.recognizer.recognize_google(audio).lower()
