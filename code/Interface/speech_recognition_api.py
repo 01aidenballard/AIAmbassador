@@ -99,7 +99,6 @@ class Listen:
         """
         Continuously listen for the wake word.
         """
-
         self.recognizer.pause_threshold = 0.8 # default
 
         text = ""
@@ -109,20 +108,20 @@ class Listen:
 
             while True:
                 try:
-                    audio = self.recognizer.listen(source, phrase_time_limit=0.9)
+                    audio = self.recognizer.listen(source, phrase_time_limit=1)
 
                     if self.recognizer_name == Recognizer.GOOGLE:
                         text = self.recognizer.recognize_google(audio).lower()
-                        print(f"Heard: {text}")
                         
+
                     elif self.recognizer_name == Recognizer.SPHINX:
                         text = self.recognizer.recognize_sphinx(audio, keyword_entries=[("lane", 1.0)] ).lower()
-                        print(f"Heard: {text}")
+                        
                         
                     elif self.recognizer_name == Recognizer.HOUNDIFY:
                         text = self.recognizer.recognize_houndify(audio).lower()
-                        print(f"Heard: {text}")
-                    
+                        
+                    print(f"Heard: {text}")
                     
                     if self.wake_word in text:
                         print(f"Wake word '{self.wake_word}' detected!")

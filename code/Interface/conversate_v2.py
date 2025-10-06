@@ -51,8 +51,10 @@ class Conversation():
 
         self.continuation_responses=["Do you have any other questions?", "Is there anything else you'd like to know?", "Can I help you with something else?", "Would you like to ask another question?", "Is there more you'd like to discuss?", "Do you need further assistance?", "Are there additional topics you're curious about?"]
 
+        self.previous_answer = ""
 
-    def respond(self, user_audio: str): 
+
+    def respond(self, question: str): 
 
         """
         Process the user audio and return the answer from CRG API
@@ -66,27 +68,118 @@ class Conversation():
         
         # process response
         st = time.time()
-        answer = CRG.answer_question(user_audio)
+        answer = self.crg.answer_question(question)
+        et = time.time()
         
         answer_text = answer['generated_answer']
         answer_class = answer['question_class']
 
 
-        if answer_class != "Follow Up":
+        if answer_class != "Follow Up" and answer_class != "Repeat":
 
             random.seed(time.time())
             followup = self.continuation_responses[random.randint(0, len(self.continuation_responses)-1)]
-            Log.log("INFO", f"Answer: {answer}\nFollow Up: {followup}\n(Time taken: {et - st:.2f} seconds)")
+            et = time.time()
+            Log.log("INFO", f"Answer: {answer_text}\nFollow Up: {followup}\n(Time taken: {et - st:.2f} seconds)")
 
-            return f"{answer_text} {followup}"
+            answer = f"{answer_text} {followup}"
+            self.previous_answer = answer_text
+            
+        
+        elif answer_class == "Repeat":
 
-        et = time.time()
-        Log.log("INFO", f"Answer: {answer}\n(Time taken: {et - st:.2f} seconds)")
+            et = time.time()
+            Log.log("INFO", f"Answer: {answer_text} {self.previous_answer}\n(Time taken: {et - st:.2f} seconds)")
 
-        return answer_text
+            answer = f"{answer_text} {self.previous_answer}"
+        
+        else:
+            Log.log("INFO", f"Answer: {answer_text}\n(Time taken: {et - st:.2f} seconds)")
+            self.previous_answer = answer_text
 
 
-def main(self):
+        print(f"Previous Answer set to: {self.previous_answer}")
+
+        return answer
+    
+    def conversate(self, conversation):
+        """
+        Function to handle the conversation between the user and the CRG API.
+        """
+
+        # while loop to ask questions
+        while True:
+
+
+            Log.log("SYSTEM", "Waiting for user...")
+            # input type to type, speak to speak
+            interaction = input()
+            if interaction == "type":
+                
+                while True:
+                    user_statement = input("Enter your question: ")
+
+                    Log.log("INFO", f"User question: {user_statement}")
+
+                    conversation.respond(user_statement)
+
+
+
+            
+            elif interaction == "speak":
+                action = L.listen_for_action_word(self.lain)
+            
+                if action:
+                    
+                    Log.log("SYSTEM", "Wake word detected, listening for user question...")
+                    # Use a random response from the listening_responses
+                    random.seed(time.time())
+                    response = self.listening_responses[random.randint(0, len(self.listening_responses)-1)]
+                    sys_command(f"flite -voice rms -t '{response}'")
+                    Log.log("INFO", f"Lain: {response}")
+
+                    null_count = 0
+
+                    while True:
+                        
+                        # listen for user question
+                        user_statement = L.listen(self.lain)
+                        Log.log("INFO", f"User question: {user_statement}")
+                        
+                        if user_statement is None:
+                            # error = "Error: Could not understand question"
+                            # sys_command(error)
+                            Log.log("ERROR", "Could not understand question, please try again...")
+                            sys_command("flite -voice rms -t 'Could not understand question, please try again...'")
+
+                            # count null messages, if 3 in a row, go back to sleep
+                            null_count += 1
+                            if null_count == 3:
+                                Log.log("SYSTEM", "Too many null messages, going back to sleep...")
+                                break
+                            continue
+
+                        null_count = 0 # reset null count if we got a valid question
+
+                        answer = conversation.respond(user_statement) # process response
+                        
+                        
+
+                        # print(f'Answer: {answer}')
+                        # print(f'Time taken: {et - st:.2f} seconds\n')
+                        
+
+                        # completed_response = subprocess.run(f"flite -voice rms -t \"{answer}", shell=True, check=True)
+                        continue # go back to listening for another question
+
+                elif not action:
+                    Log.log("SYSTEM", "Sleep word detected, exiting...")
+                    sys_command("flite -voice rms -t 'Goodbye'")
+                    break
+        
+
+
+def main():
 
     conversation = Conversation(
         dataset_path = '../dataset.json',
@@ -98,59 +191,8 @@ def main(self):
         sleep_word="go to sleep"
     )
 
-
-    # while loop to ask questions
-    while True:
-
-        Log.log("SYSTEM", "Waiting for user...")
-        action = L.listen_for_action_word(self.lain)
-
-        if action:
-            
-            Log.log("SYSTEM", "Wake word detected, listening for user question...")
-            # Use a random response from the listening_responses
-            random.seed(time.time())
-            response = self.listening_responses[random.randint(0, len(self.listening_responses)-1)]
-            sys_command(f"flite -voice rms -t '{response}'")
-            Log.log("INFO", f"Lain: {response}")
-
-            null_count = 0
-
-            while True:
-                
-                # listen for user question
-                user_statement = L.listen(self.lain)
-                Log.log("INFO", f"User question: {user_statement}")
-                
-                if user_statement is None:
-                    # error = "Error: Could not understand question"
-                    # sys_command(error)
-                    Log.log("ERROR", "Could not understand question, please try again...")
-                    sys_command("flite -voice rms -t 'Could not understand question, please try again...'")
-
-                    # count null messages, if 3 in a row, go back to sleep
-                    null_count += 1
-                    if null_count == 3:
-                        Log.log("SYSTEM", "Too many null messages, going back to sleep...")
-                        break
-                    continue
-
-                null_count = 0 # reset null count if we got a valid question
-
-                answer = conversation.respond(user_statement) # process response
-                
-
-                # print(f'Answer: {answer}')
-                # print(f'Time taken: {et - st:.2f} seconds\n')
-                
-
-                completed_response = subprocess.run(f"flite -voice rms -t \"{answer}", shell=True, check=True)
-                continue # go back to listening for another question
-
-        elif not action:
-            Log.log("SYSTEM", "Sleep word detected, exiting...")
-            sys_command("flite -voice rms -t 'Goodbye'")
-            break
+    conversation.conversate(conversation)
+    
         
 
 def sys_command(command):

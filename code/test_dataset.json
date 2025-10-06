@@ -1679,6 +1679,30 @@
       "label": "Follow Up",
       "context": "Understand user sentiment and readiness to continue conversation",
       "answer": "No problem! If you have any questions in the future, feel free to ask."
+    },
+    {
+      "question": "Can you repeat that?",
+      "label": "Repeat",
+      "context": "Repeat the previous answer",
+      "answer": "Sure! I said: "
+    },
+    {
+      "question": "Can you say that again?",
+      "label": "Repeat",
+      "context": "Repeat the previous answer",
+      "answer": "Of course! Here it is again: "
+    },
+    {
+      "question": "I didn't catch that.",
+      "label": "Repeat",
+      "context": "Repeat the previous answer",
+      "answer": "No problem! Here's what I said: "
+    },
+    {
+      "question": "Could you repeat your last response?",
+      "label": "Repeat",
+      "context": "Repeat the previous answer",
+      "answer": "Certainly! My last response was: "
     }
   ]
 }

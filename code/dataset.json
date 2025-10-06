@@ -8865,36 +8865,6 @@
                             ]
                         },
                         {
-                            "question": "Can you repeat that?",
-                            "answer": [
-                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
-                            ]
-                        },
-                        {
-                            "question": "What was that?",
-                            "answer": [
-                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
-                            ]
-                        },
-                        {
-                            "question": "Could you say that again?",
-                            "answer": [
-                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
-                            ]
-                        },
-                        {
-                            "question": "I didn't catch that.",
-                            "answer": [
-                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
-                            ]
-                        },
-                        {
-                            "question": "Please repeat your answer.",
-                            "answer": [
-                                "Of course, I can repeat my last response. Is there a specific part you'd like me to clarify?"
-                            ]
-                        },
-                        {
                             "question": "That's not what I asked.",
                             "answer": [
                                 "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
@@ -8913,15 +8883,109 @@
                             ]
                         },
                         {
-                            "question": "Try again.",
-                            "answer": [
-                                "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
-                            ]
-                        },
-                        {
                             "question": "Incorrect.",
                             "answer": [
                                 "I apologize if my previous answer was not what you were looking for. Could you please try rephrasing your question? I'll do my best to provide a more accurate response."
+                            ]
+                        }
+                    ]
+                }        
+            ]
+        },
+        {
+            "title": "Repeat",
+            "paragraphs": [
+                {
+                    "context": "Repeat the previous answer",
+                    "qas": [
+                        {
+                            "question": "Can you repeat that?",
+                            "answer": [
+                                "Of course!  I said: "
+                            ]
+                        },
+                        {
+                            "question": "Could you repeat that for me?",
+                            "answer": [
+                                "Certainly. Here is my previous response:"
+                            ]
+                        },
+                        {
+                            "question": "Please say that again.",
+                            "answer": [
+                                "Sure, here it is again:"
+                            ]
+                        },
+                        {
+                            "question": "What did you just say?",
+                            "answer": [
+                                "No problem. I said: "
+                            ]
+                        },
+                        {
+                            "question": "I didn't catch that.",
+                            "answer": [
+                                "Of course. I'll say it again for you.  I said: "
+                            ]
+                        },
+                        {
+                            "question": "Come again?",
+                            "answer": [
+                                "Absolutely! Here is the previous answer:"
+                            ]
+                        },
+                        {
+                            "question": "What was that?",
+                            "answer": [
+                                "Sure. I said:"
+                            ]
+                        },
+                        {
+                            "question": "I'm sorry, what did you say?",
+                            "answer": [
+                                "No worries. I can repeat that.  I said: "
+                            ]
+                        },
+                        {
+                            "question": "Would you mind repeating what you just said?",
+                            "answer": [
+                                "Not at all. Here it is again:"
+                            ]
+                        },
+                        {
+                            "question": "Can you go over that one more time?",
+                            "answer": [
+                                "Certainly, I'm happy to go over that again.  I said: "
+                            ]
+                        },
+                        {
+                            "question": "I missed that, could you say it again?",
+                            "answer": [
+                                "Sure! I said: "
+                            ]
+                        },
+                        {
+                            "question": "Pardon me?",
+                            "answer": [
+                                "Of course. My last response was:"
+                            ]
+                        },
+                        {
+                            "question": "Run that by me again.",
+                            "answer": [
+                                "You got it. Here is the information one more time:"
+                            ]
+                        },
+                        {
+                            "question": "Let me hear that again.",
+                            "answer": [
+                                "Absolutely. I said: "
+                            ]
+                        },
+                        {
+                            "question": "Once more, please.",
+                            "answer": [
+                                "Sure! I said: "
                             ]
                         }
                     ]
