@@ -2,8 +2,8 @@
 Classify-Retrieve-Generate API
 Provides classes and methods to use CRG in Python Script
 
-Author: Ian Jackson
-Date: 03/18/2025
+Authors: Ian Jackson and Aiden Ballard
+Date: 10/09/2025
 '''
 
 #== Imports ==#
@@ -34,6 +34,11 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Logs')))
 
 from Logging import Log
+
+# Add the RAG directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'RAG')))
+
+from vector_db import RAG
 
 
 #== Enums ==#
@@ -798,7 +803,7 @@ class Generate():
                 # generate response
                 output_tokens = model.generate(
                     **inputs,
-                    max_length=256,
+                    max_length=4096,
                     do_sample=True,  # Enables creative responses
                     temperature=0.7,  # Introduces variety
                     top_p=0.9,  # Ensures diverse and high-quality generation
@@ -878,22 +883,28 @@ class CRG():
                  extract_method: ExtractMethod = ExtractMethod.VEC,
                  retrieve_method: RetrieveMethod = RetrieveMethod.CSS_VEC,
                  generate_method: GenerateMethod = GenerateMethod.FLAN_T5,
+                 method_rag: bool = False,
                  print_info: bool = False):
         # DOCUMENT: CRG initialization
 
+        self.method_rag = method_rag
         self.print_info = print_info
 
         # initialize dataset
         self.dataset = Dataset(dataset_path, cache_vectors=True if retrieve_method == RetrieveMethod.CSS_VEC else False)
         if self.print_info: print('✓ Dataset initialized'); Log.log("SYSTEM", "Dataset initialized")
 
+        # if RAG, skip classification step
+        if self.method_rag:
+            self.rag = RAG()
+        
+        else:
+            # initialize the classes for each step
+            self.classify = Classify(self.dataset, classify_method, extract_method)
+            if self.print_info: print('✓ Classification model initialized'); Log.log("SYSTEM", "Classification model initialized")
 
-        # initialize the classes for each step
-        self.classify = Classify(self.dataset, classify_method, extract_method)
-        if self.print_info: print('✓ Classification model initialized'); Log.log("SYSTEM", "Classification model initialized")
-
-        self.retrieve = Retrieve(self.dataset, retrieve_method, extract_method)
-        if self.print_info: print('✓ Retrieval model initialized'); Log.log("SYSTEM", "Retrieval model initialized")
+            self.retrieve = Retrieve(self.dataset, retrieve_method, extract_method)
+            if self.print_info: print('✓ Retrieval model initialized'); Log.log("SYSTEM", "Retrieval model initialized")
 
         self.generate = Generate(generate_method)
         if self.print_info: print('✓ Generation model initialized'); Log.log("SYSTEM", "Generation model initialized")
@@ -908,25 +919,41 @@ class CRG():
         Returns:
             dict: Best answer and classification info
         '''
-        # classify and extract question
-        question_class = self.classify.classify_question(question)
-        question_info = self.classify.extract_info(question)
 
-        # filter dataset and store in dataset instance
-        self.dataset.filtered_dataset = filter_dataset(self.dataset.dataset, question_class)
+        if not self.method_rag:
+            # classify and extract question
+            question_class = self.classify.classify_question(question)
+            question_info = self.classify.extract_info(question)
 
-        # retrieve best answer
-        pred_answer = self.retrieve.retrieve_answer(question, question_info)
+            # filter dataset and store in dataset instance
+            self.dataset.filtered_dataset = filter_dataset(self.dataset.dataset, question_class)
+
+            # retrieve best answer
+            pred_answer = self.retrieve.retrieve_answer(question, question_info)
     
-        # generation step
-        gen_answer = self.generate.generate_answer(question, pred_answer)
+            # generation step
+            gen_answer = self.generate.generate_answer(question, pred_answer)
 
-        question_info = {
-            'generated_answer': gen_answer,
-            'question_class': question_class
-        }
+            question_info = {
+                'generated_answer': gen_answer,
+                'question_class': question_class
+            }
 
-        return question_info
+            return question_info
+        
+        else:
+            # use RAG to get answer
+            context = self.rag.answer_question(question)
+
+            gen_answer = self.generate.generate_answer(question, context['documents'][0])
+
+            question_info = {
+                'generated_answer': gen_answer,
+                'question_class': context['metadatas'][0][0]['document_name']
+            }
+
+            return question_info
+
 
 #== Methods ==#
 def filter_dataset(dataset: dict, label: str) -> dict:
