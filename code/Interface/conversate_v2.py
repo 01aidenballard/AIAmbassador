@@ -31,7 +31,7 @@ class Conversation():
     """
     Class to handle the conversation between the user and the CRG API.
     """
-    def __init__(self, dataset_path: str, classify_method: ClassifyMethod, extract_method: ExtractMethod, retrieve_method: RetrieveMethod, generate_method: GenerateMethod, wake_word: str = "lane", sleep_word: str = "go to sleep"):
+    def __init__(self, method_rag: bool, dataset_path: str, classify_method: ClassifyMethod, extract_method: ExtractMethod, retrieve_method: RetrieveMethod, generate_method: GenerateMethod, wake_word: str = "lane", sleep_word: str = "go to sleep"):
         """
         Initialize the Conversation class with the CRG API and speech recognizer.
         """
@@ -43,6 +43,7 @@ class Conversation():
             extract_method=extract_method,
             retrieve_method=retrieve_method,
             generate_method=generate_method,
+            method_rag=method_rag,
             print_info=False)
         
         self.lain = L(wake_word, sleep_word)
@@ -73,6 +74,8 @@ class Conversation():
         
         answer_text = answer['generated_answer']
         answer_class = answer['question_class']
+
+        print(f"Answer Document: {answer_class}")
 
 
         if answer_class != "Follow Up" and answer_class != "Repeat":
@@ -186,7 +189,8 @@ def main():
         classify_method = ClassifyMethod.SVM,
         extract_method = ExtractMethod.VEC,
         retrieve_method = RetrieveMethod.CSS_VEC,
-        generate_method = GenerateMethod.CONTEXT_ONLY,
+        generate_method = GenerateMethod.FLAN_T5,
+        method_rag = True,
         wake_word="lane",
         sleep_word="go to sleep"
     )
