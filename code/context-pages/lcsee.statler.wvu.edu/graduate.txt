@@ -1,0 +1,177 @@
+Skip to main content
+West Virginia University
+LANE DEPARTMENT OF COMPUTER SCIENCE AND ELECTRICAL ENGINEERING
+Benjamin M. Statler College of Engineering and Mineral Resources
+Toggle Search
+Lane Department of Computer Science and Electrical Engineering Graduate
+Graduate Program
+The Lane Department offers graduate programs aimed at preparing students for both professional and research careers. The Department offers MS degrees in electrical engineering, computer science and software engineering, which prepare students for careers in design and technical leadership. For students interested in careers in research or education, the Department offers Ph.D. degrees in electrical engineering, computer engineering and computer science.
+
+This site is intended to provide current and prospective students with information on our graduate offerings, including the application process and degree requirements. If the information you are seeking cannot be found, please email Statler-LCSEE-GradServices@mail.wvu.edu, or consult the WVU Catalog.
+
+Programs Offered
+Catalog
+
+Master's Programs
+Master of Science in Artificial Intelligence
+
+Master of Science in Computer Science
+
+Master of Science in Electrical Engineering
+
+Master of Science in Software Engineering
+
+The Department currently offers master's degree programs in computer science and electrical engineering on our main campus in Morgantown. In addition, a masters degree program in software engineering is offered entirely online.
+
+The computer science and electrical engineering degree programs each have unique requirements, but both programs also have the following common characteristics.
+
+Areas of Concentration
+The Lane Department is organized into the following five areas of concentration. Both degree programs (computer science and electrical engineering) organize their course work into these five areas:
+
+Electronics and Photonics
+Systems and Signals
+Computer Systems
+Software/Knowledge Engineering
+Theory of Computing
+Each area has several courses associated with it. Some of the courses are designated as "core" courses, while the rest are designated as "elective."
+
+Majoring and Minoring in Areas of Concentration
+Each MS degree option requires students to major in one area of concentration and minor in one or two other areas. Majoring in an area requires that three courses be taken from that area, including at least one core course. Minoring in an area requires that one of the core courses from that area be taken.
+
+Degree Requirements
+The specific requirements for computer science and electrical engineering are listed on their individual pages. In addition to the degree-specific requirements, the following requirements are common to both degree options:
+
+Graduate seminar must be taken in the first semester.
+Both a Plan of Study and a Supplemental Plan of Study must be submitted by the end of the first semester of the student's enrollment. Complete and signed plans are to be submitted to the LCSEE Program Coordinator and Statler Office of Student Services
+No more than three 400 level (upper level undergraduate) courses are allowed.
+No more than one independent study is allowed.
+All the remaining courses must be subject to approval from the chair of students Advisory Examination Committee.
+Research assistants must pursue the thesis option.
+Ph.D. Programs
+Ph.D. Computer Engineering
+
+Ph.D. Computer Science and Information Science
+
+Ph.D. Electrical Engineering
+
+LCSEE offers Doctor of Philosophy degrees in computer science and information science, electrical engineering and computer engineering. The doctor of philosophy program should be considered by those with superior academic achievement and who desire to pursue a career of research or teaching. While each of these degrees requires unique skills and accomplishments, the department employs a well-established structure that all students must follow in pursuit of these advanced degrees.
+
+Areas of Concentration
+LCSEE is organized into the following five areas of concentration. All three Ph.D. degree programs use these areas to provide organizational structure to the educational process as delineated under specific Ph.D. Requirements. The significance of these areas will be of particular importance in creating the student's Plan of Study and in preparation for the Qualifying Exam
+
+Electronics and Photonics
+Systems and Signals
+Computer Systems
+Software/Knowledge Engineering
+Theory of Computing
+Each area has several courses associated with it. Some of the courses are designated as "core" courses, while the rest are designated as "elective".
+
+Ph.D. Requirements
+In addition to the general requirements for the awarding of the degree of Doctor of Philosophy as stipulated by West Virginia University and by the Statler College of Engineering and Mineral Resources, LCSEE has the following requirements. Successful completion of each step of this process will be a determination of the faculty of the department or a designated subcommittee.
+
+Completion of Master of Science in Computer Science, Electrical Engineering, or an equivalent degree. In the absence of a MS degree, an equivalent number of hours of graduate study preparatory for the Ph.D. study as determined by the Advisory Examination Committee.
+BS to Ph.D.: Students with only a B.S. degree and without an equivalent Master's degree with the Major Code of a Doctoral student must first complete the coursework equivalent to that required for thesis option in addition to the competencies required by the doctoral program before achieving candidacy.
+Students may decide whether to actually complete a Master's degree prior to be admitted to candidacy. If so, students will need to complete all normal requirements for the MS in CS or EE, either the problem report or thesis option, as explained under Master's degree requirements. The thesis option is strongly recommended. Students will also need to form a Master's degree committee.
+Specific Ph.D. course requirements are determined by the student's Advisory Examination Committee. However, a minimum of 18 semester hours of course work at WVU is required at the 500 and higher levels with an average of 3.0 or better. No more than three credit hours of directed/independent study can count towards PhD course requirement. All requests for directed/independent study must obtained prior approval from the Department Graduate Affairs Committee. For all majors, PhD course work must include at least 6 credit hours of 600 or higher level courses (not independent or directed studies.)
+Successful completion of the Qualifying Exam Process. The Qualifying Exam Process certifies that the study has the necessary skills and qualification to undertake this advanced degree, and is a somewhat complicated process. Please study the linked document which spells this out in detail.
+Successful completion of the Candidacy Examination. During this examination, the student must demonstrate: (a) a grasp of the important phases and problems of the field of study and an appreciation of their relation to other fields of human knowledge and accomplishments, and (b) the ability to employ the instruments of research developed in the student's area of interest. At this time, the student will formally present and defend the plan for research. When an applicant has passed the comprehensive examination, the student will be formally admitted to candidacy for the doctoral degree. A student will have only one opportunity for reexamination.
+Successful completion of the Oral Defense. The student will present and defend the results of the research as proposed at the Candidacy Examination.
+Chronology
+The following major steps in the process are required.
+
+The Plan of Study must be filled out and signed by the members of the student's Advisory Examination Committee. It is the responsibility of the student to acquire all necessary signatures. The Plan of Study formalizes the student's Advisory Examination Committee and the agreement with the committee regarding the student's intentions. This form must be completed and all signatures obtained no later than the end of the student's first semester. The complete and signed form is to be submitted to the LCSEE Program Coordinator and Statler Office of Student Services. Absent this form on record, there can be no assurances that any work done by the student will result in acceptable credit for graduation.
+Once the student feels prepared to undertake the formal Qualifying Exam, the Request for Ph.D. Qualifying Examination must be filled out and submitted to the Graduate Administrative Assistant. To emphasize, the Qualifying Exam process is complex and it is the responsibility of the student to complete all preparation correctly. PhD students must make the first attempt to pass the qualifying exam within 14 months of their enrollment if they already have an MS degree from LCSEE, or within 26 months otherwise.
+The application for Qualifying Exam will be reviewed by the Qualifying Approval Committee. If approved, the QAC will appoint a Qualifying Examination Committee who will conduct the examination. Once the student is notified of approval and of the members of the QEC, the student must fill out the Qualifying Examination "Results" document. This document formalizes a time and place for the examination. It is the responsibility of the student to personally contact every member of the QEC and to establish a time and place for the examination and to obtain the signatures of all examiners. This document must be submitted to the Graduate Administrative Assistant, and it will also be used to document the results of the examination.
+The student will undergo the oral Qualifying Examination at the established time.
+After successfully passing the LCSEE departmental Ph.D. Qualifying Exam, the student must prepare a written dissertation proposal and orally present it to his or her Advisory Examination Committee (AEC). The proposal should identify the goals and objectives of the student's research and present a plan for achieving these goals and objectives. It should include results of a feasibility study and detailed literature review. The AEC may approve the research conditioned upon stipulated changes to the proposal. At its discretion, the AEC may assign additional questions that test the student's in-depth knowledge of subjects related to the student's research field. If changes to the proposal are required or additional questions assigned, the Chair of the AEC should ensure that the requirements are met by the student before signing the Admission to Candidacy form.
+At an appropriate time under the recommendations of the student's advisor, the student will undergo a Candidacy Examination with the members of the student's Advisory Examination Committee. This examination is stipulated by the Benjamin M. Statler College of Engineering and Mineral Resources. In order to apply for a Candidacy Examination, the candidate must fill out the Candidacy Examination Application form and submit it to the Graduate Administrative Assistant.
+The final step in the process is the Oral Defense of the student's research. The timing of this will be determined in conjunction with the student's advisor. There must be a minimum of four and one half months between Candidacy Examination and Oral Defense.
+Certificate Programs
+Graduate certificates are offered at West Virginia University to demonstrate concentrated study in certain selected areas. These certificates can be pursued in conjunction with a Master's or Ph.D. degree. Typically, 15 hours in a concentrated area followed by an examination are required.
+
+LCSEE currently offers certificates in these areas,
+
+Graduate certificate in software engineering
+Graduate certificate in computer forensics
+Financial Support
+The primary source for financial support within the department is the Graduate Teaching Assistantship. A number of research programs also offer positions for Graduate Research Assistants. Even if you do not have an assistantship at the present time, you may apply for assistantships in future semesters. The Graduate Teaching Assistantship (GTA) form must be renewed every semester.
+
+It is normal and appropriate that doctoral students may be funded as GRAs in connection with funded research projects in which their own research advisor participates. If you are a doctoral student, very possibly you were recruited to come to WVU specifically as a GRA for a particular project. For bonafide doctoral students who do not have a funding source through a research project, the Department will try to provide support as a GTA to the extent possible. This funding, however, cannot be guaranteed. Doctoral students who have passed their qualifiers generally receive a higher stipend than Master's degree students.
+
+International students must provide certification of their abilities in spoken English to be eligible for a GTA. This can be achieved by taking the Test of Spoken English administered by the Educational Testing Service, or the SPEAK test given at the beginning of each semester by the WVU Department of Foreign Languages. A score of 50 is required on either test.
+
+Graduate assistants receive a waiver of University tuition but not University fees or Statler College tuition plus a basic stipend for living expenses.
+
+A limited number of meritorious tuition waivers is also available each semester to students without assistantships. To receive such a waiver you must have a demonstrated record of superior performance. Applications must be submitted by the established deadlines each semester. A maximum of 9 credit hours can be waived in one semester by this process. The following rules apply:
+
+By law West Virginia residents must be considered first, followed by other U.S. residents.
+Preference is given to PhD students who have completed master's level coursework and/or passed their qualifiers.
+Tuition waivers may not be used to maintain your registration status in your graduation semester.
+A number of graduate fellowship programs are also available for outstanding students and students who are in certain special categories. Fellowship can be awarded to current graduate students, not only those entering for the first time. See your advisor for more information.
+
+The WVNano graduate fellowship program at WVU supports Ph.D. graduate students from under-represented classes in science, technology, engineering and math disciplines to increase STEM diversity at WVU and ensure lifetime career success through comprehensive career training.
+
+There are a number of funding options available to students entering graduate school. If you're willing to take the time to fully research your options, you have a good chance of covering a significant portion of your graduate school costs.
+
+Research, Electronic Theses + Dissertations
+https://etd.lib.wvu.edu/
+
+Graduate Student Job Opportunities
+Grader-CSEE (10188926) at West Virginia University
+Statler College IT-Technical Student Intern (Federal Work-Study/Evansdale) #9944129 at West Virginia University
+Admissions Requirements
+Electronics and Photonics
+Systems and Signals
+Computer Systems
+Software/Knowledge Engineering
+Theory of Computing
+Masters of Science in Software Engineering
+Graduate Forms
+PhD Qualifying Exams
+Graduate Day
+Plan of Study Template
+Lane Department of Computer Science and Electrical Engineering
+1220 Evansdale Drive | PO Box 6109
+Morgantown, West Virginia 26506-6109
+Phone:  304-293-5263 | Fax:  304-293-8602
+
+Benjamin M. Statler College of Engineering and Mineral Resources
+1374 Evansdale Drive | PO Box 6070
+Morgantown, West Virginia 26506-6070
+
+Phone:  304.293.4821 |  Email:  statler-info@mail.wvu.edu
+
+ Driving Directions
+
+Connect With Us
+Facebook Twitter Instagram LinkedIn YouTube
+Accreditations
+ 
+Web Standards
+ 
+Privacy Notice
+ 
+Questions or Comments?
+© 2025 West Virginia University. Last updated on August 27, 2025.
+
+A-Z Site Index
+ 
+Campus Map
+ 
+WVU Careers
+ 
+WVU Directory
+Give
+ 
+Handshake
+ 
+WVU Safety Notification System
+ 
+WVU Today
+ 
+WVU Portal
+WVU on Facebook
+ 
+WVU on Twitter
+ 
+WVU on YouTube
