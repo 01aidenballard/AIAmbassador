@@ -730,6 +730,7 @@ class Generate():
             Args:
                 method (GenerateMethod): Enum to select the generation model
             '''
+
             self.method = method
 
             if self.method == GenerateMethod.FLAN_T5:
@@ -767,18 +768,9 @@ class Generate():
 
                     Instructions:
                     1.  Natural Language: Transform the provided "Retrieved Answer" from a factual statement into a flowing, easy-to-understand sentence or two. Imagine you are speaking directly to someone on a campus tour.
-                    2.  Strict Information Adherence: You MUST only use the information provided in the "Retrieved Answer." Do not add any new facts, statistics, or details, even if they seem relevant. Do not hallucinate. Be concise, but thorough with the specifics.
+                    2.  Strict Information Adherence: You MUST only use the information provided in the "Retrieved Answer," and all that is applicable. Do not add any new facts, statistics, or details, even if they seem relevant. Do not hallucinate. Be concise, but thorough with the specifics.
                     3.  No Meta-Commentary: Do not mention that you have been "given" or "provided" with information. The response should be seamless.
-                    4.  Engage with a Question: After providing the answer, always ask a relevant, open-ended follow-up question to encourage further conversation.
-                    5.  Structure: The final output should only be the conversational reply from Lain.
-
-                    Example of your task:
-
-                    User Question: "What's the student-to-faculty ratio?"
-                    Retrieved Answer: "The student-to-faculty ratio is 15 to 1."
-
-                    Generated Response:
-                    "That's a great question! We have a student-to-faculty ratio of 15 to 1, which means our professors get to know their students really well. Are you interested in any particular academic departments?"
+                    4.  Structure: The final output should only be the conversational reply from Lain.
 
                     Now, use the following information to answer the user's question:
                     """
@@ -897,6 +889,10 @@ class CRG():
         # if RAG, skip classification step
         if self.method_rag:
             self.rag = RAG()
+
+
+            if self.print_info: print('✓ RAG model initialized'); Log.log("SYSTEM", "RAG model initialized")
+
         
         else:
             # initialize the classes for each step
@@ -944,8 +940,15 @@ class CRG():
         else:
             # use RAG to get answer
             context = self.rag.answer_question(question)
+            
+            #load full context page from derived document
 
-            gen_answer = self.generate.generate_answer(question, context['documents'][0])
+            context_path = os.path.join("..", "context-pages")
+
+            with open(os.path.join(context_path, context['metadatas'][0][0]['source']), 'r', encoding="utf-8") as f:
+                full_context = f.read()
+
+            gen_answer = self.generate.generate_answer(question, full_context)
 
             question_info = {
                 'generated_answer': gen_answer,

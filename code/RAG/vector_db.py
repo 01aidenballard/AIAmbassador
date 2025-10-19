@@ -1,5 +1,11 @@
 import chromadb
 import os
+import sys
+
+# Add the Log directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Logs')))
+
+from Logging import Log
 
 class RAG:
 
@@ -52,28 +58,71 @@ class RAG:
             
         ]
 
-        chroma_client = chromadb.Client()
+        chunked_context = self.chunk_data(context_pages)
 
-        self.collection = chroma_client.create_collection(name="lcsee")
+        chroma_client = chromadb.PersistentClient(path="../RAG/context_db")
 
-        for page in context_pages:
+        self.collection = chroma_client.get_or_create_collection(name="lcsee")
+    
+        if self.collection.count() > 0:
+            Log.log("SYSTEM", "Collection already populated.")
+        else:
 
-            with open(page["document_path"], "r", encoding="utf-8") as file:
-                document_content = file.read()
+            for chunk in chunked_context:
             
-            self.collection.add(
-                ids=[page["id"]],
-                documents=[document_content],
-                metadatas=[{"source": page["source"], "document_name": page["document_name"]}],
-            )
+                self.collection.add(
+                    ids=[chunk["chunk_id"]],
+                    documents=[chunk["content"]],
+                    metadatas=[{"source": chunk["metadata"]["source"], "document_name": chunk["metadata"]["document_name"]}],
+                )
+
+        
 
     def answer_question(self, question: str):
         
         result = self.collection.query(
             query_texts=[question],
-            n_results=1
+            n_results=3
         )
         return result
+
+
+    @staticmethod
+    def chunk_data(data, chunk_size=500, overlap=50):
+        """
+        Function to chunk data into smaller pieces for better processing.
+        Args:
+            data: str - the data to be chunked
+            chunk_size: int - the size of each chunk
+            overlap: int - the overlap between chunks
+        Returns:
+            chunks: list - list of chunked data
+        """
+        chunks = []
+        for page in data:
+            with open(page["document_path"], "r", encoding="utf-8") as file:
+                document_content = file.read()
+            
+            start = 0
+            chunk_index = 1
+            while start < len(document_content):
+                end = start + chunk_size
+                chunk = document_content[start:end]
+                chunks.append({
+                "id": page["id"],
+                "chunk_id": f"{page['id']}_chunk_{chunk_index}",
+                "content": chunk,
+                "metadata": {
+                    "source": page["source"],
+                    "document_name": page["document_name"]
+                }
+                })
+                chunk_index += 1
+                start += chunk_size - overlap
+            return chunks
+
+
+
 
 def main():
 
@@ -88,3 +137,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+

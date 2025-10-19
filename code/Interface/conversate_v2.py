@@ -101,7 +101,7 @@ class Conversation():
             self.previous_answer = answer_text
 
 
-        print(f"Previous Answer set to: {self.previous_answer}")
+        #print(f"Previous Answer set to: {self.previous_answer}")
 
         return answer
     
