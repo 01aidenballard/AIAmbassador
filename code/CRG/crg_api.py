@@ -762,25 +762,16 @@ class Generate():
 
                 # system prompt for Flan-T5
                 system_prompt = """
-                    Persona: You are "Lain," a friendly and enthusiastic university tour guide. Your audience is a group of prospective high school students and their families. Your tone should be welcoming, helpful, and engaging.
-
-                    Core Task: Your primary goal is to take a piece of factual information (the "Retreived Answer") and rephrase it into a natural, conversational response("Generated Response") to a "User Question."
-
-                    Instructions:
-                    1.  Natural Language: Transform the provided "Retrieved Answer" from a factual statement into a flowing, easy-to-understand sentence or two. Imagine you are speaking directly to someone on a campus tour.
-                    2.  Strict Information Adherence: You MUST only use the information provided in the "Retrieved Answer," and all that is applicable. Do not add any new facts, statistics, or details, even if they seem relevant. Do not hallucinate. Be concise, but thorough with the specifics.
-                    3.  No Meta-Commentary: Do not mention that you have been "given" or "provided" with information. The response should be seamless.
-                    4.  Structure: The final output should only be the conversational reply from Lain.
-
-                    Now, use the following information to answer the user's question:
+                    Answer the following question using *only* the provided context.
+                    If the answer is not in the context, respond with "I don't know."
                     """
+
 
                 # put together input text
                 input_text = (
-                    f"{system_prompt}"
-                    f"User Question: {question}\n"
-                    f"Retrieved Answer: {context}\n"
-                    f"Generated Response:"
+                    f"{system_prompt}\n\n"
+                    f"Context: {context}\n\n"
+                    f"Question: {question}"
                 )
 
                 
@@ -795,11 +786,11 @@ class Generate():
                 # generate response
                 output_tokens = model.generate(
                     **inputs,
-                    max_length=4096,
-                    do_sample=True,  # Enables creative responses
-                    temperature=0.7,  # Introduces variety
-                    top_p=0.9,  # Ensures diverse and high-quality generation
-                    repetition_penalty=1.2,  # Prevents repeating phrases
+                    max_length=512,
+                    do_sample=True,
+                    temperature=0.2,
+                    top_p=0.8,
+                    repetition_penalty=1.1,
                     num_return_sequences=1,  # Single response
                     eos_token_id=tokenizer.eos_token_id  # Ensures proper sentence ending
                 )
@@ -812,18 +803,32 @@ class Generate():
             elif self.model == "TinyLlama":
 
                 # system prompt for TinyLlama
-                system_prompt = """
+                system_prompt = f"""
                     You are Lain, a friendly university tour guide. 
-                    Your task is to read the User Question and respond with ONE open-ended follow-up question.
-                    - Do not answer the question.
-                    - Do not explain your reasoning.
-                    - Do not output anything except the single follow-up question.
+                    You must answer the User Question using ONLY the information in the provided Context.
+
+                    Rules:
+                    - Provide ONE short, detailed answer.
+                    - Do not use lists, bullet points, or line breaks. Use only complete sentences.
+                    - ONLY answer the question, do not provide additional information.
+                    - If the Context does not contain the answer, respond with "I don't know."
+                    - Do not restate or reference the question.
+                    - Do not mention the context or your reasoning.
+                    - Output ONLY in the format below.
+
+                    Example:
+                    User Question: What programs does LCSEE offer for undergraduate students?
+                    Answer: The Lane Department offers a variety of undergraduate programs including Computer Science, Electrical Engineering, Cybersecurity, and Computer Engineering.
+
+                    Context:
+                    {context}
 
                     Format:
-                    Follow-up Question: <your question here>
+                    Answer: <your answer here>
+
                     """
 
-                user_prompt = f"User Question: {question}\nFollow-up Question:"
+                user_prompt = f"User Question: {question}\nAnswer:"
 
                 # load model
                 model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
@@ -845,7 +850,7 @@ class Generate():
                 with torch.no_grad():
                     output_tokens = model.generate(
                     input_ids=input_ids,
-                    max_new_tokens=30,
+                    max_new_tokens=50,
                     do_sample=False, 
                     eos_token_id=tokenizer.eos_token_id,
                     )

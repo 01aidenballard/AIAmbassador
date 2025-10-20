@@ -1,612 +1,101 @@
 Lane Department of Computer Science and Electrical Engineering Faculty and Staff
-Faculty and Staff
-"Faculty and Staff": [
-    {
-      "category": "Leadership",
-      "name": "Anurag Srivastava",
-      "title": "Chairperson, Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "anurag.srivastava@mail.wvu.edu",
-      "phone": "304-293-3017",
-      "office": "AERB 363B"
-    },
-    {
-      "category": "Staff",
-      "name": "Christian Goletz",
-      "title": "Accounting Assistant - Lane Department of Computer Science and Electrical Engineering",
-      "email": null,
-      "phone": "304-293-9676",
-      "office": "AER 358"
-    },
-    {
-      "category": "Staff",
-      "name": "Baylee Groover",
-      "title": "Office Administrator - Lane Department of Computer Science and Electrical Engineering",
-      "email": null,
-      "phone": null,
-      "office": "AER 359"
-    },
-    {
-      "category": "Staff",
-      "name": "Angela Henderson",
-      "title": "Program Coordinator - Lane Department of Computer Science and Electrical Engineering",
-      "email": "angela.henderson@mail.wvu.edu",
-      "phone": "304-293-9679",
-      "office": "AERB 363A"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Donald Adjeroh",
-      "title": "Professor, Associate Chair for Computer Science, and Program Director for Computer Science Graduate Studies - Lane Department of Computer Science and Electrical Engineering",
-      "email": "donald.adjeroh@mail.wvu.edu",
-      "phone": "304-293-9681",
-      "office": "AERB 263B"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Kevin Bandura",
-      "title": "Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "kevin.bandura@mail.wvu.edu",
-      "phone": "304-293-9686",
-      "office": "AERB 237"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Muhammad Choudhry",
-      "title": "Professor, Director of Graduate Studies, and Program Director for Electrical and Computer Engineering Graduate Studies - Lane Department of Computer Science and Electrical Engineering",
-      "email": "machoudhry@mail.wvu.edu",
-      "phone": "304-293-9685",
-      "office": "AERB 262"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Jeremy Dawson",
-      "title": "Associate Professor and Program Coordinator for Biometrics Minor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "jeremy.dawson@mail.wvu.edu",
-      "phone": "304-293-4028",
-      "office": "AERB 339"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Amr El-Wakeel",
-      "title": "Assistant Professor and Program Coordinator for Robotics - Lane Department of Computer Science and Electrical Engineering",
-      "email": "amr.elwakeel@mail.wvu.edu",
-      "phone": "304-293-9688",
-      "office": "AERB 253"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Parviz Famouri",
-      "title": "Professor, Director of Undergraduate Studies, and Program Director for Undergraduate Studies in Electrical and Computer Engineering - Lane Department of Computer Science and Electrical Engineering",
-      "email": "parviz.famouri@mail.wvu.edu",
-      "phone": "304-293-9689",
-      "office": "AERB 362"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Katerina Goseva-Popstojanova",
-      "title": "Professor and Program Director of Undergraduate Studies in Cybersecurity - Lane Department of Computer Science and Electrical Engineering",
-      "email": "katerina.goseva@mail.wvu.edu",
-      "phone": "304-293-9691",
-      "office": "AER 261"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "David Graham",
-      "title": "Professor and Associate Chair of Electrical and Computer Engineering, Coordinator for Faculty Development, Student Engagement, and Industry Engagement - Lane Department of Computer Science and Electrical Engineering",
-      "email": "david.graham@mail.wvu.edu",
-      "phone": "304-293-9692",
-      "office": "AERB 355"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Prashnna Gyawali",
-      "title": "Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "prashnna.gyawali@mail.wvu.edu",
-      "phone": null,
-      "office": "AERB 352"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Sarika Khushalani-Solanki",
-      "title": "Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "sarika.khushalani-solanki@mail.wvu.edu",
-      "phone": "304-293-9142",
-      "office": "AERB 241"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Yuxin Liu",
-      "title": "Professor and Coordinator for Safety and Chemical Hygiene - Lane Department of Computer Science and Electrical Engineering",
-      "email": "yuxin.liu@mail.wvu.edu",
-      "phone": "304-293-9144",
-      "office": "AERB 243"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Ramana Reddy",
-      "title": "Professor and Coordinator of Senior Design Capstone Projects - Lane Department of Computer Science and Electrical Engineering",
-      "email": "ramana.reddy@mail.wvu.edu",
-      "phone": "304-293-9132",
-      "office": "AERB 252"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Natalia Schmid",
-      "title": "Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "natalia.schmid@mail.wvu.edu",
-      "phone": "304-293-9136",
-      "office": "AERB 354"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Anthony Sicilia",
-      "title": "Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "anthony.sicilia@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "K. Subramani",
-      "title": "Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "k.subramani@mail.wvu.edu",
-      "phone": "304-293-9137",
-      "office": "AERB 347"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Sara Tehranipoor",
-      "title": "Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "sara.tehranipoor@mail.wvu.edu",
-      "phone": null,
-      "office": "AERB 246"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Matthew Valenti",
-      "title": "Professor and Coordinator for National Center of Academic Excellence in Cyber Defense Education and Research - Lane Department of Computer Science and Electrical Engineering, Site Director - WVU Center for Identification Technology Research",
-      "email": "matthew.valenti@mail.wvu.edu",
-      "phone": "304-293-9139",
-      "office": "AERB 361"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Brian Woerner",
-      "title": "Professor and ABET Coordinator - Lane Department of Computer Science and Electrical Engineering",
-      "email": "brian.woerner@mail.wvu.edu",
-      "phone": "304-293-9141",
-      "office": "AERB 254"
-    },
-    {
-      "category": "Tenure Track Faculty",
-      "name": "Piotr Wojciechowski",
-      "title": "Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "pwojciec@mail.wvu.edu",
-      "phone": null,
-      "office": "AERB 342"
-    },
-    {
-      "category": "Research Faculty",
-      "name": "Dale Dzielski",
-      "title": "Research Associate and Program Director of MS in Software Engineering - Lane Department of Computer Science and Electrical Engineering",
-      "email": "dale.dzielski@mail.wvu.edu",
-      "phone": "304-293-9135",
-      "office": "AERB 351"
-    },
-    {
-      "category": "Research Faculty",
-      "name": "David Krovich",
-      "title": "Research Associate - Lane Department of Computer Science and Electrical Engineering",
-      "email": "david.krovich@mail.wvu.edu",
-      "phone": "304-293-9674",
-      "office": "AERB 238"
-    },
-    {
-      "category": "Teaching Faculty",
-      "name": "Md Rayhan Amin",
-      "title": "Teaching Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "mdrayhan.amin@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Teaching Faculty",
-      "name": "Tom Devine",
-      "title": "Teaching Associate Professor and Director of Lane Learning and Mentoring Center - Lane Department of Computer Science and Electrical Engineering",
-      "email": "tdevine4@mail.wvu.edu",
-      "phone": "304-293-9143",
-      "office": "AERB 337"
-    },
-    {
-      "category": "Teaching Faculty",
-      "name": "Camille Hayhurst",
-      "title": "Teaching Instructor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "camille.hayhurst@mail.wvu.edu",
-      "phone": "304-293-9693",
-      "office": "AERB 248"
-    },
-    {
-      "category": "Teaching Faculty",
-      "name": "Mohamed Hefeida",
-      "title": "Teaching Associate Professor and Program Director for Undergraduate and Graduate Studies in Computer Engineering - Lane Department of Computer Science and Electrical Engineering",
-      "email": "mohamed.hefeida@mail.wvu.edu",
-      "phone": "304-293-4326",
-      "office": "AERB 255"
-    },
-    {
-      "category": "Teaching Faculty",
-      "name": "Brian Powell",
-      "title": "Teaching Associate Professor and Program Director of Undergraduate Studies in Computer Science - Lane Department of Computer Science and Electrical Engineering",
-      "email": "brian.powell@mail.wvu.edu",
-      "phone": "304-293-3285",
-      "office": "AERB 259"
-    },
-    {
-      "category": "Teaching Faculty",
-      "name": "Ron Reaser",
-      "title": "Teaching Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "ron.reaser@mail.wvu.edu",
-      "phone": "304-293-9687",
-      "office": "AERB 251"
-    },
-    {
-      "category": "Teaching Faculty",
-      "name": "Jignesh Solanki",
-      "title": "Teaching Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "jignesh.solanki@mail.wvu.edu",
-      "phone": "304-293-5071",
-      "office": "AERB 239"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Thirimachos Bourlai",
-      "title": "Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "Thirimachos.Bourlai@uga.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "William Cawthorne",
-      "title": "Adjunct Professor - Lane Department of Computer Science & Electrical Engineering",
-      "email": "william.cawthorne@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Kenneth Costello",
-      "title": "Lecturer - Lane Department of Computer Science and Electrical Engineering",
-      "email": "kenneth.costello@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Omid Dehzangi",
-      "title": "Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "omid.dehzangi@hsc.wvu.edu",
-      "phone": "304-293-1182",
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Martin Dombrowski",
-      "title": "Lecturer - Lane Department of Computer Science and Electrical Engineering",
-      "email": "martin.dombrowski@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Jeff Edgell",
-      "title": "Lecturer - Lane Department of Computer Science and Electrical Engineering",
-      "email": "jeffrey.edgell@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Victor Fragoso",
-      "title": "Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "victor.fragoso@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Yu Gu",
-      "title": "MMAE Academy of Distinguished Alumni Professor - Department of Mechanical, Materials and Aerospace Engineering, Adjunct Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "yu.gu@mail.wvu.edu",
-      "phone": "304-293-3992",
-      "office": "ESB 935"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Guodong Guo",
-      "title": "Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "guodong.guo@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Lawrence Hornak",
-      "title": "Adjunct Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "lawrence.hornak@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Lawrence Jacowitz",
-      "title": "Lecturer - Lane Department of Computer Science and Electrical Engineering",
-      "email": "lawrence.jacowitz@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Juggy Jagannathan",
-      "title": "Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "juggy.jagannathan@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Vinod Kulathumani",
-      "title": "Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "vinod.kulathumani@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Xin Li",
-      "title": "Adjunct Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "xin.li@mail.wvu.edu",
-      "phone": "304-293-9125",
-      "office": null
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Bin Liu",
-      "title": "Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": null,
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Don McLaughlin",
-      "title": "Lecturer - Lane Department of Computer Science and Electrical Engineering",
-      "email": "don.mclaughlin@mail.wvu.edu",
-      "phone": null,
-      "office": "AERB 303"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Piyush Mehta",
-      "title": "Associate Professor - Department of Mechanical, Materials and Aerospace Engineering, Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "piyush.mehta@mail.wvu.edu",
-      "phone": "304-293-3423",
-      "office": "ESB 931"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Gregory Mundy",
-      "title": "Lecturer - Lane Department of Computer Science and Electrical Engineering",
-      "email": "gregory.mundy@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Afzel Noore",
-      "title": "Adjunct Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "afzel.noore@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Guilherme Pereira",
-      "title": "Professor - Department of Mechanical, Materials and Aerospace Engineering, Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "guilherme.pereira@mail.wvu.edu",
-      "phone": "304-293-3264",
-      "office": "ESB 947"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Robert Phipps",
-      "title": "Adjunct Instructor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "rphipps@wvu.edu",
-      "phone": "304-293-9506",
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Sumitra Reddy",
-      "title": "Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "sumitra.reddy@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Arun Ross",
-      "title": "Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "arun.ross@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Saiph Savage",
-      "title": "Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "saiph.savage@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Layth Sliman",
-      "title": "Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": null,
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Luyi Wang",
-      "title": "Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": null,
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Shuo Wang",
-      "title": "Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "shuo.wang@mail.wvu.edu",
-      "phone": "304-293-9388",
-      "office": "ESB 515"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Scott Warden",
-      "title": "Lecturer - Lane Department of Computer Science and Electrical Engineering",
-      "email": "scott.warden@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Xueyan Sherry Xu",
-      "title": "Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "xueyanxu@cdc.gov",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "YanFang Ye",
-      "title": "Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "yanfang.ye@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Michael Yura",
-      "title": "Adjunct Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "michael.yura@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Adjunct Faculty",
-      "name": "Scott Zemerick",
-      "title": "Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "szemeric@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Emeriti Faculty",
-      "name": "Hany Ammar",
-      "title": "Professor Emeritus and Lecturer - Lane Department of Computer Science and Electrical Engineering",
-      "email": "hany.ammar@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Emeriti Faculty",
-      "name": "John Atkins",
-      "title": "Professor Emeritus - Lane Department of Computer Science and Electrical Engineering",
-      "email": "john.atkins@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Emeriti Faculty",
-      "name": "Wils Cooley",
-      "title": "Professor Emeritus - Lane Department of Computer Science and Electrical Engineering",
-      "email": "wils.cooley@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Emeriti Faculty",
-      "name": "Elaine Eschen",
-      "title": "Associate Professor Emeritus - Lane Department of Computer Science and Electrical Engineering",
-      "email": "elaine.eschen@mail.wvu.edu",
-      "phone": null,
-      "office": null
-    },
-    {
-      "category": "Emeriti Faculty",
-      "name": "Mark Jerabek",
-      "title": "Associate Professor Emeritus, Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering",
-      "email": "mark.jerabek@mail.wvu.edu",
-      "phone": "304-293-9695",
-      "office": "AERB 245"
-    },
-    {
-      "category": "Emeriti Faculty",
-      "name": "Powsiri Klinkhachorn",
-      "title": "Professor Emeritus - Lane Department of Computer Science and Electrical Engineering",
-      "email": "powsiri.klinkhachorn@mail.wvu.edu",
-      "phone": null,
-      "office": null
-    },
-    {
-      "category": "Emeriti Faculty",
-      "name": "Robert McConnell",
-      "title": "Associate Professor Emeritus - Lane Department of Computer Science and Electrical Engineering",
-      "email": "rmcconne@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "Emeriti Faculty",
-      "name": "James Mooney",
-      "title": "Associate Professor Emeritus, Lecturer - Lane Department of Computer Science and Electrical Engineering",
-      "email": "jdm@csee.wvu.edu",
-      "phone": null,
-      "office": "ERB 118F"
-    },
-    {
-      "category": "Emeriti Faculty",
-      "name": "Roy Nutter Jr.",
-      "title": "Professor Emeritus - Lane Department of Computer Science and Electrical Engineering",
-      "email": "roy.nutter@mail.wvu.edu",
-      "phone": null,
-      "office": null
-    },
-    {
-      "category": "Emeriti Faculty",
-      "name": "George Trapp",
-      "title": "Professor Emeritus - Lane Department of Computer Science and Electrical Engineering",
-      "email": "george.trapp@mail.wvu.edu",
-      "phone": null,
-      "office": "OFF-CAMPUS"
-    },
-    {
-      "category": "PostDocs",
-      "name": "Cosmas Nwakanma",
-      "title": "PostDoc - Lane Department of Computer Science and Electrical Engineering",
-      "email": null,
-      "phone": null,
-      "office": "AER 353"
-    },
-    {
-      "category": "PostDocs",
-      "name": "Niloy Patari",
-      "title": "PostDoc - Lane Department of Computer Science and Electrical Engineering",
-      "email": null,
-      "phone": null,
-      "office": "AER 344"
-    }
-  ]
+
+--- Leadership ---
+
+Name: Anurag Srivastava Title: Chairperson, Professor - Lane Department of Computer Science and Electrical Engineering Email: anurag.srivastava@mail.wvu.edu Phone: 304-293-3017 Office: AERB 363B
+
+--- Staff ---
+
+Name: Christian Goletz Title: Accounting Assistant - Lane Department of Computer Science and Electrical Engineering Phone: 304-293-9676 Office: AER 358
+Name: Baylee Groover Title: Office Administrator - Lane Department of Computer Science and Electrical Engineering Office: AER 359
+Name: Angela Henderson Title: Program Coordinator - Lane Department of Computer Science and Electrical Engineering Email: angela.henderson@mail.wvu.edu Phone: 304-293-9679 Office: AERB 363A
+
+--- Tenure Track Faculty ---
+
+Name: Donald Adjeroh Title: Professor, Associate Chair for Computer Science, and Program Director for Computer Science Graduate Studies - Lane Department of Computer Science and Electrical Engineering Email: donald.adjeroh@mail.wvu.edu Phone: 304-293-9681 Office: AERB 263B
+Name: Kevin Bandura Title: Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: kevin.bandura@mail.wvu.edu Phone: 304-293-9686 Office: AERB 237
+Name: Muhammad Choudhry Title: Professor, Director of Graduate Studies, and Program Director for Electrical and Computer Engineering Graduate Studies - Lane Department of Computer Science and Electrical Engineering Email: machoudhry@mail.wvu.edu Phone: 304-293-9685 Office: AERB 262
+Name: Jeremy Dawson Title: Associate Professor and Program Coordinator for Biometrics Minor - Lane Department of Computer Science and Electrical Engineering Email: jeremy.dawson@mail.wvu.edu Phone: 304-293-4028 Office: AERB 339
+Name: Amr El-Wakeel Title: Assistant Professor and Program Coordinator for Robotics - Lane Department of Computer Science and Electrical Engineering Email: amr.elwakeel@mail.wvu.edu Phone: 304-293-9688 Office: AERB 253
+Name: Parviz Famouri Title: Professor, Director of Undergraduate Studies, and Program Director for Undergraduate Studies in Electrical and Computer Engineering - Lane Department of Computer Science and Electrical Engineering Email: parviz.famouri@mail.wvu.edu Phone: 304-293-9689 Office: AERB 362
+Name: Katerina Goseva-Popstojanova Title: Professor and Program Director of Undergraduate Studies in Cybersecurity - Lane Department of Computer Science and Electrical Engineering Email: katerina.goseva@mail.wvu.edu Phone: 304-293-9691 Office: AER 261
+Name: David Graham Title: Professor and Associate Chair of Electrical and Computer Engineering, Coordinator for Faculty Development, Student Engagement, and Industry Engagement - Lane Department of Computer Science and Electrical Engineering Email: david.graham@mail.wvu.edu Phone: 304-293-9692 Office: AERB 355
+Name: Prashnna Gyawali Title: Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: prashnna.gyawali@mail.wvu.edu Office: AERB 352
+Name: Sarika Khushalani-Solanki Title: Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: sarika.khushalani-solanki@mail.wvu.edu Phone: 304-293-9142 Office: AERB 241
+Name: Yuxin Liu Title: Professor and Coordinator for Safety and Chemical Hygiene - Lane Department of Computer Science and Electrical Engineering Email: yuxin.liu@mail.wvu.edu Phone: 304-293-9144 Office: AERB 243
+Name: Ramana Reddy Title: Professor and Coordinator of Senior Design Capstone Projects - Lane Department of Computer Science and Electrical Engineering Email: ramana.reddy@mail.wvu.edu Phone: 304-293-9132 Office: AERB 252
+Name: Natalia Schmid Title: Professor - Lane Department of Computer Science and Electrical Engineering Email: natalia.schmid@mail.wvu.edu Phone: 304-293-9136 Office: AERB 354
+Name: Anthony Sicilia Title: Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: anthony.sicilia@mail.wvu.edu Office: OFF-CAMPUS
+Name: K. Subramani Title: Professor - Lane Department of Computer Science and Electrical Engineering Email: k.subramani@mail.wvu.edu Phone: 304-293-9137 Office: AERB 347
+Name: Sara Tehranipoor Title: Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: sara.tehranipoor@mail.wvu.edu Office: AERB 246
+Name: Matthew Valenti Title: Professor and Coordinator for National Center of Academic Excellence in Cyber Defense Education and Research - Lane Department of Computer Science and Electrical Engineering, Site Director - WVU Center for Identification Technology Research Email: matthew.valenti@mail.wvu.edu Phone: 304-293-9139 Office: AERB 361
+Name: Brian Woerner Title: Professor and ABET Coordinator - Lane Department of Computer Science and Electrical Engineering Email: brian.woerner@mail.wvu.edu Phone: 304-293-9141 Office: AERB 254
+Name: Piotr Wojciechowski Title: Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: pwojciec@mail.wvu.edu Office: AERB 342
+
+--- Research Faculty ---
+
+Name: Dale Dzielski Title: Research Associate and Program Director of MS in Software Engineering - Lane Department of Computer Science and Electrical Engineering Email: dale.dzielski@mail.wvu.edu Phone: 304-293-9135 Office: AERB 351
+Name: David Krovich Title: Research Associate - Lane Department of Computer Science and Electrical Engineering Email: david.krovich@mail.wvu.edu Phone: 304-293-9674 Office: AERB 238
+
+--- Teaching Faculty ---
+
+Name: Md Rayhan Amin Title: Teaching Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: mdrayhan.amin@mail.wvu.edu Office: OFF-CAMPUS
+Name: Tom Devine Title: Teaching Associate Professor and Director of Lane Learning and Mentoring Center - Lane Department of Computer Science and Electrical Engineering Email: tdevine4@mail.wvu.edu Phone: 304-293-9143 Office: AERB 337
+Name: Camille Hayhurst Title: Teaching Instructor - Lane Department of Computer Science and Electrical Engineering Email: camille.hayhurst@mail.wvu.edu Phone: 304-293-9693 Office: AERB 248
+Name: Mohamed Hefeida Title: Teaching Associate Professor and Program Director for Undergraduate and Graduate Studies in Computer Engineering - Lane Department of Computer Science and Electrical Engineering Email: mohamed.hefeida@mail.wvu.edu Phone: 304-293-4326 Office: AERB 255
+Name: Brian Powell Title: Teaching Associate Professor and Program Director of Undergraduate Studies in Computer Science - Lane Department of Computer Science and Electrical Engineering Email: brian.powell@mail.wvu.edu Phone: 304-293-3285 Office: AERB 259
+Name: Ron Reaser Title: Teaching Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: ron.reaser@mail.wvu.edu Phone: 304-293-9687 Office: AERB 251
+Name: Jignesh Solanki Title: Teaching Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: jignesh.solanki@mail.wvu.edu Phone: 304-293-5071 Office: AERB 239
+
+--- Adjunct Faculty ---
+
+Name: Thirimachos Bourlai Title: Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: Thirimachos.Bourlai@uga.edu Office: OFF-CAMPUS
+Name: William Cawthorne Title: Adjunct Professor - Lane Department of Computer Science & Electrical Engineering Email: william.cawthorne@mail.wvu.edu Office: OFF-CAMPUS
+Name: Kenneth Costello Title: Lecturer - Lane Department of Computer Science and Electrical Engineering Email: kenneth.costello@mail.wvu.edu Office: OFF-CAMPUS
+Name: Omid Dehzangi Title: Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: omid.dehzangi@hsc.wvu.edu Phone: 304-293-1182 Office: OFF-CAMPUS
+Name: Martin Dombrowski Title: Lecturer - Lane Department of Computer Science and Electrical Engineering Email: martin.dombrowski@mail.wvu.edu Office: OFF-CAMPUS
+Name: Jeff Edgell Title: Lecturer - Lane Department of Computer Science and Electrical Engineering Email: jeffrey.edgell@mail.wvu.edu Office: OFF-CAMPUS
+Name: Victor Fragoso Title: Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: victor.fragoso@mail.wvu.edu Office: OFF CAMPUS
+Name: Yu Gu Title: MMAE Academy of Distinguished Alumni Professor - Department of Mechanical, Materials and Aerospace Engineering, Adjunct Professor - Lane Department of Computer Science and Electrical Engineering Email: yu.gu@mail.wvu.edu Phone: 304-293-3992 Office: ESB 935
+Name: Guodong Guo Title: Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: guodong.guo@mail.wvu.edu Office: OFF-CAMPUS
+Name: Lawrence Hornak Title: Adjunct Professor - Lane Department of Computer Science and Electrical Engineering Email: lawrence.hornak@mail.wvu.edu Office: OFF-CAMPUS
+Name: Lawrence Jacowitz Title: Lecturer - Lane Department of Computer Science and Electrical Engineering Email: lawrence.jacowitz@mail.wvu.edu Office: OFF-CAMPUS
+Name: Juggy Jagannathan Title: Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: juggy.jagannathan@mail.wvu.edu Office: OFF-CAMPUS
+Name: Vinod Kulathumani Title: Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: vinod.kulathumani@mail.wvu.edu Office: OFF-CAMPUS
+Name: Xin Li Title: Adjunct Professor - Lane Department of Computer Science and Electrical Engineering Email: xin.li@mail.wvu.edu Phone: 304-293-9125
+Name: Bin Liu Title: Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering Office: OFF-CAMPUS
+Name: Don McLaughlin Title: Lecturer - Lane Department of Computer Science and Electrical Engineering Email: don.mclaughlin@mail.wvu.edu Office: AERB 303
+Name: Piyush Mehta Title: Associate Professor - Department of Mechanical, Materials and Aerospace Engineering, Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: piyush.mehta@mail.wvu.edu Phone: 304-293-3423 Office: ESB 931
+Name: Gregory Mundy Title: Lecturer - Lane Department of Computer Science and Electrical Engineering Email: gregory.mundy@mail.wvu.edu Office: OFF-CAMPUS
+Name: Afzel Noore Title: Adjunct Professor - Lane Department of Computer Science and Electrical Engineering Email: afzel.noore@mail.wvu.edu Office: OFF-CAMPUS
+Name: Guilherme Pereira Title: Professor - Department of Mechanical, Materials and Aerospace Engineering, Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: guilherme.pereira@mail.wvu.edu Phone: 304-293-3264 Office: ESB 947
+Name: Robert Phipps Title: Adjunct Instructor - Lane Department of Computer Science and Electrical Engineering Email: rphipps@wvu.edu Phone: 304-293-9506 Office: OFF-CAMPUS
+Name: Sumitra Reddy Title: Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: sumitra.reddy@mail.wvu.edu Office: OFF-CAMPUS
+Name: Arun Ross Title: Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: arun.ross@mail.wvu.edu Office: OFF-CAMPUS
+Name: Saiph Savage Title: Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: saiph.savage@mail.wvu.edu Office: OFF-CAMPUS
+Name: Layth Sliman Title: Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Office: OFF-CAMPUS
+Name: Luyi Wang Title: Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Office: OFF-CAMPUS
+Name: Shuo Wang Title: Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: shuo.wang@mail.wvu.edu Phone: 304-293-9388 Office: ESB 515
+Name: Scott Warden Title: Lecturer - Lane Department of Computer Science and Electrical Engineering Email: scott.warden@mail.wvu.edu Office: OFF-CAMPUS
+Name: Xueyan Sherry Xu Title: Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: xueyanxu@cdc.gov Office: OFF-CAMPUS
+Name: YanFang Ye Title: Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: yanfang.ye@mail.wvu.edu Office: OFF-CAMPUS
+Name: Michael Yura Title: Adjunct Professor - Lane Department of Computer Science and Electrical Engineering Email: michael.yura@mail.wvu.edu Office: OFF-CAMPUS
+Name: Scott Zemerick Title: Adjunct Assistant Professor - Lane Department of Computer Science and Electrical Engineering Email: szemeric@mail.wvu.edu Office: OFF-CAMPUS
+
+--- Emeriti Faculty ---
+
+Name: Hany Ammar Title: Professor Emeritus and Lecturer - Lane Department of Computer Science and Electrical Engineering Email: hany.ammar@mail.wvu.edu Office: OFF-CAMPUS
+Name: John Atkins Title: Professor Emeritus - Lane Department of Computer Science and Electrical Engineering Email: john.atkins@mail.wvu.edu Office: OFF-CAMPUS
+Name: Wils Cooley Title: Professor Emeritus - Lane Department of Computer Science and Electrical Engineering Email: wils.cooley@mail.wvu.edu Office: OFF-CAMPUS
+Name: Elaine Eschen Title: Associate Professor Emeritus - Lane Department of Computer Science and Electrical Engineering Email: elaine.eschen@mail.wvu.edu
+Name: Mark Jerabek Title: Associate Professor Emeritus, Adjunct Associate Professor - Lane Department of Computer Science and Electrical Engineering Email: mark.jerabek@mail.wvu.edu Phone: 304-293-9695 Office: AERB 245
+Name: Powsiri Klinkhachorn Title: Professor Emeritus - Lane Department of Computer Science and Electrical Engineering Email: powsiri.klinkhachorn@mail.wvu.edu
+Name: Robert McConnell Title: Associate Professor Emeritus - Lane Department of Computer Science and Electrical Engineering Email: rmcconne@mail.wvu.edu Office: OFF-CAMPUS
+Name: James Mooney Title: Associate Professor Emeritus, Lecturer - Lane Department of Computer Science and Electrical Engineering Email: jdm@csee.wvu.edu Office: ERB 118F
+Name: Roy Nutter Jr. Title: Professor Emeritus - Lane Department of Computer Science and Electrical Engineering Email: roy.nutter@mail.wvu.edu
+Name: George Trapp Title: Professor Emeritus - Lane Department of Computer Science and Electrical Engineering Email: george.trapp@mail.wvu.edu Office: OFF-CAMPUS
+
+--- PostDocs ---
+
+Name: Cosmas Nwakanma Title: PostDoc - Lane Department of Computer Science and Electrical Engineering Office: AER 353
+Name: Niloy Patari Title: PostDoc - Lane Department of Computer Science and Electrical Engineering Office: AER 344

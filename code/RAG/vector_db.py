@@ -17,13 +17,13 @@ class RAG:
                 "id": "1",
                 "document_name": "undergraduate",
                 "source": "lcsee.statler.wvu.edu/undergraduate.txt",
-                "document_path": os.path.join(context_path,"lcsee.statler.wvu.edu", "alumni-and-friends.txt")
+                "document_path": os.path.join(context_path,"lcsee.statler.wvu.edu", "undergraduate.txt")
             },
             {
                 "id": "2",
                 "document_name": "alumni-and-friends",
                 "source": "lcsee.statler.wvu.edu/alumni-and-friends.txt",
-                "document_path": os.path.join(context_path, "lcsee.statler.wvu.edu", "undergraduate.txt")
+                "document_path": os.path.join(context_path, "lcsee.statler.wvu.edu", "alumni-and-friends.txt")
             },
             {
                 "id": "3",
@@ -92,7 +92,7 @@ class RAG:
         """
         Function to chunk data into smaller pieces for better processing.
         Args:
-            data: str - the data to be chunked
+            data: list - A list of dictionaries, each representing a page/document.
             chunk_size: int - the size of each chunk
             overlap: int - the overlap between chunks
         Returns:
@@ -100,26 +100,33 @@ class RAG:
         """
         chunks = []
         for page in data:
-            with open(page["document_path"], "r", encoding="utf-8") as file:
-                document_content = file.read()
-            
+            try:
+                with open(page["document_path"], "r", encoding="utf-8") as file:
+                    document_content = file.read()
+            except FileNotFoundError:
+                # Handle cases where the file might be missing
+                print(f"Warning: File not found at {page['document_path']}. Skipping this file.")
+                continue  # Move to the next item in the loop
+
             start = 0
-            chunk_index = 1
+            chunk_index = 0
             while start < len(document_content):
                 end = start + chunk_size
                 chunk = document_content[start:end]
                 chunks.append({
-                "id": page["id"],
-                "chunk_id": f"{page['id']}_chunk_{chunk_index}",
-                "content": chunk,
-                "metadata": {
-                    "source": page["source"],
-                    "document_name": page["document_name"]
-                }
+                    "id": page["id"],
+                    "chunk_id": f"{page['id']}_chunk_{chunk_index}",
+                    "content": chunk,
+                    "metadata": {
+                        "source": page["source"],
+                        "document_name": page["document_name"]
+                    }
                 })
                 chunk_index += 1
                 start += chunk_size - overlap
-            return chunks
+                
+        # This return statement is now correctly placed outside the loop.
+        return chunks
 
 
 
@@ -133,7 +140,36 @@ def main():
     answer = rag.answer_question(question)
 
     print(f"Question: {question}")
-    print(f"Answer: {answer}")
+    
+    # Pretty-print the query result
+    if isinstance(answer, dict):
+        # chromadb returns lists-per-query, so take the first (and only) query result
+        docs = answer.get("documents", [[]])[0]
+        metas = answer.get("metadatas", [[]])[0]
+        distances = answer.get("distances", [[]])[0]
+        ids = answer.get("ids", [[]])[0]
+
+        if not docs:
+            print("No documents returned.")
+        else:
+            for i, doc in enumerate(docs):
+                meta = metas[i] if i < len(metas) else {}
+                dist = distances[i] if i < len(distances) else None
+                id_ = ids[i] if i < len(ids) else None
+                print(f"\nResult #{i+1}")
+                if id_ is not None:
+                    print(f"  id: {id_}")
+                if dist is not None:
+                    print(f"  distance: {dist}")
+                if meta:
+                    src = meta.get("source")
+                    name = meta.get("document_name")
+                    print(f"  source: {src}  document_name: {name}")
+                print("  content:")
+                print(doc)
+    else:
+        # Fallback for unexpected result types
+        print(answer)
 
 if __name__ == "__main__":
     main()
