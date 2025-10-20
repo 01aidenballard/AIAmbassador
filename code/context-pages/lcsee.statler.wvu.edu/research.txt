@@ -1,174 +1,161 @@
-Skip to main content
-West Virginia University
-LANE DEPARTMENT OF COMPUTER SCIENCE AND ELECTRICAL ENGINEERING
-Benjamin M. Statler College of Engineering and Mineral Resources
-Toggle Search
 Lane Department of Computer Science and Electrical Engineering Research
 Research
 Research Areas
 The Lane Department of Computer Science and Electrical Engineering conducts a broad program of research in the fields of electrical engineering, computer engineering, computer science, cybersecurity and biometric systems. Approximately $7 millions of externally sponsored research was conducted in the year 2024.
 
+---
 AI, Biometrics/Computer Vision
-Biometrics is a specific area of bioengineering in which biological signatures (fingerprint, voice, face, DNA) is used for identification or authentication in criminal justice, e-commerce, and medical applications. Biometrics research consolidates the programs, activities and information-sharing related to biometrics field. WVU signed a memorandum of understanding with the Federal Bureau of Investigation that designates WVU as a lead academic partner in the biometric field.
 
+Biometrics is a specific area of bioengineering in which biological signatures (fingerprint, voice, face, DNA) is used for identification or authentication in criminal justice, e-commerce, and medical applications. Biometrics research consolidates the programs, activities and information-sharing related to biometrics field. WVU signed a memorandum of understanding with the Federal Bureau of Investigation that designates WVU as a lead academic partner in the biometric field.
 Computer Vision is the field of Artificial Intelligence(AI) that trains computers to understand and interpret the visual world and derive meaningful information. WVU’s Vision and Learning Group(https://vision.csee.wvu.edu/) investigate new and fundamental problems and applications in computer vision research. They develop novel techniques for endowing machines with high-level visual processing capabilities, much like humans use their visual system for action. They do so by deriving new machine learning and computational tools that account for the physics, semantics, and dynamics of the visual world. The outcome of this research is applicable to areas such as image and video analysis and reasoning, video surveillance, multimedia applications, medical and biomedical imaging applications, biometrics, autonomous navigation, robotics, and many others.
 
-Donald Adjeroh
-Jeremy Dawson
-Prashnna Gyawali
-Natalia Schmid
-Matthew Valenti
+Professors researching AI, Biometrics/Computer Vision:
+-Donald Adjeroh
+-Jeremy Dawson
+-Prashnna Gyawali
+-Natalia Schmid
+-Matthew Valenti
+---
+---
 AI and Health
 AI and Health CollAborative(AHA)will focus on applying AI for healthcare and utilizing brain inspired knowledge to advance AI focusing on Brain-Inspired AI and AI in Neuroscience, Center for Eldercare Technologies (CETech), Digital Health, mHealth and personalized care, Substance abuse and drug addiction with an expected outcome of enhanced funding /year in the AI and health, spawn university level centers/institutes with staff support, high quality publications, higher number of graduate students as well as post-docs, higher national and regional impact and collaboration.
-
 As society is aging, it is imperative to find suitable technologies that can enable people of all abilities to live in their own homes longer in order to minimize the social costs associated with institutional care. People at RANIAlab@WVUare building a comprehensive system known as RANIA (Residents Aware Network for Intelligent Assistance) to address this challenge.
 
-Donald Adjeroh
-Prashnna Gyawali
-Ramana Reddy
+Professors researching AI and Health:
+-Donald Adjeroh
+-Prashnna Gyawali
+-Ramana Reddy
+---
+---
 AI, Robotics and Autonomous Vehicles
 Integration of AI with Robotics helps robots to perform tasks by recognizing objects. Training the computer vision model with huge data and integrating it to robots makes then detect objects in their way. Image recognition plays a huge role in this process. Robots also need to understand the world around them. AI enabled recognition and natural language processing helps robots to understand the process. WVU Robotics provides an efficient platform to work on wide range of projects.
-
 WVU has West Virginia Robotic Technology Center(WVRTC) to support the NASA Goddard Space Flight Center in Greenbelt, Maryland. Research efforts include supporting pioneering efforts to capture orbiting satellites for refueling and repair in order to extend the operational life of the asset. The WVRTC accesses the knowledge, students and faculty, and resources of the University and Statler College to develop new technology for real-world applications. Research areas for the WVRTC include machine vision, relative navigation, advanced sensor systems and robotic control.
 
-Amr El-Wakeel
-Yu Gu
-Roy Nutter Jr.
-Ramana Reddy
-Brian Woerner
+Professors researching AI, Robotics and Autonomous Vehicles:
+-Amr El-Wakeel
+-Yu Gu
+-Roy Nutter Jr.
+-Ramana Reddy
+-Brian Woerner
+---
+---
 Big Data and Visualization
 Data is being collected constantly, in our day to day life. “Big data” is more than numbers - it’s images, tweets, locations. New industries like digital humanities and computational social sciences are appearing at the intersection of traditional fields of quantitative study. Data Visualization gives us a clear idea of what the information means by giving it visual context through maps and graphs. This helps the human mind to easily identify patterns, trends and outliers within large datasets. Majority of the companies around the world collect data continuously about customers, employees which helps them to understand the market and deliver output products that satisfy the majority of the public.
-
 Along with Data Visualization, it is also equally important to obtain required data from the web and process it effectively for visualization. WVU High Performance computing provides us with software and cloud to visualize algorithms and huge datasets. The LCSEE department offers a Big Data Engineering(CS 560) course, where students learn survey of the algorithms, methods, and technologies involved in building, organizing and analyzing massive datasets. Explores the field of data science from a computational perspective.
 
-Donald Adjeroh
-Tom Devine
-Katerina Goseva-Popstojanova
-Don McLaughlin
-Brian Powell
-K. Subramani
+Professors researching Big Data and Visualization:
+-Donald Adjeroh
+-Tom Devine
+-Katerina Goseva-Popstojanova
+-Don McLaughlin
+-Brian Powell
+-K. Subramani
+---
+---
 Cybersecurity and Computer Forensics
 Over the past 20 years there has been a tremendous increase in the use of computers and computer networks to drive the information processing that forms the infrastructure of modern business. Some of the major assets of a company, namely its intellectual property and records of its financial assets, are held in computer systems. The modern criminal has therefore begun to focus more and more on the potential rewards of tapping into the company's assets illegally, using computers as the fundamental means of committing these crimes. Security threats increasingly come through attacks using computer and information systems.
-
 WVU was recently designated as a Center for Excellence in Information Assurance Education by the National Security Agency and Department of Homeland Security. This designation not only certifies the educational content of our coursework, but also provides fellowship and internship opportunities for qualified students working in this area.
-
 Criminals are generally ahead of law enforcement personnel and even business, industry, government, and academia's own computer systems staff and management. High quality graduate education in this field should help prevent such criminal activity and indeed help in tracking the perpetrators of such crime.
 
-Tom Devine
-Dale Dzielski
-Katerina Goseva-Popstojanova
-David Krovich
-Roy Nutter Jr.
-Sara Tehranipoor
+Professor researching Cybersecurity and Computer Forensics:
+-Tom Devine
+-Dale Dzielski
+-Katerina Goseva-Popstojanova
+-David Krovich
+-Roy Nutter Jr.
+-Sara Tehranipoor
+---
+---
 Nanotechnology/Electronics
 The field of electronics and photonics, initially microelectronics and now pushing well into nanoelectronics, is at a crossroads where further developments are forcing researchers to take a closer look at quantum mechanical processes to design and fabricate small dimensional devices.
-
 The research areas cover aspects of materials science, physics, and semiconductor electronics to design, grow, fabricate, and characterize novel electronic and photonic devices and small subsystems. Present areas of research include wide bandgap semiconductor fabrication techniques, device design, and materials and device characterization; integration of photonics in microelectromechanical devices (MEMs) for active control and feedback; near-infrared and mid-infrared photonic materials and devices; nanoelectronics materials growth and device design; and the small-scale integration of photonic and electronic devices for sensing applications.
-
 Faculty in the electronics and photonics area are active participants in the WV Nano Initiative, a broad university wide initiative in the interdisciplinary research field of nano technology supported by the National Science Foundation and DOE Experimental Program to Stimulate Competitive Research (EPSCoR). The department hosts a new 4000 square foot clean room facility for the College of Engineering and Mineral Resources.
 
-Kevin Bandura
-Jeremy Dawson
-Parviz Famouri
-David Graham
-Yuxin Liu
+Professor researching Nanotechnology/Electronics:
+-Kevin Bandura
+-Jeremy Dawson
+-Parviz Famouri
+-David Graham
+-Yuxin Liu
+---
+---
 Power and Energy Systems
 Electrical power systems historically have been an area of emphasis in the electrical engineering curriculum, and the graduate program in power systems at WVU is quite mature. More than five faculty members have interest in electric power. Five graduate courses are offered in this area on a regular basis. In addition, there are four senior elective/graduate courses on the subjects of distribution, industrial power systems, power electronics, and advanced power systems analysis.
-
 Control systems is an area which has become an increasingly important part of the research program in electrical engineering. The topic has a broad range of applications ranging from guidance systems to process control and robotics. As a research area, control systems theory may be characterized as an intensely mathematical topic which requires an excellent background in both deterministic and stochastic linear systems analysis.
 
-Muhammad Choudhry
-Parviz Famouri
-Sarika Khushalani-Solanki
-Jignesh Solanki
-Anurag Srivastava
+Professors researching Power and Energy Systems:
+-Muhammad Choudhry
+-Parviz Famouri
+-Sarika Khushalani-Solanki
+-Jignesh Solanki
+-Anurag Srivastava
+---
+---
 Radio Astronomy
 Radio Astronomy is undergoing a revolution as major new telescopes come on line. This next generation of telescopes requires exceptionally sophisticated signal processing algorithms running in high throughput, heterogeneous computing environments. Implementation of these algorithms and hardware is pushing the state of the art of current DSP techniques. Advanced DSP algorithms running in commodity devices are a fundamental part of modern life. The signal processing techniques being developed here are also becoming vital across a wide range of areas, including vision-based navigation, remote sensing, robotics, mechatronics, computerized tomography, biomedical engineering, radar and sonar, and signal processing for security.
-
 The West Virginia University (WVU) Lane Department of Computer Science and Electrical Engineering, the WVU Center for Gravitational Waves and Cosmology, and the National Radio Astronomy Observatory (NRAO) in Green Bank, WV, have been funded to develop a Research Experience for Teachers program: "Digital Signal Processing in Radio Astronomy (DSPIRA)". Digital Signal Processing in Radio Astronomy (DSPIRA) is an NSF Research Experiences for Teachers (RET) in Engineering and Computer Science Site at the West Virginia University Lane Department of Computer Science and Engineering. The Principal Investigators are Professors Natalia Schmid and Kevin Bandura. The GBO coordinator is Richard Prestage.
-
 WVU RAIL is a multidisciplinary group within the Lane Department of Computer Science and Electrical Engineering at West Virginia University that focuses on Engineering and Science solutions in Radio Astronomy. Investigations are currently focused on Cosmology, Radio Transient Detections, Instrumentation and Science Education. RAIL also works in close collaboration with the Center for Gravitational Waves and Cosmology and the Physics and Astronomy Department at WVU.
 
-Kevin Bandura
-Katerina Goseva-Popstojanova
-Natalia Schmid
+Professors researching Radio Astronomy:
+-Kevin Bandura
+-Katerina Goseva-Popstojanova
+-Natalia Schmid
+---
+---
 Software Engineering
 Software engineering covers a well-defined and integrated set of activities to produce correct, consistent software products effectively and efficiently. Faculty perform research in many areas some of which include component-based development, validation and verification, software reuse, software portability, user interfaces, and graphic visualization. Research associations exist with the NASA Independent Verification and Validation Facility, the Institute for Software Research at the West Virginia High-Tech Consortium, and the Concurrent Engineering Research Center.
-
 Evaluating the quality attributes of software architectures has become a major research focus. We recognize that advances in quantitative measurement are crucial to the vitality of the discipline of software engineering. We focus in this project on defining and investigating metrics for software architectures. We wish to define such metrics so as to reflect relevant qualities of software architectures, and to alert the software architect to risks in the early stages of architectural design. We envision that such metrics should be based on a theoretical background, primarily on information theory, and they should be specific to the architectural level especially as it pertains to architecture-based software development paradigms. Software reliability is an important part of software quality assurance. We strive to have software that meets both industry and customer standards. Research in this area enables us to develop better software and provide a more robust system.
-
 Fault tolerance is a critical part of software engineering and enables a system to continue its operation when part of the system fails. The term graceful degradation is often used to describe the reduced capabilities of such fault tolerant systems. Research in this area is critical in systems used by NASA, the military and others. In mission critical systems such as flight systems fault tolerance plays an important role in maintaining reliability and availability.
 
-Hany Ammar
-Tom Devine
-Dale Dzielski
-Katerina Goseva-Popstojanova
+Professors researching Software Engineering:
+-Hany Ammar
+-Tom Devine
+-Dale Dzielski
+-Katerina Goseva-Popstojanova
+---
+---
 Theoretical Computer Science
 Research in the theory of computation covers a variety of areas ranging from foundational mathematics to analysis of the performance of algorithms. A core of faculty performs research in areas such as graph theory, topology, and discrete mathematics, partly in connection with the Institute of Combinatorial Computing and Discrete Mathematics. Another key area of interest is the development and analysis of algorithms, especially those suited for parallel and distributed systems.
-
 The WVU Institute for Combinatorial Computing and Discrete Mathematics is a collaborative research effort of the departments of Computer Science and Electrical Engineering and the Mathematics Department. Faculty work together on theoretical and applied research problems in areas such as: graph theory, algorithm design and analysis, combinatorics, linear algebra, and related areas. The faculty have several hundred combined publications and numerous research grants and awards. Numerous Masters and Doctoral students have worked under the supervision of the faculty. A weekly seminar is held to discuss problems of interest to the group.
 
-Donald Adjeroh
-Tom Devine
-K. Subramani
-Piotr Wojciechowski
+Professors researching Theoretical Computer Science:
+-Donald Adjeroh
+-Tom Devine
+-K. Subramani
+-Piotr Wojciechowski
+---
+---
 Wireless Communications and Sensor Networks
 Communications and signal processing, though distinct topics, share a strong overlap and form a joint thrust. Communications has evolved rapidly from the basic voice telephone service to a rich set of communications systems carrying voice, data, video, and other information. The integration of computers and communications systems has enabled powerful information systems for a wide range of applications. Advances in signal processing theory, physical technologies, and powerful digital signal processors have combined to dramatically expand the applications of signal processing. Research activities address three primary areas: theory, technology, and applications.
-
 Research in communications theory explores new principles for higher performance or improved analysis of communications systems. Signal processing theory research explores new principles for understanding and manipulation of analog and digital signals. These theoretical foundations drive a wide range of applied research. Recent research in the field of co-operative communications between multiple users as been supported by the National Science Foundation.
 Research on technologies extends from basic devices through full testbed systems. Projects include photonics and high speed electronics for optical communications, advanced system packaging and interconnections for high performance communications and signal processing systems, parallel arrays of high performance DSPs for image processing, and other DSP-based functions for communications and intelligent sensors.
 Application research includes information systems which integrate computing and communications. Recent work on the distributed simulation of communication has been sponsored by the NSF.
-David Graham
-Mohamed Hefeida
-Natalia Schmid
-Matthew Valenti
-Brian Woerner
+
+Professors researching Wireless Communications and Sensor Networks:
+-David Graham
+-Mohamed Hefeida
+-Natalia Schmid
+-Matthew Valenti
+-Brian Woerner
+---
+
+---
+Other Research Facilities:
 WVU Shared Research Facility
 WVU iLab
 LCSEE Systems
 WVU High Performance Computing
-Lane Department of Computer Science and Electrical Engineering
+---
+
+---
+Lane Department of Computer Science and Electrical Engineering (LCSEEE) Address
 1220 Evansdale Drive | PO Box 6109
 Morgantown, West Virginia 26506-6109
 Phone:  304-293-5263 | Fax:  304-293-8602
-
-Benjamin M. Statler College of Engineering and Mineral Resources
+---
+---
+Benjamin M. Statler College of Engineering and Mineral Resources Address
 1374 Evansdale Drive | PO Box 6070
 Morgantown, West Virginia 26506-6070
-
 Phone:  304.293.4821 |  Email:  statler-info@mail.wvu.edu
-
- Driving Directions
-
-Connect With Us
-Facebook Twitter Instagram LinkedIn YouTube
-Accreditations
- 
-Web Standards
- 
-Privacy Notice
- 
-Questions or Comments?
-© 2025 West Virginia University. Last updated on September 6, 2022.
-
-A-Z Site Index
- 
-Campus Map
- 
-WVU Careers
- 
-WVU Directory
-Give
- 
-Handshake
- 
-WVU Safety Notification System
- 
-WVU Today
- 
-WVU Portal
-WVU on Facebook
- 
-WVU on Twitter
- 
-WVU on YouTube
+---
