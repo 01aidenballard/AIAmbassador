@@ -1,7 +1,10 @@
 Lane Department of Computer Science and Electrical Engineering Undergraduate
+
+---
 Undergraduate Programs
 Each of the four undergraduate degrees offered by Lane Department requires core courses in math, science, programming and logic design. At the advanced level, each of the degree programs provides a broad spectrum of knowledge in its field, but also provides the opportunity for specialization through emphasis areas, electives, independent research projects and directed studies. The program also provides a broad general education necessary to put technical knowledge into perspective.
-
+For your Bachelor's, paths of study include Computer Engineering, Computer Science, Cybersecurity, and Electrical Engineering.
+---
 ---
 Bachelor of Science in Computer Engineering
 Computer engineers design, develop, test and oversee the manufacture and maintenance of embedded computer hardware and software. Computer engineers are part electrical engineer and part computer scientist. Embedded computer systems include applications in the automotive, communications, radio and television, consumer electronics, aircraft, robotics and healthcare industries. Computer engineers design, develop, test, manufacture and maintain complex systems including digital communications systems such as cell phone networks, computer networks such as the Internet and system-level software such as operating systems and applications software.

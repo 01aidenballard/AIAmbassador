@@ -172,7 +172,7 @@ class Conversation():
                         # print(f'Time taken: {et - st:.2f} seconds\n')
                         
 
-                        # completed_response = subprocess.run(f"flite -voice rms -t \"{answer}", shell=True, check=True)
+                        completed_response = subprocess.run(f"flite -voice rms -t \"{answer}", shell=True, check=True)
                         continue # go back to listening for another question
 
                 elif not action:

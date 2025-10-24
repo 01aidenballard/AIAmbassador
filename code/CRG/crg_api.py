@@ -763,7 +763,6 @@ class Generate():
                 # system prompt for Flan-T5
                 system_prompt = """
                     Answer the following question using *only* the provided context.
-                    If the answer is not in the context, respond with "I don't know."
                     """
 
 
@@ -787,10 +786,10 @@ class Generate():
                 output_tokens = model.generate(
                     **inputs,
                     max_length=512,
-                    do_sample=True,
-                    temperature=0.2,
-                    top_p=0.8,
-                    repetition_penalty=1.1,
+                    do_sample=False,
+                    #temperature=1.0,
+                    #top_p=0.8,
+                    #repetition_penalty=1.2,
                     num_return_sequences=1,  # Single response
                     eos_token_id=tokenizer.eos_token_id  # Ensures proper sentence ending
                 )
@@ -944,20 +943,23 @@ class CRG():
         
         else:
             # use RAG to get answer
-            context = self.rag.answer_question(question)
+            context_chunk = self.rag.answer_question(question)
             
+            # Stringify context chunk
+            context = " ".join(context_chunk['documents'][0])
+
+            ### FLAN_T5 can't handle large contexts, so stick with just the chunk.
             #load full context page from derived document
+            # context_path = os.path.join("..", "context-pages")
 
-            context_path = os.path.join("..", "context-pages")
+            # with open(os.path.join(context_path, context['metadatas'][0][0]['source']), 'r', encoding="utf-8") as f:
+            #     full_context = f.read()
 
-            with open(os.path.join(context_path, context['metadatas'][0][0]['source']), 'r', encoding="utf-8") as f:
-                full_context = f.read()
-
-            gen_answer = self.generate.generate_answer(question, full_context)
+            gen_answer = self.generate.generate_answer(question, context)
 
             question_info = {
                 'generated_answer': gen_answer,
-                'question_class': context['metadatas'][0][0]['document_name']
+                'question_class': context_chunk['metadatas'][0][0]['document_name']
             }
 
             return question_info
