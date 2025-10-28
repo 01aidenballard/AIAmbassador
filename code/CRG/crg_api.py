@@ -762,7 +762,10 @@ class Generate():
 
                 # system prompt for Flan-T5
                 system_prompt = """
-                    Answer the following question using *only* the provided context.
+                    You MUST answer using ONLY the provided context.
+                    If multiple relevant lines exist, combine them into a single comprehensive answer.
+                    Do NOT answer using only part of the context. Summarize ALL relevant information before responding.
+                    Your answer should be complete, friendly, and conversational.
                     """
 
 
@@ -781,15 +784,15 @@ class Generate():
 
                 # tokenize input
                 inputs = tokenizer(input_text, return_tensors='pt', max_length=512, truncation=True)
-
+                
                 # generate response
                 output_tokens = model.generate(
                     **inputs,
-                    max_length=512,
-                    do_sample=False,
-                    #temperature=1.0,
-                    #top_p=0.8,
-                    #repetition_penalty=1.2,
+                    max_length=256,
+                    do_sample=True,
+                    temperature=0.7,
+                    top_p=0.8,
+                    repetition_penalty=1.2,
                     num_return_sequences=1,  # Single response
                     eos_token_id=tokenizer.eos_token_id  # Ensures proper sentence ending
                 )
