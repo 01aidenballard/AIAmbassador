@@ -292,9 +292,7 @@ def main(args):
         print("Running on test dataset...")
         test_dataset = load_testset(os.path.join("..", "test_dataset.json"))
 
-        count = 1
-
-        total_distance = 0
+        avg_distance = 0
         avg_time = 0
         avg_cpu_time = 0
         avg_cpu_usage = 0
@@ -320,10 +318,11 @@ def main(args):
             print(f'  CPU time taken: {(metrics["cpu_time"]):.2f} seconds')
             print(f'  CPU usage: {(metrics["cpu_utilization_psutil"]):.2f}%')
             print(f'  Avg RAM usage: {(metrics["ram_usage_avg_mb"]):.2f} MB\n')
+            print(f'  Distance of retrieved document: {avg_distance:.4f}')
             
 
 
-            print(f"Question (#{count}): {question}\nDataset Answer: {dbanswer}\nTime Taken: {metrics['wall_time']}\nRAG Answer:")
+            print(f"Question: {question}\nDataset Answer: {dbanswer}\nTime Taken: {metrics['wall_time']}\nRAG Answer:")
             rag.pretty_print(answer)
 
         n = len(test_dataset['data'])
@@ -338,7 +337,7 @@ def main(args):
         print(f' Average time taken for answering questions: {avg_time:.3f} seconds')
         print(f' Average CPU time taken for answering questions: {avg_cpu_time:.3f} seconds')
         print(f' Average CPU usage: {avg_cpu_usage:.2f}%')
-        print(f' Average RAM usage: {avg_ram_usage:.2f} MB\n')
+        print(f' Average RAM usage: {avg_ram_usage:.2f} MB')
         print(f' Average distance of retrieved documents: {avg_distance:.4f}')
 
     elif args.train:
