@@ -11,6 +11,12 @@ import sys
 import os
 import random
 import subprocess
+import argparse
+import json
+import psutil
+import threading
+
+from contextlib import contextmanager
 
 from speech_recognition_api import Listen as L
 
@@ -179,10 +185,109 @@ class Conversation():
                     Log.log("SYSTEM", "Sleep word detected, exiting...")
                     sys_command("flite -voice rms -t 'Goodbye'")
                     break
-        
+
+#== Method ==#
+def load_testset(path: str) -> dict:
+    '''
+    load the custom test dataset and label the questions for classification
+
+    Args:
+        path (str): path to custom test dataset
+
+    Returns:
+        dict: dataset with labeled questions
+    '''
+    # check if path exist
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"Dataset not found at {path}")
+    
+    # load the JSON file
+    with open(path, 'r') as f:
+        data = json.load(f)
+
+    data = data['data']
+
+    # iterate through each label
+    labeled_data = {'data': []}
+
+    for ql in data: # iterate through each question/label
+        # extract the label and q data
+        dbanswer = ql['answer']
+        question = ql['question']
+
+        labeled_data['data'].append(
+            {
+                'question': question,
+                'answer': dbanswer
+            }
+        )
+
+    return labeled_data
 
 
-def main():
+@contextmanager
+def cpu_usage_monitor(sample_interval=0.05):
+    process = psutil.Process(os.getpid())
+    memory_samples = []
+    running = True
+
+    # mem based sampling function
+    def sample_memory():
+        while running:
+            memory_samples.append(process.memory_info().rss)
+            time.sleep(sample_interval)
+
+    # start memory sampling
+    sampler_thread = threading.Thread(target=sample_memory)
+    sampler_thread.start()
+
+    # before execution
+    start_wall = time.time()
+    start_cpu = process.cpu_times().user + process.cpu_times().system
+    start_mem = process.memory_info().rss
+    process.cpu_percent(interval=None)
+
+    try:
+        # during execution
+        yield_value = {}
+        yield yield_value
+    finally:
+        # after execution
+        end_wall = time.time()
+        end_cpu = process.cpu_times().user + process.cpu_times().system
+        end_mem = process.memory_info().rss
+        end_cpu_percent = process.cpu_percent(interval=None)
+
+        # stop memory sampling
+        running = False
+        sampler_thread.join()
+
+        # calculate averages
+        if memory_samples:
+            avg_ram_usage_bytes = sum(memory_samples) / len(memory_samples)
+        else:
+            avg_ram_usage_bytes = 0
+
+        # calc metrics
+        wall_time_elapsed = end_wall - start_wall
+        cpu_time_used = end_cpu - start_cpu
+        cpu_utilization_percent = (cpu_time_used / wall_time_elapsed) * 100
+        ram_used_bytes = end_mem - start_mem
+        ram_used_mb = ram_used_bytes / (1024 * 1024)
+
+        # store in dict
+        yield_value.update({
+            'wall_time': wall_time_elapsed,
+            'cpu_time': cpu_time_used,
+            'cpu_utilization_calculated': cpu_utilization_percent,
+            'cpu_utilization_psutil': end_cpu_percent,
+            'ram_usage_change_mb': ram_used_mb,
+            'ram_usage_start_mb': start_mem / (1024 * 1024),
+            'ram_usage_end_mb': end_mem / (1024 * 1024),
+            'ram_usage_avg_mb': avg_ram_usage_bytes / (1024 * 1024)  # Convert to MB
+        })
+
+def main(args):
 
     conversation = Conversation(
         dataset_path = '../dataset.json',
@@ -195,7 +300,48 @@ def main():
         sleep_word="go to sleep"
     )
 
-    conversation.conversate(conversation)
+    if args.test:
+        print("Running on test dataset...")
+        test_dataset = load_testset(os.path.join("..", "test_dataset.json"))
+
+        avg_time, avg_cpu_time, avg_cpu_usage, avg_ram_usage, avg_distance = 0, 0, 0, 0, 0
+
+        for QA in test_dataset['data']:
+            question = QA['question']
+            dbanswer = QA['answer']
+            
+            
+            with cpu_usage_monitor() as metrics:
+                answer = conversation.respond(question)
+
+            avg_time += metrics['wall_time']
+            avg_cpu_time += metrics['cpu_time']
+            avg_cpu_usage += metrics['cpu_utilization_psutil']
+            avg_ram_usage += metrics['ram_usage_avg_mb']
+
+            print(f'Question: {question}\nAnswer: {answer}')
+            print(f'Stats:')
+            print(f'  Response time: {(metrics["wall_time"]):.2f} seconds')
+            print(f'  CPU time taken: {(metrics["cpu_time"]):.2f} seconds')
+            print(f'  CPU usage: {(metrics["cpu_utilization_psutil"]):.2f}%')
+            print(f'  Avg RAM usage: {(metrics["ram_usage_avg_mb"]):.2f} MB\n')
+
+        n = len(test_dataset['data'])
+        avg_time /= n
+        avg_cpu_time  /= n
+        avg_cpu_usage /= n
+        avg_ram_usage /= n
+        avg_distance /= n
+
+        print('Overall Statistics:')
+        print(f' Total questions answered: {n}')
+        print(f' Average time taken for answering questions: {avg_time:.3f} seconds')
+        print(f' Average CPU time taken for answering questions: {avg_cpu_time:.3f} seconds')
+        print(f' Average CPU usage: {avg_cpu_usage:.2f}%')
+        print(f' Average RAM usage: {avg_ram_usage:.2f} MB')
+
+    else:
+        conversation.conversate(conversation)
     
         
 
@@ -203,4 +349,11 @@ def sys_command(command):
     os.system(command)
 
 if __name__ == '__main__':
-    main()
+
+    argparser = argparse.ArgumentParser(description='User Conversation Interface')
+
+    argparser.add_argument('--test', action='store_true', help='Run on test dataset')
+
+    args = argparser.parse_args()
+
+    main(args)
