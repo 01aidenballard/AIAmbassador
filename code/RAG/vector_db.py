@@ -58,7 +58,7 @@ class RAG:
     def __init__(self,):
         context_path = os.path.join("..", "context-pages")
 
-        context_pages = [
+        self.context_pages = [
             {
                 "id": "1",
                 "document_name": "undergraduate",
@@ -104,8 +104,6 @@ class RAG:
             
         ]
 
-        chunked_context = self.chunk_data(context_pages)
-
         chroma_client = chromadb.PersistentClient(path="../RAG/context_db")
 
         self.collection = chroma_client.get_or_create_collection(name="lcsee")
@@ -113,6 +111,7 @@ class RAG:
         if self.collection.count() > 0:
             Log.log("SYSTEM", "Collection already populated.")
         else:
+            chunked_context = self.chunk_data(self.context_pages)
 
             for chunk in chunked_context:
             
@@ -209,7 +208,7 @@ class RAG:
         # Clear and repopulate the database
         Log.log("SYSTEM", "Clearing and repopulating the database.")
 
-        self.collection.delete()
+        self.collection.delete(where={"*": "*"})  # Deletes all documents in the collection
 
         chunked_context = self.chunk_data(self.context_pages)
 
@@ -343,7 +342,14 @@ def main(args):
 
     elif args.train:
 
-        rag.train()
+        with cpu_usage_monitor() as metrics:
+            rag.train()
+
+        print('Training Statistics:')
+        print(f' Time Taken: {(metrics["wall_time"]):.3f} seconds')
+        print(f' CPU Time Taken: {(metrics["cpu_time"]):.3f} seconds')
+        print(f' CPU usage: {(metrics["cpu_utilization_psutil"]):.2f}%')
+        print(f' RAM usage: {(metrics["ram_usage_avg_mb"]):.2f} MB\n')
     
     else:
 
