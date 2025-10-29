@@ -308,6 +308,7 @@ def main(args):
             with cpu_usage_monitor() as metrics:
                 answer = rag.answer_question(question, n_results=1)
             
+            avg_distance += answer['distances'][0][0]
             avg_time += metrics['wall_time']
             avg_cpu_time += metrics['cpu_time']
             avg_cpu_usage += metrics['cpu_utilization_psutil']
@@ -330,7 +331,7 @@ def main(args):
         avg_cpu_time  /= n
         avg_cpu_usage /= n
         avg_ram_usage /= n
-        avg_distnace = total_distance / n
+        avg_distance /= n
 
         print('Overall Statistics:')
         print(f' Total questions answered: {n}')
@@ -338,7 +339,7 @@ def main(args):
         print(f' Average CPU time taken for answering questions: {avg_cpu_time:.3f} seconds')
         print(f' Average CPU usage: {avg_cpu_usage:.2f}%')
         print(f' Average RAM usage: {avg_ram_usage:.2f} MB\n')
-        print(f' Average distance of retrieved documents: {avg_distnace:.4f}')
+        print(f' Average distance of retrieved documents: {avg_distance:.4f}')
 
     elif args.train:
 
