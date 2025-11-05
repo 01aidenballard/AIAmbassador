@@ -122,7 +122,7 @@ class Conversation():
         return answer
     
 
-    def generate_redirect_qr_code(answer_source):
+    def generate_redirect_qr_code(self, answer_source):
 
         img = qrcode.make(answer_source)
 
@@ -130,7 +130,7 @@ class Conversation():
 
         return
     
-    def display_qr_code():
+    def display_qr_code(self):
 
         # init st7789 device 
         disp = ST7789()
