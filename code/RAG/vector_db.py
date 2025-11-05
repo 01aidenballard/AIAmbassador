@@ -62,43 +62,43 @@ class RAG:
             {
                 "id": "1",
                 "document_name": "undergraduate",
-                "source": "lcsee.statler.wvu.edu/undergraduate.txt",
+                "source": "lcsee.statler.wvu.edu/undergraduate",
                 "document_path": os.path.join(context_path,"lcsee.statler.wvu.edu", "undergraduate.txt")
             },
             {
                 "id": "2",
                 "document_name": "alumni-and-friends",
-                "source": "lcsee.statler.wvu.edu/alumni-and-friends.txt",
+                "source": "lcsee.statler.wvu.edu/alumni-and-friends",
                 "document_path": os.path.join(context_path, "lcsee.statler.wvu.edu", "alumni-and-friends.txt")
             },
             {
                 "id": "3",
                 "document_name": "graduate",
-                "source": "lcsee.statler.wvu.edu/graduate.txt",
+                "source": "lcsee.statler.wvu.edu/graduate",
                 "document_path": os.path.join(context_path, "lcsee.statler.wvu.edu", "graduate.txt")
             },
             {
                 "id": "4",
                 "document_name": "research",
-                "source": "lcsee.statler.wvu.edu/research.txt",
+                "source": "lcsee.statler.wvu.edu/research",
                 "document_path": os.path.join(context_path, "lcsee.statler.wvu.edu", "research.txt")
             },
             {
                 'id': "5",
                 "document_name": "student-life",
-                "source": "lcsee.statler.wvu.edu/student-life.txt",
+                "source": "lcsee.statler.wvu.edu/student-life",
                 "document_path": os.path.join(context_path, "lcsee.statler.wvu.edu", "student-life.txt")
             },
             { 
                 'id': "6",
                 "document_name": "faculty-staff",
-                "source": "lcsee.statler.wvu.edu/faculty-staff.txt",
+                "source": "lcsee.statler.wvu.edu/faculty-staff",
                 "document_path": os.path.join(context_path, "lcsee.statler.wvu.edu", "faculty-staff.txt")
             },
             { 
                 'id': "7",
                 "document_name": "lcsee.statler.wvu.edu",
-                "source": "lcsee.statler.wvu.edu.txt",
+                "source": "lcsee.statler.wvu.edu",
                 "document_path": os.path.join(context_path, "lcsee.statler.wvu.edu.txt")
             }
             

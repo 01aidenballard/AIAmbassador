@@ -15,6 +15,13 @@ import argparse
 import json
 import psutil
 import threading
+import qrcode
+
+from PIL import Image
+
+sys.path.append("/home/ubuntu/Robotics/QuadrupedRobot")
+sys.path.extend([os.path.join(root, name) for root, dirs, _ in os.walk("/home/ubuntu/Robotics/QuadrupedRobot") for name in dirs])
+from Mangdang.LCD.ST7789 import ST7789
 
 from contextlib import contextmanager
 
@@ -80,6 +87,7 @@ class Conversation():
         
         answer_text = answer['generated_answer']
         answer_class = answer['question_class']
+        answer_source = answer['answer_source']
 
         print(f"Answer Document: {answer_class}")
 
@@ -107,10 +115,35 @@ class Conversation():
             self.previous_answer = answer_text
 
 
+        self.generate_redirect_qr_code(answer_source)
+        self.display_qr_code()
         #print(f"Previous Answer set to: {self.previous_answer}")
 
         return answer
     
+
+    def generate_redirect_qr_code(answer_source):
+
+        img = qrcode.make(answer_source)
+
+        img.save("direct_to.png")
+
+        return
+    
+    def display_qr_code():
+
+        # init st7789 device 
+        disp = ST7789()
+        disp.begin()
+        disp.clear()
+
+        # show exaple picture
+        image=Image.open("./direct_to.png")
+        image.resize((320,240))
+        disp.display(image)
+    
+        return
+
     def conversate(self, conversation):
         """
         Function to handle the conversation between the user and the CRG API.
