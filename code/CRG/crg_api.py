@@ -962,7 +962,8 @@ class CRG():
 
             question_info = {
                 'generated_answer': gen_answer,
-                'question_class': context_chunk['metadatas'][0][0]['document_name']
+                'question_class': context_chunk['metadatas'][0][0]['document_name'],
+                'answer_source': context_chunk['metadatas'][0][0]['source']
             }
 
             return question_info
