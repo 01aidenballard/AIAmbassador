@@ -15,13 +15,6 @@ import argparse
 import json
 import psutil
 import threading
-import qrcode
-
-from PIL import Image
-
-sys.path.append("/home/ubuntu/Robotics/QuadrupedRobot")
-sys.path.extend([os.path.join(root, name) for root, dirs, _ in os.walk("/home/ubuntu/Robotics/QuadrupedRobot") for name in dirs])
-from Mangdang.LCD.ST7789 import ST7789
 
 from contextlib import contextmanager
 
@@ -36,6 +29,8 @@ from crg_api import CRG, ClassifyMethod, ExtractMethod, RetrieveMethod, Generate
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Logs')))
 
 from Logging import Log
+
+from display import Display as D
 
 #== Global Variables ==#
 
@@ -58,6 +53,9 @@ class Conversation():
             generate_method=generate_method,
             method_rag=method_rag,
             print_info=False)
+        
+        self.wake_word = wake_word
+        self.sleep_word = sleep_word
         
         self.lain = L(wake_word, sleep_word)
 
@@ -115,34 +113,12 @@ class Conversation():
             self.previous_answer = answer_text
 
 
-        self.generate_redirect_qr_code(answer_source)
-        self.display_qr_code()
+        D.generate_redirect_qr_code(answer_source)
+        # D.display_qr_code()
         #print(f"Previous Answer set to: {self.previous_answer}")
 
         return answer
     
-
-    def generate_redirect_qr_code(self, answer_source):
-
-        img = qrcode.make(answer_source)
-
-        img.save("direct_to.png")
-
-        return
-    
-    def display_qr_code(self):
-
-        # init st7789 device 
-        disp = ST7789()
-        disp.begin()
-        disp.clear()
-
-        # show exaple picture
-        image=Image.open("./direct_to.png")
-        image.resize((320,240))
-        disp.display(image)
-    
-        return
 
     def conversate(self, conversation):
         """
@@ -166,10 +142,10 @@ class Conversation():
                     conversation.respond(user_statement)
 
 
-
             
             elif interaction == "speak":
-                action = L.listen_for_action_word(self.lain)
+                # action = L.listen_for_action_word(self.lain) # listen for wake word (prior method)
+                action = L.listen_with_background_recognition(self.wake_word) # listen for wake word (new method/multithreaded)
             
                 if action:
                     
