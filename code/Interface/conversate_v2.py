@@ -130,10 +130,18 @@ class Conversation():
 
 
             Log.log("SYSTEM", "Waiting for user...")
+            print("Enter interaction mode (type or speak): ")
             # input type to type, speak to speak
-            interaction = input()
+            interaction = input().lower()
             if interaction == "type":
                 
+                Log.log("SYSTEM", "Type selected, waiting for user question...")
+                # Use a random response from the listening_responses
+                random.seed(time.time())
+                response = self.listening_responses[random.randint(0, len(self.listening_responses)-1)]
+                sys_command(f"flite -voice rms -t '{response}'")
+                Log.log("INFO", f"Lain: {response}")
+
                 while True:
                     user_statement = input("Enter your question: ")
 
@@ -141,59 +149,62 @@ class Conversation():
 
                     conversation.respond(user_statement)
 
+                    completed_response = subprocess.run(f"flite -voice rms -t \"{answer}", shell=True, check=True)
+                    continue # go back to waiting for another question
+
 
             
             elif interaction == "speak":
                 # action = L.listen_for_action_word(self.lain) # listen for wake word (prior method)
-                action = L.listen_with_background_recognition(self.wake_word) # listen for wake word (new method/multithreaded)
+                L.listen_with_background_recognition(self.lain) # listen for wake word (new method/multithreaded)
             
-                if action:
+                
+                # upon wake word detection, respond   
+                Log.log("SYSTEM", "Wake word detected, listening for user question...")
+                # Use a random response from the listening_responses
+                random.seed(time.time())
+                response = self.listening_responses[random.randint(0, len(self.listening_responses)-1)]
+                sys_command(f"flite -voice rms -t '{response}'")
+                Log.log("INFO", f"Lain: {response}")
+
+                null_count = 0
+
+                while True:
                     
-                    Log.log("SYSTEM", "Wake word detected, listening for user question...")
-                    # Use a random response from the listening_responses
-                    random.seed(time.time())
-                    response = self.listening_responses[random.randint(0, len(self.listening_responses)-1)]
-                    sys_command(f"flite -voice rms -t '{response}'")
-                    Log.log("INFO", f"Lain: {response}")
+                    # listen for user question
+                    user_statement = L.listen(self.lain)
+                    Log.log("INFO", f"User question: {user_statement}")
+                    
+                    if user_statement is None:
+                        # error = "Error: Could not understand question"
+                        # sys_command(error)
+                        Log.log("ERROR", "Could not understand question, please try again...")
+                        sys_command("flite -voice rms -t 'Could not understand question, please try again...'")
 
-                    null_count = 0
+                        # count null messages, if 3 in a row, go back to sleep
+                        null_count += 1
+                        if null_count == 3:
+                            Log.log("SYSTEM", "Too many null messages, going back to sleep...")
+                            break
+                        continue
 
-                    while True:
-                        
-                        # listen for user question
-                        user_statement = L.listen(self.lain)
-                        Log.log("INFO", f"User question: {user_statement}")
-                        
-                        if user_statement is None:
-                            # error = "Error: Could not understand question"
-                            # sys_command(error)
-                            Log.log("ERROR", "Could not understand question, please try again...")
-                            sys_command("flite -voice rms -t 'Could not understand question, please try again...'")
+                    null_count = 0 # reset null count if we got a valid question
 
-                            # count null messages, if 3 in a row, go back to sleep
-                            null_count += 1
-                            if null_count == 3:
-                                Log.log("SYSTEM", "Too many null messages, going back to sleep...")
-                                break
-                            continue
+                    answer = conversation.respond(user_statement) # process response
+                    
+                    
 
-                        null_count = 0 # reset null count if we got a valid question
+                    # print(f'Answer: {answer}')
+                    # print(f'Time taken: {et - st:.2f} seconds\n')
+                    
 
-                        answer = conversation.respond(user_statement) # process response
-                        
-                        
+                    completed_response = subprocess.run(f"flite -voice rms -t \"{answer}", shell=True, check=True)
+                    continue # go back to listening for another question
 
-                        # print(f'Answer: {answer}')
-                        # print(f'Time taken: {et - st:.2f} seconds\n')
-                        
-
-                        completed_response = subprocess.run(f"flite -voice rms -t \"{answer}", shell=True, check=True)
-                        continue # go back to listening for another question
-
-                elif not action:
-                    Log.log("SYSTEM", "Sleep word detected, exiting...")
-                    sys_command("flite -voice rms -t 'Goodbye'")
-                    break
+                # if not action:
+                #     Log.log("SYSTEM", "Sleep word detected, exiting...")
+                #     sys_command("flite -voice rms -t 'Goodbye'")
+                #     break
 
 #== Method ==#
 def load_testset(path: str) -> dict:
@@ -305,7 +316,7 @@ def main(args):
         retrieve_method = RetrieveMethod.CSS_VEC,
         generate_method = GenerateMethod.FLAN_T5,
         method_rag = True,
-        wake_word="lane",
+        wake_word="lex",
         sleep_word="go to sleep"
     )
 
