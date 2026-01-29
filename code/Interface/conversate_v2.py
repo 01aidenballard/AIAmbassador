@@ -85,7 +85,7 @@ class Conversation():
         
         answer_text = answer['generated_answer']
         answer_class = answer['question_class']
-        answer_source = answer['answer_source']
+        
 
         print(f"Answer Document: {answer_class}")
 
@@ -112,8 +112,9 @@ class Conversation():
             Log.log("INFO", f"Answer: {answer_text}\n(Time taken: {et - st:.2f} seconds)")
             self.previous_answer = answer_text
 
-
-        D.generate_redirect_qr_code(answer_source)
+        #if self.crg.method_rag:
+            #answer_source = answer['answer_source']
+            #D.generate_redirect_qr_code(answer_source)
         # D.display_qr_code()
         #print(f"Previous Answer set to: {self.previous_answer}")
 
@@ -315,7 +316,7 @@ def main(args):
         extract_method = ExtractMethod.VEC,
         retrieve_method = RetrieveMethod.CSS_VEC,
         generate_method = GenerateMethod.FLAN_T5,
-        method_rag = True,
+        method_rag = False,
         wake_word="lex",
         sleep_word="go to sleep"
     )

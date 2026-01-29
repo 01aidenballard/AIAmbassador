@@ -734,17 +734,19 @@ class Generate():
             self.method = method
 
             if self.method == GenerateMethod.FLAN_T5:
-                model_name = "Flan-T5"
+                self.model_name = "Flan-T5"
+                name = 'google/flan-t5-small'
+                self.tokenizer = T5Tokenizer.from_pretrained(name, legacy=False)
+                self.model = T5ForConditionalGeneration.from_pretrained(name)
             elif self.method == GenerateMethod.TINY_LLAMA:
-                model_name = "TinyLlama"
+                self.model_name = "TinyLlama"
             elif self.method == GenerateMethod.CONTEXT_ONLY:
-                model_name = "Context Only"
+                self.model_name = "Context Only"
             else:
                 Log.log("ERROR", f"Unknown GenerateMethod: {self.method}, options are FLAN_T5, TINY_LLAMA, CONTEXT_ONLY")
                 Log.flush()
                 raise ValueError(f"Unknown GenerateMethod: {self.method}, options are FLAN_T5, TINY_LLAMA, CONTEXT_ONLY")
             
-            self.model = model_name
 
         def generate_answer(self, question: str, context: str = "") -> str:
             '''
@@ -758,7 +760,7 @@ class Generate():
                 str: Generated answer
             '''
 
-            if self.model == "Flan-T5":
+            if self.model_name == "Flan-T5":
 
                 # system prompt for Flan-T5
                 system_prompt = """
@@ -776,17 +778,12 @@ class Generate():
                     f"Question: {question}"
                 )
 
-                
-                # load model
-                name = 'google/flan-t5-small'
-                tokenizer = T5Tokenizer.from_pretrained(name, legacy=False)
-                model = T5ForConditionalGeneration.from_pretrained(name)
 
                 # tokenize input
-                inputs = tokenizer(input_text, return_tensors='pt', max_length=512, truncation=True)
+                inputs = self.tokenizer(input_text, return_tensors='pt', max_length=512, truncation=True)
                 
                 # generate response
-                output_tokens = model.generate(
+                output_tokens = self.model.generate(
                     **inputs,
                     max_length=256,
                     do_sample=True,
@@ -794,15 +791,15 @@ class Generate():
                     top_p=0.8,
                     repetition_penalty=1.2,
                     num_return_sequences=1,  # Single response
-                    eos_token_id=tokenizer.eos_token_id  # Ensures proper sentence ending
+                    eos_token_id=self.tokenizer.eos_token_id  # Ensures proper sentence ending
                 )
 
                 # decode the generated response
-                response = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+                response = self.tokenizer.decode(output_tokens[0], skip_special_tokens=True)
 
                 return response
             
-            elif self.model == "TinyLlama":
+            elif self.model_name == "TinyLlama":
 
                 # system prompt for TinyLlama
                 system_prompt = f"""
@@ -862,7 +859,7 @@ class Generate():
                 # Just return the stripped question
                 return response
 
-            elif self.model == "Context Only":
+            elif self.model_name == "Context Only":
                 # if no generation model is selected, return the context
                 return context
             else:
