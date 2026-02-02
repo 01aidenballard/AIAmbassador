@@ -16,7 +16,7 @@ import random
 
 import numpy as np 
 import torch.nn as nn
-torch.set_num_threads(4)  # Use all 4 cores of Pi 4B
+torch.set_num_threads(3)  # Use 3 cores of Pi 4B
 torch.set_grad_enabled(False)  # Disable gradients for inference
 
 from enum import Enum
