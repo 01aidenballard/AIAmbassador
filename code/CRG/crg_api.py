@@ -492,12 +492,13 @@ class Classify():
         # VEC
         elif self.extract_method == ExtractMethod.VEC:
             # load a pretrained model
-            model = SentenceTransformer('all-MiniLM-L6-v2')
-            
-            global MODEL_W2V
-            MODEL_W2V = model
 
-            info = model.encode(question)
+            global MODEL_W2V
+
+            if MODEL_W2V is None:
+                MODEL_W2V = SentenceTransformer('all-MiniLM-L6-v2')
+
+            info = MODEL_W2V.encode(question)
 
         else:
             Log.log("ERROR", f"Invalid extraction method: {self.extract_method}")
