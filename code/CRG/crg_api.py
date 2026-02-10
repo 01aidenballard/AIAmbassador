@@ -741,6 +741,7 @@ class Generate():
                 name = 'google/flan-t5-small'
                 self.tokenizer = T5Tokenizer.from_pretrained(name, legacy=False)
                 self.model = T5ForConditionalGeneration.from_pretrained(name)
+                self.model.eval()
             elif self.method == GenerateMethod.TINY_LLAMA:
                 self.model_name = "TinyLlama"
             elif self.method == GenerateMethod.CONTEXT_ONLY:
