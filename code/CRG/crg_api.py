@@ -74,6 +74,8 @@ MODEL_SVM_PTH = 'classify/svm_c_model.pth'
 MODEL_BERT_PTH = 'classify/bert-question-classifier'
 MODEL_DISTILBERT_PTH = 'classify/distilbert-question-classifier'
 
+INIT = True  # Flag to indicate if this is the initial run (used for loading models)
+
 MODEL_SPACY = None
 MODEL_TFIDF_VEC = None
 MODEL_W2V = None
@@ -383,23 +385,25 @@ class Classify():
         # initialize and fit label encoder
         label_encoder = LabelEncoder()
         label_encoder.fit_transform(self.dataset.labels)
-
+        global INIT
         # load pretrained model and tokenizer
-        if classify_method == ClassifyMethod.BERT:
+        if classify_method == ClassifyMethod.BERT and INIT:
             # check if exist
             if os.path.exists(MODEL_BERT_PTH):
                 model = BertForSequenceClassification.from_pretrained(MODEL_BERT_PTH)
                 tokenizer = BertTokenizer.from_pretrained(MODEL_BERT_PTH)
+                INIT = False  # Set INIT to False after loading the model
             else:
                 Log.log("ERROR", f"Pretrained BERT model not found at {MODEL_BERT_PTH}")
                 Log.flush()
                 quit()
 
-        elif classify_method == ClassifyMethod.DISTILBERT:
+        elif classify_method == ClassifyMethod.DISTILBERT and INIT:
             # check if exist
             if os.path.exists(MODEL_DISTILBERT_PTH):
                 model = DistilBertForSequenceClassification.from_pretrained(MODEL_DISTILBERT_PTH)
                 tokenizer = DistilBertTokenizer.from_pretrained(MODEL_DISTILBERT_PTH)
+                INIT = False  # Set INIT to False after loading the model
             else:
                 Log.log("ERROR", f"Pretrained DistilBERT model not found at {MODEL_DISTILBERT_PTH}")
                 Log.flush()
