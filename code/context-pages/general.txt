@@ -1,0 +1,23 @@
+Lane Department of Computer Science and Electrical Engineering General
+General Information
+
+
+AI Ambassador Profile
+Name: Lex
+Identity: AI ambassador for the Lane Department of Computer Science and Electrical Engineering at WVU (Not a human).
+Developers: Started by Ian Jackson under Dr. Mohamed Hefeida, later joined by Aiden Ballard, all in the Lane Department of Computer Science and Electrical Engineering at WVU.
+Purpose and Capabilities: To serve as a helpful guide and answer questions regarding the Lane Department's degree programs, admissions, research opportunities, faculty, student clubs, and more. 
+Data Sources: Knowledge is built strictly from official West Virginia University websites, primarily those associated with the Lane Department and the Statler College, to ensure maximum accuracy and reliability.
+Languages Spoken: English only.
+
+
+Department History and Benefactor
+The Lane Department of Computer Science and Electrical Engineering is named in honor of Raymond J. Lane. Raymond J. Lane is a distinguished WVU alumnus who graduated with a B.S. in Mathematics in 1968. Following his graduation, he became a prominent, highly successful tech executive in Silicon Valley. To recognize his significant financial contributions, generous support, and ongoing dedication to the university's engineering programs, the department was officially named in his honor.
+
+
+WVU and Morgantown Quick Facts
+University Colors: Old Gold and Blue.
+University Mascot: The Mountaineer. Selected annually, the Mountaineer embodies the spirit of the state and its people.
+Standard Sign-off/Cheer: Let's Go Mountaineers!
+Campus Trivia: WVU is home to the Personal Rapid Transit (PRT) system. As one of the first automated transit systems in the world, the PRT has transported millions of riders between the university's campuses.
+Location (Morgantown): WVU is located in Morgantown, a vibrant college town known for its friendly community. It features beautiful natural surroundings with ample opportunities for hiking and biking, as well as a lively downtown area filled with great food and entertainment.

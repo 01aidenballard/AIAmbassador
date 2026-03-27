@@ -100,7 +100,14 @@ class RAG:
                 "document_name": "lcsee.statler.wvu.edu",
                 "source": "lcsee.statler.wvu.edu",
                 "document_path": os.path.join(context_path, "lcsee.statler.wvu.edu.txt")
+            },
+            {
+                'id': "8",
+                "document_name": "generic",
+                "source": "N/A",
+                "document_path": os.path.join(context_path, "lcsee.statler.wvu.edu.txt")
             }
+            
             
         ]
 
@@ -133,13 +140,13 @@ class RAG:
 
 
     @staticmethod
-    def chunk_data(data, chunk_size=500, overlap=50):
+    def chunk_data(data, chunk_size=100, overlap=20):
         """
         Function to chunk data into smaller pieces for better processing.
         Args:
             data: list - A list of dictionaries, each representing a page/document.
-            chunk_size: int - the size of each chunk (unused in --- mode, but kept for compatibility)
-            overlap: int - the overlap between chunks (unused here, but kept for compatibility)
+            chunk_size: int - the size of each chunk in characters
+            overlap: int - the overlap between chunks in characters
         Returns:
             chunks: list - list of chunked data
         """
@@ -152,12 +159,14 @@ class RAG:
                 print(f"Warning: File not found at {page['document_path']}. Skipping this file.")
                 continue
 
-            # Split on your section divider
-            chunks_split = document_content.split('---')
-
-            for chunk_index, chunk in enumerate(chunks_split):
-                chunk = chunk.strip()
-
+            # Chunk by size with overlap
+            chunk_index = 0
+            start = 0
+            
+            while start < len(document_content):
+                end = start + chunk_size
+                chunk = document_content[start:end].strip()
+                
                 # Only store non-empty chunks
                 if chunk:
                     chunks.append({
@@ -169,6 +178,10 @@ class RAG:
                             "document_name": page["document_name"]
                         }
                     })
+                    chunk_index += 1
+                
+                # Move start position by chunk_size minus overlap
+                start += chunk_size - overlap
 
         return chunks
     

@@ -4,7 +4,7 @@ The Lane Department offers graduate programs aimed at preparing students for bot
 
 This site is intended to provide current and prospective students with information on our graduate offerings, including the application process and degree requirements. If the information you are seeking cannot be found, please email Statler-LCSEE-GradServices@mail.wvu.edu, or consult the WVU Catalog.
 
----
+
 Programs Offered
 
 Master's Programs
@@ -41,8 +41,8 @@ The specific requirements for computer science and electrical engineering are li
 -No more than one independent study is allowed.
 -All the remaining courses must be subject to approval from the chair of students Advisory Examination Committee.
 -Research assistants must pursue the thesis option.
----
----
+
+
 Ph.D. Programs
 -Ph.D. Computer Engineering
 
@@ -83,16 +83,16 @@ The student will undergo the oral Qualifying Examination at the established time
 After successfully passing the LCSEE departmental Ph.D. Qualifying Exam, the student must prepare a written dissertation proposal and orally present it to his or her Advisory Examination Committee (AEC). The proposal should identify the goals and objectives of the student's research and present a plan for achieving these goals and objectives. It should include results of a feasibility study and detailed literature review. The AEC may approve the research conditioned upon stipulated changes to the proposal. At its discretion, the AEC may assign additional questions that test the student's in-depth knowledge of subjects related to the student's research field. If changes to the proposal are required or additional questions assigned, the Chair of the AEC should ensure that the requirements are met by the student before signing the Admission to Candidacy form.
 At an appropriate time under the recommendations of the student's advisor, the student will undergo a Candidacy Examination with the members of the student's Advisory Examination Committee. This examination is stipulated by the Benjamin M. Statler College of Engineering and Mineral Resources. In order to apply for a Candidacy Examination, the candidate must fill out the Candidacy Examination Application form and submit it to the Graduate Administrative Assistant.
 The final step in the process is the Oral Defense of the student's research. The timing of this will be determined in conjunction with the student's advisor. There must be a minimum of four and one half months between Candidacy Examination and Oral Defense.
----
----
+
+
 Certificate Programs
 Graduate certificates are offered at West Virginia University to demonstrate concentrated study in certain selected areas. These certificates can be pursued in conjunction with a Master's or Ph.D. degree. Typically, 15 hours in a concentrated area followed by an examination are required.
 
 LCSEE currently offers certificates in these areas,
 -Graduate certificate in software engineering
 -Graduate certificate in computer forensics
----
----
+
+
 Financial Support
 The primary source for financial support within the department is the Graduate Teaching Assistantship. A number of research programs also offer positions for Graduate Research Assistants. Even if you do not have an assistantship at the present time, you may apply for assistantships in future semesters. The Graduate Teaching Assistantship (GTA) form must be renewed every semester.
 It is normal and appropriate that doctoral students may be funded as GRAs in connection with funded research projects in which their own research advisor participates. If you are a doctoral student, very possibly you were recruited to come to WVU specifically as a GRA for a particular project. For bonafide doctoral students who do not have a funding source through a research project, the Department will try to provide support as a GTA to the extent possible. This funding, however, cannot be guaranteed. Doctoral students who have passed their qualifiers generally receive a higher stipend than Master's degree students.
@@ -105,25 +105,24 @@ Tuition waivers may not be used to maintain your registration status in your gra
 A number of graduate fellowship programs are also available for outstanding students and students who are in certain special categories. Fellowship can be awarded to current graduate students, not only those entering for the first time. See your advisor for more information.
 The WVNano graduate fellowship program at WVU supports Ph.D. graduate students from under-represented classes in science, technology, engineering and math disciplines to increase STEM diversity at WVU and ensure lifetime career success through comprehensive career training.
 There are a number of funding options available to students entering graduate school. If you're willing to take the time to fully research your options, you have a good chance of covering a significant portion of your graduate school costs.
----
----
+
+
 Research, Electronic Theses + Dissertations
 Follow this link for more https://etd.lib.wvu.edu/
----
+
 Graduate Student Job Opportunities
 Grader-CSEE (10188926) at West Virginia University
 Statler College IT-Technical Student Intern (Federal Work-Study/Evansdale) #9944129 at West Virginia University
----
 
----
+
+
 Lane Department of Computer Science and Electrical Engineering (LCSEE) Address
 1220 Evansdale Drive | PO Box 6109
 Morgantown, West Virginia 26506-6109
 Phone:  304-293-5263 | Fax:  304-293-8602
----
----
+
+
 Benjamin M. Statler College of Engineering and Mineral Resources (LCSEE) Address
 1374 Evansdale Drive | PO Box 6070
 Morgantown, West Virginia 26506-6070
 Phone:  304.293.4821 |  Email:  statler-info@mail.wvu.edu
----
