@@ -2,20 +2,23 @@
 Classify-Retrieve-Generate API
 Provides classes and methods to use CRG in Python Script
 
-Author: Ian Jackson
-Date: 03/18/2025
+Authors: Ian Jackson and Aiden Ballard
+Date: 10/09/2025
 '''
 
 #== Imports ==#
 import os
 import sys
 import json
+import time
 import torch
 import spacy
 import random
 
 import numpy as np 
 import torch.nn as nn
+torch.set_num_threads(3)  # Use 3 cores of Pi 4B
+torch.set_grad_enabled(False)  # Disable gradients for inference
 
 from enum import Enum
 from typing import Union
@@ -34,6 +37,11 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Logs')))
 
 from Logging import Log
+
+# Add the RAG directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'RAG')))
+
+from vector_db import RAG
 
 
 #== Enums ==#
@@ -66,6 +74,8 @@ MODEL_LR_PTH = 'classify/lr_c_model.pth'
 MODEL_SVM_PTH = 'classify/svm_c_model.pth'
 MODEL_BERT_PTH = 'classify/bert-question-classifier'
 MODEL_DISTILBERT_PTH = 'classify/distilbert-question-classifier'
+
+INIT = True  # Flag to indicate if this is the initial run (used for loading models)
 
 MODEL_SPACY = None
 MODEL_TFIDF_VEC = None
@@ -376,23 +386,25 @@ class Classify():
         # initialize and fit label encoder
         label_encoder = LabelEncoder()
         label_encoder.fit_transform(self.dataset.labels)
-
+        global INIT
         # load pretrained model and tokenizer
-        if classify_method == ClassifyMethod.BERT:
+        if classify_method == ClassifyMethod.BERT and INIT:
             # check if exist
             if os.path.exists(MODEL_BERT_PTH):
                 model = BertForSequenceClassification.from_pretrained(MODEL_BERT_PTH)
                 tokenizer = BertTokenizer.from_pretrained(MODEL_BERT_PTH)
+                INIT = False  # Set INIT to False after loading the model
             else:
                 Log.log("ERROR", f"Pretrained BERT model not found at {MODEL_BERT_PTH}")
                 Log.flush()
                 quit()
 
-        elif classify_method == ClassifyMethod.DISTILBERT:
+        elif classify_method == ClassifyMethod.DISTILBERT and INIT:
             # check if exist
             if os.path.exists(MODEL_DISTILBERT_PTH):
                 model = DistilBertForSequenceClassification.from_pretrained(MODEL_DISTILBERT_PTH)
                 tokenizer = DistilBertTokenizer.from_pretrained(MODEL_DISTILBERT_PTH)
+                INIT = False  # Set INIT to False after loading the model
             else:
                 Log.log("ERROR", f"Pretrained DistilBERT model not found at {MODEL_DISTILBERT_PTH}")
                 Log.flush()
@@ -485,12 +497,13 @@ class Classify():
         # VEC
         elif self.extract_method == ExtractMethod.VEC:
             # load a pretrained model
-            model = SentenceTransformer('all-MiniLM-L6-v2')
-            
-            global MODEL_W2V
-            MODEL_W2V = model
 
-            info = model.encode(question)
+            global MODEL_W2V
+
+            if MODEL_W2V is None:
+                MODEL_W2V = SentenceTransformer('all-MiniLM-L6-v2')
+
+            info = MODEL_W2V.encode(question)
 
         else:
             Log.log("ERROR", f"Invalid extraction method: {self.extract_method}")
@@ -725,20 +738,23 @@ class Generate():
             Args:
                 method (GenerateMethod): Enum to select the generation model
             '''
+
             self.method = method
 
             if self.method == GenerateMethod.FLAN_T5:
-                model_name = "Flan-T5"
+                self.model_name = "Flan-T5"
+                name = 'google/flan-t5-small'
+                self.tokenizer = T5Tokenizer.from_pretrained(name, legacy=False)
+                self.model = T5ForConditionalGeneration.from_pretrained(name)
             elif self.method == GenerateMethod.TINY_LLAMA:
-                model_name = "TinyLlama"
+                self.model_name = "TinyLlama"
             elif self.method == GenerateMethod.CONTEXT_ONLY:
-                model_name = "Context Only"
+                self.model_name = "Context Only"
             else:
                 Log.log("ERROR", f"Unknown GenerateMethod: {self.method}, options are FLAN_T5, TINY_LLAMA, CONTEXT_ONLY")
                 Log.flush()
                 raise ValueError(f"Unknown GenerateMethod: {self.method}, options are FLAN_T5, TINY_LLAMA, CONTEXT_ONLY")
             
-            self.model = model_name
 
         def generate_answer(self, question: str, context: str = "") -> str:
             '''
@@ -752,121 +768,106 @@ class Generate():
                 str: Generated answer
             '''
 
-            if self.model == "Flan-T5":
+            if self.model_name == "Flan-T5":
 
                 # system prompt for Flan-T5
                 system_prompt = """
-                    Persona: You are "Lain," a friendly and enthusiastic university tour guide. Your audience is a group of prospective high school students and their families. Your tone should be welcoming, helpful, and engaging.
-
-                    Core Task: Your primary goal is to take a piece of factual information (the "Retreived Answer") and rephrase it into a natural, conversational response("Generated Response") to a "User Question."
-
-                    Instructions:
-                    1.  Natural Language: Transform the provided "Retrieved Answer" from a factual statement into a flowing, easy-to-understand sentence or two. Imagine you are speaking directly to someone on a campus tour.
-                    2.  Strict Information Adherence: You MUST only use the information provided in the "Retrieved Answer." Do not add any new facts, statistics, or details, even if they seem relevant. Do not hallucinate. Be concise, but thorough with the specifics.
-                    3.  No Meta-Commentary: Do not mention that you have been "given" or "provided" with information. The response should be seamless.
-                    4.  Engage with a Question: After providing the answer, always ask a relevant, open-ended follow-up question to encourage further conversation.
-                    5.  Structure: The final output should only be the conversational reply from Lain.
-
-                    Example of your task:
-
-                    User Question: "What's the student-to-faculty ratio?"
-                    Retrieved Answer: "The student-to-faculty ratio is 15 to 1."
-
-                    Generated Response:
-                    "That's a great question! We have a student-to-faculty ratio of 15 to 1, which means our professors get to know their students really well. Are you interested in any particular academic departments?"
-
-                    Now, use the following information to answer the user's question:
+                    You MUST answer using ONLY the provided context.
+                    If multiple relevant lines exist, combine them into a single comprehensive answer.
+                    Do NOT answer using only part of the context. Summarize ALL relevant information before responding.
+                    Your answer should be complete, friendly, and conversational.
                     """
+
 
                 # put together input text
                 input_text = (
-                    f"{system_prompt}"
-                    f"User Question: {question}\n"
-                    f"Retrieved Answer: {context}\n"
-                    f"Generated Response:"
+                    f"{system_prompt}\n\n"
+                    f"Context: {context}\n\n"
+                    f"Question: {question}"
                 )
 
-                
-                # load model
-                name = 'google/flan-t5-small'
-                tokenizer = T5Tokenizer.from_pretrained(name, legacy=False)
-                model = T5ForConditionalGeneration.from_pretrained(name)
 
                 # tokenize input
-                inputs = tokenizer(input_text, return_tensors='pt', max_length=512, truncation=True)
-
+                inputs = self.tokenizer(input_text, return_tensors='pt', max_length=512, truncation=True)
+                
                 # generate response
-                output_tokens = model.generate(
+                output_tokens = self.model.generate(
                     **inputs,
                     max_length=256,
-                    do_sample=True,  # Enables creative responses
-                    temperature=0.7,  # Introduces variety
-                    top_p=0.9,  # Ensures diverse and high-quality generation
-                    repetition_penalty=1.2,  # Prevents repeating phrases
+                    do_sample=True,
+                    temperature=0.8,
+                    top_p=0.8,
+                    repetition_penalty=1.2,
                     num_return_sequences=1,  # Single response
-                    eos_token_id=tokenizer.eos_token_id  # Ensures proper sentence ending
+                    eos_token_id=self.tokenizer.eos_token_id  # Ensures proper sentence ending
                 )
 
                 # decode the generated response
-                response = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+                response = self.tokenizer.decode(output_tokens[0], skip_special_tokens=True)
 
                 return response
             
-            elif self.model == "TinyLlama":
+            elif self.model_name == "TinyLlama":
 
                 # system prompt for TinyLlama
-                system_prompt = """
-                    You are a friendly and engaging tour guide for West Virginia University.
-                    Your role is to provide clear, conversational, and helpful responses based on the given information.
+                system_prompt = f"""
+                    You are Lain, a friendly university tour guide. 
+                    You must answer the User Question using ONLY the information in the provided Context.
 
-                    - Rephrase the provided information in a natural, engaging way.
-                    - Do NOT mention that the information was 'given' or 'provided'.
-                    - Do NOT hallucinate or make up information, only use what is given.
-                    - Keep responses concise.
+                    Rules:
+                    - Provide ONE short, detailed answer.
+                    - Do not use lists, bullet points, or line breaks. Use only complete sentences.
+                    - ONLY answer the question, do not provide additional information.
+                    - If the Context does not contain the answer, respond with "I don't know."
+                    - Do not restate or reference the question.
+                    - Do not mention the context or your reasoning.
+                    - Output ONLY in the format below.
+
+                    Example:
+                    User Question: What programs does LCSEE offer for undergraduate students?
+                    Answer: The Lane Department offers a variety of undergraduate programs including Computer Science, Electrical Engineering, Cybersecurity, and Computer Engineering.
+
+                    Context:
+                    {context}
+
+                    Format:
+                    Answer: <your answer here>
+
                     """
 
-                # user prompt for TinyLlama
-                user_prompt = f"Answer the Users Question: {question} with this context: {context}"
+                user_prompt = f"User Question: {question}\nAnswer:"
 
-                # put together input text
-                input_text = (
-                    f"User Question: {question}\n"
-                    f"Retrieved Answer: {context}\n"
-                    f"Generated Response:"
-                )
-                
                 # load model
-                model = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
-                tokenizer = AutoTokenizer.from_pretrained(model)
-                model = AutoModelForCausalLM.from_pretrained(model)
+                model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+                tokenizer = AutoTokenizer.from_pretrained(model_name)
+                model = AutoModelForCausalLM.from_pretrained(model_name)
 
                 messages = [
                     {"role": "system", "content": system_prompt},  
                     {"role": "user", "content": user_prompt},  
                 ]
 
+                
                 # tokenize input
                 inputs = tokenizer.apply_chat_template(messages, return_tensors="pt")
                 input_ids = inputs.unsqueeze(0) if inputs.dim() == 1 else inputs
-                # inputs = tokenizer(input_text, return_tensors="pt", max_length=512, truncation=True)
-                input_length = input_ids.shape[1]  # Get the length of the input tokens
+                input_length = input_ids.shape[1]
 
-                # Generate response
+                # Generate SHORT response
                 with torch.no_grad():
                     output_tokens = model.generate(
-                        # **inputs,
-                        input_ids=input_ids,
-                        max_length=512,
-                        repetition_penalty=1.2,  
-                        num_return_sequences=1,  
-                        eos_token_id=tokenizer.eos_token_id 
+                    input_ids=input_ids,
+                    max_new_tokens=50,
+                    do_sample=False, 
+                    eos_token_id=tokenizer.eos_token_id,
                     )
 
-                # Decode the generated response
                 response = tokenizer.decode(output_tokens[0, input_length:], skip_special_tokens=True)
-                
+
+                # Just return the stripped question
                 return response
-            elif self.model == "Context Only":
+
+            elif self.model_name == "Context Only":
                 # if no generation model is selected, return the context
                 return context
             else:
@@ -886,27 +887,37 @@ class CRG():
                  extract_method: ExtractMethod = ExtractMethod.VEC,
                  retrieve_method: RetrieveMethod = RetrieveMethod.CSS_VEC,
                  generate_method: GenerateMethod = GenerateMethod.FLAN_T5,
+                 method_rag: bool = False,
                  print_info: bool = False):
         # DOCUMENT: CRG initialization
-
+        self.yields = {} # testing results
+        self.method_rag = method_rag
         self.print_info = print_info
 
         # initialize dataset
         self.dataset = Dataset(dataset_path, cache_vectors=True if retrieve_method == RetrieveMethod.CSS_VEC else False)
         if self.print_info: print('✓ Dataset initialized'); Log.log("SYSTEM", "Dataset initialized")
 
+        # if RAG, skip classification step
+        if self.method_rag:
+            self.rag = RAG()
 
-        # initialize the classes for each step
-        self.classify = Classify(self.dataset, classify_method, extract_method)
-        if self.print_info: print('✓ Classification model initialized'); Log.log("SYSTEM", "Classification model initialized")
 
-        self.retrieve = Retrieve(self.dataset, retrieve_method, extract_method)
-        if self.print_info: print('✓ Retrieval model initialized'); Log.log("SYSTEM", "Retrieval model initialized")
+            if self.print_info: print('✓ RAG model initialized'); Log.log("SYSTEM", "RAG model initialized")
+
+        
+        else:
+            # initialize the classes for each step
+            self.classify = Classify(self.dataset, classify_method, extract_method)
+            if self.print_info: print('✓ Classification model initialized'); Log.log("SYSTEM", "Classification model initialized")
+
+            self.retrieve = Retrieve(self.dataset, retrieve_method, extract_method)
+            if self.print_info: print('✓ Retrieval model initialized'); Log.log("SYSTEM", "Retrieval model initialized")
 
         self.generate = Generate(generate_method)
         if self.print_info: print('✓ Generation model initialized'); Log.log("SYSTEM", "Generation model initialized")
 
-    def answer_question(self, question: str) -> str:
+    def answer_question(self, question: str) -> dict:
         '''
         Uses CRG flow to answer a given question
 
@@ -914,22 +925,106 @@ class CRG():
             question (str): question to be asked about LCSEE
 
         Returns:
-            str: Best answer
+            dict: Best answer and classification info
         '''
-        # classify and extract question
-        question_class = self.classify.classify_question(question)
-        question_info = self.classify.extract_info(question)
 
-        # filter dataset and store in dataset instance
-        self.dataset.filtered_dataset = filter_dataset(self.dataset.dataset, question_class)
+        if not self.method_rag:
+            # classify and extract question
+            
+            st = time.time()
 
-        # retrieve best answer
-        pred_answer = self.retrieve.retrieve_answer(question, question_info)
-    
-        # generation step
-        gen_answer = self.generate.generate_answer(question, pred_answer)
+            # classification
+            c_start = time.time()
+            question_class = self.classify.classify_question(question)
+            ct = time.time() - c_start
 
-        return gen_answer
+            # extraction
+            e_start = time.time()
+            question_info = self.classify.extract_info(question)
+            et = time.time() - e_start
+
+            # filtering
+            f_start = time.time()
+            self.dataset.filtered_dataset = filter_dataset(self.dataset.dataset, question_class)
+            ft = time.time() - f_start
+
+            # retrieval
+            r_start = time.time()
+            pred_answer = self.retrieve.retrieve_answer(question, question_info)
+            lengthA = len(pred_answer)
+            rt = time.time() - r_start
+            trt = time.time() - c_start
+
+            # generation
+            g_start = time.time()
+            gen_answer = self.generate.generate_answer(question, pred_answer)
+            lengthC = len(question) + lengthA
+            lengthG = len(gen_answer)
+            gt = time.time() - g_start
+
+            tt = time.time() - st
+
+            question_info = {
+                'generated_answer': gen_answer,
+                'question_class': question_class
+            }
+            
+            self.yields.update({
+                'totalTimeTaken': tt,
+                'timeToClassify': ct,
+                'timeToExtract': et,
+                'timeToFilter': ft,
+                'timeToJustRetrieve': rt,
+                'timeToRetrieve': trt,
+                'timeToGenerate': gt,
+                'lengthOfRetAnswer': lengthA,
+                'lengthOfGenAnswer': lengthG,
+                'lengthOfContext': lengthC
+            })
+
+
+            return question_info
+        
+        else:
+            # use RAG to get answer
+            st = time.time()
+            context_chunk = self.rag.answer_question(question)
+            rt = time.time() - st
+            # Stringify context chunk
+            context = " ".join(context_chunk['documents'][0])
+            lengthC = len(context)
+            ### FLAN_T5 can't handle large contexts, so stick with just the chunk.
+            #load full context page from derived document
+            # context_path = os.path.join("..", "context-pages")
+
+            # with open(os.path.join(context_path, context['metadatas'][0][0]['source']), 'r', encoding="utf-8") as f:
+            #     full_context = f.read()
+
+            gen_answer = self.generate.generate_answer(question, context)
+            lengthG = len(gen_answer)
+            gt = time.time() - rt
+            tt = time.time() - st
+            question_info = {
+                'generated_answer': gen_answer,
+                'question_class': context_chunk['metadatas'][0][0]['document_name'],
+                'answer_source': context_chunk['metadatas'][0][0]['source']
+            }
+
+            self.yields.update({
+                'totalTimeTaken': tt,
+                'timeToClassify': -1,
+                'timeToExtract': -1,
+                'timeToFilter': -1,
+                'timeToJustRetrieve': -1,
+                'timeToRetrieve': rt,
+                'timeToGenerate': gt,
+                'lengthOfRetAnswer': -1,
+                'lengthOfGenAnswer': lengthG,
+                'lengthOfContext': lengthC
+            })
+
+            return question_info
+
 
 #== Methods ==#
 def filter_dataset(dataset: dict, label: str) -> dict:

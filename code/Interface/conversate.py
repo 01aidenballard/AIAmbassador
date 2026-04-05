@@ -28,7 +28,7 @@ listening_responses=["Yes?", "How can I help you?", "I'm listening", "What can I
 
 
 def main():
-    
+
     # set dataset path
     dataset_pth = '../dataset.json'
 
@@ -76,6 +76,10 @@ def main():
             st = time.time()
             answer = crg.answer_question(user_q)
             et = time.time()
+
+            print(f'Answer: {answer}')
+            print(f'Time taken: {et - st:.2f} seconds\n')
+            
             Log.log("INFO", f"Answer: {answer}\n(Time taken: {et - st:.2f} seconds)")
 
             sys_command(f"flite -voice rms -t '{answer}'")
