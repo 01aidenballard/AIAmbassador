@@ -795,7 +795,7 @@ class Generate():
                     **inputs,
                     max_length=256,
                     do_sample=True,
-                    temperature=0.7,
+                    temperature=0.8,
                     top_p=0.8,
                     repetition_penalty=1.2,
                     num_return_sequences=1,  # Single response

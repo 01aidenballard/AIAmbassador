@@ -349,7 +349,7 @@ def main(args):
 
     conversation = Conversation(
         dataset_path = '../dataset.json',
-        classify_method = ClassifyMethod.SVM,
+        classify_method = ClassifyMethod.DISTILBERT,
         extract_method = ExtractMethod.VEC,
         retrieve_method = RetrieveMethod.CSS_VEC,
         generate_method = GenerateMethod.FLAN_T5,
