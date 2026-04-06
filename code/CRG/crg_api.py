@@ -10,6 +10,7 @@ Date: 10/09/2025
 import os
 import sys
 import json
+import time
 import torch
 import spacy
 import random
@@ -890,7 +891,7 @@ class CRG():
                  method_rag: bool = False,
                  print_info: bool = False):
         # DOCUMENT: CRG initialization
-
+        self.yields = {} # testing results
         self.method_rag = method_rag
         self.print_info = print_info
 
@@ -930,32 +931,69 @@ class CRG():
 
         if not self.method_rag:
             # classify and extract question
+            
+            st = time.time()
+
+            # classification
+            c_start = time.time()
             question_class = self.classify.classify_question(question)
+            ct = time.time() - c_start
+
+            # extraction
+            e_start = time.time()
             question_info = self.classify.extract_info(question)
+            et = time.time() - e_start
 
-            # filter dataset and store in dataset instance
+            # filtering
+            f_start = time.time()
             self.dataset.filtered_dataset = filter_dataset(self.dataset.dataset, question_class)
+            ft = time.time() - f_start
 
-            # retrieve best answer
+            # retrieval
+            r_start = time.time()
             pred_answer = self.retrieve.retrieve_answer(question, question_info)
-    
-            # generation step
+            lengthA = len(pred_answer)
+            rt = time.time() - r_start
+            trt = time.time() - c_start
+
+            # generation
+            g_start = time.time()
             gen_answer = self.generate.generate_answer(question, pred_answer)
+            lengthC = len(question) + lengthA
+            lengthG = len(gen_answer)
+            gt = time.time() - g_start
+
+            tt = time.time() - st
 
             question_info = {
                 'generated_answer': gen_answer,
                 'question_class': question_class
             }
+            
+            self.yields.update({
+                'totalTimeTaken': tt,
+                'timeToClassify': ct,
+                'timeToExtract': et,
+                'timeToFilter': ft,
+                'timeToJustRetrieve': rt,
+                'timeToRetrieve': trt,
+                'timeToGenerate': gt,
+                'lengthOfRetAnswer': lengthA,
+                'lengthOfGenAnswer': lengthG,
+                'lengthOfContext': lengthC
+            })
+
 
             return question_info
         
         else:
             # use RAG to get answer
+            st = time.time()
             context_chunk = self.rag.answer_question(question)
-            
+            rt = time.time() - st
             # Stringify context chunk
             context = " ".join(context_chunk['documents'][0])
-
+            lengthC = len(context)
             ### FLAN_T5 can't handle large contexts, so stick with just the chunk.
             #load full context page from derived document
             # context_path = os.path.join("..", "context-pages")
@@ -964,12 +1002,27 @@ class CRG():
             #     full_context = f.read()
 
             gen_answer = self.generate.generate_answer(question, context)
-
+            lengthG = len(gen_answer)
+            gt = time.time() - rt
+            tt = time.time() - st
             question_info = {
                 'generated_answer': gen_answer,
                 'question_class': context_chunk['metadatas'][0][0]['document_name'],
                 'answer_source': context_chunk['metadatas'][0][0]['source']
             }
+
+            self.yields.update({
+                'totalTimeTaken': tt,
+                'timeToClassify': -1,
+                'timeToExtract': -1,
+                'timeToFilter': -1,
+                'timeToJustRetrieve': -1,
+                'timeToRetrieve': rt,
+                'timeToGenerate': gt,
+                'lengthOfRetAnswer': -1,
+                'lengthOfGenAnswer': lengthG,
+                'lengthOfContext': lengthC
+            })
 
             return question_info
 

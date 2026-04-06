@@ -15,6 +15,7 @@ import argparse
 import json
 import psutil
 import threading
+import sacrebleu
 
 from contextlib import contextmanager
 
@@ -30,7 +31,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'L
 
 from Logging import Log
 
-from display import Display as D
+#from display import Display as D
 
 #== Global Variables ==#
 
@@ -118,7 +119,7 @@ class Conversation():
         # D.display_qr_code()
         #print(f"Previous Answer set to: {self.previous_answer}")
 
-        return answer
+        return [answer, answer_class]
     
 
     def conversate(self, conversation):
@@ -148,7 +149,8 @@ class Conversation():
 
                     Log.log("INFO", f"User question: {user_statement}")
 
-                    conversation.respond(user_statement)
+                    answer = conversation.respond(user_statement) # process response
+                    answer = answer[0] # get answer text from response
 
                     completed_response = subprocess.run(f"flite -voice rms -t \"{answer}", shell=True, check=True)
                     continue # go back to waiting for another question
@@ -192,7 +194,7 @@ class Conversation():
                     null_count = 0 # reset null count if we got a valid question
 
                     answer = conversation.respond(user_statement) # process response
-                    
+                    answer = answer[0] # get answer text from response
                     
 
                     # print(f'Answer: {answer}')
@@ -235,11 +237,15 @@ def load_testset(path: str) -> dict:
         # extract the label and q data
         dbanswer = ql['answer']
         question = ql['question']
+        qdocument = ql['document']
+        qlabel = ql['label']
 
         labeled_data['data'].append(
             {
                 'question': question,
-                'answer': dbanswer
+                'answer': dbanswer,
+                'document': qdocument,
+                'label': qlabel
             }
         )
 
@@ -308,7 +314,38 @@ def cpu_usage_monitor(sample_interval=0.05):
             'ram_usage_avg_mb': avg_ram_usage_bytes / (1024 * 1024)  # Convert to MB
         })
 
+def calculate_bleu(predictions, references):
+    """
+    Calculate BLEU score for the model's predictions against reference answers.
+    """
+    # BLEU expects lists of sentences
+    reference_texts = [[ref["answers"][0]["text"]] for ref in references]
+    prediction_texts = [pred["prediction_text"] for pred in predictions]
+    
+    bleu_score = sacrebleu.corpus_bleu(prediction_texts, reference_texts)
+    return bleu_score.score
+
+
 def main(args):
+    """
+    Main function to run the Conversation system in either test or interactive mode.
+    This function initializes a Conversation instance with specified methods for 
+    classification, extraction, retrieval, and generation. It can operate in two modes:
+    1. Test Mode (args.test == True):
+       - Loads a test dataset from a JSON file
+       - Iterates through each question-answer pair in the dataset
+       - Measures performance metrics (wall time, CPU time, CPU usage, RAM usage)
+       - Tracks component-level timing metrics (classification, extraction, filtering, retrieval, generation)
+       - Collects predictions and references for BLEU and retrieval scoring
+       - Calculates and prints aggregate statistics
+    2. Interactive Mode (args.test == False):
+       - Starts an interactive conversation session with wake/sleep words
+    Args:
+        args: Command-line arguments object containing:
+            - args.test (bool): If True, runs in test mode; otherwise runs interactive mode
+    Returns:
+        None. Prints statistics to stdout in test mode or initiates interactive conversation.
+    """
 
     conversation = Conversation(
         dataset_path = '../dataset.json',
@@ -326,19 +363,38 @@ def main(args):
         test_dataset = load_testset(os.path.join("..", "test_dataset.json"))
 
         avg_time, avg_cpu_time, avg_cpu_usage, avg_ram_usage, avg_distance = 0, 0, 0, 0, 0
+        avg_q_time, avg_res_time, avg_clas_time, avg_extr_time, avg_fil_time, avg_ret_time, avg_gen_time = 0, 0, 0, 0, 0, 0, 0
+        avg_ret_length, avg_gen_length, avg_context_length = 0, 0, 0
+        retrieved_correctly = 0
 
         for QA in test_dataset['data']:
             question = QA['question']
             dbanswer = QA['answer']
+            qdocument = QA['document']
+            qlabel = QA['label']
             
             
             with cpu_usage_monitor() as metrics:
                 answer = conversation.respond(question)
+                answer_label = answer[1]
+                answer = answer[0]
 
             avg_time += metrics['wall_time']
             avg_cpu_time += metrics['cpu_time']
             avg_cpu_usage += metrics['cpu_utilization_psutil']
             avg_ram_usage += metrics['ram_usage_avg_mb']
+
+
+            avg_q_time += conversation.crg.yields['totalTimeTaken']
+            avg_res_time += conversation.crg.yields['timeToJustRetrieve']
+            avg_clas_time += conversation.crg.yields['timeToClassify']
+            avg_extr_time += conversation.crg.yields['timeToExtract']
+            avg_fil_time += conversation.crg.yields['timeToFilter']
+            avg_ret_time += conversation.crg.yields['timeToRetrieve']
+            avg_gen_time += conversation.crg.yields['timeToGenerate']
+            avg_ret_length += conversation.crg.yields['lengthOfRetAnswer']
+            avg_gen_length += conversation.crg.yields['lengthOfGenAnswer']
+            avg_context_length += conversation.crg.yields['lengthOfContext']
 
             print(f'Question: {question}\nAnswer: {answer}')
             print(f'Stats:')
@@ -347,21 +403,73 @@ def main(args):
             print(f'  CPU usage: {(metrics["cpu_utilization_psutil"]):.2f}%')
             print(f'  Avg RAM usage: {(metrics["ram_usage_avg_mb"]):.2f} MB\n')
 
+            # Store predictions and references for metrics
+            predictions.append({"id": str(len(predictions) + 1), "prediction_text": answer})
+            references.append({"id": str(len(references) + 1), "answers": [{"text": dbanswer, "answer_start": 0}]})
+
+            if not conversation.crg.method_rag:
+                if qlabel == answer_label:
+                    retrieved_correctly += 1
+            else:
+                if qdocument in str(answer_label):
+                    retrieved_correctly += 1
+
         n = len(test_dataset['data'])
         avg_time /= n
         avg_cpu_time  /= n
         avg_cpu_usage /= n
         avg_ram_usage /= n
         avg_distance /= n
+        avg_q_time /= n
+        avg_res_time /= n
+        avg_clas_time /= n
+        avg_ret_time /= n
+        avg_extr_time /= n
+        avg_fil_time /= n
+        avg_gen_time /= n
+        avg_ret_length /= n
+        avg_gen_length /= n
+        avg_context_length /= n
+        bleu_score = calculate_bleu(predictions, references)
+        retrieval_score = (retrieved_correctly / n) * 100
 
-        print('Overall Statistics:')
-        print(f' Total questions answered: {n}')
-        print(f' Average time taken for answering questions: {avg_time:.3f} seconds')
-        print(f' Average CPU time taken for answering questions: {avg_cpu_time:.3f} seconds')
-        print(f' Average CPU usage: {avg_cpu_usage:.2f}%')
-        print(f' Average RAM usage: {avg_ram_usage:.2f} MB')
+        if not conversation.crg.method_rag:
+            print('Overall CRG Statistics:')
+            print(f' Total questions answered: {n}')
+            print(f' Average time taken for answering questions: {avg_time:.3f} seconds')
+            print(f' Average CPU time taken for answering questions: {avg_cpu_time:.3f} seconds')
+            print(f' Average question processing time: {avg_q_time:.3f} seconds')
+            print(f'   - Average retrieval time: {avg_res_time:.3f} seconds')
+            print(f'     - Average classification time: {avg_clas_time:.3f} seconds')
+            print(f'     - Average extraction time: {avg_extr_time:.3f} seconds')
+            print(f'     - Average filtering time: {avg_fil_time:.3f} seconds')
+            print(f'     - Average retrieval time: {avg_ret_time:.3f} seconds')
+            print(f'   - Average generation time: {avg_gen_time:.3f} seconds')
+            print(f' Average length of retrieved answers: {avg_ret_length:.2f} characters')
+            print(f' Average length of generated answers: {avg_gen_length:.2f} characters')
+            print(f' Average length of context used for generation: {avg_context_length:.2f} characters')
+            print(f' BLEU Score: {bleu_score:.2f}')
+            print(f' Retrieval Accuracy: {retrieval_score:.2f}%')
+            print(f' Average CPU usage: {avg_cpu_usage:.2f}%')
+            print(f' Average RAM usage: {avg_ram_usage:.2f} MB')
+
+        if conversation.crg.method_rag:
+            print('Overall RAG Statistics:')
+            print(f' Total questions answered: {n}')
+            print(f' Average time taken for answering questions: {avg_time:.3f} seconds')
+            print(f' Average CPU time taken for answering questions: {avg_cpu_time:.3f} seconds')
+            print(f' Average question processing time: {avg_q_time:.3f} seconds')
+            print(f'   - Average retrieval time: {avg_ret_time:.3f} seconds')
+            print(f'   - Average generation time: {avg_gen_time:.3f} seconds')
+            print(f' Average length of generated answers: {avg_gen_length:.2f} characters')
+            print(f' Average length of context used for generation: {avg_context_length:.2f} characters')
+            print(f' BLEU Score: {bleu_score:.2f}')
+            print(f' Retrieval Accuracy: {retrieval_score:.2f}%')
+            print(f' Average CPU usage: {avg_cpu_usage:.2f}%')
+            print(f' Average RAM usage: {avg_ram_usage:.2f} MB')
 
     else:
+
         conversation.conversate(conversation)
     
         
@@ -370,6 +478,9 @@ def sys_command(command):
     os.system(command)
 
 if __name__ == '__main__':
+
+    predictions = []
+    references = []
 
     argparser = argparse.ArgumentParser(description='User Conversation Interface')
 
