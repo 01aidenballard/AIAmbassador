@@ -163,7 +163,7 @@ def create_hf_dataset(records):
 # Fine-tune FLAN-T5
 def fine_tune_model(dataset, model_name="google/flan-t5-small", is_hpc=False):
     if is_hpc:
-        model_name = "/scratch/agb00033/models/flan-t5-small-local/"
+        model_name = "/scratch/agb00033/AIAmbassador/code/DirectLLM/flan-t5-small"
 
     tokenizer = T5Tokenizer.from_pretrained(model_name)
     model = T5ForConditionalGeneration.from_pretrained(model_name)
@@ -289,7 +289,7 @@ if __name__ == "__main__":
         raw_data = load_dataset(dataset_path)
         records = preprocess_dataset(raw_data)
         hf_dataset = create_hf_dataset(records)
-        fine_tune_model(hf_dataset)
+        fine_tune_model(hf_dataset, is_hpc=args.hpc)
 
     model_dir = "./flan_t5_finetuned"  # Path to your fine-tuned model directory
     model, tokenizer = load_fine_tuned_model(model_dir)
@@ -297,6 +297,10 @@ if __name__ == "__main__":
     # Test questions and context
     test_data = load_testset("../test_dataset.json")  # Path to your test dataset
     test_data = test_data['data']
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     # cahce of QA to evaluate
     '''
         {
