@@ -5,7 +5,7 @@ BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
 
 echo "${BOLD}> Status${NORMAL}"
-squeue -u isj0001
+squeue -u agb00033
 echo ""
 echo "${BOLD}> Error${NORMAL}"
 cat hpc/direct_llm.err

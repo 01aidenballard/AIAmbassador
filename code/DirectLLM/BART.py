@@ -164,7 +164,7 @@ def fine_tune_bart(dataset, model_name="facebook/bart-base", is_hpc=False):
     )
 
     if is_hpc:
-        model_name = "/scratch/isj0001/models/bart-large-local/"
+        model_name = "/scratch/agb00033/AIAmbassador/code/DirectLLM/hpc/facebook-bart-large/"
         
     model = BartForConditionalGeneration.from_pretrained(model_name)
 
@@ -213,7 +213,7 @@ def main():
         })
 
         if args.hpc:
-            tokenizer = BartTokenizer.from_pretrained("/scratch/isj0001/models/bart-large-local/")
+            tokenizer = BartTokenizer.from_pretrained("/scratch/agb00033/AIAmbassador/code/DirectLLM/hpc/facebook-bart-large/")
         else:
             tokenizer = BartTokenizer.from_pretrained("facebook/bart-large")
         
